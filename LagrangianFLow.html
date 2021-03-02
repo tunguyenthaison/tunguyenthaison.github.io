@@ -109,6 +109,12 @@
 					\end{equation*}
 				by replacing $\alpha$ with $-\alpha$. Now we have the freedom to design $\alpha$ as $\alpha(s) = \frac{v(s)}{\Vert v(s)\Vert_2}$ where $v(s)\neq 0$ and zero elsewhere. Note that by definition it is clear that $\alpha \in [-1,1]^m$, hence plug it in we deduce that $\int_0^t \Vert v(s)\Vert^2\;ds = 0$, hence $v(s)\equiv 0$ and thus $b^Te^{-sM}N = 0$ for all $s>0$. Taking derivative with induction we obtain $b^TM^kN = 0$ for all $k\in \mathbb{N}$, hence $\mathrm{rank}\;G < n$.
 				</p>
+
+				<div class="theorem"> 
+        		$0\in \mathcal{C}^\circ$ iff $\mathrm{rank}\;G = n$.
+        		</div>
+				<p> Let $\Omega\subset\R^n$ be an open subset and $a\in \Omega$. Let $f:\R^n\to \R^n$ such that $f\in \mathrm{C}^1(\Omega)$ and $Df(a)\in \mathcal{L}(\R^n,\R^n)$ is invertible (as a linear bounded operator). Then, there exist open sets $V\subset\Omega$ and $W\subset\R^n$ such that $f:V\to W$ is a $\rmC^1$ diffeormophism, that is $f:V\to W$ is bijective and its inverse $f^{-1}:W\to V$ is $\rmC^1(W)$.
+				</p>
         	</div>
 
 
