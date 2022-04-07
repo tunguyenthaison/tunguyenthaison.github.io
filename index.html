@@ -1,339 +1,127 @@
-<!DOCTYPE HTML>
-<!--
-	Strata by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>Inspired</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="assets/css/main.css" />
-		
-		
-		
-		
-		
-		<script type="text/x-mathjax-config">
- 			 MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-		</script>
-		<script data-cfasync="false" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-		<!-- <script data-cfasync="false" src="https://cdn.mathjax.org/mathjax/latest/extensions/TeX/AMSmath.js"></script> -->
-		<!--<script type="text/javascript"
-  				src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-		</script> -->
-		<!-- Latex%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-		
-		
-		
-		
-		
-		
-		
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-			
-			
-		<!--<link href='https://fonts.googleapis.com/css?family=Alike' rel='stylesheet'>
-			<style>
-			body {
-				font-family: 'Alike';font-size: 15px;
-			}
-			</style>-->
-			
-		<!--<link href='https://fonts.googleapis.com/css?family=Oldenburg' rel='stylesheet'>
-			<style>
-			body {
-				font-family: 'Oldenburg';font-size: 16px;
-			}
-			</style>-->
-			
-			
-			<style>
-			p.serif {
-				font-family: "Times New Roman", Times, serif;
-			}
-
-			p.sansserif {
-				font-family: Arial, Helvetica, sans-serif;
-			}
-			</style>
-		
-		
-		
-
-			<style>
-			.half50 {
-			width:50%;
-			display: table-cell;
-			}
-			</style>
-			
-            <style>
-			hr {
-			  display: block;
-			  margin-top: 0.5em;
-			  margin-bottom: 0.5em;
-			  margin-left: auto;
-			  margin-right: auto;
-			  border-style: inset;
-			  border-width: 1px;
-			}
-			</style>
-			
-			<style>
-			.half40 {
-			width:40%;
-			display: table-cell;
-			}
-			</style>
-			
-			<link rel="icon"   type="image/png"   href="images/favicon.ico">
-			
-			<meta name="viewport" content="width=device-width, initial-scale=1">
-				<style>
-				
-				.collapsible {
-					<!-- background-color: #C0C0C0; -->
-					background-color: #0033cc; 
-					color: white;
-					cursor: pointer;
-					padding: 0px;
-					padding-bottom: 1px;
-					width: 9%;
-					<!-- border:  none;  -->
-					border:  1 px; 
-					text-align: left;
-					outline: none;
-					font-size: 14px;
-					margin-left: 0px;
-					display: inline-block;
-					text-align: center;
-				}
-
-				.active, .collapsible:hover {
-					background-color: 	#0033cc;
-					font-size: 14px;
-					padding: 0px;
-					border:  1 px; 
-					padding-bottom: 1px;
-					width: 9%;
-					display: inline-block;
-					text-align: center;
-				}
-
-				.collapsible:after {
-					<!-- content: '\002B';-->
-					color: black;
-					font-weight: bold;
-					float: right;
-					font-size: 14px;
-					border:  1 px; 
-					margin-left: 0px;
-					padding: 0px;
-					padding-bottom: 1 px;
-					width: 9%;
-					display: inline-block;
-					text-align: center;
-				}
-
-				.active:after {
-					<!-- content: "\2212"; -->
-					color: black;
-					font-size: 14px;
-					padding: 0px;
-					border:  1 px; 
-					padding-bottom: 1px;
-					width: 9%;
-					display: inline-block;
-					text-align: center;
-					
-				}
-
-				.content {
-					padding: 0 5px;
-					max-height: 0;
-					overflow: hidden;
-					width: 90%;
-					line-height:85%;
-					transition: max-height 0.2s ease-out;
-					background-color: #FFFFFF;
-					font-size: 14px;
-					margin-left: 0px;
-				}
-				<!-- For colapsible box -->
-				p.serif {
-						font-family: "Times New Roman", Times, serif;
-						}
-
-				p.sansserif {
-							font-family: Arial, Helvetica, sans-serif;
-						}
-				p.small {
-							font-variant: small-caps;
-						}
-				
-				
-				<!-- For group button colapsible -->
-				.btn-group button {
-					background-color: #6699ff;
-					border: 1px solid black; 
-					color: white; /* White text */
-					padding: 4px 24px; /* Some padding */
-					cursor: pointer; /* Pointer/hand icon */
-					float: left; /* Float the buttons side by side */
-				}
-
-				/* Clear floats (clearfix hack) */
-				.btn-group:after {
-					content: "";
-					clear: both;
-					display: table;
-				}
-
-				.btn-group button:not(:last-child) {
-					border-right: none; /* Prevent double borders */
-				}
-
-				/* Add a background color on hover */
-				.btn-group button:hover {
-					background-color: #0066ff;
-				}
-					<!-- For group button colapsible -->
-					a:link, a:visited {
-						background-color:#0033cc;
-						color: white;
-						padding: 14px 25px;
-						<!-- padding: 0.5px;-->
-						text-align: center;
-						text-decoration: none;
-						display: inline-block;
-					}
-
-
-					a:hover, a:active {
-						
-						display: inline-block;
-						text-align: center;
-					}
-					
-					a.one:link {color:#000000; text-decoration:underline;}
-					a.one:visited {color:#0000ff;}
-					a.one:hover {color:#ffcc00;}
-					
-					
-					</style>
-			
-			
-			
-	</head>
-
-
-	<body id="top">
-
-		<!-- Header -->
-			<header id="header">
-				<a href="#" class="image avatar"><img src="images/yinyang.gif" alt="" /></a>
-				<h1><strong></strong><br/></h1>
-				
-		      	<ul class="menu">
-			        <font color = blue><li>Home</li></font>
-			        <li><a href="LagrangianFLow.html">LagrangianFLow</a></li>
-			        <li><a href="LagrangianFLow.html">LagrangianFLow</a></li>
-		      	</ul>
-			</header>
-
-		<!-- Main -->
-			<div id="main">
-
-				<!-- One -->
-					<section id="one">
-						<h2></h2>
-						<p>
-							 <li><a href="LagrangianFLow.html">LagrangianFLow</a></li>
-						<br/>
-
-
-						<h2>Publications and preprints</font></h2>
-						<ol reversed>
-
-							<li></br>
-							    <a class = "one" href="" target="_blank">arXiv preprint</a> (2020), submitted. </li> 
-						</ol>
-						<hr/>
-							 
-						   
-						
-						<hr/>
-						
-						
-						<div class="half50"> 
-							<h2>CONTACT INFORMATION</h2>
-							<br/>
-							<br/>
-							<br/><br/>
-							<strong>Office:</strong> <br/>
-							<strong>E-mail:</strong> 
-							<br>
-							
-							<!-- Counting visit time -->
-						<!-- hitwebcounter Code START 
-						
-						<a href="http://www.hitwebcounter.com" target="_blank">
-						<img src="http://hitwebcounter.com/counter/counter.php?page=6510687&style=0006&nbdigits=6&type=page&initCount=0" title="" Alt=""   						border="0" >
-						</a>                                        <br/>
-						-->
-							<hr/>
-							
-							
-						</div>
-						
-						
-
-						
-						
-						<div class="half50">
-						    <br>
-							<figure> 
-							<p style="text-align:center;"> <img src="images/wave2.gif" alt="wave2" width="400" height="150" > </p>
-							<center> <figcaption>    <a href="hobby.html#Ex1-label"> <font color = grey> An example of solution to Hamilton-Jacobi equation <span style="color: blue;">(Ex.1)</span> </a></figcaption><center>
-							</figure>
-						</div>
-						
-					</section>		
-					
-						
-			</div>
-
-		<!-- Footer -->
-			<footer id="footer">
-						
-			</footer>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-
-			
-			<a href="https://clustrmaps.com/site/19yuz" title="">
-			<img id="myImage"  src="//www.clustrmaps.com/map_v2.png?d=aAlkb6ZI7OjGRCBpTL7Y4r8XJbinYubDU33HGOPXr3M&cl=ffffff" style="display:none"></a>
-			
-			
-			
-			<!-- <script type="text/javascript">
-					document.getElementById("myImage").style.display = "none";
-			</script> -->
-			<!-- <img id="myImage" src="a.gif" /> -->
-
-			
-			
-	</body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Hello, I am Thai-Son Tu.</title>
+        <link rel="stylesheet" href="assets/fonts.css">
+        <link rel="stylesheet" href="assets/simplify.css">
+        <link rel="stylesheet" href="assets/pygments.css">
+        
+        
+    </head>
+    <body class="node homepage">
+        <header class="masthead">
+            <h1><a href="index.html">Thai-Son Tu</a></h1>
+            
+                <p class="tagline">Từ Nguyễn Thái Sơn</p>
+            
+            
+            <nav class="menu">
+                <input id="menu-check" type="checkbox"/>
+                <label id="menu-label" for="menu-check" class="unselectable">
+                    <span class="icon close-icon">✕</span>
+                    <span class="icon open-icon">☰</span>
+                    <span class="text">Menu</span>
+                </label>
+                <ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="research.html">Research</a></li>
+<li><a href="teaching.html">Teaching</a>
+    <!-- * <a href="teaching/child-one.html">Child One</a> -->
+    <!-- * <a href="teaching/child-two.html">Child Two</a> --></li>
+<li><a href="notes.html">Notes</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+            </nav>
+        </header>
+        <article class="main">
+            <header class="title">
+                <h1>Hello, I am Thai-Son Tu.</h1>
+                
+                    <p class="subtitle">problem solver by day, photographer by night.</p>
+                
+                <hr>
+            </header>
+            <p>
+I am a Ph.D. student at the University of Wisconsin - Madison under the
+guidance of Professor Hung V. Tran. My dissertation is about Partial
+Differential Equations, particularly questions related to Hamilton-Jacobi
+equations.
+</p>
+<p>
+I am interested in applied probability, statistics, machine learning and
+in using these skill sets to solve real world problems.<sup class="footnote" id="fnref:1"><a href="#fn:1">1</a></sup>
+</p>
+<hr>
+<h2 id="news">
+News
+</h2>
+<ul>
+<li>
+My paper with Yuxi Han has been accepted to Applied Mathematics &amp; Optimization.
+</li>
+<li>
+My paper has been accepted to Journal of Differential Equations.
+</li>
+<li>
+The Anki deck I created in 2013 to learn TOEFL has been downloaded 20965 times! (updated Jan 10, 2022)
+</li>
+<li>
+I was invited to give a talk at the Applied Math seminar, UNCC on Sep 24, 2021.
+</li>
+<li>
+I am recently awarded the GSSC Fellowship and I am an instructor for Math 112 (College algebra - Summer 2021).
+</li>
+<li>
+I have been awarded the Excellent in Research Award by the Mathematics Department, UW-Madison (2021).
+</li>
+<li>
+I have been awarded the Outstanding Teaching Assistant Award by the Mathematics Department, UW-Madison (2020).
+</li>
+<li>
+In May 18-21, 2020, my advisor and I will organize <i>Madison Workshop in PDEs 2020</i>, see madpde2020 (postponed due to Covid).
+</li>
+</ul>
+<hr>
+<h2 id="publications-and-preprints">
+Publications and preprints
+</h2>
+<ul>
+<li>
+(with Yuxi Han) Remarks on the vanishing viscosity process of state-constraint Hamilton-Jacobi equations, <i>to appear in Applied Mathematics &amp; Optimization</i> &ndash; <a href="https://arxiv.org/abs/2107.09860">arXiv</a>.
+</li>
+<li>
+Vanishing discount problems for Hamilton-Jacobi equations on changing domains, <i>Journal of Differential Equations</i> &ndash; <a href="https://arxiv.org/abs/2006.15800">arXiv</a>.
+</li>
+<li>
+(with Yeoneung Kim and Hung V. Tran) State-constraint static Hamilton-Jacobi equations in nested domains, <i>SIAM Journal on Mathematical Analysis</i> &ndash; <a href="https://arxiv.org/pdf/1906.11222">arXiv</a>.
+</li>
+<li>
+Rate of convergence for periodic homogenization of convex Hamilton-Jacobi equations in one dimension, <i>Asymptotic Analysis</i> &ndash; <a href="https://arxiv.org/abs/1808.06129">arXiv</a>.
+</li>
+</ul>
+<hr>
+<div class="wrapper">
+<div class="contact half50">
+<h3 id="contact-information">
+CONTACT INFORMATION
+</h3>
+<p>
+Department of Mathematics <br>
+University of Wisconsin - Madison <br>
+Madison, WI  53706. <br>
+822 Van Vleck Hall, 480 Lincoln Drive. <br>
+<strong>E-mail:</strong> <code>thaison@math.wisc.edu</code> <br>
+</p>
+</div>
+<div class="half50 image">
+<p>
+<img alt="wave2" src="base/wave2.gif">
+</p>
+</div>
+</div>
+        </article>
+        
+    </body>
 </html>
