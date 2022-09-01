@@ -17,8 +17,12 @@
 }
 
 .contact {
-    min-width: 200px;
+    min-width: 100px;
     flex-grow: 1;
+}
+
+.h3-list {
+    padding-left: 1.5em;
 }
 
 .half50 {
@@ -37,9 +41,58 @@ div.image {
 
 div.image > p > img {
     margin: 0;
+    margin-top: 3rem;
     width: 100%;
     height: auto;
 }
+
+#contact-information {
+    text-align: left;
+    font-size: 22px;
+}
+
+
+.contact-social-media-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.contact-social-media-text {
+  padding-right: 29px;
+  color: #3a395e;
+  font-size: 20px;
+  line-height: 1.2em;
+  font-weight: 500;
+}
+
+.footer-social-media-grid {
+  -webkit-box-pack: start;
+  -webkit-justify-content: center;
+  -ms-flex-pack: start;
+  justify-content: start;
+  grid-column-gap: 18px;
+  -ms-grid-columns: auto auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto;
+  -ms-grid-rows: auto;
+  grid-template-rows: inherit;
+  opacity: 1;
+}
+
+
+
+
+
+
 
 html {
     box-sizing: border-box;
@@ -130,6 +183,8 @@ h3, h4, h5, h6 {
     font-size: 19px;
     font-weight: bold;
 }
+
+
 
 p {
     margin: 10px 0 0 0;
@@ -294,6 +349,7 @@ body {
     width: 360px;
     padding: 20px 50px;
     float: left;
+    position: fixed;
 }
 
 .main {
@@ -546,6 +602,7 @@ body.extra-deflist-vspace dt {
     margin-top: 80px;
 }
 
+
 /**
  * -------------------------------------------------------------------------
  *  Media Queries
@@ -571,6 +628,7 @@ body.extra-deflist-vspace dt {
         margin-right: 40px;
         border-top: 3px solid black;
         border-bottom: 3px solid black;
+        position: relative;
     }
 
     .main {
