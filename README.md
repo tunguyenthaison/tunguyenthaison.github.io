@@ -1,4 +1,4 @@
-# Personal Website
+# [Personal Website](https://tunguyenthaison.github.io/)
 ---
 This website is designed using [`Ivy`](http://www.dmulholl.com/docs/ivy/dev/index.html). Ivy is a minimalistic python static web generator. 
 ALl contents are written in `Markdown` or [`Syntext`](http://www.dmulholl.com/docs/syntext/master/). 
