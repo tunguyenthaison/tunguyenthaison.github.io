@@ -136,8 +136,9 @@ div.image > p > img {
     margin-right: 0px;
     font-size: 90%;
     font-style: normal;
-    border-bottom: 3px solid #ddd;
+    /* border-bottom: 1px solid #ddd; */
 }
+
 
 .abstract-contents {
     /* background-color: floralwhite; */
@@ -330,8 +331,9 @@ li > p {
 blockquote {
     margin: 40px 20px;
     padding: 0 20px;
-    border-left: 3px solid #ddd;
+    border-left: 1px dashed #ddd;
     font-style: italic;
+    border-bottom: 1px dashed #ddd;
 }
 
 .blockquote-caption {
