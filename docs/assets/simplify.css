@@ -134,7 +134,7 @@ div.image > p > img {
     margin-bottom: 0px; 
     margin-left: 0px;
     margin-right: 0px;
-    font-size: 90%;
+    font-size: 80%;
     font-style: normal;
     /* border-bottom: 1px solid #ddd; */
 }
@@ -342,9 +342,9 @@ li > p {
 blockquote {
     margin: 40px 20px;
     padding: 0 20px;
-    border-left: 1px dashed #ddd;
+    /* border-left: 1px dashed #ddd; */
     font-style: italic;
-    border-bottom: 1px dashed #ddd;
+    /* border-bottom: 1px dashed #ddd; */
 }
 
 .blockquote-caption {
@@ -489,16 +489,16 @@ body {
 }
 
 .masthead {
-    width: 360px;
+    width: 260px;
     padding: 20px 50px;
     float: left;
     position: fixed;
 }
 
 .main {
-    width: 600px;
+    width: 700px;
     padding: 32px 50px 40px 50px;
-    margin-left: 360px;
+    margin-left: 260px;
     border-left: 3px solid black;
     min-height: calc(100vh - 80px);
 }
