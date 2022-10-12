@@ -10,5 +10,5 @@ else
    rm -r docs/*
 fi
 
-echo "Copy Contents from ../website/docs/ to docs/"
-cp -a ../website/docs/. docs/
+echo "Copy Contents from ../website/out/ to docs/"
+cp -a ../website/out/. docs/
