@@ -210,6 +210,18 @@ p > .arxiv > img {
     height: 100%;
 }  */
 
+a.weblink {
+    color: green;
+    /* text-decoration: dotted; */
+    padding-bottom: 0pt;
+    /* border-bottom: 1px solid; */
+}
+.text-arxiv {
+    text-decoration: none;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
 /**
  * -------------------------------------------------------------------------
  *  PDF
