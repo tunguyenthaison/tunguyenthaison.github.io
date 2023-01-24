@@ -17,6 +17,18 @@
 <!-- To automatically render math in text elements, include the auto-render extension: -->
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js">
+    </script>
+<!-- <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        config: ["MMLorHTML.js"],
+        jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+        extensions: ["MathMenu.js", "MathZoom.js"]
+    });
+    </script> -->
     </head>
     <body class="node-teaching-2023-spring node-teaching node">
         <header class="masthead">
@@ -49,9 +61,9 @@
                 
                 <hr>
             </header>
-            <h3 id="cmse-mth-314-matrix-algebra-with-computational-applications">
+            <h2 id="cmse-mth-314-matrix-algebra-with-computational-applications">
 CMSE/MTH 314 Matrix Algebra with Computational Applications
-</h3>
+</h2>
 <div>
 <ul>
 <li>
@@ -113,20 +125,64 @@ Help Room: Zoom (link TBD)
 </li>
 </ul>
 </div>
-<h3 id="materials">
+<h2 id="materials">
 Materials
-</h3>
+</h2>
 <p>
 All materials are hosted on <a href="https://d2l.msu.edu/d2l/home">D2L</a>.
 </p>
-<h3 id="some-extra-notes">
-Some extra notes
-</h3>
+<h2 id="table-of-contents">
+Table of contents
+</h2>
+<ul class="stx-toc">
+<li>
+<a href="#cmse-mth-314-matrix-algebra-with-computational-applications">CMSE/MTH 314 Matrix Algebra with Computational Applications</a>
+</li>
+<li>
+<a href="#materials">Materials</a>
+</li>
+<li>
+<a href="#table-of-contents">Table of contents</a>
+</li>
+<li>
+<a href="#some-extra-notes">Some extra notes</a>
 <ul>
 <li>
-Slicing array using <code>v[start:end:step]</code>. It can be used with python <code>list</code>, <code>tuple</code> or <code>numpy.ndarray</code> (vectors created by calling <code>np.arrray([1,21,3])</code> for example). Read more at <a href="https://www.w3schools.com/python/numpy/numpy_array_slicing.asp">NumPy Array Slicing</a>.
+<a href="#slicing-arrays">Slicing arrays</a>
+</li>
+<li>
+<a href="#numerical-error">Numerical error</a>
+</li>
+<li>
+<a href="#creating-zeros-and-ones-vectors">Creating zeros and ones vectors</a>
+</li>
+<li>
+<a href="#solving-linear-systems">Solving linear systems</a>
+</li>
+<li>
+<a href="#find-the-reduced-echelon-form">Find the reduced echelon form</a>
 </li>
 </ul>
+</li>
+</ul>
+<h2 id="some-extra-notes">
+Some extra notes
+</h2>
+<!--
+    * [Slicing arrays](#slicing-arrays)
+    * [Numerical error](#numerical-error)
+    * [Creating zeros and ones vectors](#creating-zeros-and-ones-vectors)
+    * [Solving linear systems](#solving-linear-systems)
+    * [Find the reduced echelon form](#find-the-reduced-echelon-form)
+-->
+<hr>
+<h5 id="slicing-arrays">
+Slicing arrays
+</h5>
+<p>
+We can use <code>v[start:end:step]</code> to slide an array.
+It can be used with python <code>list</code>, <code>tuple</code> or <code>numpy.ndarray</code> (vectors created by calling <code>np.arrray([1,21,3])</code> for example). Read more at <a href="https://www.w3schools.com/python/numpy/numpy_array_slicing.asp">NumPy Array Slicing</a>.
+</p>
 <pre class="lang-python pygments" data-lang="python">
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
@@ -146,29 +202,24 @@ Slicing array using <code>v[start:end:step]</code>. It can be used with python <
 <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># select only indices 0, 2 as the step is 2</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 </pre>
-<ul>
-<li>
+<h4 id="numerical-error">
+Numerical error
+</h4>
+<p>
 Avoid using the comparison <code>1==1.0</code> or generally <code>a==b</code> when comparing two scalars. Use <code>np.isclose()</code> instead.
-</li>
-</ul>
+</p>
 <pre class="lang-python pygments" data-lang="python">
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kc">True</span>
 </pre>
-<ul>
-<li>
-Useful <code>numpy</code> commands:
-<ul>
-<li>
-<code>np.ones</code> create a vectors with all element as 1
-</li>
-<li>
-<code>np.zeros</code> create a vectors with all element as 0
-</li>
-</ul>
-</li>
-</ul>
+<h4 id="creating-zeros-and-ones-vectors">
+Creating zeros and ones vectors
+</h4>
+<pre>
+- `np.ones` create a vectors with all element as 1
+- `np.zeros` create a vectors with all element as 0
+</pre>
 <pre class="lang-python pygments" data-lang="python">
 <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">])</span>
@@ -176,6 +227,63 @@ Useful <code>numpy</code> commands:
 <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">])</span>
 </pre>
+<h4 id="solving-linear-systems">
+Solving linear systems
+</h4>
+<pre class="lang-python pygments" data-lang="python">
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</pre>
+<p>
+Note that one can use <code>np.matrix</code> instead of <code>np.array</code>, however the former is deprecated.
+</p>
+<h4 id="find-the-reduced-echelon-form">
+Find the reduced echelon form
+</h4>
+<p>
+The Python sympy library has a "reduced row echelon form" (<code>rref</code>) function that runs a
+much more efficient version of the Gauss-Jordan elimination. To use the rref function you
+must first convert your matrix into a sympy.Matrix and then run the function. For example,
+let's do this for the following matrix $B$:
+</p>
+<pre class="lang-python pygments" data-lang="python">
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">]])</span>
+<span class="n">M</span>
+<span class="n">M</span><span class="o">.</span><span class="n">rref</span><span class="p">()</span>
+</pre>
+<p>
+In this code, the augmented matrix is \( M = [A|b]\) where
+</p>
+<p>
+$$
+    A =
+    \begin{pmatrix}
+        1 &amp; 0 &amp; 1 \\
+        2 &amp; 3 &amp; 4 \\
+        -1 &amp; -3 &amp; -3
+    \end{pmatrix} , \qquad\text{and}\qquad b =
+    \begin{pmatrix}
+        3\\
+        7\\
+        -4
+    \end{pmatrix}.
+$$
+</p>
+<p>
+Note that <code>M.rref()</code> returns a tuple of length 2, the first one is the reduced echelon form, the second one is the tuple if incides of pivots.
+</p>
+<pre class="lang-python pygments" data-lang="python">
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">]])</span>
+<span class="n">M</span>
+<span class="n">M</span><span class="o">.</span><span class="n">rref</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+</pre>
+<p>
+This code returns the matrix only, which we use mostly in this course.
+</p>
         </article>
         
     </body>
