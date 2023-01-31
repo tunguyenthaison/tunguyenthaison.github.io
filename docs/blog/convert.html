@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Son Tu</title>
+        <link rel="stylesheet" href="../assets/fonts.css">
+        <link rel="stylesheet" href="../assets/simplify.css">
+        <link rel="stylesheet" href="../assets/pygments.css">
+        
+        <!-- All KaTeX links taken from the documentation here: https://katex.org/docs/browser.html. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
+
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script>
+
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js">
+    </script>
+<!-- <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        config: ["MMLorHTML.js"],
+        jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+        extensions: ["MathMenu.js", "MathZoom.js"]
+    });
+    </script> -->
+    </head>
+    <body class="node-blog-convert node-blog node">
+        <header class="masthead">
+            <h1><a href="../index.html">Son Tu</a></h1>
+            
+                <p class="tagline">Từ Nguyễn Thái Sơn</p>
+            
+            
+            <nav class="menu">
+                <input id="menu-check" type="checkbox"/>
+                <label id="menu-label" for="menu-check" class="unselectable">
+                    <span class="icon close-icon">✕</span>
+                    <span class="icon open-icon">☰</span>
+                    <span class="text">Menu</span>
+                </label>
+                <ul>
+<li><a href="../index.html">Home</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../teaching.html">Teaching</a>
+    <!-- * <a href="../teaching/child-one.html">Child One</a> -->
+    <!-- * <a href="../teaching/child-two.html">Child Two</a> --></li>
+<li><a href="../notes.html">Notes</a></li>
+<li><a href="../about.html">About</a></li>
+</ul>
+            </nav>
+        </header>
+        <article class="main">
+            <header class="title">
+                <h1></h1>
+                
+                <hr>
+            </header>
+            {
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 93,
+   "id": "ab25cfc3",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "If the domain $\\Omega$ is given by $\\Omega = \\{(x,y)\\in \\mathbb{T}^n\\times \\mathbb{R}: y < f(x,t)\\}$, then at a point $\\hat{x} = (x,f(x))\\in \\partial \\Omega$, the **outward unit normal vector** to $\\partial\\Omega$ is given by\n"
+     ]
+    }
+   ],
+   "source": [
+    "from icecream import ic\n",
+    "import markdown\n",
+    "import re\n",
+    "\n",
+    "text_1 = \"Let $f(x) = x^2$ and we define the following.\"\n",
+    "text_2 = \"Let $f(x) = x^2$ and we define the following $x^3$ and $$x^2+2x+1 = (x+1)^2$$.\"\n",
+    "\n",
+    "# Add r\"str\"\" to make it a literal raw string, not \\t understood\n",
+    "text_3 = r\"Let $f(x) = x^2$ and we define the following $x^3$ and $$x^2+2x+1 = (x+1)^2$$ and This means, if $\\Omega_t = \\{(x,y)\\in \\mathbb{T}^n \\times \\mathbb{R}: y < f(x,t)\\}$ is \\n involving in $t$, then the free surface is given by \"\n",
+    "\n",
+    "text_4 = r\"If the domain $\\Omega$ is given by $\\Omega = \\{(x,y)\\in \\mathbb{T}^n\\times \\mathbb{R}: y < f(x,t)\\}$, then at a point $\\hat{x} = (x,f(x))\\in \\partial \\Omega$, the **outward unit normal vector** to $\\partial\\Omega$ is given by\"\n",
+    "# md = markdown.Markdown(extensions=['pymdownx.arithmatex'])\n",
+    "\n",
+    "\n",
+    "print(text_4)\n"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "id": "d088aed4",
+   "metadata": {},
+   "source": [
+    "# Concerting Math equations in Markdown Github to Gitlab\n",
+    "\n",
+    "## Atempt 1: Writing a loop and using `str.find()`"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "id": "0ee8ad26",
+   "metadata": {},
+   "source": [
+    "## Atemp 2: Using regular expression in python with the module `re`"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 64,
+   "id": "20cd5f17",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "text_3 = r\"Let $f(x) = x^2$ and we define the following $x^3$ and $$x^2+2x+1 = (x+1)^2$$ and This means, if $\\Omega_t = \\{(x,y)\\in \\mathbb{T}^n \\times \\mathbb{R}: y < f(x,t)\\}$ is \\n involving in $t$, then the free surface is given by \""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 97,
+   "id": "1bca2437",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "ic| text: ('Let $`f(x) = x^2`$ and we define the following $x^3$ and $$x^2+2x+1 = '\n",
+      "           '(x+1)^2$$ and This means, if $\\\\Omega_t = \\\\{(x,y)\\\\in \\\\mathbb{T}^n \\\\times '\n",
+      "           '\\\\mathbb{R}: y < f(x,t)\\\\}$ is \\\n",
+      "           involving in $t$, then the free surface '\n",
+      "           'is given by ')\n",
+      "ic| text: ('Let $`f(x) = x^2`$ and we define the following $`x^3`$ and $$x^2+2x+1 = '\n",
+      "           '(x+1)^2$$ and This means, if $\\\\Omega_t = \\\\{(x,y)\\\\in \\\\mathbb{T}^n \\\\times '\n",
+      "           '\\\\mathbb{R}: y < f(x,t)\\\\}$ is \\\n",
+      "           involving in $t$, then the free surface '\n",
+      "           'is given by ')\n",
+      "ic| text: ('Let $`f(x) = x^2`$ and we define the following $`x^3`$ and $$x^2+2x+1 = '\n",
+      "           '(x+1)^2$$ and This means, if $`\\\\Omega_t = \\\\{(x,y)\\\\in \\\\mathbb{T}^n '\n",
+      "           '\\\\times \\\\mathbb{R}: y < f(x,t)\\\\}`$ is \\\n",
+      "           involving in $t$, then the free '\n",
+      "           'surface is given by ')\n",
+      "ic| text: ('Let $`f(x) = x^2`$ and we define the following $`x^3`$ and $$x^2+2x+1 = '\n",
+      "           '(x+1)^2$$ and This means, if $`\\\\Omega_t = \\\\{(x,y)\\\\in \\\\mathbb{T}^n '\n",
+      "           '\\\\times \\\\mathbb{R}: y < f(x,t)\\\\}`$ is \\\n",
+      "           involving in $`t`$, then the '\n",
+      "           'free surface is given by ')\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0 <re.Match object; span=(4, 16), match='$f(x) = x^2$'>\n",
+      "12\n",
+      "===================================\n",
+      "1 <re.Match object; span=(45, 50), match='$x^3$'>\n",
+      "5\n",
+      "===================================\n",
+      "2 <re.Match object; span=(55, 57), match='$$'>\n",
+      "===================================\n",
+      "3 <re.Match object; span=(75, 77), match='$$'>\n",
+      "===================================\n",
+      "4 <re.Match object; span=(97, 165), match='$\\\\Omega_t = \\\\{(x,y)\\\\in \\\\mathbb{T}^n \\\\times \\>\n",
+      "68\n",
+      "===================================\n",
+      "5 <re.Match object; span=(185, 188), match='$t$'>\n",
+      "3\n",
+      "===================================\n"
+     ]
+    }
+   ],
+   "source": [
+    "def ghut2glab(text: str) -> str:\n",
+    "    matches_Iterators = re.finditer(r'\\$.*?\\$', text, re.DOTALL) \n",
+    "    for count, iter in enumerate(matches_Iterators):\n",
+    "        print(count, iter)\n",
+    "        # print(iter.group())\n",
+    "        formula = iter.group()\n",
+    "        if len(formula) > 2:\n",
+    "            print(len(formula))\n",
+    "            text = text.replace(formula, '$`'+formula.strip('$')+'`$')\n",
+    "            ic(text)\n",
+    "        print('===================================')\n",
+    "\n",
+    "ghut2glab(text_3)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "7c463154",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "46027aa0",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 84,
+   "id": "bd2cec9a",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'x$'"
+      ]
+     },
+     "execution_count": 84,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "t = r'$x$'\n",
+    "tt = t.removeprefix('$')\n",
+    "tt\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "be69478a",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 63,
+   "id": "b9e5d391",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "ic| i.start(): 4, i.end(): 18, i.group(): '$`f(x) = x^2`$'\n",
+      "ic| sub_text: '$`f(x) = x^2`$', len(sub_text): 14\n",
+      "ic| replace_sub_text: '`$`f(x) = x^2`$`'\n",
+      "ic| i.start(): 50, i.end(): 56, i.group(): '$x`^3$'\n",
+      "ic| sub_text: '` $x`^', len(sub_text): 6\n",
+      "ic| replace_sub_text: '`` $x`^`'\n",
+      "ic| i.start(): 61, i.end(): 63, i.group(): '$$'\n",
+      "ic| sub_text: 'an', len(sub_text): 2\n",
+      "ic| replace_sub_text: '`an`'\n",
+      "ic| i.start(): 81, i.end(): 83, i.group(): '$$'\n",
+      "ic| sub_text: ' (', len(sub_text): 2\n",
+      "ic| replace_sub_text: '` (`'\n",
+      "ic| i.start(): 104\n",
+      "    i.end(): 175\n",
+      "    i.group(): '$\\\\Ome`g`a_t = \\\\{(x,y)\\\\in \\\\mathbb{T}^n \\\\times \\\\mathbb{R}: y < f(x,`t)\\\\}$'\n",
+      "ic| sub_text: ' me`an`s, `if $\\\\Ome`g`a_t = \\\\{(x,y)\\\\in \\\\mathbb{T}^n \\\\times \\\\mathbb{R}: '\n",
+      "    len(sub_text): 71\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "------------\n",
+      "------------\n",
+      "------------\n",
+      "------------\n",
+      "------------\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "ic| replace_sub_text: ('` me`an`s, `if $\\\\Ome`g`a_t = \\\\{(x,y)\\\\in \\\\mathbb{T}^n \\\\times '\n",
+      "                       '\\\\mathbb{R}: `')\n",
+      "ic| i.start(): 197, i.end(): 200, i.group(): '$t$'\n",
+      "ic| sub_text: ' in', len(sub_text): 3\n",
+      "ic| replace_sub_text: '` in`'\n",
+      "ic| text_3: ('Let `$`f(x) = x^2`$` `an`d we define the followin`g``` $x`^`3$ `an`d '\n",
+      "             '$$x^2+2x+1 =` (`x+1)^2$$ `an`d This` me`an`s, `if $\\\\Ome`g`a_t = '\n",
+      "             '\\\\{(x,y)\\\\in \\\\mathbb{T}^n \\\\times \\\\mathbb{R}: `y < f(x,`t)\\\\}$ is \\\n",
+      "            ` '\n",
+      "             'in`volvin`g`` in` $t$, then the free surface is `g`iven by ')\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "------------\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "'Let `$`f(x) = x^2`$` `an`d we define the followin`g``` $x`^`3$ `an`d $$x^2+2x+1 =` (`x+1)^2$$ `an`d This` me`an`s, `if $\\\\Ome`g`a_t = \\\\{(x,y)\\\\in \\\\mathbb{T}^n \\\\times \\\\mathbb{R}: `y < f(x,`t)\\\\}$ is \\\\n` in`volvin`g`` in` $t$, then the free surface is `g`iven by '"
+      ]
+     },
+     "execution_count": 63,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "\n",
+    "matches = re.finditer(r'\\$.*?\\$', text_3, re.MULTILINE)\n",
+    "for i in matches:\n",
+    "    print('------------')\n",
+    "    ic(i.start(), i.end(), i.group())\n",
+    "    sub_text = text_3[i.start():i.end()]\n",
+    "    ic(sub_text, len(sub_text))\n",
+    "    if len(sub_text) > 0:\n",
+    "        replace_sub_text = r'`'+sub_text+'`'\n",
+    "        ic(replace_sub_text)\n",
+    "        text_3 = text_3.replace(sub_text, replace_sub_text)\n",
+    "    \n",
+    "\n",
+    "ic(text_3)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "86a4ae9d",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "ic| text_new_.group(): '$x^3$'\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "'$x^3$'"
+      ]
+     },
+     "execution_count": 19,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "text_new_ = re.search(r'\\$.*?\\$', text_2[indx::], re.MULTILINE)\n",
+    "ic(text_new_.group())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 79,
+   "id": "cde12a5e",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'yab'"
+      ]
+     },
+     "execution_count": 79,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "t = 'xab'\n",
+    "t = t.replace('x','y')\n",
+    "t"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 72,
+   "id": "22c9cf6f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "start = 5\n",
+      "end = 15\n",
+      "Let $f(x) = x^2$ and we define the following.\n",
+      "f(x) = x^2\n",
+      "f(x) = x^2\n",
+      "Let $`f(x) = x^2`$ and we define the following.\n"
+     ]
+    }
+   ],
+   "source": [
+    "start = text.find('$') + 1\n",
+    "end = text.find('$', start)\n",
+    "print(f'start = {start}')\n",
+    "print(f'end = {end}')\n",
+    "print(text)\n",
+    "print(text[start:end])\n",
+    "select_text = text[start:end]\n",
+    "print(select_text)\n",
+    "new_text = text.replace(select_text, '`'+select_text+'`')\n",
+    "print(new_text)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 73,
+   "id": "f5182f06",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "text = \"Let $f(x) = x^2$ and we define the following $x^3$ and $$x^2+2x+1 = (x+1)^2$$.\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "id": "0631e047",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "start = 5\n",
+      "end = 15\n",
+      "f(x) = x^2\n",
+      "f(x) = x^2\n",
+      "Let $`f(x) = x^2`$ and we define the following $x^3$ and $$x^2+2x+1 = (x+1)^2$$.\n"
+     ]
+    }
+   ],
+   "source": [
+    "instant = 0\n",
+    "start = text.find('$') + 1\n",
+    "end = text.find('$', start)\n",
+    "print(f'start = {start}')\n",
+    "print(f'end = {end}')\n",
+    "print(text[start:end])\n",
+    "select_text = text[start:end]\n",
+    "print(select_text)\n",
+    "new_text = text.replace(select_text, '`'+select_text+'`')\n",
+    "print(new_text)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "id": "f2491d93",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "-1\n"
+     ]
+    }
+   ],
+   "source": [
+    "t = \"absc anga\"\n",
+    "start = t.find('$') \n",
+    "print(start)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "eee2ee50",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9a0e732e",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "28232816",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import markdown\n",
+    "md = markdown.Markdown(extensions=['pymdownx.arithmatex'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "id": "d8f19aa9",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "html_text = md.convert(text_2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "id": "41dd88db",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<p>Let <span class=\"arithmatex\"><span class=\"MathJax_Preview\">f(x) = x^2</span><script type=\"math/tex\">f(x) = x^2</script></span> and we define the following <span class=\"arithmatex\"><span class=\"MathJax_Preview\">x^3</span><script type=\"math/tex\">x^3</script></span> and <span class=\"arithmatex\"><span class=\"MathJax_Preview\"><span class=\"arithmatex\"><span class=\"MathJax_Preview\">x^2+2x+1 = (x+1)^2</span><script type=\"math/tex\">x^2+2x+1 = (x+1)^2</script></span></span><script type=\"math/tex\"><span class=\"arithmatex\"><span class=\"MathJax_Preview\">x^2+2x+1 = (x+1)^2</span><script type=\"math/tex\">x^2+2x+1 = (x+1)^2</script></span></script></span>.</p>"
+      ],
+      "text/plain": [
+       "<IPython.core.display.HTML object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "from IPython.display import IFrame\n",
+    "display(HTML(html_text))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 147,
+   "id": "271327c0",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def markdownconvert(text: str):\n",
+    "    found_next_dollar = (text.find('$') != -1)\n",
+    "    index = 0\n",
+    "    new_text = \"\"\n",
+    "    while found_next_dollar:\n",
+    "        ic(index)\n",
+    "        start = text.find('$', index) + 1\n",
+    "        end = text.find('$', start)\n",
+    "        select_text = text[start:end]\n",
+    "        ic(start, end)\n",
+    "        ic(select_text)\n",
+    "        ic(text[start-1:end+1])\n",
+    "        # avoid the case where $$ is found\n",
+    "        if select_text !=\"\":  \n",
+    "            new_text = text.replace(select_text, '`'+select_text+'`')\n",
+    "            index = end + 2 # adjust for the two hyphens added\n",
+    "        else: \n",
+    "            # $$ is found, simply move index += 1 after the end index\n",
+    "            print('Do nothing, just update index +1 after end')\n",
+    "            index = end + 1\n",
+    "        ic(index)\n",
+    "        ic(text.find('$', index))\n",
+    "        found_next_dollar = (text.find('$', index) != -1)\n",
+    "        ic(found_next_dollar)\n",
+    "        print('----')\n",
+    "        ic(new_text)\n",
+    "        if index < len(text):\n",
+    "            ic(new_text[index])\n",
+    "        print('---------------------------------')\n",
+    "    return new_text"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 148,
+   "id": "954beea1",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "text_a = \"Let $f(x) = x^2$ and $x^3$ but $$x^2+2x+1 = (x+1)^2$$.\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 149,
+   "id": "e78946c2",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "ic| index: 0\n",
+      "ic| start: 5, end: 15\n",
+      "ic| select_text: 'f(x) = x^2'\n",
+      "ic| text[start-1:end+1]: '$f(x) = x^2$'\n",
+      "ic| index: 17\n",
+      "ic| text.find('$', index): 21\n",
+      "ic| found_next_dollar: True\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "----\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "ic| new_text: 'Let $`f(x) = x^2`$ and $x^3$ but $$x^2+2x+1 = (x+1)^2$$.'\n",
+      "ic| new_text[index]: '$'\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "---------------------------------\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "ic| index: 17\n",
+      "ic| start: 22, end: 25\n",
+      "ic| select_text: 'x^3'\n",
+      "ic| text[start-1:end+1]: '$x^3$'\n",
+      "ic| index: 27\n",
+      "ic| text.find('$', index): 31\n",
+      "ic| found_next_dollar: True\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "----\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "ic| new_text: 'Let $f(x) = x^2$ and $`x^3`$ but $$x^2+2x+1 = (x+1)^2$$.'\n",
+      "ic| new_text[index]: '$'\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "---------------------------------\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "ic| index: 27\n",
+      "ic| start: 32, end: 32\n",
+      "ic| select_text: ''\n",
+      "ic| text[start-1:end+1]: '$$'\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Do nothing, just update index +1 after end\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "ic| index: 33\n",
+      "ic| text.find('$', index): 51\n",
+      "ic| found_next_dollar: True\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "----\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "ic| new_text: 'Let $f(x) = x^2$ and $`x^3`$ but $$x^2+2x+1 = (x+1)^2$$.'\n",
+      "ic| new_text[index]: '$'\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "---------------------------------\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "ic| index: 33\n",
+      "ic| start: 52, end: 52\n",
+      "ic| select_text: ''\n",
+      "ic| text[start-1:end+1]: '$$'\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Do nothing, just update index +1 after end\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "ic| index: 53\n",
+      "ic| text.find('$', index): -1\n",
+      "ic| found_next_dollar: False\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "----\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "ic| new_text: 'Let $f(x) = x^2$ and $`x^3`$ but $$x^2+2x+1 = (x+1)^2$$.'\n",
+      "ic| new_text[index]: '$'\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "---------------------------------\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "'Let $f(x) = x^2$ and $`x^3`$ but $$x^2+2x+1 = (x+1)^2$$.'"
+      ]
+     },
+     "execution_count": 149,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "markdownconvert(text_a)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "28936c13",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "4"
+      ]
+     },
+     "execution_count": 137,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "text.find('$', 0)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 128,
+   "id": "1207c197",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "---\n",
+      "title: Some notes on Hele-Shaw equation\n",
+      "subtitle: Some naive readings on the Hele-Shaw equation\n",
+      "---\n",
+      "\n",
+      "\n",
+      "If the domain $\\Omega$ is given by $\\Omega = \\{(x,y)\\in \\mathbb{T}^n\\times \\mathbb{R}: y < f(x,t)\\}$, \n",
+      "then at a point $\\hat{x} = (x,f(x))\\in \\partial \\Omega$, the **outward unit normal vector** to $\\partial\\Omega$ is given by\n"
+     ]
+    }
+   ],
+   "source": [
+    "with open('test.md','r') as tfile:\n",
+    "    str_text = tfile.read()\n",
+    "\n",
+    "print(str_text)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "d0fc4dcf",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "tt = \"This means, if $\\Omega_t = \\{(x,y)\\in \\mathbb{T}^n \\times \\mathbb{R}: y < f(x,t)\\}$ is involving in $t$, then the free surface is given by \"\n",
+    "# markdownconvert(tt)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "7c7d5d0a",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "This means, if $\\Omega_t = \\{(x,y)\\in \\mathbb{T}^n \times \\mathbb{R}: y < f(x,t)\\}$ is involving in $t$, then the free surface is given by \n"
+     ]
+    }
+   ],
+   "source": [
+    "import re\n",
+    "# with open('data.txt') as myfile:\n",
+    "#     content = myfile.read()\n",
+    "\n",
+    "# text = re.search(r'Start\\n.*?End', content, re.DOTALL).group()\n",
+    "# with open(\"result.txt\", \"w\") as myfile2:\n",
+    "#     myfile2.write(text)\n",
+    "print(tt)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "eee25bff",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "general",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.8"
+  },
+  "vscode": {
+   "interpreter": {
+    "hash": "8b2c85dee4b15c10153756b0027e296b51ea001992bd346e27370dd8f71df9c4"
+   }
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
+
+        </article>
+        
+    </body>
+</html>

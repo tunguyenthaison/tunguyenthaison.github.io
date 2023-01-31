@@ -162,6 +162,9 @@ Table of contents
 <li>
 <a href="#find-the-reduced-echelon-form">Find the reduced echelon form</a>
 </li>
+<li>
+<a href="#getting-the-dimensions-of-arrays-matrix">Getting the dimensions of arrays/matrix</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -216,16 +219,33 @@ Avoid using the comparison <code>1==1.0</code> or generally <code>a==b</code> wh
 <h4 id="creating-zeros-and-ones-vectors">
 Creating zeros and ones vectors
 </h4>
-<pre>
-- `np.ones` create a vectors with all element as 1
-- `np.zeros` create a vectors with all element as 0
-</pre>
+<ul>
+<li>
+<code>np.ones</code> create a vectors with all element as 1
+</li>
+<li>
+<code>np.zeros</code> create a vectors with all element as 0
+</li>
+<li>
+<code>np.zeros((m, n))</code> create a numpy array (matrix) of size \( m\times n\)
+</li>
+<li>
+Use Python list as follow to create an \(m\times n\) matrix: <code>[[0 for i in range(n)] for j in range(m)]</code>
+</li>
+</ul>
 <pre class="lang-python pygments" data-lang="python">
 <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">])</span>
 
 <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">])</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">array</span><span class="p">([[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
+   <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]])</span>
+
+<span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
 </pre>
 <h4 id="solving-linear-systems">
 Solving linear systems
@@ -246,7 +266,7 @@ Find the reduced echelon form
 The Python sympy library has a "reduced row echelon form" (<code>rref</code>) function that runs a
 much more efficient version of the Gauss-Jordan elimination. To use the rref function you
 must first convert your matrix into a sympy.Matrix and then run the function. For example,
-let's do this for the following matrix $B$:
+let's do this for the following matrix:
 </p>
 <pre class="lang-python pygments" data-lang="python">
 <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
@@ -284,6 +304,36 @@ Note that <code>M.rref()</code> returns a tuple of length 2, the first one is th
 <p>
 This code returns the matrix only, which we use mostly in this course.
 </p>
+<h4 id="getting-the-dimensions-of-arrays-matrix">
+Getting the dimensions of arrays/matrix
+</h4>
+<ul>
+<li>
+If \(M\) is a \(m\times n\) Python list, or <code>np.array</code>
+</li>
+</ul>
+<pre class="lang-python pygments" data-lang="python">
+<span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]]</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c1"># return 2</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># return 3</span>
+
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="c1"># return 2</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># return 3</span>
+</pre>
+<ul>
+<li>
+If \(M\) is a \(m\times n\) <code>np.matrix</code>, the above code gives wrong results. To get a correct answer,
+simply use <code>np.array</code> to convert it before calling <code>len()</code>
+</li>
+</ul>
+<pre class="lang-python pygments" data-lang="python">
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="c1"># return 2</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># return 1 - wrong</span>
+<span class="c1"># fix</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="c1"># return 3</span>
+</pre>
         </article>
         
     </body>
