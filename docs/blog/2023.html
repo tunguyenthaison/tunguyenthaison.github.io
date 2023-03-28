@@ -3,34 +3,56 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Some notes on Hele-Shaw equation</title>
+        <title>Son Tu</title>
         <link rel="stylesheet" href="../assets/fonts.css">
         <link rel="stylesheet" href="../assets/simplify.css">
         <link rel="stylesheet" href="../assets/pygments.css">
         
         <!-- All KaTeX links taken from the documentation here: https://katex.org/docs/browser.html. -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css"
+  integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB"
+  crossorigin="anonymous">
 
 <!-- The loading of KaTeX is deferred to speed up page rendering -->
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+  integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p"
+  crossorigin="anonymous"></script>
 
 <!-- To automatically render math in text elements, include the auto-render extension: -->
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<script defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+  integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"></script>
 
 
+<!-- <script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js">
-    </script>
-<!-- <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        config: ["MMLorHTML.js"],
-        jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
-        extensions: ["MathMenu.js", "MathZoom.js"]
-    });
-    </script> -->
+
+<script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        macros: {
+          R: '{\\mathbb R}',                    // a simple string replacement
+          bold: ['\\boldsymbol{#1}',1] ,     // this macro has one parameter
+          ddx: ['\\frac{d#2}{d#1}', 2, 'x'], // this macro has an optional parameter that defaults to 'x'
+          abc: ['(#1)', 1, [null, '\\cba']]  // equivalent to \def\abc#1\cba{(#1)}
+        }
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+</script>
+
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     </head>
-    <body class="node-blog-test node-blog node">
+    <body class="node-blog-2023 node-blog node">
         <header class="masthead">
             <h1><a href="../index.html">Son Tu</a></h1>
             
@@ -57,21 +79,11 @@
         </header>
         <article class="main">
             <header class="title">
-                <h1>Some notes on Hele-Shaw equation</h1>
-                
-                    <p class="subtitle">Some naive readings on the Hele-Shaw equation</p>
+                <h1></h1>
                 
                 <hr>
             </header>
-            <p>If the domain $\Omega$ is given by $\Omega = {(x,y)\in \mathbb{T}^n\times \mathbb{R}: y &lt; f(x,t)}$, 
-then at a point $\hat{x} = (x,f(x))\in \partial \Omega$, the <strong>outward unit normal vector</strong> to $\partial\Omega$ is given by
-$$ 
-    \mathbf{n}(\hat{x}) = \frac{1}{\sqrt{1+|\nabla f(x)|^2}} 
-    \begin{pmatrix}
-        - \nabla f(x) \
-        1 
-    \end{pmatrix}.
-$$</p>
+            
         </article>
         
     </body>

@@ -3,10 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Son Tu</title>
-        <link rel="stylesheet" href="assets/fonts.css">
-        <link rel="stylesheet" href="assets/simplify.css">
-        <link rel="stylesheet" href="assets/pygments.css">
+        <title>Some notes on Hele-Shaw equation</title>
+        <link rel="stylesheet" href="../../assets/fonts.css">
+        <link rel="stylesheet" href="../../assets/simplify.css">
+        <link rel="stylesheet" href="../../assets/pygments.css">
         
         <!-- All KaTeX links taken from the documentation here: https://katex.org/docs/browser.html. -->
 <link rel="stylesheet"
@@ -52,9 +52,9 @@
 <script id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     </head>
-    <body class="node-blog node">
+    <body class="node-blog-blog-drafts-test node-blog-blog-drafts node-blog node">
         <header class="masthead">
-            <h1><a href="index.html">Son Tu</a></h1>
+            <h1><a href="../../index.html">Son Tu</a></h1>
             
                 <p class="tagline">Từ Nguyễn Thái Sơn</p>
             
@@ -67,23 +67,33 @@
                     <span class="text">Menu</span>
                 </label>
                 <ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="research.html">Research</a></li>
-<li><a href="teaching.html">Teaching</a>
-    <!-- * <a href="teaching/child-one.html">Child One</a> -->
-    <!-- * <a href="teaching/child-two.html">Child Two</a> --></li>
-<li><a href="notes.html">Notes</a></li>
-<li><a href="about.html">About</a></li>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../research.html">Research</a></li>
+<li><a href="../../teaching.html">Teaching</a>
+    <!-- * <a href="../../teaching/child-one.html">Child One</a> -->
+    <!-- * <a href="../../teaching/child-two.html">Child Two</a> --></li>
+<li><a href="../../notes.html">Notes</a></li>
+<li><a href="../../about.html">About</a></li>
 </ul>
             </nav>
         </header>
         <article class="main">
             <header class="title">
-                <h1></h1>
+                <h1>Some notes on Hele-Shaw equation</h1>
+                
+                    <p class="subtitle">Some naive readings on the Hele-Shaw equation</p>
                 
                 <hr>
             </header>
-            
+            <p>If the domain $\Omega$ is given by $\Omega = {(x,y)\in \mathbb{T}^n\times \mathbb{R}: y &lt; f(x,t)}$, 
+then at a point $\hat{x} = (x,f(x))\in \partial \Omega$, the <strong>outward unit normal vector</strong> to $\partial\Omega$ is given by
+$$ 
+    \mathbf{n}(\hat{x}) = \frac{1}{\sqrt{1+|\nabla f(x)|^2}} 
+    \begin{pmatrix}
+        - \nabla f(x) \
+        1 
+    \end{pmatrix}.
+$$</p>
         </article>
         
     </body>

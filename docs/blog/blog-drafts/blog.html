@@ -4,35 +4,57 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Some notes on Hele-Shaw equation</title>
-        <link rel="stylesheet" href="../assets/fonts.css">
-        <link rel="stylesheet" href="../assets/simplify.css">
-        <link rel="stylesheet" href="../assets/pygments.css">
+        <link rel="stylesheet" href="../../assets/fonts.css">
+        <link rel="stylesheet" href="../../assets/simplify.css">
+        <link rel="stylesheet" href="../../assets/pygments.css">
         
         <!-- All KaTeX links taken from the documentation here: https://katex.org/docs/browser.html. -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css"
+  integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB"
+  crossorigin="anonymous">
 
 <!-- The loading of KaTeX is deferred to speed up page rendering -->
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+  integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p"
+  crossorigin="anonymous"></script>
 
 <!-- To automatically render math in text elements, include the auto-render extension: -->
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<script defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+  integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"></script>
 
 
+<!-- <script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js">
-    </script>
-<!-- <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        config: ["MMLorHTML.js"],
-        jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
-        extensions: ["MathMenu.js", "MathZoom.js"]
-    });
-    </script> -->
+
+<script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        macros: {
+          R: '{\\mathbb R}',                    // a simple string replacement
+          bold: ['\\boldsymbol{#1}',1] ,     // this macro has one parameter
+          ddx: ['\\frac{d#2}{d#1}', 2, 'x'], // this macro has an optional parameter that defaults to 'x'
+          abc: ['(#1)', 1, [null, '\\cba']]  // equivalent to \def\abc#1\cba{(#1)}
+        }
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+</script>
+
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     </head>
-    <body class="node-blog-blog node-blog node">
+    <body class="node-blog-blog-drafts-blog node-blog-blog-drafts node-blog node">
         <header class="masthead">
-            <h1><a href="../index.html">Son Tu</a></h1>
+            <h1><a href="../../index.html">Son Tu</a></h1>
             
                 <p class="tagline">Từ Nguyễn Thái Sơn</p>
             
@@ -45,13 +67,13 @@
                     <span class="text">Menu</span>
                 </label>
                 <ul>
-<li><a href="../index.html">Home</a></li>
-<li><a href="../research.html">Research</a></li>
-<li><a href="../teaching.html">Teaching</a>
-    <!-- * <a href="../teaching/child-one.html">Child One</a> -->
-    <!-- * <a href="../teaching/child-two.html">Child Two</a> --></li>
-<li><a href="../notes.html">Notes</a></li>
-<li><a href="../about.html">About</a></li>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../research.html">Research</a></li>
+<li><a href="../../teaching.html">Teaching</a>
+    <!-- * <a href="../../teaching/child-one.html">Child One</a> -->
+    <!-- * <a href="../../teaching/child-two.html">Child Two</a> --></li>
+<li><a href="../../notes.html">Notes</a></li>
+<li><a href="../../about.html">About</a></li>
 </ul>
             </nav>
         </header>
@@ -79,7 +101,7 @@ $$</p>
 </blockquote>
 <p>This means, if $\Omega_t = {(x,y)\in \mathbb{T}^n\times \mathbb{R}: y &lt; f(x,t)}$ is involving in $t$, then the free surface is given by </p>
 <p>$$
-    \Sigma_t = \partial \Omega_t = \left {(x,f(x,t)): x\in \mathbb{T}^n\right }.
+    \Sigma_t = \partial \Omega_t = \left\lbrace (x,f(x,t)): x\in \mathbb{T}^n\right \rbrace.
 $$</p>
 <p>Then with this notation, what is the <em>"normal velocity of the free surface"</em>?</p>
 <p>According to this post from <code>physics.stackexchange</code> titled <em><a href="https://physics.stackexchange.com/questions/407884/free-surface-in-fluid-dynamics">Free surface in fluid dynamics</a></em>, that </p>

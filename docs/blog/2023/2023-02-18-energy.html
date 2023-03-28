@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Energy Method</title>
+        <link rel="stylesheet" href="../../assets/fonts.css">
+        <link rel="stylesheet" href="../../assets/simplify.css">
+        <link rel="stylesheet" href="../../assets/pygments.css">
+        
+        <!-- All KaTeX links taken from the documentation here: https://katex.org/docs/browser.html. -->
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css"
+  integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB"
+  crossorigin="anonymous">
+
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+  integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p"
+  crossorigin="anonymous"></script>
+
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+  integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"></script>
+
+
+<!-- <script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->
+
+
+<script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        macros: {
+          R: '{\\mathbb R}',                    // a simple string replacement
+          bold: ['\\boldsymbol{#1}',1] ,     // this macro has one parameter
+          ddx: ['\\frac{d#2}{d#1}', 2, 'x'], // this macro has an optional parameter that defaults to 'x'
+          abc: ['(#1)', 1, [null, '\\cba']]  // equivalent to \def\abc#1\cba{(#1)}
+        }
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+</script>
+
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    </head>
+    <body class="node-blog-2023-2023-02-18-energy node-blog-2023 node-blog node">
+        <header class="masthead">
+            <h1><a href="../../index.html">Son Tu</a></h1>
+            
+                <p class="tagline">Từ Nguyễn Thái Sơn</p>
+            
+            
+            <nav class="menu">
+                <input id="menu-check" type="checkbox"/>
+                <label id="menu-label" for="menu-check" class="unselectable">
+                    <span class="icon close-icon">✕</span>
+                    <span class="icon open-icon">☰</span>
+                    <span class="text">Menu</span>
+                </label>
+                <ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../research.html">Research</a></li>
+<li><a href="../../teaching.html">Teaching</a>
+    <!-- * <a href="../../teaching/child-one.html">Child One</a> -->
+    <!-- * <a href="../../teaching/child-two.html">Child Two</a> --></li>
+<li><a href="../../notes.html">Notes</a></li>
+<li><a href="../../about.html">About</a></li>
+</ul>
+            </nav>
+        </header>
+        <article class="main">
+            <header class="title">
+                <h1>Energy Method</h1>
+                
+                    <p class="subtitle">Some basic estimates for elliptic PDEs</p>
+                
+                <hr>
+            </header>
+            <!-- ![wave2](@root/images/image-01.jpg) -->
+<!-- 
+$$
+    A = 
+    \begin{pmatrix}
+        1 & 0 & 1 \\\
+        2 & 3 & 4 \\\
+        -1 & -3 & -3
+    \end{pmatrix} , \qquad\text{and}\qquad b = 
+    \begin{pmatrix}
+        3\\\
+        7\\\
+        -4
+    \end{pmatrix}.
+$$
+
+```math
+    A = 
+        \begin{pmatrix}
+            1 & 0 & 1 \\\
+            2 & 3 & 4 \\\
+            -1 & -3 & -3
+        \end{pmatrix} , \qquad\text{and}\qquad b = 
+        \begin{pmatrix}
+            3\\\
+            7\\\
+            -4
+        \end{pmatrix}.
+``` -->
+
+<p>We consider $a_{ij}\in \mathrm{C}(B_1)$ satisfies for some $\lambda,\Lambda &gt; 0$ that</p>
+<p>$$
+\begin{equation}
+    \lambda |\xi|^2 \leq a_{ij}(x)\xi_i\xi_j \leq \Lambda |\xi|^2, \qquad\text{for any}\; x\in B_1 \;\text{and}\;\xi \in \R^n.
+\end{equation}
+$$</p>
+<p>We consider $u\in \mathrm{C}^1(B_1)$ such that</p>
+<p>$$
+\begin{equation}
+    \int_{B_1} a_{ij} \partial_{x_i} u \,\partial_{x_j}\varphi = 0 \qquad\text{for all}\;\varphi\in \mathrm{C}^1_0(B_1).
+\end{equation}
+$$
+Through out this note, we will always consider $u$ and ${a_{ij}}$ satisfy the above conditions.</p>
+<hr />
+<h2>Cacciopolli's Inequality</h2>
+<blockquote>
+<p><u><strong>Cacciopolli's Inequality.</strong></u> For $\eta\in \mathrm{C}^1_0(B_1)$ there holds
+$$ \begin{equation}
+    \int_{B_1}\eta^2|Du|^2 \leq C\int_{B_1} |Du|^2 u^2
+\end{equation}$$
+where $C = C(\lambda, \Lambda)$.</p>
+</blockquote>
+<p>Consequence of this inequality are the followings:</p>
+<hr />
+<h2>Constant coefficients</h2>
+<p>Let $a_{ij}$ be a constant matrix and $u\in \mathrm{C}^1(B_1)$ satisfies $(2)$. We claim that </p>
+<blockquote>
+<p><u><strong>Lemma.</strong></u> There holds
+$$
+\begin{equation}
+    \Vert u\Vert_{L^\infty(B_{1/2})} + \Vert Du\Vert_{L^\infty(B_{1/2})}  \leq C(\lambda, \Lambda) \Vert u\Vert_{L^2(B_1)} .
+\end{equation}
+$$</p>
+</blockquote>
+<p>Take derivative in $x_k$ for $k\in {1,2,\ldots,n}$ of the above equation we have</p>
+<p>$$
+\begin{equation}
+    \int_{B_1} a_{ij} \partial^2_{x_kx_i} u \,\partial_{x_j}\varphi  + \underbrace{\int_{B_1} a_{ij} \partial_{x_i} u \,\partial_{x_j}\left(\partial_{x_k}\varphi\right)}_{0}  = 0 \qquad\text{for all}\;\varphi\in \mathrm{C}^1_0(B_1)
+\end{equation}
+$$</p>
+<p>since $\varphi_{x_k}\in \mathrm{C}^1_0(B_1)$. Therefore all derivatives of $u$ also satisfies equation $(2)$. We deduce that</p>
+<p>$$
+    \Vert u \Vert_{H^k(B_{1/2})} \leq c(k,\lambda, \Lambda) \Vert u\Vert_{L^2(B_1)} .
+$$</p>
+<p>If we fix $k$ large with respect to $n$, then by the continuous embedding $H^k(B_{1/2}) \hookrightarrow\mathrm{C}^1(\overline{B}_{1/2})$ we have</p>
+<p>$$
+    \Vert u\Vert_{L^\infty(B_{1/2})} + \Vert Du\Vert_{L^\infty(B_{1/2})}  \leq C(\lambda, \Lambda) \Vert u\Vert_{L^2(B_1)} .
+$$</p>
+<p>This finishes the proof. $\blacksquare$ </p>
+        </article>
+        
+    </body>
+</html>
