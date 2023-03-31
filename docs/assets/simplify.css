@@ -352,10 +352,8 @@ li > p {
 }
 
 blockquote {
-    /* margin: 40px 20px; */
-    margin: 5px 0px;
+    margin: 40px 20px;
     padding: 0 20px;
-    border: 1px dashed #ddd;
     /* border-left: 1px dashed #ddd; */
     font-style: italic;
     /* border-bottom: 1px dashed #ddd; */

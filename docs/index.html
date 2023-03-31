@@ -9,48 +9,26 @@
         <link rel="stylesheet" href="assets/pygments.css">
         
         <!-- All KaTeX links taken from the documentation here: https://katex.org/docs/browser.html. -->
-<link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css"
-  integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB"
-  crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
 
 <!-- The loading of KaTeX is deferred to speed up page rendering -->
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
-  integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p"
-  crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script>
 
 <!-- To automatically render math in text elements, include the auto-render extension: -->
-<script defer
-  src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
-  integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
-  crossorigin="anonymous"
-  onload="renderMathInElement(document.body);"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
-<!-- <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script> -->
 
-
-<script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        macros: {
-          R: '{\\mathbb R}',                    // a simple string replacement
-          bold: ['\\boldsymbol{#1}',1] ,     // this macro has one parameter
-          ddx: ['\\frac{d#2}{d#1}', 2, 'x'], // this macro has an optional parameter that defaults to 'x'
-          abc: ['(#1)', 1, [null, '\\cba']]  // equivalent to \def\abc#1\cba{(#1)}
-        }
-      },
-      svg: {
-        fontCache: 'global'
-      }
-    };
-</script>
-
-<script id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js">
+    </script>
+<!-- <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        config: ["MMLorHTML.js"],
+        jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+        extensions: ["MathMenu.js", "MathZoom.js"]
+    });
+    </script> -->
     </head>
     <body class="node homepage">
         <header class="masthead">
@@ -108,19 +86,34 @@ the free boundary problem in some models of fluid dynamics.
 <h2 id="publications-and-preprints">
 Publications and preprints
 </h2>
+<ol start="6">
+<li>
+<p>
+Generalized convergence of solutions for nonlinear Hamilton-Jacobi
+equations with state-constraint
+(with Jianlu Zhang),
+<a class="weblink" href="https://arxiv.org/abs/2303.17058">
+        <i>arXiv</i>
+</a>
+</p>
+</li>
+</ol>
 <ol start="5">
 <li>
-The regularity with respect to domains of the additive eigenvalues of superquadratic Hamilton-Jacobi equation and related vanishing discount problems,
+The regularity with respect to domains of the additive eigenvalues
+of superquadratic Hamilton-Jacobi equation and related vanishing
+discount problems
 (with Farid Bozorgnia and Dohyun Kwon),
 <a class="weblink" href="https://arxiv.org/abs/2210.05544">
-        <i>arXiv 2210.05544</i>
+        <i>arXiv</i>
 </a>
 </li>
 </ol>
 <ol start="4">
 <li>
 <p>
-Remarks on the vanishing viscosity process of state-constraint Hamilton-Jacobi equations
+Remarks on the vanishing viscosity process of
+state-constraint Hamilton-Jacobi equations
 (with Yuxi Han),
 <a class="weblink" href="https://link.springer.com/article/10.1007/s00245-022-09874-z">
         <i>Applied Mathematics &amp; Optimization 86, 1 (2022), 3</i>
@@ -161,7 +154,7 @@ State-constraint static Hamilton-Jacobi equations in nested domains,
 </ol>
 <ol>
 <li>
-<i>Rate of Convergence for Periodic Homogenization of Convex Hamilton-Jacobi Equations in One Dimension</i>,
+Rate of Convergence for Periodic Homogenization of Convex Hamilton-Jacobi Equations in One Dimension,
  <a class="weblink" href="https://content.iospress.com/articles/asymptotic-analysis/asy201599">
        <i>Asymptotic Analysis 121, 2 (2021), 171–194</i>
 </a>
@@ -215,22 +208,4 @@ C330  Wells Hall, 619 Red Cedar. <br>
         </article>
         
     </body>
-    
-<!-- Statcounter code for Academic Website - Github
-https://tunguyenthaison.github.io/ on Google Sites (new) -->
-<script type="text/javascript">
-var sc_project=12849509; 
-var sc_invisible=1; 
-var sc_security="c68c8388"; 
-</script>
-<script type="text/javascript"
-src="https://www.statcounter.com/counter/counter.js"
-async></script>
-<noscript><div class="statcounter"><a title="Web Analytics"
-href="https://statcounter.com/" target="_blank"><img
-class="statcounter"
-src="https://c.statcounter.com/12849509/0/c68c8388/1/"
-alt="Web Analytics"
-referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-<!-- End of Statcounter Code -->
 </html>
