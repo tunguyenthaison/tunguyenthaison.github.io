@@ -294,7 +294,7 @@ img {
  */
 
 body {
-    font-size: 17px;
+    font-size: 15px;
     color: black;
     font-family: 'Crimson Text', Georgia, serif;
     line-height: 1.75;
@@ -345,6 +345,7 @@ p {
     padding: 0;
     overflow-wrap: break-word;
 }
+
 
 li > p {
     margin: 0 0 0 0;
@@ -433,8 +434,8 @@ ul ul, ol ol, ul ol, ol ul {
 }
 
 li {
-    margin: 4px 0;
-    padding: 0;
+    margin: 10px 0;
+    padding: 2px 0;
 }
 
 dl {
