@@ -186,10 +186,18 @@ details[open] summary{
  * -------------------------------------------------------------------------
  */
 
+.center {
+    padding-bottom: 10pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 p > a.arxiv {
-    float: right;
+    /* float: right; */
+    /* margin: auto; */
     /* border-radius: 10%; */
-    /* border: 0px; */
+    border: 0px;
     /* background-color: gray; */
     /* border: 1px solid black; */
     /* padding: 0 0 0 5px; */
