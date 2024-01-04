@@ -3,10 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Some notes on Hele-Shaw equation</title>
-        <link rel="stylesheet" href="../../assets/fonts.css">
-        <link rel="stylesheet" href="../../assets/simplify.css">
-        <link rel="stylesheet" href="../../assets/pygments.css">
+        <title>Spring 2024</title>
+        <link rel="stylesheet" href="../assets/fonts.css">
+        <link rel="stylesheet" href="../assets/simplify.css">
+        <link rel="stylesheet" href="../assets/pygments.css">
         
         
 <link rel="stylesheet" href="../assets/teaching-table.css">
@@ -35,9 +35,9 @@
     });
     </script> -->
     </head>
-    <body class="node-blog-blog-drafts-blog node-blog-blog-drafts node-blog node">
+    <body class="node-teaching-2024-spring node-teaching node">
         <header class="masthead">
-            <h1><a href="../../index.html">Son Tu</a></h1>
+            <h1><a href="../index.html">Son Tu</a></h1>
             
                 <p class="tagline">Từ Nguyễn Thái Sơn</p>
             
@@ -50,13 +50,13 @@
                     <span class="text">Menu</span>
                 </label>
                 <ul>
-<li><a href="../../index.html">Home</a></li>
-<li><a href="../../research.html">Research</a></li>
-<li><a href="../../teaching.html">Teaching</a>
-    <!-- * <a href="../../teaching/child-one.html">Child One</a> -->
-    <!-- * <a href="../../teaching/child-two.html">Child Two</a> --></li>
-<li><a href="../../notes.html">Notes</a></li>
-<li><a href="../../about.html">About</a></li>
+<li><a href="../index.html">Home</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../teaching.html">Teaching</a>
+    <!-- * <a href="../teaching/child-one.html">Child One</a> -->
+    <!-- * <a href="../teaching/child-two.html">Child Two</a> --></li>
+<li><a href="../notes.html">Notes</a></li>
+<li><a href="../about.html">About</a></li>
 </ul>
 <p><br></p>
 <p>
@@ -70,78 +70,123 @@
         </header>
         <article class="main">
             <header class="title">
-                <h1>Some notes on Hele-Shaw equation</h1>
-                
-                    <p class="subtitle">Some naive readings on the Hele-Shaw equation</p>
+                <h1>Spring 2024</h1>
                 
                 <hr>
             </header>
-            <h2>Naive attempt</h2>
-<p>If the domain ${\Omega}$ is given by $\Omega = {(x,y)\in \mathbb{T}^n\times \mathbb{R}: y &lt; f(x,t)}$, 
-then at a point $\hat{x} = (x,f(x))\in \partial \Omega$, the <strong>outward unit normal vector</strong> to $\partial\Omega$ is given by</p>
-<p>$$ 
-    \mathbf{n}(\hat{x}) = \frac{1}{\sqrt{1+|\nabla f(x)|^2}} 
-    \begin{pmatrix}
-        - \nabla f(x) \
-        1 
-    \end{pmatrix}.
-$$</p>
-<p>A boundary condition states that:</p>
-<blockquote>
-<p>The normal velocity of the free surface is equal to the normal component of the fluid velocity on the free surface</p>
-</blockquote>
-<p>This means, if $\Omega_t = {(x,y)\in \mathbb{T}^n\times \mathbb{R}: y &lt; f(x,t)}$ is involving in $t$, then the free surface is given by </p>
-<p>$$
-    \Sigma_t = \partial \Omega_t = \left\lbrace (x,f(x,t)): x\in \mathbb{T}^n\right \rbrace.
-$$</p>
-<p>Then with this notation, what is the <em>"normal velocity of the free surface"</em>?</p>
-<p>According to this post from <code>physics.stackexchange</code> titled <em><a href="https://physics.stackexchange.com/questions/407884/free-surface-in-fluid-dynamics">Free surface in fluid dynamics</a></em>, that </p>
-<p>$$
-    \text{normal velocity of the free surface} = \mathbf{V}(t)\cdot \mathbf{n}(t)
-$$
-where </p>
+            <h2 id="mth-234-multivariable-calculus">
+MTH 234 Multivariable Calculus
+</h2>
+<div>
 <ul>
 <li>
-<p>$\mathbf{V}$ is the free surface velocity (how to define this?)</p>
+<a href="https://d2l.msu.edu/d2l/home/2149385">Course website - D2L</a>
 </li>
 <li>
-<p>$\mathbf{n}$ is the unit normal to the surface. </p>
+Lecture: LEC3
+<ul>
+<li>
+Instructor: Son Tu – tuson@msu.edu
+</li>
+<li>
+Wells Hall B119 (MWF: 12:40 pm - 13:30 pm).
 </li>
 </ul>
-<p>Then the condition </p>
-<blockquote>
-<p>The normal velocity of the free surface is equal to the normal component of the fluid velocity on the free surface</p>
-</blockquote>
-<p>reads
-$$ 
-    \mathbf{V}\cdot \mathbf{n} = \mathbf{u}\cdot\mathbf{n}  \tag{1}
-$$
-where $\mathbf{u}$ is the fluid velocity, here $\mathbf{u}:\Omega \to \mathbb{R}^{n+1} \ni (x,y)$ where $y$ stands for the vertical variable. We write 
-$$
-    y = f(x,t) 
-$$
-as the equation for the free surface $\Sigma_t$. Each fluid particle on the free surface has two coordinates $x,y$ and since the fluid particle moves with time, we see that $y$ is a function of both $x$ and $t$. </p>
-<p>$$
-    \frac{dy}{dt}  = f_t + \nabla f(x) \cdot{x}'(t). 
-$$</p>
-<blockquote>
-<p>The following are wrong!</p>
-<hr />
-<p>If we look at a point on the surface of the form $(x,y) = (x,f(x,t))$ as times $t$ changes. If we fix $x$ then we should have 
-$$
-    x'(t) = 0 
-$$
-i.e., we only look at how the point move vertically as time $t$ changes. Then the total velocity of the free surface is
-$$ 
-    \mathbf{V}(t) = \Big(x'(t), \frac{d}{dt}f(x,t)\Big) = (0, f_t).
-$$
-Therefore from $(1)$ we have</p>
-<p>$$
-    \mathbf{V}\cdot \mathbf{n} = \frac{f_t}{\sqrt{1+|\nabla f|^2}} = \mathbf{u}\cdot \mathbf{n}.
-$$</p>
-<p>This is probably wrong, as one needs to decompose the $\mathbf{V}$ into a tangential component and a normal component, which then by some theorem, the tangential component $\mathbf{V}\cdot \mathbf{t} = 0$.</p>
-</blockquote>
-<h2>Free boundary as the level-set equation</h2>
+</li>
+<li>
+Recitation:
+<ul>
+<li>
+013 - R 12:40 PM - 1:30 PM - A308 WH - Rolando Ramos
+</li>
+<li>
+014 - R 12:40 PM - 1:30 PM - A224 WH - Catherine Elizabeth Davis
+</li>
+<li>
+015 - R 12:40 PM - 1:30 PM - A222 WH - Astrid Arena Olave-Herrera
+</li>
+<li>
+016 - R 1:50 PM - 2:40 PM - A336 WH - Rolando Ramos
+</li>
+<li>
+017 - R 1:50 PM - 2:40 PM - A334 WH - Vindya Lakshani Morawaliyadda
+</li>
+<li>
+018 - R 1:50 PM - 2:40 PM - A126 WH - Astrid Arena Olave-Herrera
+</li>
+</ul>
+</li>
+<li>
+Office hours:
+<ul>
+<li>
+Time: TBA
+</li>
+<li>
+<a href="https://msu.zoom.us/j/99255692163">https://msu.zoom.us/j/99255692163</a>
+</li>
+<li>
+Meeting ID: 992 5569 2163
+</li>
+<li>
+Passcode: mth234
+</li>
+</ul>
+</li>
+<li>
+Syllabus <a href="../teaching/2024-spring/2024-syllabus-spring.pdf">PDF</a> - <a href="https://d2l.msu.edu/d2l/le/content/2149385/viewContent/15259673/View">Link-D2L</a>
+</li>
+<li>
+Schedule <a href="../teaching/2024-spring/SS24MTH234Schedule.pdf">PDF</a> - <a href="https://d2l.msu.edu/d2l/le/content/2149385/viewContent/15259685/View">Link-D2L</a>
+</li>
+<li>
+Getting help:
+<ul>
+<li>
+<a href="https://piazza.com/class/llaw9idgpos4iv">Piazza</a>
+</li>
+<li>
+<a href="https://caps.msu.edu/">MSU Counseling Center</a>
+</li>
+<li>
+<a href="https://undergrad.msu.edu/resources">Student Resources</a>
+</li>
+<li>
+<a href="https://www.rcpd.msu.edu/">Resource Center for Persons with Disabilities</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="materials">
+Materials
+</h2>
+<ul>
+<li>
+All materials are hosted on <a href="https://d2l.msu.edu/d2l/home/2149385">D2L</a>.
+</li>
+<li>
+Some lecture notes are posted here for convenience.
+</li>
+</ul>
+<table class="teaching-table">
+  <tr>
+    <th>Date</th>
+    <th>Lecture number</th>
+    <th>Description</th>
+    <th>File</th>
+  </tr>
+  <tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+  </tr>
+
+</table>
         </article>
         
     </body>
