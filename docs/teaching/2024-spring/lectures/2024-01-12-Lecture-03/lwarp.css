@@ -3,6 +3,11 @@
   Copyright 2016-2022 Brian Dunn — BD Tech Concepts LLC
 */
 
+html {
+    display: flex;
+    justify-content: center;
+}
+
 /* a fix for older browsers: */
 header, section, footer, aside, nav, main,
     article, figure { display: block; }
