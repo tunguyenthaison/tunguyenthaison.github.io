@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title><span class="scshape"> Michigan State University <br /><big class="large">Math 234 – Spring 2024<br />Lecture notes</big> </span>: <span class="scshape"> Michigan State University <br /><big class="large">Math 234 – Spring 2024<br />Lecture notes</big> </span></title>
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<div class="titlepage">
+<h1><span class="scshape"> Michigan State University <br /><big class="large">Math 234 – Spring 2024<br />Lecture notes</big> </span></h1>
+<p class="authors">
+<span class="author"></span>
+</p>
+</div>
+<h1 id="a0000000002">1 Cylindrical coordinates</h1>
+<ul class="itemize">
+  <li><p>Cylindrical coordinates represent a point \(P(x,y,z)\) in space by ordered triples \((r,\theta , z)\) in which \((r,\theta )\) is the polar coordinate of \((x,y)\). </p>
+</li>
+  <li><p>\(z\) remains unchanged. </p>
+<div class="displaymath" id="a0000000003">
+  \begin{equation*}  \fbox{$ \qquad \begin{cases} \begin{aligned}  x & = r\cos \theta \\ y & = r\sin \theta \\ z & = z \end{aligned}\end{cases} \qquad \text{and}\qquad \begin{cases} \begin{aligned}  r^2 & = x^2 + y^2 \\ \frac{y}{x} & = \tan \theta . \end{aligned}\end{cases} \qquad $} \end{equation*}
+</div>
+<div class="centered"> <img src="images/img-0001.png" alt="\includegraphics[scale=0.7]{content/09-cylindrical.png}" style="width:140.7px; height:125.99999999999999px" />
+ </div>
+</li>
+  <li><p><b class="bfseries">Example.</b> Change \((x,y,z) = (-1,1,1)\) into cylindrical coordinates. </p>
+<div class="proof_wrapper" id="a0000000004">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>\(r^2 = x^2+y^2 = 2\), thus \(r=\sqrt{2}\). Then \(\tan \theta = \frac{y}{x} = \frac{1}{-1} = -1\), thus \(\theta = \frac{3\pi }{4}\). Hence </p>
+<div class="displaymath" id="a0000000005">
+  \[ (-1,1,1)\mapsto \left(\sqrt{2}, \frac{3\pi }{4}, 1\right). \]
+</div>
+
+  </div>
+</div>
+</li>
+  <li><p><b class="bfseries">Example.</b> Change \((\sqrt{2}, 3\pi /4, 2)\) to Cartesian coordinates. </p>
+<div class="proof_wrapper" id="a0000000006">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>We have \(x = r\cos \theta = \sqrt{2}\times \left(-\frac{1}{\sqrt{2}}\right) = -1\) and \(y = r\sin \theta = \sqrt{2}\times \left(\frac{1}{\sqrt{2}}\right) = 1\). Thus </p>
+<div class="displaymath" id="a0000000007">
+  \[ (\sqrt{2}, 3\pi /4, 2)\mapsto (1,-1, 2). \]
+</div>
+
+  </div>
+</div>
+</li>
+</ul>
+<h1 id="a0000000008">2 Spherical coordinates</h1>
+<ul class="itemize">
+  <li><p>\((x,y,z)\mapsto (\rho , \theta ,\phi )\), where basically we repeat the polar coordinate first, and the <em>height</em> \(z\) is tracked via the variable \(\phi \), the angle with \(Oz\). Note that the order is sometime written as \((r,\phi , \theta )\). <b class="bfseries">Pay attention to the order!</b> </p>
+</li>
+  <li><p>The relations, still introducing an extra variable \(r\) as in polar coordinates (it will be very useful) </p>
+<div class="displaymath" id="a0000000009">
+  \begin{equation*}  \fbox{$ \qquad \begin{cases} \begin{aligned}  x & = (\rho \cos \phi ) \cos \theta \\ y & = (\rho \cos \phi ) \sin \theta \\ z & = \rho \cos \phi \end{aligned}\end{cases} \qquad \text{and}\qquad \begin{cases} \begin{aligned}  \rho ^2 & = x^2+y^2+z^2 \\ r & = \rho \sin \phi \\ \frac{r}{z} & = \tan \phi \end{aligned}\end{cases}, \qquad \theta \in [0,2\pi ], \phi \in [0,\pi ] \qquad $} \end{equation*}
+</div>
+<div class="centered"> <img src="images/img-0002.png" alt="\includegraphics[scale=0.7]{content/09-spherical.png}" style="width:149.79999999999998px; height:127.39999999999999px" />
+ </div>
+</li>
+  <li><p>If \(\phi {\gt} \frac{\pi }{2}\) then \(z{\lt}0\), the angle make \(P\) lies below the \(Oxy\)-plane. </p>
+</li>
+  <li><p><b class="bfseries">Example.</b> Convert \((1,1,0)\) into spherical coordinate. </p>
+<div class="proof_wrapper" id="a0000000010">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>\(\rho ^2 = x^2+y^2+z^2 = 2\), thus \(\rho = \sqrt{2}\). Now \(z = \rho \cos \phi \) implies \(0 = \sqrt{2} \cos \phi \), thus \(\phi = \frac{\pi }{2}\). Finally \(\tan \theta = \frac{y}{x} = 1\), thus \(\theta = \frac{\pi }{4}\) (since \(x{\gt}0, y{\gt}0\)). We conclude </p>
+<div class="displaymath" id="a0000000011">
+  \begin{equation*}  (1,1,0) \mapsto \left(\sqrt{2}, \frac{\pi }{4}, \frac{\pi }{2}\right) = (r,\theta , \phi ). \end{equation*}
+</div>
+
+  </div>
+</div>
+</li>
+  <li><p><b class="bfseries">Example.</b> True/False: Consider the point with spherical coordinates \((\rho , \theta ,\phi )=(4, \frac{3\pi }{4}, \frac{5\pi }{7})\). The product of the Cartesian coordinates, \(xyz\), is positive. </p>
+<div class="proof_wrapper" id="a0000000012">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p><b class="bfseries">True</b>. We see that \(\phi = \frac{5\pi }{7} {\gt} \frac{\pi }{2}\), thus \(z{\lt}0\). Now \(\theta = \frac{3\pi }{4}\), thus \(x{\gt}0, y{\lt}0\) (draw a picture). Therefore \(xyz{\gt}0\). </p>
+
+  </div>
+</div>
+</li>
+</ul>
+<h1 id="a0000000013">3 Practice</h1>
+<ul class="itemize">
+  <li><p><b class="bfseries">Example.</b> Convert the equation \(z = \sqrt{x^2+y^2}\) into cylindrical coordinates and spherical coordinates. </p>
+<div class="proof_wrapper" id="a0000000014">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>&#8195;</p>
+<ul class="itemize">
+  <li><p>Cylindrical: \(z = r\). </p>
+</li>
+  <li><p>Spherical: \(\rho \cos \phi = r = \rho \sin \phi \), thus \(\tan \phi = 1\), thus \(\phi = \frac{\pi }{4}\) is the equation of the cone! </p>
+</li>
+</ul>
+
+  </div>
+</div>
+</li>
+  <li><p><b class="bfseries">Example.</b> Identify the surface whose equation is \(z = 4-r^2\) in cylindrical coordinate. </p>
+<div class="proof_wrapper" id="a0000000015">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>We have \(z = 4 - x^2-y^2\), thus this is a elliptical paraboloid (one term of 1st order, two terms of second order having the same sign). </p>
+
+  </div>
+</div>
+</li>
+  <li><p><b class="bfseries">Example.</b> Convert to \(x,y,z\) the surface: \(\rho = \sin \phi \cos \phi \). </p>
+<div class="proof_wrapper" id="a0000000016">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>We can do </p>
+<div class="displaymath" id="a0000000017">
+  \begin{equation*}  (x^2+y^2+z^2)^\frac {3}{2}= \rho ^3 = (\rho \sin \phi ) (\rho \cos \phi ) = rz = z\sqrt{x^2+y^2}. \end{equation*}
+</div>
+<p> The answer is \((x^2+y^2+z^2)^\frac {3}{2} = z\sqrt{x^2+y^2}\). </p>
+
+  </div>
+</div>
+</li>
+  <li><p><b class="bfseries">Example.</b> Identify the surface whose equation is: \(\rho = \sin \phi \cos \theta \). </p>
+<div class="proof_wrapper" id="a0000000018">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>We can do </p>
+<div class="displaymath" id="a0000000019">
+  \begin{equation*}  x^2+y^2+z^2 =\rho ^2 = (\rho \sin \phi ) \cos \theta = r\cos \theta = x \end{equation*}
+</div>
+<p> Therefore </p>
+<div class="displaymath" id="a0000000020">
+  \begin{equation*}  \left(x-\frac{1}{2}\right)^2 + y^2 +z^2 = \frac{1}{4} \end{equation*}
+</div>
+<p> This is a sphere centered at \((\frac{1}{2},0,0\) with radius \(\frac{1}{2}\), this is a <em>ellipsoid</em>. </p>
+
+  </div>
+</div>
+</li>
+</ul>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>
