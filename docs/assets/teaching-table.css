@@ -19,3 +19,7 @@ th, td {
 
 tr:hover {background-color: #afebd2;}
   
+/* This is for details tag inline */
+footer details {
+  display: inline-block;
+}

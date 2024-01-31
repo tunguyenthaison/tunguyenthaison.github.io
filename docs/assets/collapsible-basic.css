@@ -1,0 +1,82 @@
+
+  
+  div.collapsible-container {
+    display: flex;
+    flex-wrap: nowrap
+  }
+    div.collapsible-container > details {
+      flex-basis: 300px;
+      flex-grow: 1;
+      flex-shrink: 1;
+    }
+  
+  
+  details {
+    background-color: #777;
+    border: 1px solid black;
+    overflow: hidden;
+  }
+  details[open] {
+    background-color: black;
+  }
+  
+    details > summary {
+      color: white;
+      padding: 1em;
+      cursor: pointer;
+    }
+    details > summary:hover {
+      /* background-color: black; */
+    }
+    details > summary:active {
+      background-color: pink;
+    }
+      details > summary::before {
+        display: inline;
+      }
+      details[open] > summary::before {
+        content: 'Close ';
+      }
+      details:not([open]) > summary::before {
+        content: 'Open ';
+      }
+    
+    details > summary + div {
+      background-color: #f1f1f1;
+      padding: 0.5em;
+    }
+  
+  
+  /* Mobile-friendly (rounded corners on top and bottom items only): */
+  /* This is commented-out because the StackOverflow snippet preview area is too narrow, so it will always use the mobile-friendly rules when we want to show the desktop styles instead:
+  @media screen and (max-width: 767px) {
+    details:first-child {
+      border-top-left-radius: 9px;
+      border-top-right-radius: 9px;
+    }
+    details:last-child {
+      border-bottom-left-radius: 9px;
+      border-bottom-right-radius: 9px;
+    }
+    div.collapsible-container {
+      flex-direction: column;
+    }
+      div.collapsible-container > details {
+        flex-basis: auto;
+        flex-grow: 1;
+        flex-shrink: 1;
+      }
+  }
+  */
+  
+  /* Same-row rounded-corners for desktops only: */
+  @media screen and (min-width: 768px) {
+    details:first-child {
+      border-top-left-radius: 9px;
+      border-bottom-left-radius: 9px;
+    }
+    details:last-child {
+      border-top-right-radius: 9px;
+      border-bottom-right-radius: 9px;
+    }
+  }
