@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
         <title>Research</title>
         <link rel="stylesheet" href="assets/fonts.css">
         <link rel="stylesheet" href="assets/simplify.css">
@@ -10,10 +13,11 @@
         
         
         
+        
 <!-- for table css-->
 <link rel="stylesheet" href="../assets/teaching-table.css">
 
-
+<link rel="stylesheet" href="../assets/collapsible.css">
 
 
 <!-- KATEX -->
@@ -47,6 +51,7 @@
         extensions: ["MathMenu.js", "MathZoom.js"]
     });
     </script> -->
+        
         
 
     </head>
@@ -100,10 +105,35 @@ the free boundary problem in some models of fluid dynamics.
 <h2 id="preprints-and-publications">
 Preprints and Publications
 </h2>
+<p>
+<button
+  class="btn btn-primary btn__first"
+  data-toggle="collapse"
+  data-target=".collapse.second"
+  data-text="Collapse"
+  >
+  Toggle Second
+</button>
+<button
+  class="btn btn-primary btn__first"
+  data-toggle="collapse"
+  data-target=".collapse"
+  data-text="Collapse"
+  >
+  Toggle All
+</button>
+</p>
+<div class="block collapse second">
+  <div class="block__content">
+    I'm the second content!
+  </div>
+</div>
 <ol start="9">
 <li>
 Work in progress <br>
 (with Russell Schwab and Olga Turanova), <br>
+
+
 <a class="weblink"
     href="">
         <i>preprint</i>
@@ -134,6 +164,9 @@ Work in progress <br>
 <li>
 On the regularity of stochastic effective Hamiltonian <br>
 (with Jianlu Zhang), <br>
+
+
+
 <a class="weblink"
     href="">
         <i>preprint</i>
@@ -695,7 +728,7 @@ Referee for mathematics journal
     </p>
 </blockquote>
 
-
+<script type="text/javascript" src="../assets/collapsible.js"></script>
 
 <!-- Default Statcounter code for MyWeb
 https://tunguyenthaison.github.io/ -->

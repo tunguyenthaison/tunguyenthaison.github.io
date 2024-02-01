@@ -230,6 +230,15 @@ a.weblink {
     border-bottom: none;
 }
 
+.imagelogo {
+    border-bottom: none;
+}
+
+.imagelogo img {
+    margin: 0;
+    display: inline;
+}
+
 /**
  * -------------------------------------------------------------------------
  *  PDF
