@@ -232,12 +232,21 @@ a.weblink {
 
 .imagelogo {
     border-bottom: none;
+    /* position: relative; */
+    /* line-height: 0px; */
+    vertical-align:top;
 }
 
 .imagelogo img {
-    margin: 0 !important;
+    margin: 0;
     display: inline !important; 
+    /* display: inline-block; */
+    /* padding-bottom: 0; */
+    /* border-bottom: 0; */
+    vertical-align: text-top;
 }
+
+.comment { display: none; }
 
 /**
  * -------------------------------------------------------------------------
