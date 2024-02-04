@@ -220,9 +220,10 @@ p > .arxiv > img {
 
 a.weblink {
     color: green;
-    /* text-decoration: dotted; */
+    text-decoration: dotted;
     padding-bottom: 0pt;
     /* border-bottom: 1px solid; */
+    /* font-style: italic; */
 }
 .text-arxiv {
     text-decoration: none;

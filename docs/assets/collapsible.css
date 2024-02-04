@@ -5,11 +5,13 @@
 
 button.btn.btn-primary.btn__first {
     padding: 0 5px;
-    /* border-radius: 1 solid; */
-    /* background-color: transparent; */
-    
+    border-radius: 1 solid;
+    background-color: transparent;
+    /* border: 1px double; */
+	border: 0;
+	border-bottom: 1px solid;
+	color: green;
 }
-
 
 .collapse {
 	 display: flex;
