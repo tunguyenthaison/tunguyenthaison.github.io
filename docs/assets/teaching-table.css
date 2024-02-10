@@ -11,6 +11,7 @@ th, td {
     text-align: center;
     border-bottom: 1px solid #844343;
     border: 1px solid black;
+    /* width: 20px ; */
 }
 
 .cell-left {
