@@ -29,6 +29,16 @@
     padding-left: 1.5em;
 }
 
+
+.half30 {
+    width: 30%;
+    /* Grow at a rate of 1 if there is room for me to do so!*/
+    flex-grow: 1;
+    display: table-cell;
+    height: fit-content;
+    align-content: flex-end;
+}
+
 .half50 {
     width: 50%;
     /* Grow at a rate of 1 if there is room for me to do so!*/
