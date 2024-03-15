@@ -8,7 +8,8 @@ The website's theme is derived from the built-in `graphite` theme in `Ivy`, with
 
 * Support for LaTeX has been added using both:
   * `KaTex`, based on [`markdown_katex`](https://pypi.org/project/markdown-katex/). 
-  * `MathJax`, based [`MathJax 3`](https://docs.mathjax.org/en/v3.2-latest/upgrading/whats-new-3.0.html). 
+  * `MathJax`, based [`MathJax 3`](https://docs.mathjax.org/en/v3.2-latest/upgrading/whats-new-3.0.html).
+   
   Equations can be written using inline math or code block. 
   * `Katex`: $`x^2`$
   * `MathJax`: $x^2$.
