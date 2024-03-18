@@ -1,0 +1,10 @@
+@import url("lwarp.css");
+
+section.textbody{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.fancyvrb{
+    font-size: 100%;
+}
