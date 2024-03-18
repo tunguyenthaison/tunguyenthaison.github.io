@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title><span class="scshape"> Michigan State University <br /><big class="large">Math 234 – Spring 2024<br />Lecture notes</big> </span>: Cylindrical coordinates</title>
+<link rel="next" href="sect0002.html" title="Spherical coordinates" />
+<link rel="prev" href="index.html" title=" Michigan State University Math 234 – Spring 2024Lecture notes " />
+<link rel="up" href="index.html" title=" Michigan State University Math 234 – Spring 2024Lecture notes " />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html"><span class="scshape"> Michigan State University <br /><big class="large">Math 234 – Spring 2024<br />Lecture notes</big> </span></a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class=" active current">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Cylindrical coordinates</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">2</span> <span class="toc_entry">Spherical coordinates</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">3</span> <span class="toc_entry">Practice</span></a>
+ </li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000002">1 Cylindrical coordinates</h1>
+<ul class="itemize">
+  <li><p>Cylindrical coordinates represent a point \(P(x,y,z)\) in space by ordered triples \((r,\theta , z)\) in which \((r,\theta )\) is the polar coordinate of \((x,y)\). </p>
+</li>
+  <li><p>\(z\) remains unchanged. </p>
+<div class="displaymath" id="a0000000005">
+  \begin{equation*}  \fbox{$ \qquad \begin{cases} \begin{aligned}  x & = r\cos \theta \\ y & = r\sin \theta \\ z & = z \end{aligned}\end{cases} \qquad \text{and}\qquad \begin{cases} \begin{aligned}  r^2 & = x^2 + y^2 \\ \frac{y}{x} & = \tan \theta . \end{aligned}\end{cases} \qquad $} \end{equation*}
+</div>
+<div class="centered"> <img src="images/img-0001.png" alt="\includegraphics[scale=0.7]{content/09-cylindrical.png}" style="width:140.7px; height:125.99999999999999px" />
+ </div>
+</li>
+  <li><p><b class="bfseries">Example.</b> Change \((x,y,z) = (-1,1,1)\) into cylindrical coordinates. </p>
+<div class="proof_wrapper" id="a0000000006">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>\(r^2 = x^2+y^2 = 2\), thus \(r=\sqrt{2}\). Then \(\tan \theta = \frac{y}{x} = \frac{1}{-1} = -1\), thus \(\theta = \frac{3\pi }{4}\). Hence </p>
+<div class="displaymath" id="a0000000007">
+  \[ (-1,1,1)\mapsto \left(\sqrt{2}, \frac{3\pi }{4}, 1\right). \]
+</div>
+
+  </div>
+</div>
+</li>
+  <li><p><b class="bfseries">Example.</b> Change \((\sqrt{2}, 3\pi /4, 2)\) to Cartesian coordinates. </p>
+<div class="proof_wrapper" id="a0000000008">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>We have \(x = r\cos \theta = \sqrt{2}\times \left(-\frac{1}{\sqrt{2}}\right) = -1\) and \(y = r\sin \theta = \sqrt{2}\times \left(\frac{1}{\sqrt{2}}\right) = 1\). Thus </p>
+<div class="displaymath" id="a0000000009">
+  \[ (\sqrt{2}, 3\pi /4, 2)\mapsto (1,-1, 2). \]
+</div>
+
+  </div>
+</div>
+</li>
+</ul>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="index.html" title="Michigan State University Math 234 – Spring 2024Lecture notes"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="Michigan State University Math 234 – Spring 2024Lecture notes"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0002.html" title="Spherical coordinates"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

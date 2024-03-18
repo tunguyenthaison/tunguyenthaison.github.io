@@ -1,0 +1,26 @@
+
+.teaching-table {
+    /* border-collapse: collapse; */
+    border: 1px solid black;
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+th, td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #844343;
+    border: 1px solid black;
+    /* width: 20px ; */
+}
+
+.cell-left {
+  text-align: left;
+}
+
+tr:hover {background-color: #afebd2;}
+  
+/* This is for details tag inline */
+footer details {
+  display: inline-block;
+}
