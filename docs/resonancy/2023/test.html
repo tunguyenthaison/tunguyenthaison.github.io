@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
 
-        <title>Some notes on the optimal control formula of solution to certain Hamilton--Jacobi equations</title>
+        <title>Some notes on Hele-Shaw equation</title>
         <link rel="stylesheet" href="../../assets/fonts.css">
         <link rel="stylesheet" href="../../assets/simplify.css">
         <link rel="stylesheet" href="../../assets/pygments.css">
@@ -63,7 +63,7 @@
         
 
     </head>
-    <body class="node-blog-blog-drafts-homogenization node-blog-blog-drafts node-blog node">
+    <body class="node-resonancy-2023-test node-resonancy-2023 node-resonancy node">
         <header class="masthead">
             <h1><a href="../../index.html">Son Tu</a></h1>
             
@@ -116,60 +116,21 @@
         </header>
         <article class="main">
             <header class="title">
-                <h1>Some notes on the optimal control formula of solution to certain Hamilton--Jacobi equations</h1>
+                <h1>Some notes on Hele-Shaw equation</h1>
                 
-                    <p class="subtitle">Optimal control</p>
+                    <p class="subtitle">Some naive readings on the Hele-Shaw equation</p>
                 
                 <hr>
             </header>
-            <h1>Remarks on Homogenization and Optimal control formula</h1>
-<ul>
-<li><a href="#remarks-on-homogenization-and-optimal-control-formula">Remarks on Homogenization and Optimal control formula</a></li>
-<li><a href="#the-optimal-control-representation">The optimal control representation</a></li>
-<li><a href="#the-metric-problem">The metric problem</a></li>
-<li><a href="#references">References</a></li>
-</ul>
-<p>Consider the following problem
-$$
-\begin{cases}
-    \begin{aligned}
-    u^\varepsilon_t + H\left(\frac{x}{\varepsilon}, Du^\varepsilon\right) &amp;= 0 &amp; &amp; \text{in}\;\mathbb{R}^n \times (0,T)\\
-    u^\varepsilon(x,0) &amp;= u_0(x) &amp; &amp; \text{on}\;\mathbb{R}^n.
-    \end{aligned}
-\end{cases}
+            <p>If the domain $\Omega$ is given by $\Omega = {(x,y)\in \mathbb{T}^n\times \mathbb{R}: y &lt; f(x,t)}$, 
+then at a point $\hat{x} = (x,f(x))\in \partial \Omega$, the <strong>outward unit normal vector</strong> to $\partial\Omega$ is given by
+$$ 
+    \mathbf{n}(\hat{x}) = \frac{1}{\sqrt{1+|\nabla f(x)|^2}} 
+    \begin{pmatrix}
+        - \nabla f(x) \
+        1 
+    \end{pmatrix}.
 $$</p>
-<h2>The optimal control representation</h2>
-<p>Following <a href="#Evans">[1]</a>, we write the solution as </p>
-<p>$$
-    u^\varepsilon(x,t) = \inf_{\eta\in \mathrm{AC}([-t,0])} \left \lbrace \int_{-t}^0 L\left(\frac{\eta(s)}{\varepsilon}, \dot{\eta}(s)\right)ds + u_0(\eta(-t)): \eta(0)=x \right\rbrace
-$$</p>
-<p>here we follow the convention of using backward characteristic, i.e., starting at $\eta(0) = x$ and going backward in time. Define</p>
-<p>$$
-    s = \varepsilon \tau, \qquad \tau \in \left[-\varepsilon^{-1}t, 0\right]
-$$</p>
-<p>and </p>
-<p>$$
-    \zeta(\tau) = \varepsilon^{-1} \eta(\varepsilon \tau) 
-$$</p>
-<p>we deduce that </p>
-<p>$$
-    u^\varepsilon(x,t) = \inf_{\zeta\in \mathrm{AC}([-\varepsilon^{-1}t,0])} \left \lbrace \varepsilon\int_{-\varepsilon^{-1}t}^0 L\left(\zeta(\tau), \dot{\zeta}(\tau)\right)ds + u_0(\varepsilon\zeta(-\varepsilon^{-1}t)): \varepsilon\zeta(0)=x \right\rbrace. 
-$$</p>
-<p>We shift the time as follow $\kappa = \tau + \varepsilon^{-1}t$, then $\kappa \in [0, \varepsilon^{-1}t]$ and</p>
-<p>$$
-    u^\varepsilon(x,t) = \inf_{\gamma\in \mathrm{AC}([0,\varepsilon^{-1}t])} \left \lbrace \varepsilon\int_0^{\varepsilon^{-1}t} L\left(\gamma(\kappa), \dot{\gamma}(\kappa)\right)ds + u_0(\varepsilon\gamma(0)): \varepsilon\zeta(\varepsilon ^{-1}t)=x \right\rbrace. 
-$$
-where $\gamma(\kappa) = \zeta(\tau) = \zeta(\kappa = \varepsilon^{-1}\tau)$.</p>
-<h2>The metric problem</h2>
-<p>In terms of the the metric problem, we define</p>
-<p>$$
-\begin{equation}
-    m(t,x,y) = \inf<br />
-\end{equation} 
-$$</p>
-<p>as the minimum cost of travelling from $x$ to $y$ in time $t&gt;0$.</p>
-<h2>References</h2>
-<p><a id="Evans">[1]</a> Evans, Lawrence C. Partial Differential Equations. Providence, R.I.: American Mathematical Society, 2010.</p>
 
             <!-- For use inside index.stx
 ::: quote

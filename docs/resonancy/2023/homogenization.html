@@ -6,10 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
 
-        <title>Some notes on Hele-Shaw equation</title>
-        <link rel="stylesheet" href="../assets/fonts.css">
-        <link rel="stylesheet" href="../assets/simplify.css">
-        <link rel="stylesheet" href="../assets/pygments.css">
+        <title>Some notes on the optimal control formula of solution to certain Hamilton--Jacobi equations</title>
+        <link rel="stylesheet" href="../../assets/fonts.css">
+        <link rel="stylesheet" href="../../assets/simplify.css">
+        <link rel="stylesheet" href="../../assets/pygments.css">
         
         
         
@@ -63,9 +63,9 @@
         
 
     </head>
-    <body class="node-blog-ntest node-blog node">
+    <body class="node-resonancy-2023-homogenization node-resonancy-2023 node-resonancy node">
         <header class="masthead">
-            <h1><a href="../index.html">Son Tu</a></h1>
+            <h1><a href="../../index.html">Son Tu</a></h1>
             
                 <p class="tagline">Từ Nguyễn Thái Sơn</p>
             
@@ -78,14 +78,14 @@
                     <span class="text">Menu</span>
                 </label>
                 <ul>
-<li><a href="../index.html">Home</a></li>
-<li><a href="../notes//2024-01-09-cv.pdf">CV</a></li>
-<li><a href="../research.html">Research</a></li>
-<li><a href="../teaching.html">Teaching</a>
-    <!-- * <a href="../teaching/child-one.html">Child One</a> -->
-    <!-- * <a href="../teaching/child-two.html">Child Two</a> --></li>
-<li><a href="../notes.html">Notes</a></li>
-<li><a href="../about.html">About</a></li>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../notes//2024-01-09-cv.pdf">CV</a></li>
+<li><a href="../../research.html">Research</a></li>
+<li><a href="../../teaching.html">Teaching</a>
+    <!-- * <a href="../../teaching/child-one.html">Child One</a> -->
+    <!-- * <a href="../../teaching/child-two.html">Child Two</a> --></li>
+<li><a href="../../notes.html">Notes</a></li>
+<li><a href="../../about.html">About</a></li>
 </ul>
 <p><br></p>
 <p>
@@ -116,38 +116,60 @@
         </header>
         <article class="main">
             <header class="title">
-                <h1>Some notes on Hele-Shaw equation</h1>
+                <h1>Some notes on the optimal control formula of solution to certain Hamilton--Jacobi equations</h1>
                 
-                    <p class="subtitle">Some naive readings on the Hele-Shaw equation</p>
+                    <p class="subtitle">Optimal control</p>
                 
                 <hr>
             </header>
-            <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"
-  integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs"
-  crossorigin="anonymous" />
-
-<style type="text/css">
-    .katex img {
-      object-fit: fill;
-      padding: unset;
-      display: block;
-      position: absolute;
-      width: 100%;
-      height: inherit;
-    }
-</style>
-<p>If the domain <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">\Omega</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Ω</span></span></span></span> is given by <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ω</mi><mo>=</mo><mo stretchy="false">{</mo><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo><mo>∈</mo><msup><mi mathvariant="double-struck">T</mi><mi>n</mi></msup><mo>×</mo><mi mathvariant="double-struck">R</mi><mo>:</mo><mi>y</mi><mo>&lt;</mo><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>t</mi><mo stretchy="false">)</mo><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">\Omega = \{(x,y)\in \mathbb{T}^n\times \mathbb{R}: y &lt; f(x,t)\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Ω</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7722em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord mathbb">T</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6889em;"></span><span class="mord mathbb">R</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">t</span><span class="mclose">)}</span></span></span></span>, 
-then at a point <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>=</mo><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>∈</mo><mi mathvariant="normal">∂</mi><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">\hat{x} = (x,f(x))\in \partial \Omega</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6944em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">x</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2222em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">))</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord">Ω</span></span></span></span>, the <strong>outward unit normal vector</strong> to <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∂</mi><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">\partial\Omega</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord">Ω</span></span></span></span> is given by</p>
-<p>
+            <h1>Remarks on Homogenization and Optimal control formula</h1>
+<ul>
+<li><a href="#remarks-on-homogenization-and-optimal-control-formula">Remarks on Homogenization and Optimal control formula</a></li>
+<li><a href="#the-optimal-control-representation">The optimal control representation</a></li>
+<li><a href="#the-metric-problem">The metric problem</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+<p>Consider the following problem
+$$
+\begin{cases}
+    \begin{aligned}
+    u^\varepsilon_t + H\left(\frac{x}{\varepsilon}, Du^\varepsilon\right) &amp;= 0 &amp; &amp; \text{in}\;\mathbb{R}^n \times (0,T)\\
+    u^\varepsilon(x,0) &amp;= u_0(x) &amp; &amp; \text{on}\;\mathbb{R}^n.
+    \end{aligned}
+\end{cases}
+$$</p>
+<h2>The optimal control representation</h2>
+<p>Following <a href="#Evans">[1]</a>, we write the solution as </p>
+<p>$$
+    u^\varepsilon(x,t) = \inf_{\eta\in \mathrm{AC}([-t,0])} \left \lbrace \int_{-t}^0 L\left(\frac{\eta(s)}{\varepsilon}, \dot{\eta}(s)\right)ds + u_0(\eta(-t)): \eta(0)=x \right\rbrace
+$$</p>
+<p>here we follow the convention of using backward characteristic, i.e., starting at $\eta(0) = x$ and going backward in time. Define</p>
+<p>$$
+    s = \varepsilon \tau, \qquad \tau \in \left[-\varepsilon^{-1}t, 0\right]
+$$</p>
+<p>and </p>
+<p>$$
+    \zeta(\tau) = \varepsilon^{-1} \eta(\varepsilon \tau) 
+$$</p>
+<p>we deduce that </p>
+<p>$$
+    u^\varepsilon(x,t) = \inf_{\zeta\in \mathrm{AC}([-\varepsilon^{-1}t,0])} \left \lbrace \varepsilon\int_{-\varepsilon^{-1}t}^0 L\left(\zeta(\tau), \dot{\zeta}(\tau)\right)ds + u_0(\varepsilon\zeta(-\varepsilon^{-1}t)): \varepsilon\zeta(0)=x \right\rbrace. 
+$$</p>
+<p>We shift the time as follow $\kappa = \tau + \varepsilon^{-1}t$, then $\kappa \in [0, \varepsilon^{-1}t]$ and</p>
+<p>$$
+    u^\varepsilon(x,t) = \inf_{\gamma\in \mathrm{AC}([0,\varepsilon^{-1}t])} \left \lbrace \varepsilon\int_0^{\varepsilon^{-1}t} L\left(\gamma(\kappa), \dot{\gamma}(\kappa)\right)ds + u_0(\varepsilon\gamma(0)): \varepsilon\zeta(\varepsilon ^{-1}t)=x \right\rbrace. 
+$$
+where $\gamma(\kappa) = \zeta(\tau) = \zeta(\kappa = \varepsilon^{-1}\tau)$.</p>
+<h2>The metric problem</h2>
+<p>In terms of the the metric problem, we define</p>
+<p>$$
 \begin{equation}
-    \mathbf{n}(\hat{x}) = \frac{1}{\sqrt{1+|\nabla f(x)|^2}} 
-    \begin{pmatrix}
-        - \nabla f(x) \\
-        1 
-    \end{pmatrix}.
-\end{equation}
-</p>
+    m(t,x,y) = \inf<br />
+\end{equation} 
+$$</p>
+<p>as the minimum cost of travelling from $x$ to $y$ in time $t&gt;0$.</p>
+<h2>References</h2>
+<p><a id="Evans">[1]</a> Evans, Lawrence C. Partial Differential Equations. Providence, R.I.: American Mathematical Society, 2010.</p>
 
             <!-- For use inside index.stx
 ::: quote

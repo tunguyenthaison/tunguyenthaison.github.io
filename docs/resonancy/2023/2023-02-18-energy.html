@@ -6,10 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
 
-        <title>Some notes on the optimal control formula of solution to certain Hamilton--Jacobi equations</title>
-        <link rel="stylesheet" href="../assets/fonts.css">
-        <link rel="stylesheet" href="../assets/simplify.css">
-        <link rel="stylesheet" href="../assets/pygments.css">
+        <title>Energy Method</title>
+        <link rel="stylesheet" href="../../assets/fonts.css">
+        <link rel="stylesheet" href="../../assets/simplify.css">
+        <link rel="stylesheet" href="../../assets/pygments.css">
         
         
         
@@ -63,9 +63,9 @@
         
 
     </head>
-    <body class="node-blog-homogenization node-blog node">
+    <body class="node-resonancy-2023-2023-02-18-energy node-resonancy-2023 node-resonancy node">
         <header class="masthead">
-            <h1><a href="../index.html">Son Tu</a></h1>
+            <h1><a href="../../index.html">Son Tu</a></h1>
             
                 <p class="tagline">Từ Nguyễn Thái Sơn</p>
             
@@ -78,14 +78,14 @@
                     <span class="text">Menu</span>
                 </label>
                 <ul>
-<li><a href="../index.html">Home</a></li>
-<li><a href="../notes//2024-01-09-cv.pdf">CV</a></li>
-<li><a href="../research.html">Research</a></li>
-<li><a href="../teaching.html">Teaching</a>
-    <!-- * <a href="../teaching/child-one.html">Child One</a> -->
-    <!-- * <a href="../teaching/child-two.html">Child Two</a> --></li>
-<li><a href="../notes.html">Notes</a></li>
-<li><a href="../about.html">About</a></li>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../notes//2024-01-09-cv.pdf">CV</a></li>
+<li><a href="../../research.html">Research</a></li>
+<li><a href="../../teaching.html">Teaching</a>
+    <!-- * <a href="../../teaching/child-one.html">Child One</a> -->
+    <!-- * <a href="../../teaching/child-two.html">Child Two</a> --></li>
+<li><a href="../../notes.html">Notes</a></li>
+<li><a href="../../about.html">About</a></li>
 </ul>
 <p><br></p>
 <p>
@@ -116,53 +116,91 @@
         </header>
         <article class="main">
             <header class="title">
-                <h1>Some notes on the optimal control formula of solution to certain Hamilton--Jacobi equations</h1>
+                <h1>Energy Method</h1>
                 
-                    <p class="subtitle">Optimal control</p>
+                    <p class="subtitle">Some basic estimates for elliptic PDEs</p>
                 
                 <hr>
             </header>
-            <p>Consider the following problem
+            <!-- ![wave2](@root/images/image-01.jpg) -->
+<!-- 
 $$
-\begin{cases}
-    \begin{aligned}
-    u^\varepsilon_t + H\left(\frac{x}{\varepsilon}, Du^\varepsilon\right) &amp;= 0 &amp; &amp; \text{in}\;\mathbb{R}^n \times (0,T)\
-    u^\varepsilon(x,0) &amp;= u_0(x) &amp; &amp; \text{on}\;\mathbb{R}^n.
-    \end{aligned}
-\end{cases}
-$$</p>
-<h2>The optimal control representation</h2>
-<p>Following <a href="#Evans">[1]</a>, we write the solution as </p>
-<p>$$
-    u^\varepsilon(x,t) = \inf_{\eta\in \mathrm{AC}([-t,0])} \left \lbrace \int_{-t}^0 L\left(\frac{\eta(s)}{\varepsilon}, \dot{\eta}(s)\right)ds + u_0(\eta(-t)): \eta(0)=x \right\rbrace
-$$</p>
-<p>here we follow the convention of using backward characteristic, i.e., starting at $\eta(0) = x$ and going backward in time. Define</p>
-<p>$$
-    s = \varepsilon \tau, \qquad \tau \in \left[-\varepsilon^{-1}t, 0\right]
-$$</p>
-<p>and </p>
-<p>$$
-    \zeta(\tau) = \varepsilon^{-1} \eta(\varepsilon \tau) 
-$$</p>
-<p>we deduce that </p>
-<p>$$
-    u^\varepsilon(x,t) = \inf_{\zeta\in \mathrm{AC}([-\varepsilon^{-1}t,0])} \left \lbrace \varepsilon\int_{-\varepsilon^{-1}t}^0 L\left(\zeta(\tau), \dot{\zeta}(\tau)\right)ds + u_0(\varepsilon\zeta(-\varepsilon^{-1}t)): \varepsilon\zeta(0)=x \right\rbrace. 
-$$</p>
-<p>We shift the time as follow $\kappa = \tau + \varepsilon^{-1}t$, then $\kappa \in [0, \varepsilon^{-1}t]$ and</p>
-<p>$$
-    u^\varepsilon(x,t) = \inf_{\gamma\in \mathrm{AC}([0,\varepsilon^{-1}t])} \left \lbrace \varepsilon\int_0^{\varepsilon^{-1}t} L\left(\gamma(\kappa), \dot{\gamma}(\kappa)\right)ds + u_0(\varepsilon\gamma(0)): \varepsilon\zeta(\varepsilon ^{-1}t)=x \right\rbrace. 
+    A = 
+    \begin{pmatrix}
+        1 & 0 & 1 \\\
+        2 & 3 & 4 \\\
+        -1 & -3 & -3
+    \end{pmatrix} , \qquad\text{and}\qquad b = 
+    \begin{pmatrix}
+        3\\\
+        7\\\
+        -4
+    \end{pmatrix}.
 $$
-where $\gamma(\kappa) = \zeta(\tau) = \zeta(\kappa = \varepsilon^{-1}\tau)$.</p>
-<h2>The metric problem</h2>
-<p>In terms of the the metric problem, we define</p>
+
+```math
+    A = 
+        \begin{pmatrix}
+            1 & 0 & 1 \\\
+            2 & 3 & 4 \\\
+            -1 & -3 & -3
+        \end{pmatrix} , \qquad\text{and}\qquad b = 
+        \begin{pmatrix}
+            3\\\
+            7\\\
+            -4
+        \end{pmatrix}.
+``` -->
+
+<p>We consider $a_{ij}\in \mathrm{C}(B_1)$ satisfies for some $\lambda,\Lambda &gt; 0$ that</p>
 <p>$$
 \begin{equation}
-    m(t,x,y) = \inf<br />
-\end{equation} 
+    \lambda |\xi|^2 \leq a_{ij}(x)\xi_i\xi_j \leq \Lambda |\xi|^2, \qquad\text{for any}\; x\in B_1 \;\text{and}\;\xi \in \R^n.
+\end{equation}
 $$</p>
-<p>as the minimum cost of travelling from $x$ to $y$ in time $t&gt;0$.</p>
-<h2>References</h2>
-<p><a id="Evans">[1]</a> Evans, Lawrence C. Partial Differential Equations. Providence, R.I.: American Mathematical Society, 2010.</p>
+<p>We consider $u\in \mathrm{C}^1(B_1)$ such that</p>
+<p>$$
+\begin{equation}
+    \int_{B_1} a_{ij} \partial_{x_i} u \,\partial_{x_j}\varphi = 0 \qquad\text{for all}\;\varphi\in \mathrm{C}^1_0(B_1).
+\end{equation}
+$$
+Through out this note, we will always consider $u$ and ${a_{ij}}$ satisfy the above conditions.</p>
+<hr />
+<h2>Cacciopolli's Inequality</h2>
+<blockquote>
+<p><u><strong>Cacciopolli's Inequality.</strong></u> For $\eta\in \mathrm{C}^1_0(B_1)$ there holds
+$$ \begin{equation}
+    \int_{B_1}\eta^2|Du|^2 \leq C\int_{B_1} |Du|^2 u^2
+\end{equation}$$
+where $C = C(\lambda, \Lambda)$.</p>
+</blockquote>
+<p>Consequence of this inequality are the followings:</p>
+<hr />
+<h2>Constant coefficients</h2>
+<p>Let $a_{ij}$ be a constant matrix and $u\in \mathrm{C}^1(B_1)$ satisfies $(2)$. We claim that </p>
+<blockquote>
+<p><u><strong>Lemma.</strong></u> There holds
+$$
+\begin{equation}
+    \Vert u\Vert_{L^\infty(B_{1/2})} + \Vert Du\Vert_{L^\infty(B_{1/2})}  \leq C(\lambda, \Lambda) \Vert u\Vert_{L^2(B_1)} .
+\end{equation}
+$$</p>
+</blockquote>
+<p>Take derivative in $x_k$ for $k\in {1,2,\ldots,n}$ of the above equation we have</p>
+<p>$$
+\begin{equation}
+    \int_{B_1} a_{ij} \partial^2_{x_kx_i} u \,\partial_{x_j}\varphi  + \underbrace{\int_{B_1} a_{ij} \partial_{x_i} u \,\partial_{x_j}\left(\partial_{x_k}\varphi\right)}_{0}  = 0 \qquad\text{for all}\;\varphi\in \mathrm{C}^1_0(B_1)
+\end{equation}
+$$</p>
+<p>since $\varphi_{x_k}\in \mathrm{C}^1_0(B_1)$. Therefore all derivatives of $u$ also satisfies equation $(2)$. We deduce that</p>
+<p>$$
+    \Vert u \Vert_{H^k(B_{1/2})} \leq c(k,\lambda, \Lambda) \Vert u\Vert_{L^2(B_1)} .
+$$</p>
+<p>If we fix $k$ large with respect to $n$, then by the continuous embedding $H^k(B_{1/2}) \hookrightarrow\mathrm{C}^1(\overline{B}_{1/2})$ we have</p>
+<p>$$
+    \Vert u\Vert_{L^\infty(B_{1/2})} + \Vert Du\Vert_{L^\infty(B_{1/2})}  \leq C(\lambda, \Lambda) \Vert u\Vert_{L^2(B_1)} .
+$$</p>
+<p>This finishes the proof. $\blacksquare$ </p>
 
             <!-- For use inside index.stx
 ::: quote
