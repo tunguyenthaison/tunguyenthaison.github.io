@@ -5,10 +5,9 @@
 
 button.btn.btn-primary.btn__first {
     padding: 0 5px;
-    border-radius: 1 solid;
+    /* border-radius: 1 solid; */
     background-color: transparent;
-    /* border: 1px double; */
-	/* border: 1px solid; */
+    border: 0px;
 	border-bottom: 1px solid;
 	color: green;
 }
