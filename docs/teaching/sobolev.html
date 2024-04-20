@@ -6,10 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
 
-        <title>Notes on using `plastex`</title>
-        <link rel="stylesheet" href="../../assets/fonts.css">
-        <link rel="stylesheet" href="../../assets/simplify.css">
-        <link rel="stylesheet" href="../../assets/pygments.css">
+        <title>Son Tu</title>
+        <link rel="stylesheet" href="../assets/fonts.css">
+        <link rel="stylesheet" href="../assets/simplify.css">
+        <link rel="stylesheet" href="../assets/pygments.css">
         
         
         
@@ -101,9 +101,9 @@ function includeHTML() {
         
 
     </head>
-    <body class="node-logs-2024-2024-04-18-plastex node-logs-2024 node-logs node">
+    <body class="node-teaching-sobolev node-teaching node">
         <header class="masthead">
-            <h1><a href="../../index.html">Son Tu</a></h1>
+            <h1><a href="../index.html">Son Tu</a></h1>
             
                 <p class="tagline">Từ Nguyễn Thái Sơn</p>
             
@@ -116,14 +116,14 @@ function includeHTML() {
                     <span class="text">Menu</span>
                 </label>
                 <ul>
-<li><a href="../../index.html">Home</a></li>
-<li><a href="../../notes//2024-04-17-CV.pdf">CV</a></li>
-<li><a href="../../research.html">Research</a></li>
-<li><a href="../../teaching.html">Teaching</a>
-    <!-- * <a href="../../teaching/child-one.html">Child One</a> -->
-    <!-- * <a href="../../teaching/child-two.html">Child Two</a> --></li>
-<li><a href="../../notes.html">Notes</a></li>
-<li><a href="../../about.html">About</a></li>
+<li><a href="../index.html">Home</a></li>
+<li><a href="../notes//2024-04-17-CV.pdf">CV</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../teaching.html">Teaching</a>
+    <!-- * <a href="../teaching/child-one.html">Child One</a> -->
+    <!-- * <a href="../teaching/child-two.html">Child Two</a> --></li>
+<li><a href="../notes.html">Notes</a></li>
+<li><a href="../about.html">About</a></li>
 </ul>
 <p><br></p>
 <p>
@@ -154,47 +154,74 @@ function includeHTML() {
         </header>
         <article class="main">
             <header class="title">
-                <h1>Notes on using `plastex`</h1>
-                
-                    <p class="subtitle">tricks on `latex` conversion</p>
+                <h1></h1>
                 
                 <hr>
             </header>
-            <p>2023-04-18</p>
-<h3>Notes on <code>plastex</code></h3>
-<p>At the time of writing this post, <code>plastex</code> has the following issues:</p>
-<ul>
-<li>
-<p>If an equation has a special name with <code>tag{abc}</code>, then after running <code>plastex</code>
-    the label of the equation gets duplicated, which making error when referring
-    to the equation in the body of the text. </p>
-<p><em>(Temporary) Solutions:</em> remove all special tags, just using the automatic numbering
-    built-in in <code>Latex</code>.</p>
-<p>Also, if a label of an equation contains <code>abc_xyz</code> it will causes problem, try
-    <code>abc-xyz</code> instead.</p>
-</li>
-<li>
-<p><code>tikz</code> does not work well, try using <code>.png</code> for figures (not even <code>.pdf</code> figures).</p>
-</li>
-<li>
-<p><code>vspace{}</code> does not work, try to remove them.</p>
-</li>
-<li>
-<p><code>enumitem</code> with labels for <code>description</code> enviroment does not work.</p>
-</li>
-<li>
-<p>Cannot use <code>.bib</code> directly. One needs to render <code>.bbl</code> first and then use that</p>
-</li>
-</ul>
-<h3>Testing <code>html</code> inclusion</h3>
-<h4>Inlcude <code>html</code> as a sperate page, where <code>ivy</code> navigation kicks in</h4>
-<ul>
-<li><a href="../../teaching/2024-spring-review-final.html">Final-review</a></li>
-<li><a href="../../teaching/sobolev.html">Sobolev norm</a></li>
-</ul>
-<h4>Include as <code>raw html</code></h4>
-<p>Testing including <code>html</code> files without rendering extra <code>ivy css</code></p>
-<div w3-include-html="/texhtml/sobolev.html"></div>
+            <p>Let </p>
+<div class="displaymath" id="a0000000002">
+  \begin{equation*}  \mathbf{V}(\mathbf{x}) = 2-\sin (2\pi x) - \sin (2\pi y), \qquad \mathbf{x}= (x,y)\in \mathbb {T}^2. \end{equation*}
+</div>
+<p> We are interested in estimating, for \(\mu {\gt}0\) and \(\gamma {\gt} 0\) the Sobolev norm \(H^{2+s}(\mathbb {T}^2)\) of the function </p>
+<div class="displaymath" id="a0000000003">
+  \begin{equation*}  \mathbf{K}_\mu (\mathbf{x}) = (\mu + \mathbf{V}(\mathbf{x}))^{{-1/2}}, \qquad \mathbf{x}\in \mathbb {T}^2. \end{equation*}
+</div>
+<h1 id="a0000000004">1 Evaluate the \(3rd\)-derivative</h1>
+<p> We want to compute </p>
+<div class="displaymath" id="a0000000005">
+  \begin{align*}  \partial ^2_{x_ix_j} \mathbf{K}_\mu (\mathbf{x}) & = \frac{3\gamma ^2}{4}\left(\mu +\mathbf{V}(\mathbf{x})^\gamma \right)^{-5/2} \left(\gamma \mathbf{V}^{\gamma -1} \mathbf{V}_{x_i}\right) \left(\gamma \mathbf{V}^{\gamma -1} \mathbf{V}_{x_j}\right) \\ &  -\frac{1}{2}(\mu + \mathbf{V}^\gamma )^{-3/2} \left( \gamma (\gamma -1)\mathbf{V}^{\gamma -2} \mathbf{V}_{x_i}\mathbf{V}_{x_j} + \gamma \mathbf{V}^{\gamma -1} \mathbf{V}_{x_ix_j} \right). \end{align*}
+</div>
+<p> We have </p>
+<div class="displaymath" id="a0000000006">
+  \begin{align*}  \partial _{x_k}\Big(\partial ^2_{x_ix_j} \mathbf{K}_\mu (\mathbf{x}) \Big) = I_1 + I_2 + I_3 + I_4, \end{align*}
+</div>
+<p> where </p>
+<div class="displaymath" id="a0000000007">
+  \begin{align*}  I_1 & = -\frac{15\gamma ^2}{8} (\mu +\mathbf{V}^\gamma )^{-7/2} \prod _{i,j,k} \left(\gamma \mathbf{V}^{\gamma -1}\mathbf{V}_{x_i}\right) \\ I_2 & = \frac{3\gamma ^2}{4}(\mu +\mathbf{V}^\gamma )^{-5/2} \frac{\partial }{\partial _{x_k}} \left(\gamma \mathbf{V}^{\gamma -1}\mathbf{V}_{x_i}\right) \left(\gamma \mathbf{V}^{\gamma -1}\mathbf{V}_{x_j}\right)\\ I_3 & = \frac{3}{4}(\mu +\mathbf{V}^\gamma )^{-5/2} \left( \gamma \mathbf{V}^{\gamma -1}\mathbf{V}_{x_k} \right) \left( \gamma (\gamma -1)\mathbf{V}^{\gamma -2}\mathbf{V}_{x_i}\mathbf{V}_{x_j} + \gamma \mathbf{V}^{\gamma -1} \mathbf{V}_{x_ix_j} \right) \\ I_4 & = -\frac{1}{2}(\mu +\mathbf{V}^\gamma )^{-3/2} \frac{\partial }{\partial x_k} \left( \gamma (\gamma -1)\mathbf{V}^{\gamma -2} \mathbf{V}_{x_i}\mathbf{V}_{x_j} + \gamma \mathbf{V}^{\gamma -1} \partial ^2_{x_ix_j}\mathbf{V}\right). \end{align*}
+</div>
+<p>We only need to differentiate \(I_2\) and \(I_4\). </p>
+<h2 id="a0000000008">1.1 Compute \(I_1\)</h2>
+<p> We have </p>
+<div class="displaymath" id="a0000000009">
+  \begin{align*}  \fbox{$\displaystyle I_1 \leq \frac{ |\mathbf{x}-\mathbf{x}_0|^{6\gamma -3} }{ (\mu +|\mathbf{x}-\mathbf{x}_0|^{2\gamma })^{7/2} } $}. \end{align*}
+</div>
+<h2 id="a0000000010">1.2 Compute \(I_2\)</h2>
+<p> We have </p>
+<div class="displaymath" id="a0000000011">
+  \begin{align*} & \frac{\partial }{\partial _{x_k}} \left(\gamma \mathbf{V}^{\gamma -1}\mathbf{V}_{x_i}\right) \left(\gamma \mathbf{V}^{\gamma -1}\mathbf{V}_{x_j}\right) = \\ &  \qquad \Big[ \gamma (\gamma -1)\mathbf{V}^{\gamma -2} \mathbf{V}_{x_i}\mathbf{V}_{x_k} + \gamma \mathbf{V}^{\gamma -1} \mathbf{V}_{x_ix_k} \Big] \left(\gamma \mathbf{V}^{\gamma -1}\mathbf{V}_{x_j}\right) \color {red} \sim \left(|\mathbf{x}-\mathbf{x}_0|^{2\gamma -2} + |\mathbf{x}-\mathbf{x}_0|^{2\gamma -2}\right)|\mathbf{x}-\mathbf{x}_0|^{2\gamma -1} \color {black} \\ &  \qquad \qquad + \\ &  \qquad \Big[ \gamma (\gamma -1)\mathbf{V}^{\gamma -2} \mathbf{V}_{x_j}\mathbf{V}_{x_k} + \gamma \mathbf{V}^{\gamma -1}\mathbf{V}_{x_jx_k} \Big] \left(\gamma \mathbf{V}^{\gamma -1}\mathbf{V}_{x_i}\right). \end{align*}
+</div>
+<p> Therefore </p>
+<div class="displaymath" id="a0000000012">
+  \begin{align*}  I_2 & = \frac{3\gamma ^2}{4}(\mu +\mathbf{V}^\gamma )^{-5/2} \\ &  \left( \Big[ \gamma (\gamma -1)\mathbf{V}^{\gamma -2}\mathbf{V}_{x_i} + \gamma \mathbf{V}^{\gamma -1} \mathbf{V}_{x_ix_k} \Big] \left(\gamma \mathbf{V}^{\gamma -1}\mathbf{V}_{x_j}\right) + \Big[ \gamma (\gamma -1)\mathbf{V}^{\gamma -2} \mathbf{V}_{x_j} + \gamma \mathbf{V}^{\gamma -1} \mathbf{V}_{x_jx_k} \Big] \left(\gamma \mathbf{V}^{\gamma -1}\mathbf{V}_{x_i}\right) \right) \end{align*}
+</div>
+<p> And thus </p>
+<div class="displaymath" id="a0000000013">
+  \begin{align*}  I_2 \leq \frac{ |\mathbf{x}-\mathbf{x}_0|^{2\gamma -2} \cdot |\mathbf{x}-\mathbf{x}_0|^{2\gamma -1} }{(\mu +|\mathbf{x}-\mathbf{x}_0|^{2\gamma })^{5/2}} = \fbox{$ \displaystyle \frac{ |\mathbf{x}-\mathbf{x}_0|^{4\gamma -3} }{ (\mu +|\mathbf{x}-\mathbf{x}_0|^{2\gamma })^{5/2} } $} \end{align*}
+</div>
+<h2 id="a0000000014">1.3 Compute \(I_3\)</h2>
+<p> We have </p>
+<div class="displaymath" id="a0000000015">
+  \begin{align*}  I_3 \leq \frac{ |\mathbf{x}-\mathbf{x}_0|^{2\gamma -1} \cdot \Big( |\mathbf{x}-\mathbf{x}_0|^{2\gamma -2} + |\mathbf{x}-\mathbf{x}_0|^{2\gamma -2} \Big) }{ (\mu +|\mathbf{x}-\mathbf{x}_0|^{2\gamma })^{5/2} } = \fbox{$ \displaystyle \frac{ |\mathbf{x}-\mathbf{x}_0|^{4\gamma -3} }{ (\mu +|\mathbf{x}-\mathbf{x}_0|^{2\gamma })^{5/2} } $}. \end{align*}
+</div>
+<h2 id="a0000000016">1.4 Compute \(I_4\)</h2>
+<p> We have </p>
+<div class="displaymath" id="a0000000017">
+  \begin{align*}  I_4 & = -\frac{1}{2}(\mu +\mathbf{V}^\gamma )^{-3/2} \left( \gamma (\gamma -1) \sum _{i,j,k} \mathbf{V}^{\gamma -2} \mathbf{V}_{x_ix_j}\mathbf{V}_{x_k} + \gamma \mathbf{V}^{\gamma -1} \mathbf{V}_{x_ix_jx_k} + \gamma (\gamma -1)(\gamma -2)\mathbf{V}^{\gamma -3} \mathbf{V}_{x_i}\mathbf{V}_{x_j}\mathbf{V}_{x_k} \right). \end{align*}
+</div>
+<p> Therefore </p>
+<div class="displaymath" id="a0000000018">
+  \begin{align*}  I_4 \leq \frac{ |\mathbf{x}-\mathbf{x}_0|^{2\gamma -3} + |\mathbf{x}-\mathbf{x}_0|^{2\gamma -1} + |\mathbf{x}-\mathbf{x}_0|^{2\gamma -3} }{ (\mu +|\mathbf{x}-\mathbf{x}_0|^{2\gamma })^{3/2} } \leq \fbox{$\displaystyle \frac{|\mathbf{x}-\mathbf{x}_0|^{2\gamma -3}}{(\mu +|\mathbf{x}-\mathbf{x}_0|^{2\gamma })^{3/2}} + \frac{|\mathbf{x}-\mathbf{x}_0|^{2\gamma -1}}{(\mu +|\mathbf{x}-\mathbf{x}_0|^{2\gamma })^{3/2}} $}. \end{align*}
+</div>
+<h2 id="a0000000019">1.5 Putting everything together</h2>
+<p> We obtain </p>
+<div class="displaymath" id="a0000000020">
+  \begin{align*}  I_1+I_2+I_3+I_4 \leq \frac{ |\mathbf{x}-\mathbf{x}_0|^{6\gamma -3} }{ (\mu +|\mathbf{x}-\mathbf{x}_0|^{2\gamma })^{7/2} } + \frac{ |\mathbf{x}-\mathbf{x}_0|^{4\gamma -3} }{ (\mu +|\mathbf{x}-\mathbf{x}_0|^{2\gamma })^{5/2} } + \frac{ |\mathbf{x}-\mathbf{x}_0|^{2\gamma -3} }{ (\mu +|\mathbf{x}-\mathbf{x}_0|^{2\gamma })^{3/2} } + \frac{ |\mathbf{x}-\mathbf{x}_0|^{2\gamma -1} }{ (\mu +|\mathbf{x}-\mathbf{x}_0|^{2\gamma })^{3/2}. } \end{align*}
+</div>
+<p> Therefore, we have </p>
+<div class="displaymath" id="a0000000021">
+  \begin{align*} & \int _{\mathbb {T}^2} |D^3\mathbf{K}_\mu (\mathbf{x})|^2\; d\mathbf{x}\\ & \qquad \leq C \left( 1 + \int _0^1 \frac{r^{12\gamma -5}}{(\mu +r^{2\gamma })^7}\; dr + \int _0^1 \frac{r^{8\gamma -5}}{(\mu +r^{2\gamma })^5}\; dr + \int _0^1 \frac{r^{4\gamma -5}}{(\mu +r^{2\gamma })^3}\; dr + \int _0^1 \frac{r^{4\gamma -1}}{(\mu +r^{2\gamma })^3}\; dr \right)\\ & \qquad \leq C \left( 1 + \mu ^{-1-\frac{2}{\gamma }}\int _0^{\mu ^{-\frac{1}{2\gamma }}} \frac{s^{12\gamma -5}\; ds}{(1+s^{2\gamma })^7} + \mu ^{-1-\frac{2}{\gamma }}\int _0^{\mu ^{-\frac{1}{2\gamma }}} \frac{s^{8\gamma -5}\; ds}{(1+s^{2\gamma })^5} + \mu ^{-1-\frac{2}{\gamma }}\int _0^{\mu ^{-\frac{1}{2\gamma }}} \frac{s^{4\gamma -5}\; ds}{(1+s^{2\gamma })^3} \right. \\ & \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \left. + \mu ^{-1}\int _0^{\mu ^{-\frac{1}{2\gamma }}} \frac{s^{4\gamma -1}\; ds}{(1+s^{2\gamma })^3} \right) \\ & \qquad \leq C\left(1 + \mu ^{-1-\frac{2}{\gamma }} + \mu ^{-1}\right). \end{align*}
+</div>
+
 
             <!-- For use inside index.stx
 ::: quote

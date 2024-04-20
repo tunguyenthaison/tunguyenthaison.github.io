@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
 
-        <title>Notes on using `plastex`</title>
+        <title>On Sobolev norm in 2D Torus of a particular function</title>
         <link rel="stylesheet" href="../../assets/fonts.css">
         <link rel="stylesheet" href="../../assets/simplify.css">
         <link rel="stylesheet" href="../../assets/pygments.css">
@@ -101,7 +101,7 @@ function includeHTML() {
         
 
     </head>
-    <body class="node-logs-2024-2024-04-18-plastex node-logs-2024 node-logs node">
+    <body class="node-logs-2024-2024-04-20-sobolev node-logs-2024 node-logs node">
         <header class="masthead">
             <h1><a href="../../index.html">Son Tu</a></h1>
             
@@ -154,47 +154,16 @@ function includeHTML() {
         </header>
         <article class="main">
             <header class="title">
-                <h1>Notes on using `plastex`</h1>
+                <h1>On Sobolev norm in 2D Torus of a particular function</h1>
                 
-                    <p class="subtitle">tricks on `latex` conversion</p>
+                    <p class="subtitle">a messy and tedious computation</p>
                 
                 <hr>
             </header>
-            <p>2023-04-18</p>
-<h3>Notes on <code>plastex</code></h3>
-<p>At the time of writing this post, <code>plastex</code> has the following issues:</p>
-<ul>
-<li>
-<p>If an equation has a special name with <code>tag{abc}</code>, then after running <code>plastex</code>
-    the label of the equation gets duplicated, which making error when referring
-    to the equation in the body of the text. </p>
-<p><em>(Temporary) Solutions:</em> remove all special tags, just using the automatic numbering
-    built-in in <code>Latex</code>.</p>
-<p>Also, if a label of an equation contains <code>abc_xyz</code> it will causes problem, try
-    <code>abc-xyz</code> instead.</p>
-</li>
-<li>
-<p><code>tikz</code> does not work well, try using <code>.png</code> for figures (not even <code>.pdf</code> figures).</p>
-</li>
-<li>
-<p><code>vspace{}</code> does not work, try to remove them.</p>
-</li>
-<li>
-<p><code>enumitem</code> with labels for <code>description</code> enviroment does not work.</p>
-</li>
-<li>
-<p>Cannot use <code>.bib</code> directly. One needs to render <code>.bbl</code> first and then use that</p>
-</li>
-</ul>
-<h3>Testing <code>html</code> inclusion</h3>
-<h4>Inlcude <code>html</code> as a sperate page, where <code>ivy</code> navigation kicks in</h4>
-<ul>
-<li><a href="../../teaching/2024-spring-review-final.html">Final-review</a></li>
-<li><a href="../../teaching/sobolev.html">Sobolev norm</a></li>
-</ul>
-<h4>Include as <code>raw html</code></h4>
-<p>Testing including <code>html</code> files without rendering extra <code>ivy css</code></p>
-<div w3-include-html="/texhtml/sobolev.html"></div>
+            <div w3-include-html="../../texhtml/sobolev.html"></div>
+
+<div class="codehilite"><pre><span></span><code>
+</code></pre></div>
 
             <!-- For use inside index.stx
 ::: quote
