@@ -15,9 +15,9 @@
         
         
 <!-- for table css-->
-<link rel="stylesheet" href="../assets/teaching-table.css">
+<link rel="stylesheet" href="../../assets/teaching-table.css">
 
-<link rel="stylesheet" href="../assets/collapsible.css">
+<link rel="stylesheet" href="../../assets/collapsible.css">
 
 <!-- KATEX -->
 <!-- All KaTeX links taken from the documentation here: https://katex.org/docs/browser.html. -->
@@ -160,10 +160,128 @@ function includeHTML() {
                 
                 <hr>
             </header>
-            <div w3-include-html="../../texhtml/sobolev.html"></div>
+            <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"
+  integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs"
+  crossorigin="anonymous" />
+
+<style type="text/css">
+    .katex img {
+      object-fit: fill;
+      padding: unset;
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: inherit;
+    }
+</style>
+<div w3-include-html="../../texhtml/sobolev.html"></div>
 
 <div class="codehilite"><pre><span></span><code>
 </code></pre></div>
+
+<ol reversed style="counter-reset: list-items 5;">
+
+
+<!-- Paper 1 -->
+<li value="1">
+    <p>
+    Rate of convergence for periodic homogenization of convex 
+    Hamilton-Jacobi equations in one dimension, <br>
+    <!-- Preprint & journal name -->
+    <a class="weblink" href="https://content.iospress.com/articles/asymptotic-analysis/asy201599">
+        Asymptotic Analysis 121, 2 (2021), 171–194 </a> 
+
+
+
+    <span style="text-align-last: right; display: inline; float:right "> 
+    <!-- &nbsp; &middot; &nbsp;  -->
+
+
+    <!-- errata button-->
+    <button class="btn btn-primary btn__first" 
+            data-toggle="collapse"
+            data-target=".collapse.one_errata"
+            data-text="Collapse"> 
+            <a class="weblink" href="../../notes/errata-tu2018.pdf" style="border-bottom: 0;">
+                errata </a> </button> 
+                &nbsp; &middot; &nbsp;
+
+    <!-- Arxiv link -->
+    <a class="weblink" href="https://arxiv.org/abs/1808.06129">arxiv </a> 
+    &nbsp; &middot; &nbsp;
+    <!-- abstract button-->
+    <button class="btn btn-primary btn__first" 
+            data-toggle="collapse"
+            data-target=".collapse.one_abstract"
+            data-text="Collapse"> abstract </button> 
+    &nbsp; &middot; &nbsp;
+    <!-- cite button-->
+    <button class="btn btn-primary btn__first" 
+            data-toggle="collapse"
+            data-target=".collapse.one_bibtex"
+            data-text="Collapse"> cite </button> 
+
+
+
+
+    <!-- abstract button content -->
+    <div class="block collapse one_abstract">
+        <div class="block__content">
+            Let <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>u</mi><mi>ε</mi></msup></mrow><annotation encoding="application/x-tex">u^\varepsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6644em;"></span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">ε</span></span></span></span></span></span></span></span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">u</span></span></span></span> be viscosity solutions of 
+            the oscillatory Hamilton–Jacobi 
+            equation and its corresponding effective equation. 
+            Given bounded, Lipschitz initial data, we present a simple proof 
+            to obtain the optimal rate of convergence 
+            <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>ε</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathcal{O}(\varepsilon)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">ε</span><span class="mclose">)</span></span></span></span> of 
+            <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>u</mi><mi>ε</mi></msup><mo>→</mo><mi>u</mi></mrow><annotation encoding="application/x-tex">u^\varepsilon \to u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6644em;"></span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">ε</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">u</span></span></span></span> as <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo>→</mo><msup><mn>0</mn><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">\varepsilon \to 0^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">ε</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>. 
+            <br>
+            <!-- logo arxiv -->
+            <!-- <a class='imagelogo' href="https://arxiv.org/abs/1808.06129">
+                <img alt="https://arxiv.org/abs/1808.06129" 
+                        src="https://img.shields.io/badge/math.AP-1808.06129-b31b1b?logo=arxiv&amp;logoColor=red.svg"
+                        style="transform: scale(1, 1);"> </a> -->
+        </div>
+    </div>
+    <!-- cite button content -->
+    <div class="block collapse one_bibtex">
+        <div class="block__content">
+        <pre class="infobox" >
+
+@article{tu_rate_2021,
+    title        = {Rate of convergence for periodic homogenization 
+                    of convex {Hamilton}–{Jacobi} equations in one 
+                    dimension},
+    author       = {Tu, Son N. T.},
+    year         = 2021,
+    month        = jan,
+    journal      = {Asymptotic Analysis},
+    volume       = 121,
+    number       = 2,
+    pages        = {171--194},
+    doi          = {10.3233/ASY-201599},
+    issn         = {0921-7134},
+    url          = {https://content.iospress.com/
+                    articles/asymptotic-analysis/asy201599},
+    urldate      = {2024-02-03},
+    note         = {Publisher: IOS Press},
+    abstract     = {Let u ε and u be viscosity solutions of the 
+                    oscillatory Hamilton–Jacobi equation and its 
+                    corresponding effective equation. 
+                    Given bounded, Lipschitz initial data, we 
+                    present a simple proof to obtain the optimal 
+                    rate of convergence O ( ε ) of u ε → u a},
+    language     = {en},
+}
+        </pre>
+        </div>
+    </div>
+
+</span>
+</p>
+
+</li> 
+</ol>
 
             <!-- For use inside index.stx
 ::: quote
