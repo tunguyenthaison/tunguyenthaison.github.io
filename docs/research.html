@@ -15,9 +15,9 @@
         
         
 <!-- for table css-->
-<link rel="stylesheet" href="assets/teaching-table.css">
+<link rel="stylesheet" href="/assets/teaching-table.css">
 
-<link rel="stylesheet" href="assets/collapsible.css">
+<link rel="stylesheet" href="/assets/collapsible.css">
 
 <!-- KATEX -->
 <!-- All KaTeX links taken from the documentation here: https://katex.org/docs/browser.html. -->
@@ -178,8 +178,6 @@ function includeHTML() {
 the free boundary problem in some models of fluid dynamics. </p>
 <h2>Preprints and Publications</h2>
 <ol reversed style="counter-reset: list-items 5;">
-
-
 
 
 
@@ -1011,18 +1009,93 @@ MRREVIEWER = {Sayonita\ Ghosh Hajra},
 <h2>Refereed conference proceedings &amp; papers.</h2>
 <ol reversed style="counter-reset: list-items 5;">
 
-<li> 
+
+<!-- proceeding 01 -->
+<li value="1"> 
+    <p>
     Unequal Covariance Awareness for Fisher Discriminant Analysis 
-    and Its Variants in Classification <br>
+    and Its Variants in Classification  <br>
     Thu Nguyen, Quang M. Le, Son N.T. Tu, Binh T. Nguyen <br>
-    <a class="weblink" href="">
-           2022 International Joint Conference on Neural Networks (IJCNN), (Jul. 2022)
-    </a> <br>
-    <!-- &nbsp; &middot; &nbsp; -->
-    <a class='imagelogo' href="https://arxiv.org/abs/2205.13565">
-        <img alt="https://arxiv.org/abs/2205.13565" 
-            src="https://img.shields.io/badge/math.AP-2205.13565-b31b1b?logo=arxiv&amp;logoColor=red.svg"
-            style="transform: scale(1, 1);"> </a>
+
+<!-- preprent & journal name -->
+<a class="weblink" href="https://ieeexplore.ieee.org/abstract/document/9892588?casa_token=uETKQKbK7kEAAAAA:t_WZu76Jdi5h6SAt3tM1torihIy_CF98dosPzRfaqKkTYd_JRwmAv-zB1x2plK7nYtA0S8YgPws">
+    2022 International Joint Conference on Neural Networks (IJCNN), (Jul. 2022)
+</a>
+
+<span style="text-align-last: right; display: inline; float:right "> 
+<!-- &nbsp; &middot; &nbsp; -->
+
+<!-- Arxiv link -->
+<a class="weblink" href="https://arxiv.org/abs/2205.13565"> arxiv </a>
+&nbsp; &middot; &nbsp;
+
+
+<!-- abstract button-->
+<button class="btn btn-primary btn__first" 
+        data-toggle="collapse"
+        data-target=".collapse.proceeding_1_abstract"
+        data-text="Collapse"> abstract </button> 
+&nbsp; &middot; &nbsp;
+
+
+<!-- cite button-->
+<button class="btn btn-primary btn__first" 
+        data-toggle="collapse"
+        data-target=".collapse.proceeding_1_bibtex"
+        data-text="Collapse"> cite </button>
+
+
+<!-- abstract button content -->
+<div class="block collapse proceeding_1_abstract">
+    <div class="block__content">
+        Fisher Discriminant Analysis (FDA) is one of the essential tools for 
+        feature extraction and classification. In addition, it motivates the 
+        development of many improved techniques based on the FDA to adapt to 
+        different problems or data types. However, none of these approaches 
+        make use of the fact that the assumption of equal covariance matrices 
+        in FDA is usually not satisfied in practical situations. Therefore, we 
+        propose a novel classification rule for the FDA that accounts for this 
+        fact, mitigating the effect of unequal covariance matrices in the FDA. 
+        Furthermore, since we only modify the classification rule, the same 
+        can be applied to many FDA variants, improving these algorithms further. 
+        Theoretical analysis reveals that the new classification rule allows 
+        the implicit use of the class covariance matrices while increasing the 
+        number of parameters to be estimated by a small amount compared to 
+        going from FDA to Quadratic Discriminant Analysis. We illustrate our 
+        idea via experiments, which shows the superior performance of the 
+        modified algorithms based on our new classification rule compared 
+        to the original ones.
+    </div>
+</div>
+
+<!-- cite button content -->
+<div class="block collapse proceeding_1_bibtex">
+    <div class="block__content">
+    <pre class="infobox" >
+
+@INPROCEEDINGS{9892588,
+    author={Nguyen, Thu and Le, Quang M. and Tu, Son N.T. and Nguyen, Binh T.},
+    booktitle={2022 International Joint Conference on Neural Networks (IJCNN)}, 
+    title={Unequal Covariance Awareness for Fisher Discriminant Analysis 
+            and Its Variants in Classification}, 
+    year={2022},
+    volume={},
+    number={},
+    pages={1-8},
+    keywords={Neural networks;Feature extraction;
+                Classification algorithms;
+                Fisher Discrimiant Analysis;
+                Linear Discriminant Analysis;
+                Quadratic Discriminant Analysis;classification},
+    doi={10.1109/IJCNN55064.2022.9892588}}
+
+    </pre>
+    </div>
+</div>
+
+</span>
+</p>
+
 </li>
 </ol>
 
@@ -1404,7 +1477,7 @@ North Carolina State University.
     </p>
 </blockquote>
 
-<script type="text/javascript" src="assets/collapsible.js"></script>
+<script type="text/javascript" src="/assets/collapsible.js"></script>
 
 <!-- Default Statcounter code for MyWeb
 https://tunguyenthaison.github.io/ -->
