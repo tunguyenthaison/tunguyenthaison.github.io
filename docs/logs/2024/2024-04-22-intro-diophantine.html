@@ -6,10 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
 
-        <title>Dynamics & Classical Mechanics</title>
-        <link rel="stylesheet" href="../assets/fonts.css">
-        <link rel="stylesheet" href="../assets/simplify.css">
-        <link rel="stylesheet" href="../assets/pygments.css">
+        <title>Introduction to Diophantine Approximation</title>
+        <link rel="stylesheet" href="../../assets/fonts.css">
+        <link rel="stylesheet" href="../../assets/simplify.css">
+        <link rel="stylesheet" href="../../assets/pygments.css">
         
         
         
@@ -101,9 +101,9 @@ function includeHTML() {
         
 
     </head>
-    <body class="node-notes-dynamic-mechanics node-notes node">
+    <body class="node-logs-2024-2024-04-22-intro-diophantine node-logs-2024 node-logs node">
         <header class="masthead">
-            <h1><a href="../index.html">Son Tu</a></h1>
+            <h1><a href="../../index.html">Son Tu</a></h1>
             
                 <p class="tagline">Từ Nguyễn Thái Sơn</p>
             
@@ -116,14 +116,14 @@ function includeHTML() {
                     <span class="text">Menu</span>
                 </label>
                 <ul>
-<li><a href="../index.html">Home</a></li>
-<li><a href="../notes//2024-04-17-CV.pdf">CV</a></li>
-<li><a href="../research.html">Research</a></li>
-<li><a href="../teaching.html">Teaching</a>
-    <!-- * <a href="../teaching/child-one.html">Child One</a> -->
-    <!-- * <a href="../teaching/child-two.html">Child Two</a> --></li>
-<li><a href="../notes.html">Notes</a></li>
-<li><a href="../about.html">About</a></li>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../notes//2024-04-17-CV.pdf">CV</a></li>
+<li><a href="../../research.html">Research</a></li>
+<li><a href="../../teaching.html">Teaching</a>
+    <!-- * <a href="../../teaching/child-one.html">Child One</a> -->
+    <!-- * <a href="../../teaching/child-two.html">Child Two</a> --></li>
+<li><a href="../../notes.html">Notes</a></li>
+<li><a href="../../about.html">About</a></li>
 </ul>
 <p><br></p>
 <p>
@@ -154,27 +154,141 @@ function includeHTML() {
         </header>
         <article class="main">
             <header class="title">
-                <h1>Dynamics & Classical Mechanics</h1>
-                
-                    <p class="subtitle">A compilation of materials on Dynamical Systems and Classical Mechanics</p>
+                <h1>Introduction to Diophantine Approximation</h1>
                 
                 <hr>
             </header>
-            <ul>
-<li>
-Lecture notes on Mather's theory for Lagrangian systems, Alfonso Sorrentino <br>
-Publicaciones Matem´aticas del Uruguay, Volumen 16, Julio 2016, P´aginas 169–192, S 0797-1443 <br>
-<span style="text-align-last: right; display: inline; float:right ">
-<a class="weblink" href="https://arxiv.org/pdf/1011.0590">
-        arxiv
-</a>
-&nbsp; &#183; &nbsp;
-<a class="weblink" href="https://drive.google.com/file/d/1fj9hylLuYN5o5z75aYVPvhsjvUQmCmM7/view?usp=sharing">
-    pdf
-</a>
-</span>
-</li>
+            <p>For a number $\alpha$, we denote by $[\alpha]$ the integer part of $\alpha$, and 
+by ${\alpha}$ the fractional part of $\alpha$, i.e., $[\alpha]+{\alpha} = \alpha$. 
+We denote by $\Vert \alpha \Vert$ the (positive) difference between $\alpha$ and the
+nearest integer, that is</p>
+<p>$$
+    \Vert \alpha \Vert = \min_{n \in \mathbb{N}} |\alpha - n|. 
+$$</p>
+<p>With that notation, if $p$ and $q$ are integers, and without loss of generality, we may assume $q &gt; 0$. For a fixed $q$, we have:</p>
+<p>$$
+    \min_{p\in \Z}\left|\alpha - \frac{p}{q}\right| 
+        = q^{-1}\min_{p\in \Z}\left|q \alpha - p\right| 
+        = q^{-1} \Vert q \alpha \Vert.
+$$</p>
+<p>Then, some well-known theorems in Diophantine approximation theory can be formulated
+using this notations. For instance, Hurwitz's theorem saids:</p>
+<dt> Hurwitz's theorem </dt>
+<dd>
+    For every irrational number $\xi$, there are infinitely many relatively 
+    prime integers $m, n$ such that
+    $$
+        \left|\xi - \frac{p}{q}\right| < \frac{1}{\sqrt{5}q^2}. 
+    $$
+</dd>
+
+<p>In the notation above, we can say that:</p>
+<dd>
+
+The inequality $\Vert q\xi \Vert < 5^{-1/2} q^{-1}$ has infintely many integer 
+solutions $q$, for all irrational $\xi$.
+
+</dd>
+
+<p>Statements like the above is common: there is no half-way between <em>almost all</em> and <em>almost none</em>. <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>
+Let $E_{\mathcal{A}}\subset \R^n$ denote the collection of all points in $\R^n$
+having the property $\mathcal{A}$. We say that:</p>
+<ul>
+<li>Almost all points of $\R^n$ have the property $\mathcal{A}$ if $\R^n\backslash E_{\mathcal{A}}$ is a nullset. </li>
+<li>Almost no points of $\R^n$ have the property $\mathcal{A}$ if $E_{\mathcal{A}}$ is a nullset. </li>
 </ul>
+<p>The following Theorem is taken from <a href="https://drive.google.com/file/d/1WiQvxQ3bluuLNIjxCBNrJcW1qWz3QMB8/view?usp=sharing">Theorem 1, p. 120, J. W. S Cassels - An introduction to Diophantine approximation</a>.</p>
+<dt>Theorem</dt>
+
+<dd>
+
+Let $\psi(q)$ be a monotonely decreasing function of the integer variable $q>0$ with $0\leq \psi(q) \leq \frac{1}{2}$. 
+Let $(\mathcal{A})$ be the property:
+
+<blockquote>
+
+The point $\theta = (\theta_1,\ldots, \theta_n)$ satisfies $(\mathcal{A})$ if: <br>
+
+The set of inequalities: $\Vert q\theta_j \Vert < \psi(q)$ for $i=1,2,\ldots, n$ has infinitely many
+integer solutions $q$.
+</blockquote>
+
+We have
+
+<ul>
+    <li> If $\sum_{q\in \mathbb{N}} \psi(q)^n < \infty$, almost no $\theta \in \R^n$ has property $(\mathcal{A})$. </li>
+    <li> If $\sum_{q\in \mathbb{N}} \psi(q)^n = \infty$, almost all $\theta \in \R^n$ has property $(\mathcal{A})$. </li>
+</ul>
+
+</dd>
+
+<p>For example, we have</p>
+<p>$$
+    \sum_{q=2}^\infty \frac{1}{q \ln^2(q)} &lt; \infty.
+$$</p>
+<p>Therefore, the set of $\theta \in \R^n$ that has the property $(\mathcal{A})$ has measure $0$. In other
+words, for almost every $\theta \in \R^n$, the equation</p>
+<p>$$
+    \Vert q\theta_j \Vert &lt; \psi(q), \qquad\text{for all}\; i=1,2,\ldots, n
+$$</p>
+<p>only has finitely many integer solutions $q$.</p>
+<p>We formulate this as the following result, which is Lemma 1, p. 121 J. W. S Cassels - <a href="https://drive.google.com/file/d/1WiQvxQ3bluuLNIjxCBNrJcW1qWz3QMB8/view?usp=sharing">An introduction to Diophantine approximation</a>.</p>
+<dt>Theorem</dt>
+<dd>
+    Suppose that $\psi(q) \in [0,\frac{1}{2}]$ and $\sum_{q=1}^\infty \psi(q)$ 
+    is convergent, and $\alpha$ is fixed. Then for almost every $\theta \in \R$, 
+    the equation
+
+    $$
+    \begin{equation}
+        \Vert \theta q - \alpha \Vert < \psi(q) 
+    \label{eq:1}
+    \tag{1}
+    \end{equation}
+    $$ 
+
+    only has finitely many integer solutions $q>0$.
+</dd>
+
+<dt>Proof</dt>
+<dd> 
+
+For a fixed $\alpha$ and $q$, the $\theta$ satisying $\eqref{eq:1}$, that is
+
+$$
+    \left|\theta - \frac{p+\alpha}{q}\right| < \frac{\psi(q)}{q} 
+$$
+
+where $p$ is an integer form a set of intervals with width $\frac{2\psi(q)}{q}$, 
+and centers $\frac{1}{q}$ apart. The set of $\theta \in  [0,1]$ thus,  is at most 
+$q$ intervals, hence 
+
+$$
+    \text{The set of}\;\theta\in [0,1]\;\text{that satisfies}\;\eqref{eq:1}\;\text{has measure at most}\;2\psi(q).
+$$
+
+If we fix $Q\in \mathbb{N}$ large, the set of $\theta$ satisfying $\eqref{eq:1}$ with a solution $q\geq Q$ has 
+measure at most
+
+$$
+    2\sum_{q\geq Q} \psi(q) < \varepsilon,
+$$
+
+where we use the convergent assumption. In particular, the set of $\theta$ such that $\eqref{eq:1}$
+has infinitely many integer solutions $q$ has measure at most $\varepsilon$. As $\varepsilon$ is arbitrary, the proof
+is complete.
+</dd>
+
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>J. W. S Cassels - An introduction to Diophantine approximation, 
+Cambridge University Express, 1957 
+<a href="https://drive.google.com/file/d/1WiQvxQ3bluuLNIjxCBNrJcW1qWz3QMB8/view?usp=sharing">pdf</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
             <!-- For use inside index.stx
 ::: quote
@@ -205,8 +319,8 @@ Publicaciones Matem´aticas del Uruguay, Volumen 16, Julio 2016, P´aginas 169�
 
 <blockquote>
     <p>
-    © Copyright 2022-2024 Son N. T. Tu. Powered by <a href="https://www.dmulholl.com/docs/ivy/dev/">Ivy</a>. 
-    Last updated: April 21, 2024.
+    © Copyright 2016-2024 Son N. T. Tu. Powered by <a href="https://www.dmulholl.com/docs/ivy/dev/">Ivy</a>. 
+    Last updated: May 03, 2024.
     </p>
 </blockquote>
 
