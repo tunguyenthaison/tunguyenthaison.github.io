@@ -241,7 +241,7 @@ words, for almost every $\theta \in \R^n$, the equation</p>
 $$</p>
 <p>only has finitely many integer solutions $q$.</p>
 <p>We formulate this as the following result, which is Lemma 1, p. 121 J. W. S Cassels - <a href="https://drive.google.com/file/d/1WiQvxQ3bluuLNIjxCBNrJcW1qWz3QMB8/view?usp=sharing">An introduction to Diophantine approximation</a>.</p>
-<dt>Theorem</dt>
+<dt id="theorem-psi-convergence">Theorem</dt>
 <dd>
     Suppose that $\psi(q) \in [0,\frac{1}{2}]$ and $\sum_{q=1}^\infty \psi(q)$ 
     is convergent, and $\alpha$ is fixed. Then for almost every $\theta \in \R$, 
@@ -289,6 +289,34 @@ is complete.
 
 <h2>Application to Quasi-periodic functions</h2>
 <p><a id="application-to-quasi-periodic-functions"> </a></p>
+<p>We follow <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> in this section. Let $(\mathcal{A})$ be the following property: </p>
+<p>$$(\mathcal{A}):
+    \omega = (\omega_1, \ldots, \omega_n) \in \R^n\;\text{satisfies, there exists}\;
+    R &gt; 0\;\text{such that} \\ 
+\begin{cases} 
+    \Vert \omega_i q\Vert &lt; R^{-1/n} , \;\text{for all}\; i=1,2,\ldots, n \\
+    |q| &lt; \frac{R}{|\log(R)|^2} 
+\end{cases} \\ 
+\text{only has finitely many integer solutions}\;q.
+$$</p>
+<p>Let $E = \left\lbrace \omega \in \R^n: \omega\;\text{satisfies}\;(\mathcal{A})\right\rbrace$. To see that
+$E$ has full measure, let $\omega \notin E$, we then observe that </p>
+<p>$$
+    \forall\;R&gt;0, 
+    \begin{cases} 
+        \Vert \omega_i q\Vert &lt; R^{-1/n} , \forall\; i=1,2,\ldots, n \\
+        |q| &lt; \frac{R}{|\log(R)|^2} 
+    \end{cases}\;\qquad \text{has infinitely many integer solutions}\;q. 
+$$</p>
+<p>For such $R&gt;0$ and such a solution $q$ to the system, we have $R&gt; q|\log(R)|^2$, and since
+$R&gt;q$ for $R\geq 3$ we have for infinitely many $q$ that</p>
+<p>$$
+    \Vert \omega_i q\Vert &lt; \left(\frac{1}{R}\right)^{1/n} 
+    &lt; \left(\frac{1}{q|\log R|^2}\right)^{1/n} 
+    \leq \left(\frac{1}{q\ln^2q}\right)^{1/n}. 
+$$</p>
+<p>Applying <a href="#theorem-psi-convergence">Theorem</a> above, we deduce that $\R^n\backslash E$ is null. Therefore
+we conclude that the set $E$ has full measures.</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -296,6 +324,10 @@ is complete.
 <p>J. W. S Cassels - An introduction to Diophantine approximation, 
 Cambridge University Express, 1957 
 <a href="https://drive.google.com/file/d/1WiQvxQ3bluuLNIjxCBNrJcW1qWz3QMB8/view?usp=sharing">pdf</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Bryan P. Rynne, The fractal dimension of quasi-periodic orbits, <em>Ergod. Th. &amp; Dynam. Sys. (1998), 18, 1467–1471</em>
+<a href="https://drive.google.com/file/d/1_tQdCyC8RLOTdSTwQW48ZuWPgeGq-Fz-/view?usp=sharing">pdf</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
