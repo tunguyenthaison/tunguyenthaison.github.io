@@ -46,6 +46,7 @@
         tex: {
         inlineMath: [['$', '$'], ['\\(', '\\)']],
         macros: {
+        x: '{\\mathbf x}',       
         R: '{\\mathbb R}',                 // a simple string replacement
         T: '{\\mathbb T}',                 // a simple string replacement
         bold: ['\\boldsymbol{#1}',1] ,     // this macro has one parameter
@@ -259,6 +260,7 @@ $$</p>
 </dd>
 
 <dt>Proof</dt>
+<details>
 <dd> 
 
 For a fixed $\alpha$ and $q$, the $\theta$ satisying $\eqref{eq:1}$, that is
@@ -286,10 +288,48 @@ where we use the convergent assumption. In particular, the set of $\theta$ such 
 has infinitely many integer solutions $q$ has measure at most $\varepsilon$. As $\varepsilon$ is arbitrary, the proof
 is complete.
 </dd>
+</details>
 
 <h2>Application to Quasi-periodic functions</h2>
 <p><a id="application-to-quasi-periodic-functions"> </a></p>
-<p>We follow <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> in this section. Let $(\mathcal{A})$ be the following property: </p>
+<p>We follow <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> in this section. </p>
+<dt> The equation $\eqref{eq:equation-simultaneous}$ </dt>
+<dd>
+Let $\omega = (\omega_1,\ldots, \omega_n) \in \R^n$, we say $(q,R) \in \mathbb{Z}_{>0}\times \R^+$ is a solution to \eqref{eq:equation-simultaneous} if
+\begin{equation}\label{eq:equation-simultaneous}
+    \fbox{$\displaystyle 
+    \Vert \omega q\Vert < \left(\frac{1}{R}\right)^{1/n} 
+    \qquad \text{and}\qquad 
+    |q| < \frac{R}{|\log(R)|^2}.
+    \tag{$\star$}
+    $}
+\end{equation}
+Let $E = \{\omega \in \R^n: \eqref{eq:equation-simultaneous}\;\text{has only finitely many solutions}\}$. Then, by definition we have the complement of $E$ is $E^c = \mathbb{R}^n\backslash E = \{\omega\in \R^n: \eqref{eq:equation-simultaneous}\;\text{has infinitely many solutions}\}$. 
+</dd>
+
+<p>We will need the following Theorem from <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. </p>
+<dt> Theorem (VI p. 82 Cassels 1957) </dt>
+<dd>
+
+If there is no integer solution $\x = (x_1,\ldots, x_m) \in \mathbb{Z}^m$ to the $n$-linear forms
+\begin{equation*}
+    \Vert L_j(\x)\Vert < C, \qquad |x_i| < X,
+\end{equation*}
+then, for any $(\alpha_1,\ldots, \alpha_n)\in \R^n$, the $n$-inequalities
+\begin{equation*}
+    \Vert L_j(\x) - \alpha_j\Vert < C_1, \qquad |x_i| < X_1
+\end{equation*}
+are solvable with an integer solution $\x$, where 
+\begin{equation*}
+\begin{cases}
+    C_1 = \frac{1}{2}(1+h)C\\
+    X_1 = \frac{1}{2}(1+h)X
+\end{cases} \qquad\text{and}\qquad h = X^{-m}C^{-n}.
+\end{equation*}
+
+</dd>
+
+<p>Let $(\mathcal{A})$ be the following property: </p>
 <p>$$(\mathcal{A}):
     \omega = (\omega_1, \ldots, \omega_n) \in \R^n\;\text{satisfies, there exists}\;
     R &gt; 0\;\text{such that} \\ 
@@ -330,7 +370,7 @@ $$</p>
 \end{equation}
 $$</p>
 <p>Here is the place where a simultaneous approximation result can be applied. </p>
-<p>Theorem VI p. 82 of <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup> says 
+<p>Theorem VI p. 82 of <sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup> says 
 that, for every $\beta=(\beta_1,\ldots,\beta_n) \in \R^n$ </p>
 <div class="footnote">
 <hr />
@@ -338,7 +378,7 @@ that, for every $\beta=(\beta_1,\ldots,\beta_n) \in \R^n$ </p>
 <li id="fn:1">
 <p>J. W. S Cassels - An introduction to Diophantine approximation, 
 Cambridge University Express, 1957 
-<a href="https://drive.google.com/file/d/1WiQvxQ3bluuLNIjxCBNrJcW1qWz3QMB8/view?usp=sharing">pdf</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<a href="https://drive.google.com/file/d/1WiQvxQ3bluuLNIjxCBNrJcW1qWz3QMB8/view?usp=sharing">pdf</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
 <p>Bryan P. Rynne, The fractal dimension of quasi-periodic orbits, 

@@ -4,303 +4,15 @@
  * -------------------------------------------------------------------------
  */
 
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    box-sizing: border-box;
+}
+
 *, *:before, *:after {
     box-sizing: inherit;
-}
-
-
-.wrapper {
-    display: flex;
-    /* If I can't fit my children on one line at the size they want to be, wrap onto a new line */
-    flex-wrap: wrap;
-    align-items: flex-end;
-}
-
-.justify-text {
-    text-align: justify;
-}
-
-.contact {
-    min-width: 100px;
-    flex-grow: 1;
-}
-
-.h3-list {
-    padding-left: 1.5em;
-}
-
-
-.half30 {
-    width: 30%;
-    /* Grow at a rate of 1 if there is room for me to do so!*/
-    flex-grow: 1;
-    display: table-cell;
-    height: fit-content;
-    align-content: flex-end;
-}
-
-.half70 {
-    width: 70%;
-    /* Grow at a rate of 1 if there is room for me to do so!*/
-    flex-grow: 1;
-    display: table-cell;
-    height: fit-content;
-    align-content: flex-end;
-}
-
-.half50 {
-    width: 50%;
-    /* Grow at a rate of 1 if there is room for me to do so!*/
-    flex-grow: 1;
-    display: table-cell;
-    height: fit-content;
-    align-content: flex-end;
-}
-
-.half40 {
-    width: 40%;
-    /* Grow at a rate of 1 if there is room for me to do so!*/
-    flex-grow: 1;
-    display: table-cell;
-    height: fit-content;
-    align-content: flex-end;
-}
-
-.half60 {
-    width: 60%;
-    /* Grow at a rate of 1 if there is room for me to do so!*/
-    flex-grow: 1;
-    display: table-cell;
-    height: fit-content;
-    align-content: flex-end;
-}
-
-
-div.image {
-    min-width: 195px;
-    flex-grow: 1;
-}
-
-
-div.image > p > img {
-    margin-top: 0rem;
-    margin-bottom: 0rem;
-    width: 100%;
-    height: auto;
-}
-
-#avatar > p > img {
-    border-radius: 50%;
-    width: 70%;
-}
-
-
-#contact-information {
-    text-align: left;
-    font-size: 22px;
-}
-
-
-.contact-social-media-wrapper {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.contact-social-media-text {
-  padding-right: 29px;
-  color: #3a395e;
-  font-size: 20px;
-  line-height: 1.2em;
-  font-weight: 500;
-}
-
-.footer-social-media-grid {
-  -webkit-box-pack: start;
-  -webkit-justify-content: center;
-  -ms-flex-pack: start;
-  justify-content: start;
-  grid-column-gap: 18px;
-  -ms-grid-columns: auto auto auto auto auto auto;
-  grid-template-columns: auto auto auto auto auto auto;
-  -ms-grid-rows: auto;
-  grid-template-rows: inherit;
-  opacity: 1;
-}
-
-/**
- * -------------------------------------------------------------------------
- *  Collapsible box
- * -------------------------------------------------------------------------
- */
-
-.abstract-footnote {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-.abstract {
-    margin-top: 0px;
-    margin-bottom: 0px; 
-    margin-left: 0px;
-    margin-right: 0px;
-    font-size: 80%;
-    font-style: normal;
-    /* border-bottom: 1px solid #ddd; */
-}
-
-
-.abstract-contents {
-    /* background-color: floralwhite; */
-    border-radius: 10%;
-    padding: 1%;
-    margin-top: 1px;
-    text-align: justify;
-}
-
-.button{
-    max-width: 20%;
-    /* background: #333; */
-    /*remove text highlighting (easy to double click and highlight)
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
-    supported by Chrome and Opera */
-}
-
-details summary.button::-webkit-details-marker {
-    display:none; /*remove the arrow of the details tag*/
-}
-
-details[open] summary{
-    /* background: #666; /*change background when button is 'open'*/
-}
-
-
-/**
- * -------------------------------------------------------------------------
- *  tagline Vietnamese
- * -------------------------------------------------------------------------
- */
-
- .tagline {
-    font-family: 'Times New Roman', Times, serif;
- }
-
-/**
- * -------------------------------------------------------------------------
- *  arXiv 
- * -------------------------------------------------------------------------
- */
-
-.center {
-    padding-bottom: 10pt;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-p > a.arxiv {
-    /* float: right; */
-    /* margin: auto; */
-    border-radius: 10%;
-    border: 10px;
-    /* background-color: gray; */
-    /* border: 1px solid black; */
-    /* padding: 0 0 0 5px; */
-    /* height: 2em; */
-}
-
-p > .arxiv > img {
-    display: inline-block;
-    vertical-align:middle;
-    filter: invert(1);
-    margin: 0px 3px;
-    padding: 0px;
-    height: 1em;
-    
-}
-
-/* span > .journal {
-    height: 100%;
-}  */
-
-a.weblink {
-    color: green;
-    text-decoration: dotted;
-    padding-bottom: 0pt;
-    /* border-bottom: 1px solid; */
-    /* font-style: italic; */
-}
-.text-arxiv {
-    text-decoration: none;
-    padding-bottom: 0;
-    border-bottom: none;
-}
-
-.imagelogo {
-    border-bottom: none;
-    /* position: relative; */
-    /* line-height: 0px; */
-    vertical-align:top;
-}
-
-.imagelogo img {
-    margin: 0;
-    display: inline !important; 
-    /* display: inline-block; */
-    /* padding-bottom: 0; */
-    /* border-bottom: 0; */
-    vertical-align: text-top;
-}
-
-.comment { display: none; }
-
-/**
- * -------------------------------------------------------------------------
- *  PDF
- * -------------------------------------------------------------------------
- */
-
- p > a.pdf {
-    float: right;
-    border-radius: 10%;
-    /* border: 0px; */
-    /* background-color: gray;
-    border: 1px solid black;
-    padding: 0px;
-    height: 2em; */
-}
-
-p > .pdf > img {
-    display: inline-block;
-    vertical-align:middle;
-    /* filter: invert(1); */
-    margin: -10px 3px;
-    padding: 0px;
-    height: 2.5em;
-    
-}
-
-
-
-html {
-    box-sizing: border-box;
-    font-size: 100%;
-    -webkit-text-size-adjust: none;
-            text-size-adjust: none;
 }
 
 body {
@@ -323,15 +35,7 @@ button, input, select, textarea, label {
 img {
     border: 0;
     max-width: 100%;
-    margin: 40px auto;
-    display: block;
 }
-
-
-.katex { 
-    font-size: 1em  !important; 
-}
-
 
 /**
  * -------------------------------------------------------------------------
@@ -339,71 +43,53 @@ img {
  * -------------------------------------------------------------------------
  */
 
+
+
 body {
-    font-size: 15px;
+    font-size: 17px;
     color: black;
     font-family: 'Crimson Text', Georgia, serif;
     line-height: 1.75;
 }
 
-h1 {
+.katex { font-size: 1.1em !important;  }
+
+h1, h2 {
     padding: 0;
     margin: 80px 0 30px;
     line-height: 1.25;
     text-align: center;
+}
+
+h1 {
     font-size: 32px;
     font-weight: normal;
 }
 
 h2 {
-    padding: 0;
-    margin: 80px 0 30px;
-    line-height: 1.25;
-    text-align: center;
     font-size: 22px;
     font-weight: bold;
-}
-
-h2.underline {
-    padding: 0;
-    margin: 80px 0 35px;
-    line-height: 1.25;
-    text-align: left;
-    font-size: 22px;
-    font-weight: bold;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #ccc;
 }
 
 h3, h4, h5, h6 {
     padding: 0;
-    margin: 40px 0 20px;
+    margin: 80px 0 30px;
     line-height: 1.25;
     text-align: left;
     font-size: 19px;
     font-weight: bold;
 }
 
-
-
 p {
-    margin: 10px 0 0 0;
-    padding: 0;
-    overflow-wrap: break-word;
-}
-
-
-li > p {
-    margin: 0 0 0 0;
+    margin: 25px 0;
     padding: 0;
 }
 
 blockquote {
-    margin: 40px 20px;
+    margin: 40px 0px;
     padding: 0 20px;
-    /* border-left: 1px dashed #ddd; */
+    border-left: 3px solid #ddd;
     font-style: italic;
-    /* border-bottom: 1px dashed #ddd; */
 }
 
 .blockquote-caption {
@@ -425,7 +111,7 @@ sup, sub {
 
 sup {
     bottom: 1.5ex;
-    padding: 0 0.5ex;
+    padding: 0 .75ex;
 }
 
 sub {
@@ -442,36 +128,30 @@ pre, code {
 }
 
 code {
-    /* margin: 0 2px;
+    margin: 0 2px;
     padding: 1px 5px;
     white-space: nowrap;
     border: 1px solid #e8e8e8;
     border-radius: 3px;
-    background-color: #f8f8f8; */
+    background-color: #f8f8f8;
 }
 
 pre {
-    background-color: transparent;
-    background-color: rgba(0, 0, 0, 0.01);
-    border: 1px solid #eaeaea;
-    border: 1px solid rgba(51, 51, 51, 0.1);
-    line-height: 1.4;
-    margin: 2.5em 0;
-    max-width: 100%;
+    margin: 40px 0;
+    padding: 16px 20px;
+    border-top: 1px dotted #bbb;
+    border-bottom: 1px dotted #bbb;
+    background-color: #f8f8f8;
     overflow: auto;
-    padding: 0.8em;
-}
-
-h1 code {
-    font-size: 26px;
+    line-height: 1.4;
 }
 
 /**
  * Lists
  */
 
-ul, ol {  
-    margin: 0px 0 0 0;
+ul, ol {
+    margin: 35px 0;
     padding: 0 0 0 20px;
 }
 
@@ -480,8 +160,8 @@ ul ul, ol ol, ul ol, ol ul {
 }
 
 li {
-    margin: 10px 0;
-    padding: 2px 0;
+    margin: 4px 0;
+    padding: 0;
 }
 
 dl {
@@ -530,10 +210,10 @@ hr {
     max-width: 300px;
 }
 
-
-
-
-
+img {
+    margin: 40px auto;
+    display: block;
+}
 
 /**
  * -------------------------------------------------------------------------
@@ -542,22 +222,21 @@ hr {
  */
 
 body {
-    width: 1160px;
+    width: 1460px;
     margin: 0 auto;
     padding: 40px 0;
 }
 
 .masthead {
-    width: 260px;
+    width: 360px;
     padding: 20px 50px;
     float: left;
-    position: fixed;
 }
 
 .main {
-    width: 900px;
+    width: 1100px;
     padding: 32px 50px 40px 50px;
-    margin-left: 260px;
+    margin-left: 360px;
     border-left: 3px solid black;
     min-height: calc(100vh - 80px);
 }
@@ -693,7 +372,7 @@ body {
 
  .footnotes dt {
      display: table-cell;
-     width: 30px;
+     width: 40px;
      text-align: right;
      font-weight: normal;
  }
@@ -726,20 +405,14 @@ body {
      margin-bottom: 0;
  }
 
- .footnotes pre {
-     margin: 30px 0;
- }
-
 /**
  * Tables
  */
 
 table {
-    font-size: 16px;
     border-collapse: collapse;
     border-spacing: 0;
-    margin: 50px 0px;
-    width: 100%;
+    margin: 40px 0px;
 }
 
 thead, tfoot {
@@ -797,11 +470,81 @@ th, td {
 }
 
 /**
- * Custom Classes
+ * -------------------------------------------------------------------------
+ *  Blog Stuff
+ * -------------------------------------------------------------------------
  */
 
-body.extra-deflist-vspace dt {
-    margin-top: 80px;
+.image-strip {
+    height: 175px;
+    position: relative;
+    overflow: hidden;
+    margin: 40px 0;
+}
+
+.image-strip img {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: auto;
+    width: 100%;
+    -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+}
+
+.entry h3 a {
+    border-bottom: none;
+}
+
+.entry .teaser {
+    padding-left: 30px;
+    border-left: 1px solid #ddd;
+}
+
+.tags {
+    margin: 40px 0;
+    border: 1px solid;
+    padding: 15px 25px;
+    border-radius: 3px;
+    border-color: #bbb;
+    background-color: #f8f8f8;
+}
+
+#paging {
+    margin: 80px 40px 20px;
+    background-color: #f8f8f8;
+    line-height: 45px;
+    text-align: center;
+    position: relative;
+}
+
+#paging a {
+    border-bottom: none;
+}
+
+#paging .prev,
+#paging .next {
+    background-color: #f0f0f0;
+    display: inline-block;
+    width: 45px;
+    padding: 0;
+    position: absolute;
+    font-size: 28px;
+}
+
+#paging .prev {
+    left: 0;
+}
+
+#paging .next {
+    right: 0;
+}
+
+#paging a:hover {
+    background-color: #e0e0e0;
 }
 
 
@@ -809,15 +552,33 @@ body.extra-deflist-vspace dt {
  * -------------------------------------------------------------------------
  *  Media Queries
  * -------------------------------------------------------------------------
+ *
+ * The @viewport tag does the same thing as
+ *
+ *   <meta name="viewport" content="width=device-width">
+ *
+ * but in the future W3C standard way. The -ms- prefix is required for
+ * IE10+ to render responsive styling in Windows 8 "snapped" views;
+ * IE10+ does not honour the meta tag.
  */
 
-/* Tablet screens and smaller. */
+@-ms-viewport {
+    width: device-width;
+}
+
+@viewport {
+    width: device-width;
+}
+
+/**
+ * Tablet screens and smaller.
+ */
 
 @media screen and (max-width: 960px) {
 
     body {
         width: auto;
-        max-width: 680px;
+        max-width: 600px;
         padding-top: 60px;
     }
 
@@ -830,7 +591,6 @@ body.extra-deflist-vspace dt {
         margin-right: 40px;
         border-top: 3px solid black;
         border-bottom: 3px solid black;
-        position: relative;
     }
 
     .main {
@@ -847,9 +607,6 @@ body.extra-deflist-vspace dt {
 
     .masthead .tagline {
         text-align: center;
-        max-width: 450px;
-        margin-left: auto;
-        margin-right: auto;
         display: none;
     }
 
@@ -915,7 +672,7 @@ body.extra-deflist-vspace dt {
         display: inline-block;
         padding: 0 20px;
         height: 50px;
-        border: 1px solid #ddd;
+        border: 1px solid;
         cursor: pointer;
         line-height: 50px;
         color: #333;
@@ -959,12 +716,16 @@ body.extra-deflist-vspace dt {
     }
 }
 
-/* Landscape phone screens and smaller. */
+/**
+ * Landscape phone screens and smaller.
+ */
 
 @media screen and (max-width: 720px) {
 }
 
-/* Portrait phone screens. */
+/**
+ * Portrait phone screens.
+ */
 
 @media screen and (max-width: 480px) {
 
@@ -985,10 +746,6 @@ body.extra-deflist-vspace dt {
         font-size: 16px;
     }
 
-    h1 code {
-        font-size: 24px;
-    }
-
     pre, code {
         font-size: 12px;
     }
@@ -997,4 +754,5 @@ body.extra-deflist-vspace dt {
         font-size: 15px;
     }
 }
+
 
