@@ -160,9 +160,94 @@ function includeHTML() {
                 <hr>
             </header>
             <ul>
+<li><a href="#badly-approximable-irrational">Badly approximable irrational</a></li>
 <li><a href="#some-results-in-the-metrical-theory">Some results in the Metrical Theory</a></li>
 <li><a href="#application-to-quasi-periodic-functions">Application to Quasi-periodic functions</a></li>
 </ul>
+<h2>Badly approximable irrational</h2>
+<p><a id="badly-approximable-irrational"> </a></p>
+<dt> Definitions </dt>
+<dd>
+
+Let $\omega>0$ be an irrational number. 
+<ol>
+
+<li> We say $\omega > 0$ has a continued fraction representation $\omega = [a_0;a_1,a_2,\ldots]$ where $a_0\in \mathbb{Z}$ and $a_n\in \mathbb{N}$ for $n=1,2,\ldots$ such that 
+
+    \begin{equation*}
+        \displaystyle \omega = a_0 + \frac{1}{a_1+\displaystyle\frac{1}{a_2 + \ldots }}.
+    \end{equation*}
+
+</li>
+
+<li> For a sequence $\{a_n\}_{n=0}^\infty$, such that $a_0 \in \mathbb{Z}$ and $a_n \in \mathbb{N}$ for $i\in \mathbb{N}$, we define the sequence $\{(P_n/Q_n)\}_{n=1}^\infty$ in the following way:
+    \begin{equation}\label{eq:DiophantinePQ}
+    \begin{aligned}
+        P_{-1} &= 1, &P_0 &= a_0, &\qquad P_{k} &= a_k P_{k-1} + P_{k-2},\\
+        Q_{-1} &= 0, &Q_0 &= 1, &\qquad Q_{k} &= a_k Q_{k-1} + Q_{k-2}.
+    \end{aligned}    
+    \end{equation}
+</li>
+
+
+<li>
+    An irrational number $\omega$ is called \emph{badly approximable} if there exists a constant $c(\omega) > 0$ such that  
+    \begin{equation}\label{defn:badly-approx}
+        \left|\omega - \frac{p}{q}\right| 
+        > \frac{c(\omega)}{q^2} \qquad \text{for all integers}\; p,q\neq 0. \tag{1}
+    \end{equation}
+</li>
+
+</ol>
+</dd>
+
+<p>One of the basic result is </p>
+<p>$$
+    \omega \in \R\;\text{is badly approximable} 
+        \qquad\Longleftrightarrow\qquad 
+    \omega = [a_0;a_1,\ldots] \;\text{with}\;|a_i|\leq A.
+$$</p>
+<p>As an easy consequence, we see that we can always reduce to $\omega \in (0,1)$.</p>
+<p>$$
+    \omega \in \R\;\text{is badly approximable}<br />
+        \qquad\Longleftrightarrow\qquad 
+    \left\lbrace \omega \right\rbrace \in  (0,1)\;\text{is badly approximable}  .
+$$</p>
+<p>On the other hand, if $\omega&gt;1$ is approximable, then $\omega = [a_0;a_1,\ldots ]$ with $a_0 \geq 1$, thus</p>
+<p>$$
+\begin{aligned}
+    \omega = [a_0;a_1,\ldots ] \in (1,\infty)
+        &amp;\qquad\Longleftrightarrow\qquad \omega^{-1} = [0; a_0,a_1\ldots] \\
+        &amp;\qquad\Longleftrightarrow\qquad \omega^{-1}\;\text{is badly approximable}\;\in (0,1).
+\end{aligned}
+$$</p>
+<p>Here the fact that $a_0\geq 1$ makes $[0; a_0,a_1\ldots]$ a valid continued fractions is crucial. 
+Finally, a trivial fact, followed by definition $\eqref{defn:badly-approx}$</p>
+<p>$$
+\begin{aligned}
+    \omega\;\text{is badly approximable}\;\in (0,\infty)
+    &amp;\qquad\Longleftrightarrow\qquad 
+    - \omega\;\text{is badly approximable}\;\in (-\infty, 0).
+\end{aligned}
+$$</p>
+<p>We summarize them in the following lemma.</p>
+<dt>Lemma</dt>
+<dd> Let $\omega\in \R$ be an irrational number, then 
+
+$$
+\begin{aligned}
+    \omega \in \R\;\text{is badly approximable}  
+        &\qquad\Longleftrightarrow\qquad 
+    \omega = [a_0;a_1,\ldots] \;\text{with}\;|a_i|\leq A \\\ 
+        &\qquad\Longleftrightarrow\qquad 
+    \left\lbrace \omega \right\rbrace \in  (0,1)\;\text{is badly approximable}  \\\
+        &\qquad\Longleftrightarrow\qquad 1/\omega\;\text{is badly approximable}. 
+\end{aligned}
+$$
+
+
+</dd>
+
 <h2>Some results in the Metrical Theory</h2>
 <p><a id="some-results-in-the-metrical-theory"> </a></p>
 <p>For a number $\alpha$, we denote by $[\alpha]$ the integer part of $\alpha$, and 
@@ -329,56 +414,13 @@ are solvable with an integer solution $\x$, where
 
 </dd>
 
-<p>Let $(\mathcal{A})$ be the following property: </p>
-<p>$$(\mathcal{A}):
-    \omega = (\omega_1, \ldots, \omega_n) \in \R^n\;\text{satisfies, there exists}\;
-    R &gt; 0\;\text{such that} \\ 
-\begin{cases} 
-    \Vert \omega_i q\Vert &lt; R^{-1/n} , \;\text{for all}\; i=1,2,\ldots, n \\
-    |q| &lt; \frac{R}{|\log(R)|^2} 
-\end{cases} \\ 
-\text{only has finitely many integer solutions}\;q.
-$$</p>
-<p>Let $E = \left\lbrace \omega \in \R^n: \omega\;\text{satisfies}\;(\mathcal{A})\right\rbrace$. To see that
-$E$ has full measure, let $\omega \notin E$, we then observe that </p>
-<p>$$
-    \forall\;R&gt;0, 
-    \begin{cases} 
-        \Vert \omega_i q\Vert &lt; R^{-1/n} , \forall\; i=1,2,\ldots, n \\
-        |q| &lt; \frac{R}{|\log(R)|^2} 
-    \end{cases}\;\qquad \text{has infinitely many integer solutions}\;q. 
-$$</p>
-<p>For such $R&gt;0$ and such a solution $q$ to the system, we have $R&gt; q|\log(R)|^2$, and since
-$R&gt;q$ for $R\geq 3$ we have for infinitely many $q$ that</p>
-<p>$$
-    \Vert \omega_i q\Vert &lt; \left(\frac{1}{R}\right)^{1/n} 
-    &lt; \left(\frac{1}{q|\log R|^2}\right)^{1/n} 
-    \leq \left(\frac{1}{q\ln^2q}\right)^{1/n}. 
-$$</p>
-<p>Applying <a href="#theorem-psi-convergence">Theorem</a> above, we deduce that $\R^n\backslash E$ is null. Therefore
-we conclude that the set $E$ has full measures.</p>
-<p>Now if $\omega \in E$, there exists $R&gt;0$ such that there are only finitely many interger solutions $q$ to </p>
-<p>$$
-\begin{equation}
-    \Vert \omega_i q\Vert &lt; R^{-1/n}, \qquad 1\leq i\leq n, \qquad |q| &lt; \frac{R}{|\log(R)|^2},
-\end{equation}
-$$</p>
-<p>we can find a constant $\gamma(\omega) &gt; 0$ such that there is no integer solutions $q$ to </p>
-<p>$$
-\begin{equation}
-    \Vert \omega_i q\Vert &lt; R^{-1/n}, \qquad 1\leq i\leq n, \qquad |q| &lt; \frac{\gamma R}{|\log(R)|^2},
-\end{equation}
-$$</p>
-<p>Here is the place where a simultaneous approximation result can be applied. </p>
-<p>Theorem VI p. 82 of <sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup> says 
-that, for every $\beta=(\beta_1,\ldots,\beta_n) \in \R^n$ </p>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:1">
 <p>J. W. S Cassels - An introduction to Diophantine approximation, 
 Cambridge University Express, 1957 
-<a href="https://drive.google.com/file/d/1WiQvxQ3bluuLNIjxCBNrJcW1qWz3QMB8/view?usp=sharing">pdf</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<a href="https://drive.google.com/file/d/1WiQvxQ3bluuLNIjxCBNrJcW1qWz3QMB8/view?usp=sharing">pdf</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
 <p>Bryan P. Rynne, The fractal dimension of quasi-periodic orbits, 
