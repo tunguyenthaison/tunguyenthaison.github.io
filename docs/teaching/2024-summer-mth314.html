@@ -244,26 +244,96 @@ All materials are hosted on <a href="https://d2l.msu.edu/d2l/home/2211458">D2L</
 Some lecture notes are posted here for convenience.
 </li>
 </ul>
-<table class="teaching-table" markdown='1'>
-  <tr>
-    <th style="width:auto" >Date</th>
-    <th>No. </th>
-    <th>Description</th>
-    <th>File</th>
-  </tr>
-  <tr>
-<!-- space -->
-  <tr>
-    <td>2024-05-14</td>
-    <td>01</td>
-    <td class="cell-left"></td>
-    <td class="cell-left" markdown='1'> Lecture 01 &nbsp; &#183; &nbsp;
-      <a class="weblink" href="">pdf</a>
-    </td>
-  </tr>
-<!-- space -->
+<h6 id="lecture-03-2024-05-21-inverse-of-matrix">
+Lecture 03 &nbsp; &#183; &nbsp; 2024-05-21 &nbsp; &#183; &nbsp; Inverse of Matrix
+</h6>
+<p>
+<details>
+</p>
+<p>
+Key takeaway:
+</p>
+<ul>
+<li>
+Finding the inserve of a matrix.
+</li>
+<li>
+Finding a series of elementary matrices in the row operations.
+</li>
+</ul>
+<p>
+Python code to do the augmented matrix and perfoming row operations
+</p>
+<p>
+Let
+</p>
+<p>
+$$
+A =
+\begin{bmatrix}
+    0 &amp; 1 &amp; 2 \\
+    1 &amp; 0 &amp; 3 \\
+    4 &amp;-3 &amp; 8
+\end{bmatrix}.
+$$
+</p>
+<p>
+To find the inverse of $A$, we form the augmented matrix
+</p>
+<p>
+$$
+    [A|B] =
+\begin{bmatrix}
+    0 &amp; 1 &amp; 2 &amp; | &amp; 1 &amp; 0 &amp; 0\\
+    1 &amp; 0 &amp; 3 &amp; | &amp; 0 &amp; 1 &amp; 0\\
+    4 &amp;-3 &amp; 8 &amp; | &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}.
+$$
+</p>
+<p>
+Then we perform row operations to find the reduced row echelon form of $A$ (<code>rref</code>),
+then the matrix obtained on the right will be $A^{-1}$, given the <code>rref(A) = I_3</code>. Otherwise $A$ is not invertible.
+</p>
+<pre class="lang-python pygments" data-lang="python">
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 
-</table>
+<span class="n">A</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="p">])</span>
+
+<span class="c1"># stack A|B to form the augmented matrix</span>
+<span class="n">AB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">A</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span>
+
+<span class="c1"># convert AB to sympy</span>
+<span class="n">AB</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">AB</span><span class="p">)</span>
+
+<span class="c1"># perform the row operations to find the reduced echelon form of A</span>
+<span class="n">AB_rref</span> <span class="o">=</span> <span class="n">AB</span><span class="o">.</span><span class="n">rref</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># select the matrix on the right hand side</span>
+<span class="n">Ainv</span> <span class="o">=</span> <span class="n">AB_rref</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+
+<span class="n">Ainv</span>
+</pre>
+<p>
+We obtain
+</p>
+<p>
+$$
+  A ^ { -1 } =
+  \begin{bmatrix}
+      -4.5 &amp; 7  &amp; -1.5 \\
+        -2 &amp; 4  &amp; -1 \\
+       1.5 &amp; -2 &amp; 0.5
+  \end{bmatrix}
+$$
+</p>
+<p>
+</details>
+</p>
 
             <!-- For use inside index.stx
 ::: quote
