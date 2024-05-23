@@ -244,6 +244,35 @@ All materials are hosted on <a href="https://d2l.msu.edu/d2l/home/2211458">D2L</
 Some lecture notes are posted here for convenience.
 </li>
 </ul>
+<h6 id="lecture-04-2024-05-23-determinant">
+Lecture 04 &nbsp; &#183; &nbsp; 2024-05-23 &nbsp; &#183; &nbsp; Determinant
+</h6>
+<p>
+Key takeaway:
+</p>
+<ul>
+<li>
+Algorithm to compute determinant: cofactor expansion
+</li>
+<li>
+Relation between determinants of matrices after row operations.
+</li>
+</ul>
+<p>
+$$
+    A =
+    \begin{bmatrix}
+        1  &amp; -4 &amp; 2 \\
+        -2 &amp; 8 &amp; -4 \\
+        -1 &amp; 7 &amp; 0
+    \end{bmatrix}
+$$
+</p>
+<pre class="lang-python pygments" data-lang="python">
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">det</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre>
 <h6 id="lecture-03-2024-05-21-inverse-of-matrix">
 Lecture 03 &nbsp; &#183; &nbsp; 2024-05-21 &nbsp; &#183; &nbsp; Inverse of Matrix
 </h6>
