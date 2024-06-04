@@ -250,28 +250,66 @@ Lecture 07 &nbsp; &#183; &nbsp; 2024-06-04 &nbsp; &#183; &nbsp; Vector space 2
 <p>
 Key takeaways:
 Given a matrix <code>$A$</code> of size <code>$m\times n$</code>
-- Nullspace: set of all solutions of the equation <code>$Ax=0$</code>. <br>
-    Other notation: <code>$\mathrm{null}(A)$</code> or <code>$\mathrm{ker}(T)$</code> where <code>$T(x)=Ax$</code>.
-- Column space: set of linear combinations of the columns of $A$. <br>
-    * <code>$\mathrm{col}(A)$</code> is a subset of <code>$\R^m$</code>
-    * <code>$\mathrm{col}(A)$</code> is also range of <code>$T$</code> where <code>$Tx=Ax$</code>
-- Row space: set of linear combinations of all rows of <code>$A$</code> (each row is a vector in <code>$\R^n$</code>)
-    * <code>$\mathrm{row}(A) = \mathrm{col}(A^T)$</code>
-- Finding bases for row space, column space, null space and dimension of a space
-    * Row space: rwo equivalent transformation <br>
-        Start from <code>$A$</code>, do RREF, whatever we get at the end, their rows form a basis for <code>$\mathrm{row}(A)$</code>
-    * <i>Note: row operation <code>$A$</code> to <code>$B$</code> makes <code>$\mathrm{col}(A)=\mathrm{col}(B)$</code> (as vector spaces)</i>
-    * Column space:
-        + Start from <code>$A$</code>, do RREF to get <code>$B$</code>
-        + See which columns of <code>$B$</code> are dependent on the others (non-pivot columns), cross them out
-        + The rest of the columns form a basis for <code>$\mathrm{col}(A)$</code>
 </p>
 <ul>
+<li>
+Nullspace: set of all solutions of the equation <code>$Ax=0$</code>. <br>
+Other notation: <code>$\mathrm{null}(A)$</code> or <code>$\mathrm{ker}(T)$</code> where <code>$T(x)=Ax$</code>.
+</li>
+<li>
+Column space: set of linear combinations of the columns of $A$. <br>
+
+<ul>
+<li>
+<code>$\mathrm{col}(A)$</code> is a subset of <code>$\R^m$</code>
+</li>
+<li>
+<code>$\mathrm{col}(A)$</code> is also range of <code>$T$</code> where <code>$Tx=Ax$</code>
+</li>
+</ul>
+</li>
+<li>
+Row space: set of linear combinations of all rows of <code>$A$</code> (each row is a vector in <code>$\R^n$</code>)
+<ul>
+<li>
+<code>$\mathrm{row}(A) = \mathrm{col}(A^T)$</code>
+</li>
+</ul>
+</li>
+<li>
+Finding bases for row space, column space, null space and dimension of a space
+
+<ul>
+<li>
+Row space: rwo equivalent transformation <br>
+Start from <code>$A$</code>, do RREF, whatever we get at the end, their rows form a basis for <code>$\mathrm{row}(A)$</code>
+</li>
+<li>
+<i>Note: row operation <code>$A$</code> to <code>$B$</code> makes <code>$\mathrm{col}(A)=\mathrm{col}(B)$</code> (as vector spaces)</i>
+</li>
+<li>
+Column space:
+
+<ul>
+<li>
+Start from <code>$A$</code>, do RREF to get <code>$B$</code>
+</li>
+<li>
+See which columns of <code>$B$</code> are dependent on the others (non-pivot columns), cross them out
+</li>
+<li>
+The rest of the columns form a basis for <code>$\mathrm{col}(A)$</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>
 <code>$\mathrm{rank}(A) = \mathrm{dim}(\mathrm{col}(A)) = \mathrm{dim}(\mathrm{row}(A))$</code> : number of leading (pivots) in RREF
 </li>
 <li>
 Rank-Nullity theorem:
+
 <ul>
 <li>
 <code>$\mathrm{rank}(A) + \mathrm{dim}(\mathrm{null}(A)) = n$</code>
