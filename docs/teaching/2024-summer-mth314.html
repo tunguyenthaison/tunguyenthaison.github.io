@@ -244,6 +244,31 @@ All materials are hosted on <a href="https://d2l.msu.edu/d2l/home/2211458">D2L</
 Some lecture notes are posted here for convenience.
 </li>
 </ul>
+<h6 id="lecture-07-2024-06-04-vector-space-2">
+Lecture 07 &nbsp; &#183; &nbsp; 2024-06-04 &nbsp; &#183; &nbsp; Vector space 2
+</h6>
+<p>
+Key takeaways:
+Given a matrix <code>$A$</code> of size <code>$m\times n$</code>
+- Nullspace: set of all solutions of the equation <code>$Ax=0$</code>. <br>
+    Other notation: <code>$\mathrm{null}(A)$</code> or <code>$\mathrm{ker}(T)$</code> where <code>$T(x)=Ax$</code>.
+- Column space: set of linear combinations of the columns of $A$. <br>
+    * <code>$\mathrm{col}(A)$</code> is a subset of <code>$\R^m$</code>
+    * <code>$\mathrm{col}(A)$</code> is also range of <code>$T$</code> where <code>$Tx=Ax$</code>
+- Row space: set of linear combinations of all rows of <code>$A$</code> (each row is a vector in <code>$\R^n$</code>)
+    * <code>$\mathrm{row}(A) = \mathrm{col}(A^T)$</code>
+- Finding bases for row space, column space, null space and dimension of a space
+    * Row space: rwo equivalent transformation <br>
+        Start from <code>$A$</code>, do RREF, whatever we get at the end, their rows form a basis for <code>$\mathrm{row}(A)$</code>
+    * <i>Note: row operation <code>$A$</code> to <code>$B$</code> makes <code>$\mathrm{col}(A)=\mathrm{col}(B)$</code> (as vector spaces)</i>
+    * Column space:
+        + Start from <code>$A$</code>, do RREF to get <code>$B$</code>
+        + See which columns of <code>$B$</code> are dependent on the others (non-pivot columns), cross them out
+        + The rest of the columns form a basis for <code>$\mathrm{col}(A)$</code>
+</p>
+<h6 id="lecture-06-2024-05-30-vector-space-i">
+Lecture 06 &nbsp; &#183; &nbsp; 2024-05-30 &nbsp; &#183; &nbsp; Vector space I
+</h6>
 <h6 id="lecture-05-2024-05-28-linear-transformation">
 Lecture 05 &nbsp; &#183; &nbsp; 2024-05-28 &nbsp; &#183; &nbsp; Linear transformation
 </h6>
