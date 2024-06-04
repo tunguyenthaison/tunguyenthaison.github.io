@@ -249,30 +249,30 @@ Lecture 07 &nbsp; &#183; &nbsp; 2024-06-04 &nbsp; &#183; &nbsp; Vector space 2
 </h6>
 <p>
 Key takeaways:
-Given a matrix <code>$A$</code> of size <code>$m\times n$</code>
+Given a matrix $A$ of size $m\times n$
 </p>
 <ul>
 <li>
-Nullspace: set of all solutions of the equation <code>$Ax=0$</code>. <br>
-Other notation: <code>$\mathrm{null}(A)$</code> or <code>$\mathrm{ker}(T)$</code> where <code>$T(x)=Ax$</code>.
+Nullspace: set of all solutions of the equation $Ax=0$. <br>
+Other notation: $\mathrm{null}(A)$ or $\mathrm{ker}(T)$ where $T(x)=Ax$.
 </li>
 <li>
 Column space: set of linear combinations of the columns of $A$. <br>
 
 <ul>
 <li>
-<code>$\mathrm{col}(A)$</code> is a subset of <code>$\R^m$</code>
+$\mathrm{col}(A)$ is a subset of $\R^m$
 </li>
 <li>
-<code>$\mathrm{col}(A)$</code> is also range of <code>$T$</code> where <code>$Tx=Ax$</code>
+$\mathrm{col}(A)$ is also range of $T$ where $Tx=Ax$
 </li>
 </ul>
 </li>
 <li>
-Row space: set of linear combinations of all rows of <code>$A$</code> (each row is a vector in <code>$\R^n$</code>)
+Row space: set of linear combinations of all rows of $A$ (each row is a vector in $\R^n$)
 <ul>
 <li>
-<code>$\mathrm{row}(A) = \mathrm{col}(A^T)$</code>
+$\mathrm{row}(A) = \mathrm{col}(A^T)$
 </li>
 </ul>
 </li>
@@ -282,40 +282,40 @@ Finding bases for row space, column space, null space and dimension of a space
 <ul>
 <li>
 Row space: rwo equivalent transformation <br>
-Start from <code>$A$</code>, do RREF, whatever we get at the end, their rows form a basis for <code>$\mathrm{row}(A)$</code>
+Start from $A$, do RREF, whatever we get at the end, their rows form a basis for $\mathrm{row}(A)$
 </li>
 <li>
-<i>Note: row operation <code>$A$</code> to <code>$B$</code> makes <code>$\mathrm{col}(A)=\mathrm{col}(B)$</code> (as vector spaces)</i>
+<i>Note: row operation $A$ to $B$ makes $\mathrm{col}(A)=\mathrm{col}(B)$ (as vector spaces)</i>
 </li>
 <li>
 Column space:
 
 <ul>
 <li>
-Start from <code>$A$</code>, do RREF to get <code>$B$</code>
+Start from $A$, do RREF to get $B$
 </li>
 <li>
-See which columns of <code>$B$</code> are dependent on the others (non-pivot columns), cross them out
+See which columns of $B$ are dependent on the others (non-pivot columns), cross them out
 </li>
 <li>
-The rest of the columns form a basis for <code>$\mathrm{col}(A)$</code>
+The rest of the columns form a basis for $\mathrm{col}(A)$
 </li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<code>$\mathrm{rank}(A) = \mathrm{dim}(\mathrm{col}(A)) = \mathrm{dim}(\mathrm{row}(A))$</code> : number of leading (pivots) in RREF
+$\mathrm{rank}(A) = \mathrm{dim}(\mathrm{col}(A)) = \mathrm{dim}(\mathrm{row}(A))$ : number of leading (pivots) in RREF
 </li>
 <li>
 Rank-Nullity theorem:
 
 <ul>
 <li>
-<code>$\mathrm{rank}(A) + \mathrm{dim}(\mathrm{null}(A)) = n$</code>
+$\mathrm{rank}(A) + \mathrm{dim}(\mathrm{null}(A)) = n$
 </li>
 <li>
-<code>$\mathrm{rank}(A) + \mathrm{dim}(\mathrm{null}(A^T)) = m$</code>
+$\mathrm{rank}(A) + \mathrm{dim}(\mathrm{null}(A^T)) = m$
 </li>
 </ul>
 </li>
@@ -331,10 +331,10 @@ Key takeaways:
 </p>
 <ul>
 <li>
-Linear transformation (they are matrix tranformation if <code>$T:\R^n\tom\R^m$</code>)
+Linear transformation (they are matrix tranformation if $T:\R^n\tom\R^m$)
 </li>
 <li>
-Given a linear transformation <code>$T:\R^n\tom\R^m$</code>, find the matrix representation <code>$Tx=Ax$</code>.
+Given a linear transformation $T:\R^n\tom\R^m$, find the matrix representation $Tx=Ax$.
 </li>
 <li>
 Elementary transformations in 2D:
