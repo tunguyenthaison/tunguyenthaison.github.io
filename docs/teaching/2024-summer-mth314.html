@@ -254,6 +254,9 @@ Some lecture notes are posted here for convenience.
 <a href="#materials">Materials</a>
 <ul>
 <li>
+<a href="#lecture-09-2024-06-11-gram-schmidt-process">Lecture 09 &nbsp; &#183; &nbsp; 2024-06-11 &nbsp; &#183; &nbsp; Gram-Schmidt process</a>
+</li>
+<li>
 <a href="#lecture-08-2024-06-06-change-of-basis">Lecture 08 &nbsp; &#183; &nbsp; 2024-06-06 &nbsp; &#183; &nbsp; Change of basis</a>
 </li>
 <li>
@@ -274,9 +277,48 @@ Some lecture notes are posted here for convenience.
 </ul>
 </li>
 </ul>
+<h6 id="lecture-09-2024-06-11-gram-schmidt-process">
+Lecture 09 &nbsp; &#183; &nbsp; 2024-06-11 &nbsp; &#183; &nbsp; Gram-Schmidt process
+</h6>
 <h6 id="lecture-08-2024-06-06-change-of-basis">
 Lecture 08 &nbsp; &#183; &nbsp; 2024-06-06 &nbsp; &#183; &nbsp; Change of basis
 </h6>
+<p>
+Key takeaways:
+- Let $\mathcal{E} = (e_1,\ldots, e_n)$ be a (standard) basis for $V$ (think of $\R^n$)
+- Let $\mathcal{B} = (b_1,\ldots, b_n)$ be a basis for $V$.
+- Let $\mathcal{C} = (c_1,\ldots, c_n)$ be a basis for $V$.
+For $x\in V$ then
+</p>
+<p>
+$$
+    [x]_\mathcal{B} =
+    \begin{bmatrix}
+        x_1\\
+        \vdots\\
+        x_n
+    \end{bmatrix} \qquad\text{means} \qquad x =[x]_\mathcal{E} = x_1b_1 + \ldots + x_nb_n.
+$$
+</p>
+<p>
+In other words, this is the key equation:
+</p>
+<p>
+$$
+    [ x ] _ { \mathcal{E} } =  [ b_1, \ldots, b_n ] \cdot [ x ] _ {\mathcal{B}}  = [c_1, \ldots, c_n] \cdot [ x ] _ {\mathcal{C}}.
+$$
+</p>
+<p>
+Then we can convert between bases as
+</p>
+<p>
+$$
+\fbox{$
+    \displaystyle
+    [ x ] _ { \mathcal{C} } = [ c_1,\ldots, c_n ] ^ {-1} \cdot [b_1,\ldots, b_n] \cdot [ x ] _ { \mathcal{B} } .
+$}
+$$
+</p>
 <h6 id="lecture-07-2024-06-04-vector-space-2">
 Lecture 07 &nbsp; &#183; &nbsp; 2024-06-04 &nbsp; &#183; &nbsp; Vector space 2
 </h6>
