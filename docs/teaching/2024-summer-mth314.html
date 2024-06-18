@@ -296,16 +296,13 @@ Singular value decompostion
 <li>
 <b>Theorem:</b> If $A$ is of size $n\times n$  is symmetric and orthogonal, then $A$ can be written as $A = PDP^T$, where $P$ is orthogonal and $D$ is diagonal.
 </li>
-<li>
-If $A$ is of size $m\times n$, then
-</li>
-<li>
-the matrix $A^TA$ is $n\times n$ symetric
-</li>
-<li>
-the matrix $AA^T$ is $m\times m$ symetric
-</li>
 </ul>
+If $A$ is of size $m\times n$, then
+
+    * the matrix $A^TA$ is $n\times n$ symetric
+
+    * the matrix $AA^T$ is $m\times m$ symetric
+
 We therefore can apply the theorem to $A^TA$ and $AA^T$ to get
 
 $$
@@ -321,11 +318,28 @@ $$
   A = U\cdot \Sigma \cdot V^T
 $$
 
-where $\sigma$ is the $m\times n$ matrix fromed from $D$ with padded zeros rows and columns.
+where $\Sigma$ is the $m\times n$ matrix fromed from $D$ with padded zeros rows and columns.
 
 <ul>
 <li>
 Notes: when computing $U,V$, we need to normalized every eigenvector (column) to norm $1$.
+</li>
+<li>
+Facts for orthogonal matrix $A$
+<ul>
+<li>
+Column vectors are an orthogonal set
+</li>
+<li>
+Row vectors are an orthogonal set
+</li>
+<li>
+$A^{-1}$ is orthorgonal
+</li>
+<li>
+$A^T$ is orthorgonal (since $A^{-1} = A^T$)
+</li>
+</ul>
 </li>
 </ul>
 </li>
