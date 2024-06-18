@@ -314,6 +314,14 @@ $$
       AA^T &amp;= UD_2U^T .
   \end{cases}
 $$
+
+Let $\lambda_1, \ldots, \lambda_n$ be the eigenvalues of $A^TA$, then they are non-negative. The singular values are $\sigma_i=\sqrt{\lambda_i}$ for $i=1,2,\ldots,n$. Let $D = \mathrm{diag}(\sigma_1,\ldots,\sigma_n)$ then
+
+$$
+  A = U\cdot \Sigma \cdot V^T
+$$
+
+where $\sigma$ is the $m\times n$ matrix fromed from $D$ with padded zeros rows and columns.
 </li>
 </ul>
 <h6 id="lecture-10-2024-06-13-eigenvalue-markovs-problem">
