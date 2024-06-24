@@ -6,10 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
 
-        <title>A crash course on probability theory</title>
-        <link rel="stylesheet" href="../../assets/fonts.css">
-        <link rel="stylesheet" href="../../assets/simplify.css">
-        <link rel="stylesheet" href="../../assets/pygments.css">
+        <title>Son Tu</title>
+        <link rel="stylesheet" href="../assets/fonts.css">
+        <link rel="stylesheet" href="../assets/simplify.css">
+        <link rel="stylesheet" href="../assets/pygments.css">
         
         
         
@@ -103,9 +103,9 @@ function includeHTML() {
         
 
     </head>
-    <body class="node-logs-2024-2024-06-21-stochastic node-logs-2024 node-logs node">
+    <body class="node-logs-2017 node-logs node">
         <header class="masthead">
-            <h1><a href="../../index.html">Son Tu</a></h1>
+            <h1><a href="../index.html">Son Tu</a></h1>
             
                 <p class="tagline">Từ Nguyễn Thái Sơn</p>
             
@@ -118,14 +118,14 @@ function includeHTML() {
                     <span class="text">Menu</span>
                 </label>
                 <ul>
-<li><a href="../../index.html">Home</a></li>
-<li><a href="../../notes//2024-04-17-CV.pdf">CV</a></li>
-<li><a href="../../research.html">Research</a></li>
-<li><a href="../../teaching.html">Teaching</a>
-    <!-- * <a href="../../teaching/child-one.html">Child One</a> -->
-    <!-- * <a href="../../teaching/child-two.html">Child Two</a> --></li>
-<li><a href="../../notes.html">Notes</a></li>
-<li><a href="../../about.html">About</a></li>
+<li><a href="../index.html">Home</a></li>
+<li><a href="../notes//2024-04-17-CV.pdf">CV</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../teaching.html">Teaching</a>
+    <!-- * <a href="../teaching/child-one.html">Child One</a> -->
+    <!-- * <a href="../teaching/child-two.html">Child Two</a> --></li>
+<li><a href="../notes.html">Notes</a></li>
+<li><a href="../about.html">About</a></li>
 </ul>
 <p><br></p>
 <p>
@@ -155,51 +155,11 @@ function includeHTML() {
         </header>
         <article class="main">
             <header class="title">
-                <h1>A crash course on probability theory</h1>
+                <h1></h1>
                 
                 <hr>
             </header>
-            <h3>Miscellaneous remarks</h3>
-<ul>
-<li>
-<p>$n$-dimensional "<em>white noise</em>" $\xi$ is the time-derivative of $n$-dimensional <em>Brownian motion</em> (a.k.a. <em>Wiener process</em>): $\dot{\mathbf{W}}(x) = \xi(x)$.</p>
-</li>
-<li>
-<p>Given a probability space $(\Omega, \mathcal{M}, P)$, we call $\Omega$ a sample space, $\mathcal{M}$ the collection of all events, and $P(A)$ the probability of an event $A\in \mathcal{M}$.</p>
-</li>
-<li>
-<p>Random variables: the probability space $(\Omega, \mathcal{M}, P)$ is a <em>mathematical construct</em> only, i.e., it is not <em>directly</em> observable. We observe it via a map $X:\Omega \to \R^n$, where the values $X(\omega)$ we can observe (or measure). We therefore interested in the Borel $\sigma$-algebra of $\R^n$.</p>
-</li>
-<li>
-<p>An $n$-dimensional random variable $X$ is a map $X:\Omega \to \R^n$ with $X^{-1}(\mathcal{B}) \subset \mathcal{M}$ (equivalently, $X$ is $\mathcal{M}$-measurable). </p>
-</li>
-</ul>
-<h3>Distribution functions</h3>
-<ul>
-<li>Conditional probability</li>
-<li>Independent events</li>
-<li>Independent random variables.</li>
-</ul>
-<h3>Independence</h3>
-<h3>Some probabilistic tools</h3>
-<ul>
-<li>Chebyshev's inequality</li>
-<li>Borel-Cantelli Lemma
-    Let $A_1,\ldots, A_n, \ldots$ be a sequence of events. Then the event
-    $$
-    \bigcap_{n=1}^\infty \bigcup_{m=n}^\infty A_m = 
-    \{\omega \in \Omega: \omega\;\text{belongs to infinitely many}\;A_n\} = \{A_n\;\text{i.o.}\}
-    $$
-    The Borel-Cantelli Lemma said that, if $\sum_{n=1}^\infty P(A_n) &lt; \infty$ then $P(A_n\;\text{i.o.}) = 0$.</li>
-</ul>
-<h3>Characteristic functions</h3>
-<p>Let $X:(\Omega, \mathcal{M}, P) \to (\R^n, \mathcal{B}, \mu)$ (the Borel $\sigma$-algebra with Lebesgue measure) be a random variable</p>
-<h3>Identically distributed random variables</h3>
-<blockquote>
-<p><em>mathematical model for “repeated, independent experiments”</em></p>
-<p>Imagine given a random sample point $\omega\in\Omega$ and that we can observe the sequence of values  $X_1(\omega), X_2(\omega), \ldots, X_n(\omega), \ldots$. What can we infer from these observations?</p>
-</blockquote>
-<h3>Law of Large numbers and Central limit theorem</h3>
+            
 
             <!-- For use inside index.stx
 ::: quote
