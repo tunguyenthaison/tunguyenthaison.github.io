@@ -157,9 +157,13 @@ function includeHTML() {
             <header class="title">
                 <h1>Remark on a paraboloids</h1>
                 
+                
+                    <p class="subtitle">2024-06-28</p>
+                
                 <hr>
             </header>
-            <dt> Paraboloids </dt>
+            <h2>Definitions</h2>
+<dt> Paraboloids </dt>
 <dd>
 
 A $\textbf{paraboloid}$ is a quadratic polynomial in $(x,t) = (x_1,x_2,\ldots, x_n,t) \in \R^d\times [0,T)$, which can be written as 
@@ -184,6 +188,18 @@ The paraboloid is convex (resp. concave) if the sign of the 2nd-order term is po
     $$
 
 </dd>
+
+<h2>The touching trick</h2>
+<p>Let $u:\R^d\times [0,T] \to \R$ be bounded and upper-semicontinuous, and $v:\R^d\times [0,T] \to \R$ be bounded and lower-semicontinuous. Let $u^\varepsilon, v_\varepsilon$ be the sup-convolution and inf-convolution of $u,v$, respectively. 
+Then, $u^\varepsilon$ is semiconvex, and $v_\varepsilon$ is semiconcave. In other words, at every point $(x_0,t_0)$ in the domain:</p>
+<ul>
+<li>$u^\varepsilon$ can be touched from below by a paraboloid of opening $\frac{1}{2\varepsilon}$; </li>
+<li>$v_\varepsilon$ can be touched from above by a paraboloid of opening $\frac{1}{2\varepsilon}$. </li>
+</ul>
+<p>Assume $\phi(x,t)$ is a smooth function such that </p>
+<p>$$
+    (u^\varepsilon - v_\varepsilon) - \phi \;\text{has a local maximum zero at}\;(x_0,t_0). 
+$$</p>
 
             <!-- For use inside index.stx
 ::: quote
