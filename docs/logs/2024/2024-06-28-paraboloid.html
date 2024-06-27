@@ -162,28 +162,28 @@ function includeHTML() {
             <dt> Paraboloids </dt>
 <dd>
 
-
-A *paraboloid* is a quadratic polynomial in $(x,t) = (x_1,x_2,\ldots, x_n,t) \in \R^d\times [0,T)$, which can be written as 
-
-$$
+A $\textbf{paraboloid}$ is a quadratic polynomial in $(x,t) = (x_1,x_2,\ldots, x_n,t) \in \R^d\times [0,T)$, which can be written as 
+\begin{equation*}
     p(x,t) = c + (b, b_0)\cdot (x,t) + \frac{1}{2}x^T \cdot \mathbf{A}\cdot x + \frac{1}{2}a_0 t^2,
-$$
-
+\end{equation*}
 where $c\in \mathbb{R}$ and $(b,b_0) \in \mathbb{R}^d\times \R$ and $\mathbf{A} = D^2p(x)$ (is independent of $x$) is a symmetric matrix of size $d\times d$, and $a_0\in \R$. For $m>0$, we say that the paraboloid $p(\cdot)$ is of opening $m$ if 
+\begin{align*}
+    p(x,t) = c + (b, b_0)\cdot (x,t) \pm \frac{m}{2}(|x|^2+|t|^2).
+\end{align*}
+The paraboloid is convex (resp. concave) if the sign of the 2nd-order term is positive (resp. negative). We say that $u$ is touched from above at $(x_0,t_0)$ by a $\textbf{convex}$ paraboloid of opening $m$ if there exists $c\in \mathbb{R}$ and $(b,b_0)\in \mathbb{R}^d\times \R$ such that
+    \begin{equation*}
+        u(x,t) \leq u(x_0,t_0) + (b,b_0)\cdot (x-x_0, t-t_0) + \frac{m}{2}
+        \big( 
+        |x-x_0|^2  + |t-t_0|^2
+        \big). 
+    \end{equation*}
+    If this is the case, we also say that $u$ is $C^{1,1}$ by above at $(x_0,t_0)$. We also denote
 
-$$
-    p(x) = c + (b, b_0)\cdot (x,t) \pm \frac{m}{2}(|x|^2+|t|^2).
-$$
+    $$
+        u \in \frac{m}{2}-C^{1,1}(x_0,t_0).
+    $$
 
-The paraboloid is convex (resp. concave) if the sign of the 2nd-order term is positive (resp. negative). We say that $u$ is touched from above at $x_0$ in $\mathcal{O}$ by a \textbf{convex} paraboloid of opening $m$ if there exists $c\in \mathbb{R}$ and $b\in \mathbb{R}^n$ such that
-
-$$
-        u(x) \leq u(x_0) + b\cdot (x-x_0) + \frac{m}{2}|x-x_0|^2, \qquad x\in \mathcal{O}.
-$$
-
-    If this is the case, we also say that $u$ is $C^{1,1}$ by above at $x_0$.
-
-<dd>
+</dd>
 
             <!-- For use inside index.stx
 ::: quote
