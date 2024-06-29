@@ -190,15 +190,121 @@ The paraboloid is convex (resp. concave) if the sign of the 2nd-order term is po
 </dd>
 
 <h2>The touching trick</h2>
+<p>For simplicity, if $u:\R^d\times [0,T]\to \R$ is differentiable at $(x_0,t_0)$ then we
+denote</p>
+<p>$$
+    P_u(x,t) = u(x_0,t_0) + \partial_t u(x_0,t_0)\cdot (t-t_0) 
+        + \nabla u(x_0,t_0) \cdot (x-x_0)
+$$</p>
+<p>as a affine functional (1st-order Taylor polynomal). </p>
 <p>Let $u:\R^d\times [0,T] \to \R$ be bounded and upper-semicontinuous, and $v:\R^d\times [0,T] \to \R$ be bounded and lower-semicontinuous. Let $u^\varepsilon, v_\varepsilon$ be the sup-convolution and inf-convolution of $u,v$, respectively. 
 Then, $u^\varepsilon$ is semiconvex, and $v_\varepsilon$ is semiconcave. In other words, at every point $(x_0,t_0)$ in the domain:</p>
 <ul>
-<li>$u^\varepsilon$ can be touched from below by a paraboloid of opening $\frac{1}{2\varepsilon}$; </li>
-<li>$v_\varepsilon$ can be touched from above by a paraboloid of opening $\frac{1}{2\varepsilon}$. </li>
+<li>$u^\varepsilon$ can be touched from below by a paraboloid of opening $\frac{1}{2\varepsilon}$; i.e.,
+    $$
+        u^\varepsilon(x,t) \geq P_{u^\varepsilon}(x,t) - \frac{1}{2\varepsilon}
+        \big(|x-x_0|^2 + |t-t_0|^2\big).
+    $$</li>
+<li>$v_\varepsilon$ can be touched from above by a paraboloid of opening $\frac{1}{2\varepsilon}$. 
+    $$
+        v^\varepsilon(x,t) \leq P_{v^\varepsilon}(x,t) + \frac{1}{2\varepsilon}
+        \big(|x-x_0|^2 + |t-t_0|^2\big).
+    $$</li>
 </ul>
 <p>Assume $\phi(x,t)$ is a smooth function such that </p>
 <p>$$
     (u^\varepsilon - v_\varepsilon) - \phi \;\text{has a local maximum zero at}\;(x_0,t_0). 
+$$</p>
+<p>The tricks are:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>$u^\varepsilon, v_\varepsilon$ are in $(2\varepsilon^{-1})-C^{1,1}(x_0,t_0)$ jointly in $(x,t)$.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>$u^\varepsilon, v_\varepsilon$ are Hölder at $(x_0,t_0)$ with norm $C\varepsilon^{-1}$ and $C$ depends on $L^\infty$-bound $u,v$</td>
+</tr>
+</tbody>
+</table>
+<p>Since $\phi$ is smooth, we have </p>
+<p>$$
+    \phi(x,t) = P_\phi(x,t) + \circ(|x-x_0|^2+|t-t_0|^2)
+$$</p>
+<p>and also</p>
+<p>$$
+    P_{u^\varepsilon}(x_0,t_0) = P_{v_\varepsilon}(x_0,t_0) + P_\phi(x_0,t_0).
+$$</p>
+<p>Let 
+$$
+    \ell(x,t) = P_{u^\varepsilon}(x_0,t_0) - 
+        \Big( 
+            P_{v_\varepsilon}(x_0,t_0) + P_\phi(x_0,t_0)
+        \Big)
+$$
+be an affine function: $\ell(x,t) = c_\ell + (b_\ell, a_\ell)\cdot (x-x_0,t-t_0)$. Then $\ell(x_0,t_0) = 0$ implies $c_\ell = 0$. </p>
+<p>Since $u^\varepsilon - (v_\varepsilon + \phi)$ has a local maximum at $(x_0,t_0)$, i.e.,</p>
+<p>$$
+\begin{align}
+    P_{u^\varepsilon}(x,t) - \frac{1}{2\varepsilon}
+        \big(|(x,t)-(x_0, t_0)|^2\big) 
+        &amp;\leq u^\varepsilon(x,t) \\
+        &amp;\leq v_\varepsilon(x,t) + \phi(x,t) \\
+        &amp;\leq P_{v^\varepsilon}(x,t) + \frac{1}{2\varepsilon}
+        \big(|(x,t)-(x_0, t_0)|^2\big) + \phi(x,t) \\ 
+        &amp;\leq\Big( P_{v_\varepsilon}(x,t)+P_\phi(x,t)\Big) + \frac{1}{2\varepsilon}
+        \big(|(x,t)-(x_0, t_0)|^2\big) + o(|(x,t)-(x_0, t_0)|^2). 
+\end{align}
+$$</p>
+<p>with equalities at $(x,t) = (x_0,t_0)$. We deduce that </p>
+<p>$$
+\begin{align}
+    \ell(x,t)
+    &amp;\leq \frac{2}{\varepsilon}\Vert (x,t)-(x_0,t_0) \Vert^2
+\end{align}
+$$
+Recall that 
+$$
+    \ell(x,t) = (b_\ell, a_\ell) \cdot \big( (x,t) - (x_0,t_0)\big). 
+$$
+If $a\cdot X \leq C|X|^2$ for all $X\in \R^n$, then the vector $a\in \R^n$ must be zero. Indeed, if $a\neq 0$, we can take
+$$
+\begin{align}
+    X = \frac{a}{2C} 
+    &amp;\qquad \Longrightarrow\qquad 
+    a\cdot X = \frac{|a|^2}{2C} \leq C|X|^2 = C\cdot \frac{|a|^2}{4C^2} = \frac{|a|^2}{4C}
+    \qquad \Longrightarrow\qquad 
+    4C \leq 2C 
+\end{align}
+$$
+which is a contradiction. Thus we conclude that $\ell(x,t) \equiv 0$, i.e.,
+$$
+    P(x,t) = P_{u^\varepsilon}(x,t) = P_{v_\varepsilon}(x,t) + P_\phi(x,t)
+$$
+as an affine function. We then have 
+$$
+    |u^\varepsilon(x,t) - P(x,t)| \leq \frac{2}{\varepsilon}\Vert (x,t) - (x_0,t_0) \Vert^2
+$$
+and thus $u^\varepsilon \in (2\varepsilon^{-1})-C^{1,1}(x_0,t_0)$-jointly. By a similar argument, we also have $v_\varepsilon \in (2\varepsilon^{-1})-C^{1,1}(x_0,t_0)$-jointly. Consequently, we have in a ball $B_r(x_0,t_0)$ then</p>
+<p>$$
+    \max 
+    \left\lbrace 
+    [u^\varepsilon]<em>{C^{1,\gamma}(x_0,t_0)}, [v</em>\varepsilon]_{C^{1,\gamma}(x_0,t_0)} 
+    \right\rbrace 
+    \leq (2\varepsilon^{-1}r^\gamma) \leq 2\varepsilon^{-1}
+$$
+if we choose $r\leq 1$ and do not care about the vanishing as $r\to 0^+$. On the other hand, it is clear that </p>
+<p>$$
+    \mathrm{Lip}(u^\varepsilon)\leq \frac{C}{\varepsilon}\Vert u\Vert_{L^\infty}
+    \qquad 
+    \mathrm{Lip}(u_\varepsilon)\leq \frac{C}{\varepsilon}\Vert v\Vert_{L^\infty}
 $$</p>
 
             <!-- For use inside index.stx
