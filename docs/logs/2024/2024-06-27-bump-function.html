@@ -162,7 +162,26 @@ function includeHTML() {
                 
                 <hr>
             </header>
-            <p>Let </p>
+            <p>For $R&gt;0$, let us define the smooth bump function
+$$
+    \Phi(x) = \frac{|x|^2}{1+|x|^2}  \qquad \text{and}\qquad
+    \Phi_R(x) = \Phi\left(\frac{x}{R}\right), \qquad x\in \R^d. 
+$$</p>
+<p>Let $u:\R^d\times [0,T]\to \R$ be bounded from above and upper semicontinuous. Assume that </p>
+<p>$$
+    \delta = \sup_{\R^d \times [0,T]} u - \sup_{\R^d} u(\cdot, 0) &gt; 0.
+$$</p>
+<p>Define for $x_0, \Theta, \delta, h$ the function</p>
+<p>$$
+    \psi(x,t) = \Theta  + \delta \Phi_R(x-x_0) + ht , \qquad (x,t)\in \R^d\times [0,T]. 
+$$</p>
+<p>If $u$ is a viscosity subsolution to $\partial_t u = \mathcal{M}^+(u,x)$ and $\psi$ touches $u$ from above at $(x^<em>, t^</em>)$ then </p>
+<p>$$
+    h = \partial_t \psi(x^<em>, t^</em>) \leq \mathcal{M}^+\big(\psi(\cdot, t^<em>), x^</em>\big). 
+$$</p>
+<blockquote>
+<p>The goal is to show that, if $\delta&gt;0$, there exists $x,\Theta, h, R$ such that the above equation implies a contradiction.</p>
+</blockquote>
 
             <!-- For use inside index.stx
 ::: quote

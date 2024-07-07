@@ -162,7 +162,18 @@ function includeHTML() {
                 
                 <hr>
             </header>
-            
+            <h1>Regularization on $\R^d\times [0,T]$</h1>
+<p>Consider $u:\mathcal{O}_T = \mathbb{R}^n\times [0,T]\to \mathbb{R}$ be bounded and upper semicontinuous (u.s.c.), we will write $u\in L^\infty(\mathcal{O}_T)\cap \mathrm{USC}(\mathcal{O}_T)$ to denote such a function.</p>
+<dt> Definition </dt>
+<dd>
+For a bounded function $u(x,t): \mathbb{R}^d\times [0,T] \to \mathbb{R}$ we define the inf convolution and sup convolution as follows.
+\begin{align}
+    u^\varepsilon(x,t) &= \sup_{(y,s)\in \mathbb{R}^d\times [0,T]} \left(u(y,s) -  \frac{|t-s|^2+|x-y|^2}{\varepsilon}\right),\\
+    u_\varepsilon(x,t) &= \inf_{(y,s)\in \mathbb{R}^d\times [0,T]} \left(u(y,s) +  \frac{|t-s|^2+|x-y|^2}{\varepsilon}\right).
+\end{align}
+</dd>
+
+<p>It is clear that as long as $u$ is bounded, $u^\varepsilon, u_\varepsilon$ are well-defined and $u^\varepsilon\geq u \geq u_\varepsilon$.</p>
 
             <!-- For use inside index.stx
 ::: quote
