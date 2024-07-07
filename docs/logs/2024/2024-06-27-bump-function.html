@@ -175,13 +175,51 @@ $$</p>
 <p>$$
     \psi(x,t) = \Theta  + \delta \Phi_R(x-x_0) + ht , \qquad (x,t)\in \R^d\times [0,T]. 
 $$</p>
-<p>If $u$ is a viscosity subsolution to $\partial_t u = \mathcal{M}^+(u,x)$ and $\psi$ touches $u$ from above at $(x^<em>, t^</em>)$ then </p>
+<p>If $u$ is a viscosity subsolution to $\partial_t u = \mathcal{M}^+(u,x)$ and $\psi$ touches $u$ from above at $( x ^ *, t ^ * )$ then </p>
 <p>$$
-    h = \partial_t \psi(x^<em>, t^</em>) \leq \mathcal{M}^+\big(\psi(\cdot, t^<em>), x^</em>\big). 
+    h = \partial_t \psi ( x ^ *, t ^ * ) 
+    \leq \mathcal{M} ^ +
+    \big( \psi( \cdot , t ^ * ), x ^ *  \big). 
 $$</p>
 <blockquote>
 <p>The goal is to show that, if $\delta&gt;0$, there exists $x,\Theta, h, R$ such that the above equation implies a contradiction.</p>
 </blockquote>
+<ul>
+<li>
+<p>Choose $(x_\delta, t_\delta) \in \R^d\times [0,T]$ such that 
+    $$
+        u(x_\delta, t_\delta) &gt; 
+        \left( \sup_{\R^d\times [0,T]} u \right) - \frac{\delta}{4}. 
+    $$</p>
+<p>We must have $t_\delta&gt;0$, since otherwise, if $t_\delta= 0$ then </p>
+<p>$$
+    \left( \sup_{\R^d\times [0,T]} u \right) - \frac{\delta}{4} 
+    &lt; 
+    u(x_\delta, 0) 
+    \leq 
+    \sup_{\R^d} u(\cdot, 0)
+    = 
+    \left( \sup_{\R^d\times [0,T]} u \right) - \delta,
+$$</p>
+<p>which is a contradiction.</p>
+</li>
+<li>
+<p>Next, we observe that 
+  $$
+    u-\psi \;\text{has a maximum} \qquad\Longleftrightarrow\qquad 
+    \Psi(x,t) = u(x,t) - \delta \Phi_R(x-x_0) - ht \;\text{has a maximum}. 
+  $$</p>
+</li>
+<li>
+<p>Choose $x_0 = x_\delta$</p>
+</li>
+<li>
+<p>Note that
+    $$
+    \Psi(x_\delta, t_\delta) = 
+    $$</p>
+</li>
+</ul>
 
             <!-- For use inside index.stx
 ::: quote
