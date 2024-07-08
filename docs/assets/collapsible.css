@@ -8,6 +8,7 @@ button.btn.btn-primary.btn__first {
     /* border-radius: 1 solid; */
     background-color: transparent;
     /* border: 1px dashed; */
+	border: 0px;
 	border-bottom: 1px solid;
 	color: green;
 }
