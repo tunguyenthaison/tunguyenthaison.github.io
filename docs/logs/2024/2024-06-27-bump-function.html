@@ -167,59 +167,91 @@ $$
     \Phi(x) = \frac{|x|^2}{1+|x|^2}  \qquad \text{and}\qquad
     \Phi_R(x) = \Phi\left(\frac{x}{R}\right), \qquad x\in \R^d. 
 $$</p>
-<p>Let $u:\R^d\times [0,T]\to \R$ be bounded from above and upper semicontinuous. Assume that </p>
-<p>$$
-    \delta = \sup_{\R^d \times [0,T]} u - \sup_{\R^d} u(\cdot, 0) &gt; 0.
-$$</p>
-<p>Define for $x_0, \Theta, \delta, h$ the function</p>
-<p>$$
+<p>Let $u:\R^d\times [0,T]\to \R$ be bounded from above and upper semicontinuous. </p>
+<p><button class="btn btn-primary btn__first__proof" 
+        data-toggle="collapse"
+        data-target=".collapse.one_proof"
+        data-text="Collapse"> Proof 1 </button> 
+    <!-- &nbsp; &middot; &nbsp; --></p>
+<div class="block collapse one_proof">
+<div class="block__content"> Let
+
+Assume that 
+
+$$
+    \delta = \sup_{\R^d \times [0,T]} u - \sup_{\R^d} u(\cdot, 0) > 0.
+$$
+
+
+Define for $x_0, \Theta, \delta, h$ the function
+
+$$
     \psi(x,t) = \Theta  + \delta \Phi_R(x-x_0) + ht , \qquad (x,t)\in \R^d\times [0,T]. 
-$$</p>
-<p>If $u$ is a viscosity subsolution to $\partial_t u = \mathcal{M}^+(u,x)$ and $\psi$ touches $u$ from above at $( x ^ *, t ^ * )$ then </p>
-<p>$$
+$$
+
+
+If $u$ is a viscosity subsolution to $\partial_t u = \mathcal{M}^+(u,x)$ and $\psi$ touches $u$ from above at $( x ^ *, t ^ * )$ then 
+
+$$
     h = \partial_t \psi ( x ^ *, t ^ * ) 
     \leq \mathcal{M} ^ +
     \big( \psi( \cdot , t ^ * ), x ^ *  \big). 
-$$</p>
-<blockquote>
-<p>The goal is to show that, if $\delta&gt;0$, there exists $x,\Theta, h, R$ such that the above equation implies a contradiction.</p>
-</blockquote>
-<ul>
-<li>
-<p>Choose $(x_\delta, t_\delta) \in \R^d\times [0,T]$ such that 
+$$
+
+> The goal is to show that, if $\delta>0$, there exists $x,\Theta, h, R$ such that the above equation implies a contradiction.
+
+
+- Choose $(x_\delta, t_\delta) \in \R^d\times [0,T]$ such that 
     $$
-        u(x_\delta, t_\delta) &gt; 
+        u(x_\delta, t_\delta) > 
         \left( \sup_{\R^d\times [0,T]} u \right) - \frac{\delta}{4}. 
-    $$</p>
-<p>We must have $t_\delta&gt;0$, since otherwise, if $t_\delta= 0$ then </p>
-<p>$$
-    \left( \sup_{\R^d\times [0,T]} u \right) - \frac{\delta}{4} 
-    &lt; 
-    u(x_\delta, 0) 
-    \leq 
-    \sup_{\R^d} u(\cdot, 0)
-    = 
-    \left( \sup_{\R^d\times [0,T]} u \right) - \delta,
-$$</p>
-<p>which is a contradiction.</p>
-</li>
-<li>
-<p>Next, we observe that 
+    $$
+
+    We must have $t_\delta>0$, since otherwise, if $t_\delta= 0$ then 
+
+    $$
+        \left( \sup_{\R^d\times [0,T]} u \right) - \frac{\delta}{4} 
+        < 
+        u(x_\delta, 0) 
+        \leq 
+        \sup_{\R^d} u(\cdot, 0)
+        = 
+        \left( \sup_{\R^d\times [0,T]} u \right) - \delta,
+    $$
+
+    which is a contradiction.
+
+- Next, we observe that 
   $$
     u-\psi \;\text{has a maximum} \qquad\Longleftrightarrow\qquad 
     \Psi(x,t) = u(x,t) - \delta \Phi_R(x-x_0) - ht \;\text{has a maximum}. 
-  $$</p>
-</li>
-<li>
-<p>Choose $x_0 = x_\delta$</p>
-</li>
-<li>
-<p>Note that
+  $$
+
+- Choose $x_0 = x_\delta$
+
+
+- Note that
     $$
-    \Psi(x_\delta, t_\delta) = 
-    $$</p>
-</li>
-</ul>
+    \Psi(x_\delta, t_\delta) = u(x_\delta, t_\delta)  - h t_\delta  
+    \geq 
+    \sup_{\R^d} u(\cdot, 0) + \frac{3\delta}{4} - ht_\delta 
+    \geq 
+    \sup_{\R^d} u(\cdot, 0) + \frac{3\delta}{4} - hT 
+    $$
+    Therefore, if $hT \leq \frac{\delta}{4}$ then
+    $$
+    \Psi(x_\delta, t_\delta)  \geq  \sup_{\R^d} u(\cdot, 0) + \frac{\delta}{2}. 
+    $$
+
+- On the other hand, for $|x|\geq \sqrt{3} R$ then $\Phi_R(x) \geq \frac{3}{4}$, thus 
+    $$
+        \Psi(x,t) \leq u(x,t) -\frac{3\delta}{4} - ht
+    $$
+
+
+
+</div>
+</div>
 
             <!-- For use inside index.stx
 ::: quote

@@ -7,7 +7,7 @@ button.btn.btn-primary.btn__first {
     padding: 0 5px;
     /* border-radius: 1 solid; */
     background-color: transparent;
-    border: 0px;
+    /* border: 1px dashed; */
 	border-bottom: 1px solid;
 	color: green;
 }
@@ -48,3 +48,14 @@ button.btn.btn-primary.btn__first {
 	max-width: 400px !important;
 }
  
+
+
+
+button.btn.btn-primary.btn__first__proof {
+    padding: 0 5px;
+    /* border-radius: 1 solid; */
+    background-color: transparent;
+    border: 1px dashed;
+	/* border-bottom: 1px solid; */
+	color: green;
+}
