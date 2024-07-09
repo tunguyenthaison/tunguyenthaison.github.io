@@ -162,52 +162,65 @@ function includeHTML() {
                 
                 <hr>
             </header>
-            <p>For $R&gt;0$, let us define the smooth bump function
+            <h2>Basic properties</h2>
+<p>For $R&gt;0$, let us define the smooth bump function
 $$
     \Phi(x) = \frac{|x|^2}{1+|x|^2}  \qquad \text{and}\qquad
     \Phi_R(x) = \Phi\left(\frac{x}{R}\right), \qquad x\in \R^d. 
 $$</p>
-<p>Let $u:\R^d\times [0,T]\to \R$ be bounded from above and upper semicontinuous. </p>
-<p><button class="btn btn-primary btn__first__proof" 
-        data-toggle="collapse"
-        data-target=".collapse.one_proof"
-        data-text="Collapse"> Proof 1 </button> 
-    <!-- &nbsp; &middot; &nbsp; --></p>
-<div class="block collapse one_proof">
-<div class="block__content"> Let
+<p>We have the computation
+\begin{align}
+     &amp; D^2\Phi(x) = \frac{2}{(1+|x|^2)^2}\left(\mathbb{I}_d - \frac{4x\otimes x}{1+|x|^2} \right) \\
+     &amp; |D^2\Phi(x)| \leq \frac{2}{(1+|x|^2)}\left(d^{1/2} + \frac{4|x|^2}{1+|x|^2}\right) \leq 2(4+\sqrt{d}) \\
+     &amp; |D^2\Phi_R(x)| \leq \frac{2(4+\sqrt{d})}{R^2} \\
+     &amp; |\nabla_R\Phi(x) - \nabla \Phi_R(y)| \leq \frac{2(4+\sqrt{d})}{R^2}|x-y|. 
+\end{align}</p>
+<p>For $\gamma \in (0,1)$ we have</p>
+<p>\begin{align}
+    |\nabla \Phi_R(x) - \nabla \Phi_R(y)| 
+    &amp; = |\nabla \Phi_R(x) - \nabla \Phi_R(y)|^{1-\gamma} \cdot |\nabla \Phi_R(x) - \nabla \Phi_R(y)|^{\gamma} \\
+    &amp;\leq 
+    \left(\frac{2}{R}\right)^{1-\gamma}\left(\frac{2(4+\sqrt{d})}{R^2}\right)^{\gamma} |x-y|^{\gamma} \\
+    &amp;= \frac{2(4+\sqrt{d})^\gamma}{R^{1+\gamma}}|x-y|^\gamma. 
+\end{align}</p>
+<p>We deduce that </p>
+<p>\begin{equation}
+    \Vert \Phi_R\Vert_{C^{1,\gamma}(\mathbb{R}^d)} \leq 1 + \frac{1}{R} + \frac{2(4+\sqrt{d})^\gamma}{R^{1+\gamma}} \leq \frac{C(d,\gamma)}{R^{1+\gamma}}
+\end{equation}</p>
+<p>for $R&gt;1$.</p>
+<h2>Touching function</h2>
+<p>Define for $x_0, \Theta, \delta, h$ the function $ \psi(x,t) = \Theta  + \delta \Phi_R(x-x_0) + ht$ for $(x,t)\in \R^d\times [0,T]$. If $u$ is a viscosity subsolution to $\partial_t u = \mathcal{M}^+(u,x)$ and $\psi$ touches $u$ from above at $( x ^ *, t ^ * )$ then </p>
+<p>$$
+    h = \partial_t \psi ( x ^ *, t ^ * ) 
+    \leq \mathcal{M} ^ +
+    \big( \psi( \cdot , t ^ * ), x ^ *  \big). 
+$$</p>
+<p>The goal is to show that, if $\delta&gt;0$, there exists $x,\Theta, h, R$ such that the above equation implies a contradiction.</p>
+<dt>Lemma </dt>
+<dd>
 
-Assume that 
+Let $u:\R^d\times [0,T]\to \R$ be bounded from above and upper semicontinuous such that
 
 $$
     \delta = \sup_{\R^d \times [0,T]} u - \sup_{\R^d} u(\cdot, 0) > 0.
 $$
 
+Then there exists $\psi(x,t) = C_1 + C_2\Phi_R(x-x_0) + ht$ such that $\psi$ touches $u$ from above at some point $(x^*, t^*) \in \R^d\times (0,T]$. 
+</dd>
 
-Define for $x_0, \Theta, \delta, h$ the function
+<!-- &nbsp; &middot; &nbsp; -->
+<dt> Proof </dt>
 
-$$
-    \psi(x,t) = \Theta  + \delta \Phi_R(x-x_0) + ht , \qquad (x,t)\in \R^d\times [0,T]. 
-$$
-
-
-If $u$ is a viscosity subsolution to $\partial_t u = \mathcal{M}^+(u,x)$ and $\psi$ touches $u$ from above at $( x ^ *, t ^ * )$ then 
-
-$$
-    h = \partial_t \psi ( x ^ *, t ^ * ) 
-    \leq \mathcal{M} ^ +
-    \big( \psi( \cdot , t ^ * ), x ^ *  \big). 
-$$
-
-> The goal is to show that, if $\delta>0$, there exists $x,\Theta, h, R$ such that the above equation implies a contradiction.
+<dd>
 
 
-- Choose $(x_\delta, t_\delta) \in \R^d\times [0,T]$ such that 
+Choose $(x_\delta, t_\delta) \in \R^d\times [0,T]$ such that 
     $$
         u(x_\delta, t_\delta) > 
         \left( \sup_{\R^d\times [0,T]} u \right) - \frac{\delta}{4}. 
     $$
 
-    We must have $t_\delta>0$, since otherwise, if $t_\delta= 0$ then 
+We must have $t_\delta>0$, since otherwise, if $t_\delta= 0$ then 
 
     $$
         \left( \sup_{\R^d\times [0,T]} u \right) - \frac{\delta}{4} 
@@ -221,16 +234,7 @@ $$
 
     which is a contradiction.
 
-- Next, we observe that 
-  $$
-    u-\psi \;\text{has a maximum} \qquad\Longleftrightarrow\qquad 
-    \Psi(x,t) = u(x,t) - \delta \Phi_R(x-x_0) - ht \;\text{has a maximum}. 
-  $$
-
-- Choose $x_0 = x_\delta$
-
-
-- Note that
+Note that
     $$
     \Psi(x_\delta, t_\delta) = u(x_\delta, t_\delta)  - h t_\delta  
     \geq 
@@ -243,15 +247,31 @@ $$
     \Psi(x_\delta, t_\delta)  \geq  \sup_{\R^d} u(\cdot, 0) + \frac{\delta}{2}. 
     $$
 
-- On the other hand, for $|x|\geq \sqrt{3} R$ then $\Phi_R(x) \geq \frac{3}{4}$, thus 
+On the other hand, for $|x-x_\delta|\geq \sqrt{3} R$ then $\Phi_R(x) \geq \frac{3}{4}$, thus 
     $$
-        \Psi(x,t) \leq u(x,t) -\frac{3\delta}{4} - ht
+        \Psi(x,t) \leq u(x,t) -\frac{3\delta}{4} - ht \leq \sup_{\R^d\times [0,T]} u - \frac{3\delta}{4} - \frac{\delta}{4} = \sup_{\R^d} u(\cdot, 0)
     $$
 
+Since $\Psi$ is upper semicontinuous, it has maximum over the compact set 
+ $\overline{B } _ { \sqrt{3}R}(x_\delta)\times [0,T]$. Assume the maximum is achieved at $( x ^ *, t ^ * )$. Then 
 
+ $$
+    \Psi( x ^ *, t ^ * ) \geq \Psi(x_\delta, t_\delta)
+    \geq  \sup_{\R^d} u(\cdot, 0) + \frac{\delta}{2}. 
+ $$
 
-</div>
-</div>
+ This implies that $t^* > 0$ and the proof is complete. 
+
+</dd>
+
+<p>However, we note that the maximum is not always postive (i.e., the constant $C$ in $C+\delta \Phi_R(x-x_\delta) + ht$), especially when </p>
+<p>$$
+    \sup_{\R^d} u(\cdot, 0) &lt; 0. 
+$$</p>
+<p>This is the reason why in most papers when dealing with comparison principle instead of compare $u(x,t) \leq u(x,0)$ they do $u_+(x,t) \leq u_+(x,0)$ instead, where </p>
+<p>$$
+    u_+(x) = \max{u(x), 0} \geq 0. 
+$$</p>
 
             <!-- For use inside index.stx
 ::: quote
