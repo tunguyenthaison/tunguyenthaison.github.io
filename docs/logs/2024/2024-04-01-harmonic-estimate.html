@@ -165,12 +165,13 @@ function includeHTML() {
             <ul>
 <li><a href="https://drive.google.com/file/d/1TMjk-ba6BvkRV-z-5VgyFP63U5SEkFNk/view?usp=sharing">Link pdf</a></li>
 </ul>
-<p>\noindent</p>
-<p>For $m&gt;0$, we denote by $ \mathcal{K}^<em>(\gamma, m)$ the collection of functions $f:\R^d\to \R$ such that $\Vert f\Vert_{C^{0,1}(|R^d)} \leq m$ and at every point $x\in \R^d$, we have $f\in m-C^{1,\gamma}(x)$, that is there exists $r&gt;0$ such that
-\begin{equation</em>}
+<p>For $m&gt;0$, we denote by $ \mathcal{K} ^ * (\gamma, m)$ the collection of functions $f:\R^d\to \R$ such that $\Vert f\Vert_{C^{0,1}(|R^d)} \leq m$ and at every point $x\in \R^d$, we have $f\in m-C^{1,\gamma}(x)$, that is there exists $r&gt;0$ such that</p>
+<p>$$
+\begin{equation}
     f(x+h) \leq f(x) + \nabla f(x)\cdot h +  m|h|^{1,\gamma}, \qquad h\in B_r(0). 
-\end{equation*}
-We define $\mathcal{K}(\gamma, m)$ the collection of $C^{1,\gamma}(\R^d)$ functions with $\Vert f\Vert_{C^{1,\gamma}(\R^d)} &lt; m$. In this note, we revisit the proof of the following estimate for harmonic functions, as found in \cite[Lemma 3.14]{SchwabTuTuranova-2024WellposednessMuskat-ArXiv}.</p>
+\end{equation}
+$$</p>
+<p>We define $\mathcal{K}(\gamma, m)$ the collection of $C^{1,\gamma}(\R^d)$ functions with $\Vert f\Vert_{C^{1,\gamma}(\R^d)} &lt; m$. In this note, we revisit the proof of the following estimate for harmonic functions, as found in Lemma 3.14 of [^1]</p>
 <p>\begin{center}
 \fbox{
 \begin{minipage}{1\columnwidth}
@@ -380,6 +381,8 @@ we have
 \end{align</em>}
 for $s&gt;0$ small, and $\nu_w$ is the inward normal vector toward $D_w$ at $X_0$. 
 \end{proof}</p>
+<p>[^1] Russell Schwab, Son Tu, Olga Turanova, 
+    Well-posedness for viscosity solutions of the one-phase Muskat problem in all dimensions, arXiv:2404.10972, 2024</p>
 
             <!-- For use inside index.stx
 ::: quote
