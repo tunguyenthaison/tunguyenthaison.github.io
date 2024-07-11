@@ -172,215 +172,226 @@ function includeHTML() {
 \end{equation}
 $$</p>
 <p>We define $\mathcal{K}(\gamma, m)$ the collection of $C^{1,\gamma}(\R^d)$ functions with $\Vert f\Vert_{C^{1,\gamma}(\R^d)} &lt; m$. In this note, we revisit the proof of the following estimate for harmonic functions, as found in Lemma 3.14 of <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
-<p>\begin{center}
-\fbox{
-\begin{minipage}{1\columnwidth}
-\begin{proposition}[Semiconcave above and $C^{1,\gamma}(x_0)$ implies growth-rate of $f\mapsto W_f$] \label{prop:HeleShawOperator:bound-C1gamma-Circle} Let
-\begin{align<em>}
-    w\in \mathcal{K}^</em>(\gamma, m)\cap \big(m-C^{1,\gamma}(x_0)\big).
-\end{align<em>}
+<dt> Proposition (Semiconcave above and $C^{1,\gamma}(x_0)$ implies growth-rate of $f\mapsto W_f$) </dt>
+
+<dd>
+
+Let
+\begin{align*}
+    w\in \mathcal{K}^*(\gamma, m)\cap \big(m-C^{1,\gamma}(x_0)\big).
+\end{align*}
 For $r\in (0,1)$, assume that $V$ satisfies
 \begin{equation}\label{eq:equationV}
     \begin{cases}
         \begin{aligned}
-            \Delta V &amp;= 0                       &amp;&amp; \text{in}\; \;\;\; D_w\cap B_r(X_0) ,\
-            |V(x)| &amp;\leq C_0|X-X_0|^{1+\gamma}  &amp;&amp; \text{on}\; \partial \big(D_w\cap B_r(X_0) \big).
+            \Delta V &= 0                       && \text{in}\; \;\;\; D_w\cap B_r(X_0) ,\\
+            |V(x)| &\leq C_0|X-X_0|^{1+\gamma}  && \text{on}\; \partial \big(D_w\cap B_r(X_0) \big).
         \end{aligned}
     \end{cases}
 \end{equation}
-Then there exists $C = C(\gamma, m, d) &gt; 0$ so that  for all $s&gt;0$:
-\begin{equation</em>}
+Then there exists $C = C(\gamma, m, d) > 0$ so that  for all $s>0$:
+\begin{equation*}
     |V(X_0+s\nu_w)| \leq CC_0s.
 \end{equation*}
-\end{proposition}
-\end{minipage}
-}
-\end{center}</p>
-<p>\begin{proof} Under the assumption that  $w\in \mathcal{K}^<em>(\gamma, m)\cap \big(m-C^{1,\gamma}(x_0)\big)$, we can find $0&lt; \kappa &lt; r$ and $w^+$ such that 
+
+</dd>
+
+<dt> Proof </dt>
+
+<dd>
+
+Under the assumption that  $w\in \mathcal{K}^*(\gamma, m)\cap \big(m-C^{1,\gamma}(x_0)\big)$, we can find $0< \kappa < r$ and $w^+$ such that 
 \begin{itemize}
     \item $w^+ \in \mathcal{K}(\gamma, 2m)$ with $w^+(x_0) = w(x_0)$, $\nabla w^+(x_0) = \nabla w(x_0)$ and $w(x)\leq w^+(x)$ for $x\in \R^d$.
     \item For $x\in B_\kappa(x_0)$, we have $w^+(x) - w(x) \geq m|x-x_0|^{1+\gamma}$.
 \end{itemize}
 In particular, we have
-\begin{equation</em>}
+\begin{equation*}
     m|x-x_0|^{1+\gamma} \leq w^+(x)-w(x) \leq 3m|x-x_0|^{1+\gamma}, \qquad x\in B_\kappa(x_0). 
-\end{equation<em>}
+\end{equation*}
 Let us consider $\Phi$ solving
 \begin{equation}
 \begin{cases}
 \begin{aligned}
-    \Delta \Phi(X) &amp;= 0  &amp;&amp; \text{in}\;\;\;\;\; D_{w^+}\cap B_1(X_0) \
-    \Phi(X) &amp;= |X-X_0|^{1+\gamma} &amp;&amp; \text{on}\; \partial \big( D_{w^+}\cap B_1(X_0) \big). 
+    \Delta \Phi(X) &= 0  && \text{in}\;\;\;\;\; D_{w^+}\cap B_1(X_0) \\
+    \Phi(X) &= |X-X_0|^{1+\gamma} && \text{on}\; \partial \big( D_{w^+}\cap B_1(X_0) \big). 
 \end{aligned}
 \end{cases}
 \end{equation}
-The goal is to use $\Phi$ as a barrier on $B_{\tau}\cap D_w$ for some $\tau&gt;0$. Note that 
-\begin{equation</em>}
+The goal is to use $\Phi$ as a barrier on $B_{\tau}\cap D_w$ for some $\tau>0$. Note that 
+\begin{equation*}
     \partial \big( D_{w}\cap B_\tau(X_0) \big) = 
-    \underbrace{\big( \Gamma_{w}\cap B_\tau (X_0) \big)}<em w="w">{\Lambda_1}
+    \underbrace{\big( \Gamma_{w}\cap B_\tau (X_0) \big)}_{\Lambda_1}
     \cup 
-    \underbrace{\big( D</em>\cap \partial B_\tau (X_0) \big)}<em 1_2="1/2">{\Lambda_2} . 
+    \underbrace{\big( D_{w}\cap \partial B_\tau (X_0) \big)}_{\Lambda_2} . 
 \end{equation*}
 Therefore we need to bound $\Phi$ from below on $\Lambda_1$ and $\Lambda_2$, respectively. First of all, we see that 
 \begin{equation}\label{eq:PhiInC1GammaB12}
     \Phi \in C^{1,\gamma}
     \big(
-    \overline{B}</em>(X_0)\cap \overline{D}_{w^+}
+    \overline{B}_{1/2}(X_0)\cap \overline{D}_{w^+}
     \big). 
 \end{equation}
-Without loss of generality, let us assume $X_0 = (x_0,0) = (0,0) \in \R^{d}\times \R$. </p>
-<p>\begin{figure}[ht]
+Without loss of generality, let us assume $X_0 = (x_0,0) = (0,0) \in \R^{d}\times \R$. 
+
+
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.9\linewidth]{sources/2024-07-09-harmonic-estimates.png}
     \caption{The region $B_\tau(X_0) \cap D_w$ is shaded in green.}
     \label{fig:enter-label}
-\end{figure}</p>
-<p>\paragraph{\underline{\textit{Step 1. Estimate on $\Lambda_1$}}} We note that if $w^+$ touches $w$ from above at $x_0$ and $w^+\in C^{1,\gamma}(\R^d)$, we can choose $w^+$ in a way such that $D_{w^+}$ at $(x_0,w^+(x_0))$ has an interior sphere condition. By Hopf Lemma at $(x_0, w^+(x_0))$ we have 
-\begin{align<em>}
-    \partial_{-e_{d+1}} \Phi(X_0) &gt; 0. 
-\end{align</em>}
-By continuity from \eqref{eq:PhiInC1GammaB12}, there exists $0&lt;2\tau &lt; \min{\frac{1}{2}, \kappa}$ small enough such that 
-\begin{align<em>}
-    \partial_{-e_{d+1}} \Phi(X) \geq \delta, \qquad X\in \Gamma_{w^+}\cap B_{2\tau}(X_0).<br />
-\end{align</em>}
+\end{figure}
+
+
+\paragraph{\underline{\textit{Step 1. Estimate on $\Lambda_1$}}} We note that if $w^+$ touches $w$ from above at $x_0$ and $w^+\in C^{1,\gamma}(\R^d)$, we can choose $w^+$ in a way such that $D_{w^+}$ at $(x_0,w^+(x_0))$ has an interior sphere condition. By Hopf Lemma at $(x_0, w^+(x_0))$ we have 
+\begin{align*}
+    \partial_{-e_{d+1}} \Phi(X_0) > 0. 
+\end{align*}
+By continuity from \eqref{eq:PhiInC1GammaB12}, there exists $0<2\tau < \min\{\frac{1}{2}, \kappa\}$ small enough such that 
+\begin{align*}
+    \partial_{-e_{d+1}} \Phi(X) \geq \delta, \qquad X\in \Gamma_{w^+}\cap B_{2\tau}(X_0).  
+\end{align*}
 Let 
-\begin{equation<em>}
+\begin{equation*}
     X = (x,w(x)) \in \Gamma_w \cap B_\tau(X_0) \qquad\text{and}\qquad 
     \widehat{X} = (x,w^+(x)).
-\end{equation</em>}
-We choose this way so that the (vertical) line segment connecting $X$ to $\widehat{X}$ is contained in $B_{2\tau}(X_0)\cap D_{w^+}$, so that $\partial_{-e_{d+1}} \Phi(X) \geq \delta$ here. Since $\widehat{X}<em d_1="d+1">{d+1} = w^+(x) \geq w(x) = X</em>$ for $x\in \R^d$, let us look at , then by the intermediate value theorem, there exists $\widetilde{X} = (x, t)$ where $t\in [w(x),w^+(x)]$ such that 
-\begin{align<em>}
+\end{equation*}
+We choose this way so that the (vertical) line segment connecting $X$ to $\widehat{X}$ is contained in $B_{2\tau}(X_0)\cap D_{w^+}$, so that $\partial_{-e_{d+1}} \Phi(X) \geq \delta$ here. Since $\widehat{X}_{d+1} = w^+(x) \geq w(x) = X_{d+1}$ for $x\in \R^d$, let us look at , then by the intermediate value theorem, there exists $\widetilde{X} = (x, t)$ where $t\in [w(x),w^+(x)]$ such that 
+\begin{align*}
     \Phi(x,w^+(x)) - \Phi(x,w(x)) 
-    &amp;= \partial_{e_{d+1}}\Phi(\widetilde{X})\cdot 
-    \Big(w^+(x) - w(x)\Big)<br />
+    &= \partial_{e_{d+1}}\Phi(\widetilde{X})\cdot 
+    \Big(w^+(x) - w(x)\Big)  
     \leq -\delta \Big(w^+(x) - w(x)\Big) . 
-\end{align</em>}
-% \begin{align<em>}
-%     \Phi(x,w^+(x)) = \Phi(x,w(x)) + \int_{w(x)}^{w^{+}(x)} \partial_{e_{d+1}}\Phi(x,t) \;dt &lt; \Phi(x,w(x)). 
-% \end{align</em>}
+\end{align*}
+% \begin{align*}
+%     \Phi(x,w^+(x)) = \Phi(x,w(x)) + \int_{w(x)}^{w^{+}(x)} \partial_{e_{d+1}}\Phi(x,t) \;dt < \Phi(x,w(x)). 
+% \end{align*}
 In other words, we have
-\begin{align<em>}
+\begin{align*}
     \Phi(x, w(x)) 
-    &amp;\geq \Phi(x,w^+(x)) + \delta 
-    \Big( w^+(x) - w(x)\Big) \
-    &amp;= |\widehat{X}-X_0|^{1+\gamma} + \delta 
+    &\geq \Phi(x,w^+(x)) + \delta 
+    \Big( w^+(x) - w(x)\Big) \\
+    &= |\widehat{X}-X_0|^{1+\gamma} + \delta 
     \Big( w^+(x) - w(x)\Big) 
     = |\widehat{X} - X_0|^{1+\gamma} + \delta |\widehat{X} - X|.
-\end{align</em>}
-Choose the radius $\kappa$ small such that $|\widehat{X} - X| &lt; 1$ and thanks to $\delta \in (0,1)$, we have 
-\begin{align<em>}
+\end{align*}
+Choose the radius $\kappa$ small such that $|\widehat{X} - X| < 1$ and thanks to $\delta \in (0,1)$, we have 
+\begin{align*}
     \Phi(X) = \Phi(x, w(x)) 
-    &amp;\geq |\widehat{X} - X_0|^{1+\gamma} + \delta |\widehat{X} - X|^{1+\gamma} \
-    &amp;\geq \delta \Big(|\widehat{X} - X_0|^{1+\gamma} + |\widehat{X} - X|^{1+\gamma}\Big) \geq \frac{\delta}{2^{1+\gamma}}|X-X_0|^{1+\gamma}.
-\end{align</em>}
+    &\geq |\widehat{X} - X_0|^{1+\gamma} + \delta |\widehat{X} - X|^{1+\gamma} \\
+    &\geq \delta \Big(|\widehat{X} - X_0|^{1+\gamma} + |\widehat{X} - X|^{1+\gamma}\Big) \geq \frac{\delta}{2^{1+\gamma}}|X-X_0|^{1+\gamma}.
+\end{align*}
 In other words, we have
 \begin{align}\label{eq:estimateLambda1}
-    \Phi(X) \geq \frac{\delta}{2^{1+\gamma}}|X-X_0|^{1+\gamma} \qquad\text{for all}\;X\in \Lambda_1.<br />
+    \Phi(X) \geq \frac{\delta}{2^{1+\gamma}}|X-X_0|^{1+\gamma} \qquad\text{for all}\;X\in \Lambda_1.  
 \end{align}
 \paragraph{\underline{\textit{Step 2. Estimate on $\Lambda_2$}}} Let $Y =(x,y_{d+1}) \in \partial B_{\tau}(X_0)\cap D_{w^+}$, we want to minimize
-\begin{align<em>}
+\begin{align*}
     \min 
-    \big\lbrace<br />
+    \big\lbrace  
     w(x) - y_{d+1}: Y = (x,y_{d+1}) \in B_{\tau}(X_0)\cap D_{w^+} 
     \big\rbrace . 
-\end{align</em>}
+\end{align*}
 We have
 \begin{align}\label{eq:estimateXHatY}
     |\widehat{X}Y| + |\widehat{X}X_0| \geq |X_0Y| = \tau. 
 \end{align}
-Let $\widehat{X} = (x, \widehat{x}<em>{d+1}) = (x,w^+(x))$, we have
-\begin{align<em>}
+Let $\widehat{X} = (x, \widehat{x}_{d+1}) = (x,w^+(x))$, we have
+\begin{align*}
     |\widehat{X}Y| = w^+(x) - y_{d+1}
-\end{align</em>}
-and, by using $|x-x_0| &lt; 1$ if $\tau$ small enough, we have
+\end{align*}
+and, by using $|x-x_0| < 1$ if $\tau$ small enough, we have
 \begin{align}\label{eq:estimateXX0}
      |\widehat{X}X_0| = \sqrt{|x-x_0|^2 + |w^+(x)-w(x_0)|^2}  \leq \sqrt{|x-x_0|^2 + m^2|x-x_0|^{2(1+\gamma)}} \leq |x-x_0|\sqrt{1+m^2}. 
 \end{align}
 Thus, the question of interest is 
-\begin{align<em>}
+\begin{align*}
     \min \Big\lbrace 
         |\widehat{X}Y|: Y\in \partial B_\tau(X_0)\cap D_w 
     \Big \rbrace. 
-\end{align</em>}
+\end{align*}
 We have the constraint
-\begin{align<em>}
+\begin{align*}
     \tau = |X_0Y| = \sqrt{|x-x_0|^2 + |w(x_0) - y_{d+1}|^2}, \qquad Y = (x,y_{d+1})\in \partial B_{\tau}(X_0)\cap D_w. 
-\end{align</em>}
+\end{align*}
 \begin{itemize}
     \item Case 1. If $|x-x_0|\leq \frac{\tau}{2\sqrt{(1+m^2)}}$ then from \eqref{eq:estimateXX0} we have
-    \begin{align<em>}
+    \begin{align*}
         |\widehat{X}X_0| \leq 
         \frac{\tau}{2} 
         \qquad\Longrightarrow\qquad 
         |\widehat{X}Y|\geq \frac{\tau}{2}
-    \end{align</em>}
+    \end{align*}
     by using \eqref{eq:estimateXHatY}. 
     \item Case 2. If $|x-x_0|\geq \frac{\tau}{2\sqrt{(1+m^2)}}$ then 
-    \begin{align<em>}
+    \begin{align*}
         |\widehat{X}Y| = |\widehat{X}X| + |XY| \geq |\widehat{X}X| = |w^+(x) - w(x)| \geq m|x-x_0|^{1+\gamma} \geq \frac{\tau^{1+\gamma}}{(2\sqrt{2})^{1+\gamma}m^\gamma},
-    \end{align</em>}
-    where $X = (x,w(x)) \in \Gamma_w$, and we simply estimate $|XY|\geq 0$, which happens when $Y$ is at the corner $\partial B</em>\tau(X_0)\cap \Gamma_w$. 
-    \textit{Note: This case we really use the fact that $Y\in \partial B_\tau(X_0)\cap D_w$ so that $|\widehat{X}X| &gt; 0$ is strictly positive.} 
+    \end{align*}
+    where $X = (x,w(x)) \in \Gamma_w$, and we simply estimate $|XY|\geq 0$, which happens when $Y$ is at the corner $\partial B_\tau(X_0)\cap \Gamma_w$. 
+    \textit{Note: This case we really use the fact that $Y\in \partial B_\tau(X_0)\cap D_w$ so that $|\widehat{X}X| > 0$ is strictly positive.} 
 \end{itemize}
 Combining from the two cases, we have 
-\begin{equation<em>}
+\begin{equation*}
 \begin{aligned}
      \min \Big\lbrace 
         |\widehat{X}Y|: Y\in \Lambda_2
     \Big \rbrace 
-    &amp;= \min \Big\lbrace 
+    &= \min \Big\lbrace 
         |\widehat{X}Y|: Y\in \partial B_\tau(X_0)\cap D_w 
-    \Big \rbrace \
-    &amp;\geq C(\gamma, m) \tau^{1+\gamma}
+    \Big \rbrace \\
+    &\geq C(\gamma, m) \tau^{1+\gamma}
     = \left(\min \left\lbrace \frac{1}{2}, \frac{1}{(2\sqrt{2})^{1+\gamma}m^\gamma}\right\rbrace\right)\tau^{1+\gamma}. 
 \end{aligned}
-\end{equation</em>}
+\end{equation*}
 where we use $\tau \geq \tau^{1+\gamma}$. With $Y = (x,y_{d+1}) \in \partial B_\tau(X_0)\cap D_w$, $X = (x,w(x))$ and $\widehat{X} = (x, w^+(x))$, we have
-\begin{align<em>}
+\begin{align*}
     \Phi(Y)
-    &amp;= \Phi(\widehat{X})  + \int_{y_{d+1}}^{w^+(x)} \partial_{-e_{d+1}} \Phi(x, t)\;dt  \
-    &amp;\geq \delta 
+    &= \Phi(\widehat{X})  + \int_{y_{d+1}}^{w^+(x)} \partial_{-e_{d+1}} \Phi(x, t)\;dt  \\
+    &\geq \delta 
     \big( w^+(x) - y_{d+1} \big) \geq \delta C(\gamma, m) \tau^{1+\gamma}, \qquad Y \in \partial B_\tau(X_0)\cap D_w. 
-\end{align</em>}
+\end{align*}
 In other words, we have 
 \begin{align}\label{eq:estimateLambda2}
     \Phi(Y) \geq \delta C(\gamma, m) \tau^{1+\gamma} \qquad \text{for all}\;Y \in \Lambda_2. 
 \end{align}
-We can assume $\delta C(\gamma, m )\tau^{1+\gamma} &lt; 1$. </p>
-<p>\paragraph{\underline{\textit{Step 3. Combine $\Lambda_1$ and $\Lambda_2$}}} Recall that we assume $X_0 = 0$. From the assumption on $V$ as in \eqref{eq:equationV} and \eqref{eq:estimateLambda2}, we observe that if $X\in \partial B_\tau(X_0)$, we define $X = \tau \xi$ for $\xi \in \partial B_1(X_0)$, and 
-\begin{align<em>}
+We can assume $\delta C(\gamma, m )\tau^{1+\gamma} < 1$. 
+
+\paragraph{\underline{\textit{Step 3. Combine $\Lambda_1$ and $\Lambda_2$}}} Recall that we assume $X_0 = 0$. From the assumption on $V$ as in \eqref{eq:equationV} and \eqref{eq:estimateLambda2}, we observe that if $X\in \partial B_\tau(X_0)$, we define $X = \tau \xi$ for $\xi \in \partial B_1(X_0)$, and 
+\begin{align*}
     \tilde{V}(\xi) = V(\tau \xi), \qquad \tilde{\Phi}(\xi) = \Phi(\tau \xi), \qquad \xi \in \partial B_1(0).
-\end{align</em>}
+\end{align*}
 On the portion of $\partial B_1(0)$ after scaling, we have 
-\begin{align<em>}
+\begin{align*}
     |\tilde{V}(\xi)| \leq C_0 \tau^{1+\gamma} \qquad\text{and}\qquad |\tilde{\Phi}(\xi)| \geq \delta C(\gamma, m) \tau^{1+\gamma}. 
-\end{align</em>}
+\end{align*}
 Therefore 
-\begin{equation<em>}
+\begin{equation*}
     |\tilde{\Phi}(\xi)| \geq \frac{\delta C(\gamma, m)}{C_0} |\tilde{V}(\xi)|.
-\end{equation</em>}
+\end{equation*}
 In other words, we have 
-\begin{align<em>}
+\begin{align*}
     |V(X)| \leq \frac{C_0}{\delta C(\gamma, m)} |\Phi(X)| , \qquad X\in \partial B_{\tau}(X_0)\cap D_w. 
-\end{align</em>}
+\end{align*}
 Similarly, from \eqref{eq:estimateLambda1} and \eqref{eq:equationV} on $B_\tau(X_0)\cap \Gamma_w$ we have 
-\begin{align<em>}
+\begin{align*}
     |V(X)| \leq \frac{2^{1+\gamma}C_0}{\delta} |\Phi(X)|, \qquad X\in B_{\tau}(X_0)\cap \Gamma_w. 
-\end{align</em>}
+\end{align*}
 In other words, we found $C_1,C_2$ depending only on $\delta, \gamma, m$ such that
-\begin{align<em>}
+\begin{align*}
     -C_1 C_0\Phi(X) \leq V(X) \leq C_2C_0\Phi(X) , \qquad x\in B_\tau(X_0)\cap D_w
-\end{align</em>}
+\end{align*}
 by comparison principle for harmonic function. As a consequence, thanks to $\Phi(X_0) = V(X_0) = 0$ and 
-\begin{equation<em>}
+\begin{equation*}
     \Vert \Phi \Vert_{C^{1,\gamma}(\R^d)} \leq C(\gamma, m, d),
-\end{equation</em>}
+\end{equation*}
 we have 
-\begin{align<em>}
+\begin{align*}
     |V(X_0 +s \nu_w)| \leq CC_0s
-\end{align</em>}
-for $s&gt;0$ small, and $\nu_w$ is the inward normal vector toward $D_w$ at $X_0$. 
-\end{proof}</p>
+\end{align*}
+for $s>0$ small, and $\nu_w$ is the inward normal vector toward $D_w$ at $X_0$. 
+
+</dd>
+
 <div class="footnote">
 <hr />
 <ol>
