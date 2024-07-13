@@ -6,10 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
 
-        <title>Son Tu</title>
-        <link rel="stylesheet" href="assets/fonts.css">
-        <link rel="stylesheet" href="assets/simplify.css">
-        <link rel="stylesheet" href="assets/pygments.css">
+        <title>Remark on Hopf Lemma and Harnack inequality</title>
+        <link rel="stylesheet" href="../../assets/fonts.css">
+        <link rel="stylesheet" href="../../assets/simplify.css">
+        <link rel="stylesheet" href="../../assets/pygments.css">
         
         
         
@@ -103,9 +103,9 @@ function includeHTML() {
         
 
     </head>
-    <body class="node-gallery node">
+    <body class="node-logs-2024-2024-07-13-hopf-lemma node-logs-2024 node-logs node">
         <header class="masthead">
-            <h1><a href="index.html">Son Tu</a></h1>
+            <h1><a href="../../index.html">Son Tu</a></h1>
             
                 <p class="tagline">Từ Nguyễn Thái Sơn</p>
             
@@ -118,14 +118,14 @@ function includeHTML() {
                     <span class="text">Menu</span>
                 </label>
                 <ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="notes//2024-04-17-CV.pdf">CV</a></li>
-<li><a href="research.html">Research</a></li>
-<li><a href="teaching.html">Teaching</a>
-    <!-- * <a href="teaching/child-one.html">Child One</a> -->
-    <!-- * <a href="teaching/child-two.html">Child Two</a> --></li>
-<li><a href="notes.html">Notes</a></li>
-<li><a href="about.html">About</a></li>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../notes//2024-04-17-CV.pdf">CV</a></li>
+<li><a href="../../research.html">Research</a></li>
+<li><a href="../../teaching.html">Teaching</a>
+    <!-- * <a href="../../teaching/child-one.html">Child One</a> -->
+    <!-- * <a href="../../teaching/child-two.html">Child Two</a> --></li>
+<li><a href="../../notes.html">Notes</a></li>
+<li><a href="../../about.html">About</a></li>
 </ul>
 <p><br></p>
 <p>
@@ -155,215 +155,33 @@ function includeHTML() {
         </header>
         <article class="main">
             <header class="title">
-                <h1></h1>
+                <h1>Remark on Hopf Lemma and Harnack inequality</h1>
                 
+                
+                    <p class="subtitle">2024-07-13</p>
                 
                 <hr>
             </header>
-            <!DOCTYPE html>
-<html>
-    <head>
-
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-        
-
-        <title>Gallery</title>
-        <link rel="stylesheet" href="../assets/fonts.css">
-        <link rel="stylesheet" href="../assets/simplify.css">
-        <link rel="stylesheet" href="../assets/pygments.css">
-
-
-        <!-- for timeline css-->
-        <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet" type="text/css"/>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" href="../assets/horizontal_timeline.css"> -->
-        <!-- ########### -->
-
-        
-
-        <!-- for table css-->
-        <link rel="stylesheet" href="../assets/teaching-table.css">
-
-        <link rel="stylesheet" href="../assets/collapsible.css">
-        <!-- ########### -->
-
-        
-
-        <!-- KATEX -->
-        <!-- All KaTeX links taken from the documentation here: https://katex.org/docs/browser.html. -->
-        <link rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css"
-            integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB"
-            crossorigin="anonymous">
-        <!-- The loading of KaTeX is deferred to speed up page rendering -->
-        <script defer
-            src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
-            integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p"
-            crossorigin="anonymous">
-        </script>
-        <!-- To automatically render math in text elements, include the auto-render extension: -->
-        <script defer
-            src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
-            integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
-            crossorigin="anonymous"
-            onload="renderMathInElement(document.body);">
-        </script>
-        <!-- KATEX -->
-
-        <!-- MATHJAX -->
-        <script>
-            MathJax = {
-                tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                macros: {
-                R: '{\\mathbb R}',                 // a simple string replacement
-                T: '{\\mathbb T}',                 // a simple string replacement
-                bold: ['\\boldsymbol{#1}',1] ,     // this macro has one parameter
-                ddx: ['\\frac{d#2}{d#1}', 2, 'x'], // this macro has an optional parameter that defaults to 'x'
-                abc: ['(#1)', 1, [null, '\\cba']]  // equivalent to \def\abc#1\cba{(#1)}
-                }
-                }
-        };
-        </script>
-
-        <script id="MathJax-script" async
-            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-        <!-- ############################################################## -->
-
-        <style>
-            /* body,h1 {font-family: "Montserrat", sans-serif} */
-            img {margin-bottom: -7px}
-            .w3-row-padding img {margin-bottom: 12px}
-            .w3-third img{margin-bottom: -6px; opacity: 0.8; cursor: pointer}
-            .w3-third img:hover{opacity: 1}
-            </style>
-
-    </head>
-
-   
-
-    <body class="node-blog-gallery node-blog node">
-       
-        
-            
-        <header class="title">
-            <h1>Gallery </h1>
-    
-            <p class="subtitle">
-                Collection of my images. Whenever there is
-                light, we can photograph!</p>
-            <p class="w3-padding-16 subtitle"><button class="w3-button w3-black" onclick="myFunction()">Toggle Grid Padding</button></p>
-    
-            <hr>
-        </header>
-
-
-        
-    <h2>A 30-day challenge</h2>
-    <p class="subtitle">Starting May 27, 2024</p>
-
-    <div class="w3-row" id="myGrid" style="margin-bottom:128px;">
-        <div class="w3-third">
-        <!-- <img src="https://drive.google.com/thumbnail?id=1N1cFrXY0k5bDPwaWTnGDImdXLQY0Pr6u" style="width:100%" onclick="onClick(this)" alt="A silent night, Memorial Day, May 27, 2024"> -->
-        <img src="https://lh3.googleusercontent.com/d/1N1cFrXY0k5bDPwaWTnGDImdXLQY0Pr6u" style="width:100%" onclick="onClick(this)" alt="A silent night, Memorial Day, May 27 2024">
-        </div>
-
-        <div class="w3-third">
-            <!-- <img src="https://drive.google.com/thumbnail?id=10hNQQAuGW19kXefNi56Fgl-9uKOV6Tcn" style="width:100%" onclick="onClick(this)" alt="Late coffee, May 28, 2024"> -->
-            <img src="https://lh3.googleusercontent.com/d/10hNQQAuGW19kXefNi56Fgl-9uKOV6Tcn" style="width:100%" onclick="onClick(this)" alt="Late coffee, May 28, 2024">
-        </div>
-
-        <div class="w3-third">
-            <!-- <img src="https://drive.google.com/thumbnail?id=10hNQQAuGW19kXefNi56Fgl-9uKOV6Tcn" style="width:100%" onclick="onClick(this)" alt="Late coffee, May 28, 2024"> -->
-            <img src="https://lh3.googleusercontent.com/d/120mhW_vZ4Ravb2c1WVLkRRQjXIfOnuDf" style="width:100%" onclick="onClick(this)" alt="Tranquil Sunset, June 01, 2024">
-        </div>
-    </div>
-    
-
-    
-
-    <hr>
-            
-    <h2>Random pictures taken by iPhone</h2>
-    <!-- Photo Grid -->
-    <div class="w3-row" id="myGrid" style="margin-bottom:128px;">
-        <div class="w3-third">
-        <img src="images/gallery/01_h_Monona01.jpg" style="width:100%" onclick="onClick(this)" alt="Lake Monona, Summer 2018">
-        <img src="images/gallery/04_s_Mendota02.jpg" style="width:100%" onclick="onClick(this)" alt="Lake Mendota, Winter 2018">
-        <img src="images/gallery/07_s_Newyork01.jpg" style="width:100%" onclick="onClick(this)" alt="Newyork, Summer 2018">
-        <img src="images/gallery/10_h_Mendota01.jpg" style="width:100%" onclick="onClick(this)" alt="Lake Mendota, Summer 2018">
-        </div>
-    
-        <div class="w3-third">
-        <img src="images/gallery/02_s_Newyork02.jpg" style="width:100%" onclick="onClick(this)" alt="A house in Stony Brook resembling one from the Hobbit movie, Summer 2018">
-        <img src="images/gallery/05_h_Pittsburgh02.jpg" style="width:100%" onclick="onClick(this)" alt="Pittsburgh, Winter 2019">
-        <img src="images/gallery/08_h_Madison02.jpg" style="width:100%" onclick="onClick(this)" alt="State Street, Madison, Summer 2018">
-        <img src="images/gallery/11_s_Picnic_Point01.jpg" style="width:100%" onclick="onClick(this)" alt="Picnic Point, Madison, Summer 2018">
-        </div>
-    
-        <div class="w3-third">
-        <img src="images/gallery/03_h_Pittsburgh01.jpg" style="width:100%" onclick="onClick(this)" alt="The Cathedral of Learning at the University of Pittsburgh looks like it's straight out of Harry Potter, Winter 2019">
-        <img src="images/gallery/06_s_Bascom01.jpg" style="width:100%" onclick="onClick(this)" alt="Bascom hill, Madison, Winter 2018">
-        <img src="images/gallery/09_s_Newmexico01.jpg" style="width:100%" onclick="onClick(this)" alt="Stopping point along the way to Albuquerque, Summer 2018">
-        <img src="images/gallery/12_h_Madison01.jpg" style="width:100%" onclick="onClick(this)" alt="Bascom Hill, Summer 2017">
-        </div>
-    </div>
-
-    
-
-    <!-- Modal for full size images on click-->
-    <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
-        <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
-        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-          <img id="img01" class="w3-image">
-          <p id="caption"></p>
-        </div>
-    </div>
-
-  <script>
-    // Toggle grid padding
-    function myFunction() {
-      var x = document.getElementById("myGrid");
-      if (x.className === "w3-row") {
-        x.className = "w3-row-padding";
-      } else { 
-        x.className = x.className.replace("w3-row-padding", "w3-row");
-      }
-    }
-    
-    // Open and close sidebar
-    function w3_open() {
-      document.getElementById("mySidebar").style.width = "100%";
-      document.getElementById("mySidebar").style.display = "block";
-    }
-    
-    function w3_close() {
-      document.getElementById("mySidebar").style.display = "none";
-    }
-
-    // Modal Image Gallery
-    function onClick(element) {
-    document.getElementById("img01").src = element.src;
-    document.getElementById("modal01").style.display = "block";
-    var captionText = document.getElementById("caption");
-    captionText.innerHTML = element.alt;
-    }
-    </script>
-    <script type="text/javascript" src="../assets/collapsible.js"></script>
-
-
-    
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.js"></script> -->
-    <!-- <script src = '../assets/horizontal_timeline.js'></script> -->
-    </body>
-</html>
-
+            <ul>
+<li>
+<p>YanYan Li and Louis Nirenberg, On the Hopf Lemma, <br>
+    <a href="https://arxiv.org/abs/0709.3531">https://arxiv.org/abs/0709.3531</a></p>
+</li>
+<li>
+<p>Tomasz Klimsiak, Tomasz Komorowski, On the maximum principles and the quantitative version of the Hopf lemma for<br />
+    uniformly elliptic integro-differential operators <br>
+    Journal of Differential Equations, 
+    Volume 298, 15 October 2021, Pages 346-386</p>
+</li>
+<li>
+<p>Daniela De Silva, Ovidiu Savin<br>
+    A short proof of Boundary Harnack Inequality<br>
+    <a href="https://arxiv.org/abs/1909.00062">https://arxiv.org/abs/1909.00062</a></p>
+</li>
+<li>
+<p>Leobardo Rosales, Generalizing Hopf’s Boundary Point Lemma, <a href="https://drive.google.com/file/d/1VReHzu0fteZ5EhUmM8wvSFT58BiVqQbh/view?usp=sharing">pdf</a></p>
+</li>
+</ul>
 
             <!-- For use inside index.stx
 ::: quote
