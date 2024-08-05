@@ -178,12 +178,27 @@ $$</p>
 <dt> Question </dt>
 
 <dd> Given a function $\varphi:\Omega \to \R$, under what conditions will the time average of
-the function $\varphi$ over the trajectory  $T_t(x^*)$ with initial condition $x^*$.
+the function $\varphi$ over the trajectory  $T_t(x^*)$ with initial condition $x^*$,
 
 $$
-    \langle\varphi \rangle _T(x^*) = \frac{1}{T} \int_0^T \varphi(T_t(x^*))dt
+    \langle\varphi \rangle _T(x^*) = \frac{1}{T} \int_0^T \varphi(T_t(x^*))\; dt
 $$
 
+converge to the space average as $T\to \infty$ 
+
+$$
+    \langle \varphi \rangle _\Omega = \int_\Omega \varphi \;d\mu . 
+$$
+
+<blockquote>
+
+By taking $\varphi$ to be the characteristic function $\chi_A$ of a set $A$ in $\Omega$ which is invariant
+under the flow $T_t$, one immediately shows that a necessary condition for answering this
+question in the affirmative is that all subsets invariant under the flow have measure $0$ or $1$.
+Flows with this property are said to be ergodic. Birkhoff s ergodic theorem says that this
+property is also sufficient. 
+
+</blockquote>
 
 </dd>
 
