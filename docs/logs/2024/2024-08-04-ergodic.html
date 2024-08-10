@@ -163,6 +163,7 @@ function includeHTML() {
                 <hr>
             </header>
             <h2>Introduction</h2>
+<h3>Basic notions</h3>
 <p>In this post I attempt to present a basic overview of ergodic theory (based on <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>).</p>
 <p>Let $(\Omega, \mathcal{M}, P)$ be a probability space. A map $T:\Omega\to \Omega$ (measurable transformation) is said to
 preserve the measure $\mu$ if </p>
@@ -174,6 +175,13 @@ $$</p>
 <li>${\displaystyle \mu (T(A))}$ is generically called a <strong>pullback</strong>.</li>
 </ul>
 <p>Almost all properties and behaviors of dynamical systems are defined in terms of the pushforward.</p>
+<ul>
+<li>If $T:\Omega\to \Omega$ is measure-preserving, then an event $A\in \mathcal{M}$ is called
+    <strong>invariant</strong> if $T^{-1}(A) = A$. </li>
+<li>The collection $\mathcal{F}$ of all invariant events is the invariant $\sigma$-algebra.</li>
+<li>If every invariant set $A$ either has measure $0$ or $1$, then $T$ is said to be <strong>ergodic</strong>.</li>
+</ul>
+<h3>Birkhoff's ergodic Theorem</h3>
 <p>Consider a flow $T_t:X\to X$ which preserves the probability measure $\mu$ on the space $(\Omega, \mathcal{M}, \mu)$. </p>
 <dt> Question </dt>
 
@@ -190,6 +198,8 @@ $$
     \langle \varphi \rangle _\Omega = \int_\Omega \varphi \;d\mu . 
 $$
 
+</dd>
+
 <blockquote>
 
 By taking $\varphi$ to be the characteristic function $\chi_A$ of a set $A$ in $\Omega$ which is invariant
@@ -200,8 +210,30 @@ property is also sufficient.
 
 </blockquote>
 
+<dt> Birkhoff's Theorem </dt>
+
+<dd> 
+
+For any function $\varphi \in L^1(\Omega, \mu)$, and for almost all $x\in \Omega$, we have
+
+$$
+    \lim_{T\to \infty} \frac{1}{T} \int_0^T \varphi(T_t(x))\;dt = M(\varphi)
+$$
+
+for some function 
+
 </dd>
 
+<h2>The discrete setting</h2>
+<p>Let $\phi:\Omega\to \R$ be continuous. For $N\in \mathbb{N}$, we define</p>
+<p>$$
+    \phi^{(N)} (x) =  \phi(x) + \phi(Tx) + \ldots + \phi(T^{N-1}x)
+$$</p>
+<p>as the correspondong Birkhoff sum. Birkhoff’s ergodic theorem in this setting asserts that uniformly</p>
+<p>$$
+    \frac{1}{N}\phi^{(N)}(\cdot) \to \int_\Omega \phi\; d\mu \;\text{uniformly as function}
+$$</p>
+<p>when $N\to \infty$.</p>
 <h2>References</h2>
 <p>A course page with more references <a href="https://people.maths.bris.ac.uk/~matmj/reading.html">web</a>. </p>
 <div class="footnote">
