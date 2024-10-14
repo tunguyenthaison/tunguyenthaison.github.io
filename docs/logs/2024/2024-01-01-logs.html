@@ -162,7 +162,18 @@ function includeHTML() {
                 
                 <hr>
             </header>
-            <h4>2024-10-11</h4>
+            <p><link href="/pagefind/pagefind-ui.css" rel="stylesheet"></p>
+<script src="/pagefind/pagefind-ui.js"></script>
+
+<div id="search"></div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: true });
+    });
+</script>
+
+<h4>2024-10-11</h4>
 <ul>
 <li><a href="https://drive.google.com/file/d/1rYWYEXbHMlwTJ9K6MFIT3442z6ESAtLO/view?usp=sharing">Invent paper: On the existence of minimal expansive solutions to the N-body problem, Davide Polimeni·Susanna Terracini</a></li>
 </ul>
