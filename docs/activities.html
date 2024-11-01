@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        <title>Activities</title>
+        <link rel="stylesheet" href="assets/fonts.css">
+        <link rel="stylesheet" href="assets/simplify.css">
+        <link rel="stylesheet" href="assets/pygments.css">
+        
+        
+        
+        
+<!-- for table css-->
+<link rel="stylesheet" href="/assets/teaching-table.css">
+
+<link rel="stylesheet" href="/assets/collapsible.css">
+
+<!-- KATEX -->
+<!-- All KaTeX links taken from the documentation here: https://katex.org/docs/browser.html. -->
+<link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css"
+        integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB"
+        crossorigin="anonymous">
+
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+        integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p"
+        crossorigin="anonymous">
+</script>
+
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer
+        src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+        integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
+        crossorigin="anonymous"
+        onload="renderMathInElement(document.body);">
+</script>
+<!-- KATEX -->
+
+<script>
+    MathJax = {
+        tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        macros: {
+        P: '{\\mathbf P}',  
+        x: '{\\mathbf x}',       
+        R: '{\\mathbb R}',                 // a simple string replacement
+        T: '{\\mathbb T}',                 // a simple string replacement
+        bold: ['\\boldsymbol{#1}',1] ,     // this macro has one parameter
+        ddx: ['\\frac{d#2}{d#1}', 2, 'x'], // this macro has an optional parameter that defaults to 'x'
+        abc: ['(#1)', 1, [null, '\\cba']]  // equivalent to \def\abc#1\cba{(#1)}
+        }
+        }
+};
+</script>
+
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+
+
+<!-- HTML includes are done by JavaScript. -->
+<script>
+function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+        /* Make an HTTP request using the attribute value as the file name: */
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("w3-include-html");
+                includeHTML();
+        }
+        }
+        xhttp.open("GET", file, true);
+        xhttp.send();
+        /* Exit the function: */
+        return;
+        }
+        }
+}
+</script>
+        
+        
+
+    </head>
+    <body class="node-activities node">
+        <header class="masthead">
+            <h1><a href="index.html">Son Tu</a></h1>
+            
+                <p class="tagline">Từ Nguyễn Thái Sơn</p>
+            
+            
+            <nav class="menu">
+                <input id="menu-check" type="checkbox"/>
+                <label id="menu-label" for="menu-check" class="unselectable">
+                    <span class="icon close-icon">✕</span>
+                    <span class="icon open-icon">☰</span>
+                    <span class="text">Menu</span>
+                </label>
+                <ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="notes//2024-10-02-CV.pdf">CV</a></li>
+<li><a href="research.html">Research</a></li>
+<li><a href="teaching.html">Teaching</a>
+    <!-- * <a href="teaching/child-one.html">Child One</a> -->
+    <!-- * <a href="teaching/child-two.html">Child Two</a> --></li>
+<li><a href="notes.html">Notes</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+<p><br></p>
+<p>
+
+<a class='imagelogo' href="https://orcid.org/0000-0003-3839-8336">
+    <img alt="orcid" 
+         src="/base/orcid.svg" width="30" >
+</a>
+
+<a class='imagelogo' href="https://arxiv.org/a/tu_s_1.html">
+    <img alt="arxiv" 
+         src="/base/arxiv.svg" width="30" >
+</a>
+
+<a class='imagelogo' href="https://scholar.google.com/citations?user=83D3lnQAAAAJ&hl=en">
+    <img alt="google scholar" 
+         src="/base/googlescholar.svg" width="30" >
+</a>
+
+
+<!-- <a class="arxiv" href="https://arxiv.org/a/tu_s_1.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165 165" width="24" height="24"><title>arXiv</title><path fill="currentColor" d="M38.6 9.4c-6.7 2.5-14.4 12.2-11.8 14.8 1.5 1.5 4.1.2 5.1-2.5.5-1.3 2.5-3.8 4.5-5.5 4.9-4.2 8.8-4.3 12.7-.1 5.6 6 14.3 27.6 22.3 55.1C75 83.8 75.6 86.8 74.6 88l-27.3 31.1C32.9 135.4 20.7 149.7 20 151c-1 1.8-.9 2.4.1 3 2 1.3 3.1.4 11.6-9.3l45.2-51.4c.3-.2 2.8 6.8 5.5 15.5 10.1 32.5 14.4 41 23.2 45.2 6.9 3.4 17.7 3.9 23.1 1.1 5.4-2.7 10.5-8.8 10.1-12.1-.4-3.6-2.6-3.1-5.6 1.4-3.1 4.6-6.6 7.2-10.5 8.2-2.3.5-3.3 0-6.1-2.9-5.6-5.9-15.4-30.7-23.7-59.9-2.6-9.3-2.9-11.1-1.7-12.5.7-1 12.6-14.6 26.3-30.3 28.5-32.5 29.7-33.9 28.9-35.1-1.7-2.7-6 1.4-30.4 29.5L88.8 71.9c-.4.1-2.3-5.2-4.3-11.7-8.7-28.3-14.3-41.3-20-46-6.3-5.1-18.7-7.4-25.9-4.8z"></path></svg></a> -->
+
+<!-- <a class="arxiv" href="https://scholar.google.com/citations?user=83D3lnQAAAAJ&hl=en"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="24" height="24"><title>Google Scholar</title><path fill="currentColor" d="M411.995 74.802V43.01L435 25H185.61L35 155.978h99.787l-.182 7.206c0 24.195 8.395 44.402 25.173 60.423 17.016 16.176 37.6 24.167 62.2 24.167 5.807 0 11.418-.574 17.002-1.19-3.372 7.598-5.192 14.623-5.192 21.004 0 11.6 5.192 24.012 15.813 37.012-45.814 3.008-79.412 11.39-100.794 24.6-12.398 7.6-22.222 17.185-29.596 28.574-7.613 11.6-11.21 24.014-11.21 37.42 0 11.18 2.407 21.382 7.207 30.38 4.8 9.012 11.194 16.415 18.975 22.012 7.808 5.78 16.82 10.594 27.007 14.61 10.173 3.792 20.416 6.59 30.393 8.187 10.216 1.61 20.193 2.406 30.002 2.406 15.813 0 31.402-2.015 47.396-6.017 15.826-4.17 30.603-10.187 44.4-18.192 13.812-8.004 25.203-18.793 33.808-32.17 8.606-13.63 12.986-29.008 12.986-46 0-12.804-2.798-24.418-7.975-34.998-5.22-10.593-11.6-19.408-19.2-26.223-7.626-6.773-15.24-13.014-22.837-18.583-7.375-5.612-13.77-11.405-19.185-17.213-5.192-5.974-7.78-11.78-7.78-17.393 0-5.793 1.986-11.376 6.2-16.777 3.987-5.402 8.787-10.412 14.595-15.422 5.792-4.98 11.6-10.578 17.196-16.582 5.808-6.003 10.818-13.81 14.805-23.215 4.003-9.613 6-20.402 6-32.395 0-15.784-3.008-28.6-8.802-38.79-.602-1.203-1.4-2.21-2.197-3.596l66.413-54.42v20c-8.593 1.008-7.81 6.2-7.81 12.4V237.21c0 6.97 5.794 12.58 12.804 12.58h4.6c7.01 0 12.594-5.61 12.594-12.58V87.2c0-6.2 1.007-11.39-7.584-12.4zM286.8 334.197c1.176.798 4.17 3.19 8.998 7 4.575 3.778 8 6.578 9.586 8.593 1.61 1.987 4.198 5.01 7.416 8.787 3.386 4 5.597 7.403 6.772 10.202.995 3.008 2.225 6.408 3.415 10.396a43.7 43.7 0 0 1 1.805 12.398c0 19.802-7.598 34.592-23.02 44.207-15.196 9.403-33.374 14.202-54.574 14.202-10.816 0-21.214-1.2-31.61-3.597-10.397-2.616-20.207-6.408-29.596-11.208a61.52 61.52 0 0 1-22.795-20.808c-5.807-8.984-8.606-19.185-8.606-30.59 0-11.993 3.2-22.6 9.81-31.402 6.577-9.012 15.183-15.588 25.776-20.192 10.398-4.617 21.2-7.823 32.003-9.796 10.998-2.015 22.01-3.008 33.206-3.008 5.192 0 9.193.406 12.202.797.406.196 3.4 2.393 8.984 6.62l10.23 7.39zm-4.002-117.4c-8.606 10.37-20.598 15.602-36.02 15.602-13.8 0-26-5.624-36.592-16.82-10.398-11-17.786-23.58-22.39-37.782-4.618-14.008-7.012-27.806-7.012-41.42 0-15.994 4.2-29.596 12.594-40.79 8.41-11.39 20.417-17.002 36.187-17.002 13.826 0 26 6.003 36.62 17.814 10.593 11.6 18.19 24.783 22.796 39.6 4.393 14.595 6.814 28.574 6.814 41.8 0 15.784-4.422 28.756-13 39z"></path></svg></a> -->
+
+</p>
+            </nav>
+        </header>
+        <article class="main">
+            <header class="title">
+                <h1>Activities</h1>
+                
+                
+                <hr>
+            </header>
+            <p>Here's where I share what I'm up to with teaching, research, and other projects.</p>
+<h2>Invited Talks</h2>
+<ul>
+<li>
+<p>(2024-10-16) Analysis and PDE seminar, Michigan State University (MSU) <br>
+    <em>Regularity and Vanishing Viscosity Rates in the Ergodic Problem</em> 
+    &nbsp; &#183; &nbsp; 
+    <a class="weblink" href="https://math.msu.edu/events/seminars/talk.aspx?eventId=42093">[website]</a>
+    <!-- <a class="weblink" href="">[slides]</a> -->
+    <!-- &nbsp; &#183; &nbsp; -->
+    <!-- <a class="weblink" href="">[video]</a> --></p>
+</li>
+<li>
+<p>(2024-10-14) (Online) Analysis Seminar, Texas Tech University (TTU) <br>
+   <em>Remarks on the well-posedness of Viscosity Solutions for the One-Phase Muskat Problem</em> 
+    &nbsp; &#183; &nbsp; 
+    <a class="weblink" href="https://www.math.ttu.edu/events/seminars/analysis/2024/fall/">[website]</a>
+    <!-- <a class="weblink" href="">[slides]</a> -->
+    <!-- &nbsp; &#183; &nbsp; -->
+    <!-- <a class="weblink" href="">[video]</a> --></p>
+</li>
+<li>
+<p>(2024-07-27) <em>Remarks on the well-posedness of Viscosity Solutions for the One-Phase Muskat Problem</em>, 
+    Summer school in PDE and Application 2024, Vietnam Institute for Advanced Study in Mathematics (VIASM) and Saigon University (SGU) <br>
+    <!-- &nbsp; &#183; &nbsp; -->
+    <a class="weblink" href="https://viasm.edu.vn/hdkh/pde2024?userkey=program">[website]</a>
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="">[slides]</a>
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="slides/2024_SSonPDE_Program.pdf">[schedule]</a>
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="https://viasm.edu.vn/en/scientific-activities/news-and-events/detail/summer-school-in-pde-and-applications-2024">[bulletin - eng] </a> 
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="https://drive.google.com/file/d/1DRvrxg-YQ11ufWjco_X1IQBv74EkSaag/view?usp=sharing">[pdf]</a>
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="https://viasm.edu.vn/hoat-dong-khoa-hoc/tin-tuc/chi-tiet/truong-he-ve-phuong-trinh-dao-ham-rieng-va-ung-dung-2024">[bulletin - vie]</a>
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="https://drive.google.com/file/d/1oJf-KQzNALsFhSrpzUtT_roGESO3Qjof/view?usp=sharing">[pdf]</a></p>
+</li>
+<li>
+<p>(2024-05-30) <em>Polynomial convergence rate for quasiperiodic homogenization of Hamilton-Jacobi equations</em>, 
+    Virtual PDEs seminar. 
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="">[slides]</a>
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="">[video]</a></p>
+</li>
+<li>
+<p>(2024-04-17) <em>Convergence Rate for 1D Quasi-Periodic Homogenization of Hamilton-Jacobi Equations</em>, <br>
+    Analysis and PDE seminar, Michigan State Univeristy.
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="https://math.msu.edu/events/seminars/talk.aspx?eventId=38870">[website]</a></p>
+</li>
+<li>
+<p>(2024-04-09) <em>Properties of the effective Hamiltonian and homogenization of the Hamilton-Jacobi equation</em>, 
+    PDE seminar, Ohio State Univeristy
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="">[website]</a></p>
+</li>
+<li>
+<p>(2024-03-21) (virtual) <em>Properties of the effective Hamiltonian and homogenization of the Hamilton-Jacobi equation</em>, 
+    Early Career Math Colloquium, The Univeristy of Arizona.
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" 
+        href="https://www.math.arizona.edu/outreach/lectures">
+        [website]
+    </a></p>
+</li>
+<li>
+<p>(2023-11) 
+    <em>Generalized Convergence of Hamilton–Jacobi equations with state-constraint</em>, <br>
+    Differential Equations and Nonlinear Analysis Seminar, 
+    North Carolina State University.
+    &nbsp; &#183; &nbsp;
+        <a class="weblink" 
+        href="https://wp.math.ncsu.edu/nat/ncsu-differential-equations-nonlinear-analysis-seminar-schedule-fall-2023/">
+        [website]
+    </a></p>
+</li>
+<li>
+<p>(2023-10) 
+    <em>Generalized Convergence of Hamilton–Jacobi equations with state-constraint</em>, <br>
+    SIAM Great Lakes 2023, Mini Symposium on 
+    Nonlinear partial differential equations and optimal transport 
+    with applications, Michigan State University.
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" 
+        href="https://sites.google.com/msu.edu/siamgreatlakes2023/home?authuser=0">
+        [website]
+    </a>
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" 
+        href="slides/FINALProgram-GLSIAM23.pdf">
+        [program]
+    </a></p>
+</li>
+<li>
+<p>(2023-08) 
+    <em>Generalized Convergence of Hamilton–Jacobi equations</em>, <br>
+    Applied Analysis Seminar, Stinghua University, Beijing, China.</p>
+</li>
+<li>
+<p>(2023-06) 
+    <em>Generalized Convergence of Hamilton–Jacobi equations</em>, <br>
+    Mathematics Seminar, University of Science - VNU HCMC.
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" 
+        href="https://www.math.hcmus.edu.vn/tin-t%E1%BB%A9c/tin-nghi%C3%AAn-c%E1%BB%A9u/765-seminar-b%E1%BB%99-m%C3%B4n-gi%E1%BA%A3i-t%C3%ADch-2">
+        [website]
+    </a></p>
+</li>
+<li>
+<p>(2023-05) 
+    <em>Generalized Convergence of Hamilton–Jacobi equations</em>, 
+    Madison PDEs Conference, University of Wisconsin - Madison.
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="https://sites.google.com/view/madpde2023/home">[website]</a></p>
+</li>
+<li>
+<p>(2023-04) (online): 
+    <em>The regularity with respect to domains of the additive eigenvalues of superquadratic Hamilton–Jacobi equation</em>,
+    Academy of Mathematics and Systems Science.
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="slides/slide_vanish_discount_amss_2023.pdf">[slides]</a></p>
+<p><blockquote class="abstract">
+    <details> 
+        <summary class="button"> [link] </summary> 
+        <p class="abstract-contents"></p>
+<div class="codehilite"><pre><span></span><code>        报告人：Son Thai Tu (Michigan State University) <span class="nt">&lt;br&gt;</span>
+
+        邀请人：张建路 <span class="nt">&lt;br&gt;</span>
+
+        题  目：The regularity with respect to domains of the 
+                additive eigenvalues of superquadratic 
+                Hamilton–Jacobi equation <span class="nt">&lt;br&gt;</span>
+
+        时  间：2023.04.26（星期三）09:00-11:00 <span class="nt">&lt;br&gt;</span>
+
+        地  点：腾讯会议：118-107-637 <span class="nt">&lt;br&gt;</span>
+
+        https://meeting.tencent.com/dm/HTmDd6DXH1HU 
+    <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/details&gt;</span>
+</code></pre></div>
+
+</blockquote>
+</li>
+<li>
+<p>(2023-04) (online): 
+    <em>Remarks on the vanishing viscosity process of 
+        state-constraint Hamilton-Jacobi equations</em>, <br>
+    Academy of Mathematics and Systems Science.
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" 
+        href="slides/slide_vanish_viscosity_amss_2023.pdf">
+        [slides]
+    </a></p>
+<p><blockquote class="abstract">
+    <details> 
+        <summary class="button"> [link] </summary> 
+        <p class="abstract-contents"></p>
+<div class="codehilite"><pre><span></span><code>        报告人：Son Thai Tu (Michigan State University) <span class="nt">&lt;br&gt;</span>
+
+        邀请人：张建路 <span class="nt">&lt;br&gt;</span>
+
+        题  目：Remarks on the vanishing viscosity process of 
+                state-constraint Hamilton-Jacobi equations <span class="nt">&lt;br&gt;</span>
+
+        时  间：2023.04.19（星期三）09:00-11:00 <span class="nt">&lt;br&gt;</span>
+
+        地  点：腾讯会议：118-107-637 <span class="nt">&lt;br&gt;</span>
+
+        https://meeting.tencent.com/dm/HTmDd6DXH1HU 
+    <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/details&gt;</span>
+</code></pre></div>
+
+</blockquote>
+</li>
+<li>
+<p>(2021-09) <em>Remarks on rate of vanishing viscosity for Hamilton–Jacobi equations</em>, <br>
+    Department of Mathematics and Statistics, 
+    University of North Carolina at Charlott.
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="">[slides]</a></p>
+</li>
+<li>
+<p>(2020-10) (online): <em>Vanishing discount problems for Hamilton–Jacobi equations on changing domains</em>, <br>
+    PDE Real Analysis Seminar, 
+    Graduate School of Mathematical Sciences, The University of Tokyo 
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="https://www.ms.u-tokyo.ac.jp/seminar/2020/sem20-126_e.html">[website]</a></p>
+</li>
+<li>
+<p>(2019-09) <em>State-constraint static Hamilton-Jacobi equation in nested domains</em>, 
+    Physical Applied Math seminar, University of Wisconsin - Madison.</p>
+</li>
+<li>
+<p>(2019-09) <em>State-constraint static Hamilton-Jacobi equation in nested domains</em>, 
+    PDE and Geometric Analysis seminar, University of Wisconsin - Madison.</p>
+</li>
+<li>
+<p>(2019-07) <em>State-constraint static Hamilton-Jacobi equation in nested domains</em>, 
+    Mathematical conference: Summer meeting 2019, University of Science - HCMC.</p>
+</li>
+<li>
+<p>(2018-09) <em>Rate of convergence for periodic homogenization of convex Hamilton-Jacobi equations in one dimension</em>, 
+    Physical Applied Math seminar, University of Wisconsin - Madison.</p>
+</li>
+</ul>
+<h2>Contributed Talks &amp; Presentation</h2>
+<ul>
+<li>
+<p>(2024-05-31) <em>Rate of convergence for quasi-periodic homogenization of Hamilton–Jacobi equation and application</em>, 
+    Boston-Keio-Tsinghua Workshop 2024: Differential Equations, Dynamical Systems and Applied Mathematics, Boston University.
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="https://math.bu.edu/BKT2024/index.html">[website]</a>
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="slides/2024_slides_boston.pdf">[slides]</a>
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="slides/2024-05-31-Boston-schedule.png">[schedule]</a></p>
+</li>
+<li>
+<p>(2024-04-26) Contributed talk: <em>Properties of the effective Hamiltonian and homogenization of the Hamilton-Jacobi equation</em>, 
+    88th Midwest PDE seminar, The Ohio State University.
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="https://www.asc.ohio-state.edu/lam.184/2024MWPDE/2024mwpdeposter.pdf">[website]</a>
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="slides/2024mwpdeposter.pdf">[poster]</a>
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="https://www.asc.ohio-state.edu/lam.184/2024MWPDE/MWPDE_timetable.pdf">[schedule]</a>
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="slides/MWPDE_timetable.pdf">[pdf]</a></p>
+</li>
+<li>
+<p>(2024-04-05) <a class="weblink" href="slides/2024_MSU_Poster.pdf">[poster]</a> 
+    <em>On the regularity of stochastic effective Hamiltonian</em>,<br />
+    8th OISS Annual Scholar Showcase,
+    Oﬀice of International Students and Scholars, 
+    Michigan State Univeristy.
+    <!-- &nbsp; &#183; &nbsp; --></p>
+</li>
+<li>
+<p>(2022-07) Contributed talk: 
+    <em>Remarks on rate of vanishing viscosity for Hamilton–Jacobi equations</em>,
+    Concentration week on Geometry and Analysis, 
+    University of Texas A&amp;M.
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" 
+        href="https://sites.google.com/tamu.edu/cw-mg/home?authuser=0&pli=1">
+           [website]
+    </a></p>
+</li>
+<li>
+<p>(2021-09) <em>From Stochastic Optimal control to Deterministic Optimal control: rate of convergence of the value functions</em>, <br>
+    Physical Applied Math seminar, 
+    University of Wisconsin - Madison 
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="https://wiki.math.wisc.edu/index.php/Applied/Physical_Applied_Math/Fall2021">[website]</a></p>
+</li>
+<li>
+<p>(2019-03) Contributed Talk: <em>Some recent works on homogenization of 
+    Hamilton-Jacobi equations</em>, 
+    Geometric and Harmonic Analysis 2019, 
+    University of Connecticut.
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="#"> [slide]</a></p>
+</li>
+<li>
+<p>(2019-03) Poster: <em>Homogenization of Hamilton-Jacobi equation: Rate of convergence</em>,<br />
+    CNA Workshop 2019: Mathematical Models for Pattern fomation, 
+    Carnegie Mellon University.
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="slides/CNA2019_Poster.pdf">[poster]</a></p>
+</li>
+</ul>
+<h2>Research visits</h2>
+<ul>
+<li>(2024-07) University of Seoul, Seoul, Korea, hosted by Dohuyn Kwon</li>
+<li>(2023-08) Academy of Mathematics and Systems Science, Chinese Academy of Science, BeijingChina, hosted by Jianlu Zhang </li>
+<li>(2023-11) North Carolina State University, USA, hosted by Khai T. Nguyen</li>
+<li>(2021-09) University of North Carolina - Charlotte, USA, hosted by Loc Nguyen</li>
+</ul>
+<h2>Selected Conferences, Workshops, and Summer Schools attended</h2>
+<ul>
+<li>
+<p>(2024-08) <em>Brin Summer school: PDE and Randomness</em>, University of Maryland. <br>
+    <a class="weblink" href="https://brinmrc.umd.edu/programs/schools/summer24/summer24-school-random.html">[link]</a>
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="slides/2024Summer_School_PDE_and_Randomness_Poster.pdf">[poster]</a>
+    &nbsp; &#183; &nbsp;
+    <a class="weblink" href="slides/2024Scheldule_SS-PDER_final.pdf">[schedule]</a></p>
+</li>
+<li>
+<p>(2023-10) <em>SIAM Great Lakes 2023 Meeting</em>, Michigan State University.</p>
+</li>
+<li>
+<p>(2023-05) <em>Madison PDEs</em>, University of Wisconsin-Madison.</p>
+</li>
+<li>
+<p>(2022-07) <em>Concentration week on Geometry and Analysis</em>, University of Texas A&amp;M.</p>
+</li>
+<li>
+<p>(2021-07) <em>Methematics conference: Summer meeting</em>, University of Science, VNU-HCMC.</p>
+</li>
+<li>
+<p>(2021-04) <em>The Twenty-Third Riviere-Fabes Symposium on Analysis and PDE</em> (online).</p>
+</li>
+<li>
+<p>(2020-05) <em>High Dimensional Hamilton-Jacobi PDEs Stochastic PDEs</em>, (online) IPAM, UCLA.</p>
+</li>
+<li>
+<p>(2020-03) <em>High Dimensional Hamilton-Jacobi PDEs Tutorial</em>, IPAM, UCLA.</p>
+</li>
+<li>
+<p>(2019-09) <em>AMS Fall Central Sectional Meeting</em>, University of Wisconsin-Madison.</p>
+</li>
+<li>
+<p>(2019-03) <em>Geometric and Harmonic Analysis 2019</em>, University of Connecticut.</p>
+</li>
+<li>
+<p>(2019-03) <em>CNA Workshop 2019: Mathematical Models for Pattern fomation</em>, Carnegie Mellon University.</p>
+</li>
+<li>
+<p>(2018-04) <em>81st Midwest PDE seminar</em>, University of Wisconsin-Madison.</p>
+</li>
+<li>
+<p>(2017-06) <em>Fourth Chicago Summer School in Analysis</em>, University of Chicago.</p>
+</li>
+<li>
+<p>(2017-05) <em>Minischool in Calculus of Variations and Nonlinear Partial Differential Equations</em>, University of California - Berkeley.</p>
+</li>
+<li>
+<p>(2016-10) <em>Madison workshop in Analysis and PDEs</em>, University of Wisconsin - Madison.</p>
+</li>
+<li>
+<p>(2016-03) <em>DAAD Spring School on Combinatorial Stochastic Processes</em>, VIASM.</p>
+</li>
+<li>
+<p>(2014-07) <em>Summer Program onPDEs and Applied Mathematics</em>, VIASM.</p>
+</li>
+</ul>
+<h2>Reviewer for Mathematics Journals</h2>
+<ul>
+<li><a href="https://www.ams.org/publications/journals/journalsframework/aboutproc">Proceedings of the American Mathematical Society</a></li>
+<li><a href="https://pubs.aip.org/aip/jmp">Journal of Mathematical Physics</a></li>
+<li><a href="https://www.springer.com/journal/12220">The Journal of Geometric Analysis</a></li>
+<li><a href="https://www.aimsciences.org/DCDS">Discrete and Continuous Dynamical Systems</a></li>
+</ul>
+<h2>Collaborators</h2>
+<ul>
+<li><a href="https://users.math.msu.edu/users/schwabru/">Russell Schwab</a> (East Lansing, USA)</li>
+<li><a href="https://sites.google.com/msu.edu/turanova/research?authuser=0">Olga Turanova</a> (East Lansing, USA)</li>
+<li><a href="https://www.auburn.edu/cosam/faculty/math_stats/hu/index.htm">Bingyang Hu</a> (Auburn, Alabama, USA)</li>
+<li><a href="https://www.math.tecnico.ulisboa.pt/~bozorg/">Farid Bozorgnia</a> (Lisboa, Portugal)</li>
+<li><a href="https://sites.google.com/view/yeoneung527">Yeoneung Kim</a> (Seoul, South Korea)</li>
+<li><a href="https://people.math.wisc.edu/~htran24/">Hung Vinh Tran</a> (Madison, USA)</li>
+<li><a href="https://people.math.wisc.edu/~yhan244/Research.html">Yuxi Han</a> (Madison, USA)</li>
+<li><a href="https://sites.google.com/site/dhkwonmath/home?authuser=0">Dohyun Kwon</a> (Seoul, South Korea)</li>
+<li><a href="https://www.researchgate.net/profile/Jianlu-Zhang">Jianlu Zhang</a> (Beijing, China)</li>
+<li><a href="https://www.researchgate.net/profile/Thu-Nguyen-460">Thu Nguyen</a> (Oslo, Norway)</li>
+<li><a href="">Quang M. Le</a> (Ho Chi Minh City, Vietnam)</li>
+<li><a href="">Binh T. Nguyen</a> (Ho Chi Minh City, Vietnam)</li>
+</ul>
+
+            <!-- For use inside index.stx
+::: quote
+    © Copyright 2022-2024 Son N. T. Tu. Powered by [Ivy](https://www.dmulholl.com/docs/ivy/dev/). 
+-->
+
+
+
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+
+
+<!-- HTML includes are done by JavaScript. -->
+<script>
+    includeHTML();
+</script>
+    
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+
+<hr>
+
+<blockquote>
+    <p>
+        © 2016-2024 Son N. T. Tu. Powered by <a href="https://www.dmulholl.com/docs/ark/main/">Ark</a>.  
+        Last updated: October 02, 2024.
+    </p>
+</blockquote>
+
+<script type="text/javascript" src="/assets/collapsible.js"></script>
+
+<!-- Default Statcounter code for MyWeb
+https://tunguyenthaison.github.io/ -->
+<script type="text/javascript">
+    var sc_project=11219527; 
+    var sc_invisible=0; 
+    var sc_security="8ef86b9e"; 
+    var scJsHost = "https://";
+    document.write("<sc"+"ript type='text/javascript' src='" +
+    scJsHost+
+    "statcounter.com/counter/counter.js'></"+"script>");
+    </script>
+    <noscript><div class="statcounter"><a title="Web Analytics
+    Made Easy - Statcounter" href="https://statcounter.com/"
+    target="_blank"><img class="statcounter"
+    src="https://c.statcounter.com/11219527/0/8ef86b9e/0/"
+    alt="Web Analytics Made Easy - Statcounter"
+    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+    <!-- End of Statcounter Code -->
+
+
+    <!-- Default Statcounter code for university
+https://users.math.msu.edu/users/tuson/ -->
+<script type="text/javascript">
+    var sc_project=12959139; 
+    var sc_invisible=1; 
+    var sc_security="1c3525af"; 
+    </script>
+    <script type="text/javascript"
+    src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript><div class="statcounter"><a title="Web Analytics"
+    href="https://statcounter.com/" target="_blank"><img class="statcounter"
+    src="https://c.statcounter.com/12959139/0/1c3525af/1/" alt="Web Analytics"
+    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+    <!-- End of Statcounter Code -->
+            
+        </article>
+        
+    </body>
+</html>
