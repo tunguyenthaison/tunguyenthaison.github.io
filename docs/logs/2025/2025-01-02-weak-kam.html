@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        <title>Weak KAM Theory</title>
+        <link rel="stylesheet" href="../../assets/fonts.css">
+        <link rel="stylesheet" href="../../assets/simplify.css">
+        <link rel="stylesheet" href="../../assets/pygments.css">
+        
+        
+        
+        
+<!-- for table css-->
+<link rel="stylesheet" href="/assets/teaching-table.css">
+
+<link rel="stylesheet" href="/assets/collapsible.css">
+
+<!-- KATEX -->
+<!-- All KaTeX links taken from the documentation here: https://katex.org/docs/browser.html. -->
+<link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css"
+        integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB"
+        crossorigin="anonymous">
+
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+        integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p"
+        crossorigin="anonymous">
+</script>
+
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer
+        src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+        integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
+        crossorigin="anonymous"
+        onload="renderMathInElement(document.body);">
+</script>
+<!-- KATEX -->
+
+<script>
+    MathJax = {
+        tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        macros: {
+        P: '{\\mathbf P}',  
+        x: '{\\mathbf x}',       
+        R: '{\\mathbb R}',                 // a simple string replacement
+        T: '{\\mathbb T}',                 // a simple string replacement
+        bold: ['\\boldsymbol{#1}',1] ,     // this macro has one parameter
+        ddx: ['\\frac{d#2}{d#1}', 2, 'x'], // this macro has an optional parameter that defaults to 'x'
+        abc: ['(#1)', 1, [null, '\\cba']]  // equivalent to \def\abc#1\cba{(#1)}
+        }
+        }
+};
+</script>
+
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+
+
+<!-- HTML includes are done by JavaScript. -->
+<script>
+function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+        /* Make an HTTP request using the attribute value as the file name: */
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("w3-include-html");
+                includeHTML();
+        }
+        }
+        xhttp.open("GET", file, true);
+        xhttp.send();
+        /* Exit the function: */
+        return;
+        }
+        }
+}
+</script>
+        
+        
+
+    </head>
+    <body class="node-logs-2025-2025-01-02-weak-kam node-logs-2025 node-logs node">
+        <header class="masthead">
+            <h1><a href="../../index.html">Son Tu</a></h1>
+            
+                <p class="tagline">Từ Nguyễn Thái Sơn</p>
+            
+            
+            <nav class="menu">
+                <input id="menu-check" type="checkbox"/>
+                <label id="menu-label" for="menu-check" class="unselectable">
+                    <span class="icon close-icon">✕</span>
+                    <span class="icon open-icon">☰</span>
+                    <span class="text">Menu</span>
+                </label>
+                <ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../cv//2024-19-12.pdf">CV</a></li>
+<li><a href="../../research.html">Research</a></li>
+<li><a href="../../teaching.html">Teaching</a></li>
+<li><a href="../../activities.html">Activity</a> 
+    <!-- * <a href="../../teaching/child-one.html">Child One</a> -->
+    <!-- * <a href="../../teaching/child-two.html">Child Two</a> --></li>
+<li><a href="../../notes.html">Notes</a></li>
+<li><a href="../../about.html">About</a></li>
+</ul>
+<p><br></p>
+<p>
+
+<!-- <a class='imagelogo' href="https://www.researchgate.net/profile/Son-Tu-2">
+    <img alt="research gate" 
+         src="/base/researchgate-svgrepo-com.svg" width="40" >
+</a> -->
+
+
+<a class='imagelogo' href="https://orcid.org/0000-0003-3839-8336">
+    <img alt="orcid" 
+         src="/base/orcid.svg" width="30" >
+</a>
+
+<a class='imagelogo' href="https://arxiv.org/a/tu_s_1.html">
+    <img alt="arxiv" 
+         src="/base/arxiv.svg" width="30" >
+</a>
+
+<a class='imagelogo' href="https://scholar.google.com/citations?user=83D3lnQAAAAJ&hl=en">
+    <img alt="google scholar" 
+         src="/base/googlescholar.svg" width="30" >
+</a>
+
+
+</p>
+            </nav>
+        </header>
+        <article class="main">
+            <header class="title">
+                <h1>Weak KAM Theory</h1>
+                
+                
+                    <p class="subtitle">2025-01-02</p>
+                
+                <hr>
+            </header>
+            <ul>
+<li><a href="https://en.wikipedia.org/wiki/Symplectic_manifold">Symplectic manifold, Wiki</a></li>
+</ul>
+<hr />
+<ul>
+<li>
+<p>Kaizhi Wang, Lin Wang and Jun Yan, <em>Implicit variational principle for contact Hamiltonian systems</em>, Kaizhi Wang et al 2017 Nonlinearity 30 492, <a href="https://drive.google.com/file/d/1UcJoP7cNn0TWZTPzwpbdXI_rf6ij9Gm_/view?usp=sharing">pdf</a></p>
+</li>
+<li>
+<p>Lawrence C. Evans, Weak KAM Theory and Partial Differential Equations, <a href="https://math.berkeley.edu/~evans/weak_KAM.pdf">pdf</a></p>
+</li>
+<li>Patrick Bernard and Boris Buffoni, Optimal mass transportation and Mather theory, <a href="https://web.ma.utexas.edu/mp_arc/c/04/04-411.pdf">pdf</a></li>
+<li>Alfonso Sorrentio, Lecture notes on Mather's Theory for Lagrangian Systems, <a href="https://pmu.uy/pmu16/pmu16-0169.pdf">pdf</a></li>
+<li>Diogo A. Gomes, Regularity Theory for Hamilton-Jacobi equations, <a href="https://web.ma.utexas.edu/mp_arc/c/01/01-423.pdf">pdf</a></li>
+<li>Xiaojujn Cui, Locally Lipschitz graph property for lines, <a href="https://www.researchgate.net/publication/259367401_Locally_Lipschitz_graph_property_for_lines">Research Gate</a></li>
+<li>The AUbry-Mather theory, <a href="https://www.science.smith.edu/~cgole/OLD/KOBO/NEW/chapter2.pdf">Book Chapter</a></li>
+<li>Patrick Bernard, Joana Santos, A geometric definition of the Aubry-Mather set, <a href="https://hal.science/hal-00678691/document">HAL</a></li>
+<li>A. Figalli, L. Rifford, Aubry sets, Hamilton-Jacobi equations, and the Mane Conjecture, <a href="https://people.math.ethz.ch/~afigalli/lecture-notes-pdf/Aubry-sets-Hamilton-Jacobi-equations-and-the-Mane-Conjecture.pdf">pdf</a></li>
+<li>J.J.P. Veerman, F.M. Tangerman, On Aubry-Mather sets, Physica D 46 (1990) 149-162, <a href="https://drive.google.com/file/d/1DvqYsHtvRJLYQQOn7pNYQR4OgfuLaeQh/view?usp=sharing">pdf</a></li>
+<li>Hitoshi Ishii, Kaizhi Wang, Lin Wang, Jun Yan, <em>Hamilton–Jacobi equations with their Hamiltonians depending Lipschitz continuously on the unknown</em>, <a href="https://www.tandfonline.com/doi/full/10.1080/03605302.2021.1983598">doi</a>  </li>
+</ul>
+<hr />
+<ul>
+<li>Thierry Wilfried Tabet Tchamba, Large time behavior of solutions of viscous Hamilton-Jacobi Equations with superquadratic Hamiltonian, <a href="https://arxiv.org/abs/0903.4679">https://arxiv.org/abs/0903.4679</a></li>
+<li>Guy Barles a, Alessio Porretta, Thierry Tabet Tchamba, <em>On the large time behavior of solutions of the Dirichlet problem for subquadratic viscous Hamilton–Jacobi equations</em>, Journal de Mathématiques Pures et Appliquées, Volume 94, Issue 5, November 2010, Pages 497-519, <a href="https://drive.google.com/file/d/1n0cHkjK3TYgQR5LOy4P3g7rd8sgiKvDt/view?usp=sharing">pdf</a></li>
+</ul>
+
+            <!-- For use inside index.stx
+::: quote
+    © Copyright 2022-2024 Son N. T. Tu. Powered by [Ivy](https://www.dmulholl.com/docs/ivy/dev/). 
+-->
+
+
+
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+
+
+<!-- HTML includes are done by JavaScript. -->
+<script>
+    includeHTML();
+</script>
+    
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+
+<hr>
+
+<blockquote>
+    <p>
+        © 2016-2025 Son N. T. Tu. Powered by <a href="https://www.dmulholl.com/docs/ark/main/">Ark</a>.  
+        Last updated: January 03, 2025.
+    </p>
+</blockquote>
+
+<script type="text/javascript" src="/assets/collapsible.js"></script>
+
+<!-- Default Statcounter code for MyWeb
+https://tunguyenthaison.github.io/ -->
+<script type="text/javascript">
+    var sc_project=11219527; 
+    var sc_invisible=0; 
+    var sc_security="8ef86b9e"; 
+    var scJsHost = "https://";
+    document.write("<sc"+"ript type='text/javascript' src='" +
+    scJsHost+
+    "statcounter.com/counter/counter.js'></"+"script>");
+    </script>
+    <noscript><div class="statcounter"><a title="Web Analytics
+    Made Easy - Statcounter" href="https://statcounter.com/"
+    target="_blank"><img class="statcounter"
+    src="https://c.statcounter.com/11219527/0/8ef86b9e/0/"
+    alt="Web Analytics Made Easy - Statcounter"
+    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+    <!-- End of Statcounter Code -->
+
+
+    <!-- Default Statcounter code for university
+https://users.math.msu.edu/users/tuson/ -->
+<script type="text/javascript">
+    var sc_project=12959139; 
+    var sc_invisible=1; 
+    var sc_security="1c3525af"; 
+    </script>
+    <script type="text/javascript"
+    src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript><div class="statcounter"><a title="Web Analytics"
+    href="https://statcounter.com/" target="_blank"><img class="statcounter"
+    src="https://c.statcounter.com/12959139/0/1c3525af/1/" alt="Web Analytics"
+    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+    <!-- End of Statcounter Code -->
+            
+        </article>
+        
+    </body>
+</html>
