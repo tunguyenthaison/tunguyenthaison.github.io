@@ -216,24 +216,17 @@ Preprints and Publications
 <!-- abstract button content -->
 <div class="block collapse _14_abstract">
     <div class="block__content">
-       We propose a splitting approach to solve the second-order
-       Hamilton--Jacobi equation, reducing it to a heat step and
-       a purely first-order step. The latter is implemented using
-       a gradient value policy iteration algorithm, enabling efficient
-       characteristic-based machine learning methods.
-        We establish convergence rates for the splitting method.
-        In particular, the $L^\infty$ error is bounded below by
-        $\mathcal{O}(h)$ and above by $\mathcal{O}(h^{1/7})$ for
-        Lipschitz initial data; this improves to $\mathcal{O}(h^{1/5})$
-        for semiconcave data and to $\mathcal{O}(h^{1/3})$ for $C^2$ data.
-        We also prove an upper $L^1$ error estimate of order
-        $\mathcal{O}(h^{1/2})$ in the periodic setting, where $h$ is
-        the splitting step.
-        For the first-order step, we provide a weighted $L^2$ error
-        analysis that shows exponential convergence.
-        Each iteration solves linear characteristic equations and learns
-        the value function by minimizing a weighted value gradient loss.
-        The approach yields stable and accurate numerical results.
+       We propose a splitting approach to solve the second-order Hamilton--Jacobi equation,
+       reducing it to a heat step and a purely first-order step. The latter is implemented using a
+       gradient value policy iteration algorithm, enabling efficient characteristic-based machine
+       learning methods.
+        We establish convergence rates for the splitting method. In particular,
+        with $h$ the splitting step, the $L^\infty$ error is bounded between $\mathcal{O}(h)$
+        and $\mathcal{O}(h^{1/5})$ for Lipschitz data, improving to $\mathcal{O}(h^{1/3})$ for
+        semiconcave data. In the periodic setting, we also obtain an $L^1$ error of order $\mathcal{O}(h^{1/2})$.
+        For the first-order step, we provide a weighted $L^2$ error analysis that shows exponential convergence.
+        Each iteration solves linear characteristic equations and learns the value function by minimizing a
+        weighted value gradient loss. The approach yields stable and accurate numerical results.
     </div>
 </div>
 
