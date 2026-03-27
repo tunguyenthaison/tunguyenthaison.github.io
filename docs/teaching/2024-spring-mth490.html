@@ -99,6 +99,26 @@ function includeHTML() {
         }
 }
 </script>
+
+<script>
+window.MathJax = {
+  tex: {
+    tags: 'ams',   // <-- THIS enables AMS-style numbering
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    macros: {
+        T: "\\mathbb{T}",
+        R: "\\mathbb{R}",
+        N: "\\mathbb{N}",
+        Z: "\\mathbb{Z}",
+        eps: "\\varepsilon"
+}
+  }
+};
+</script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
         
         
 
@@ -165,22 +185,7 @@ function includeHTML() {
                 
                 <hr>
             </header>
-            <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"
-  integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs"
-  crossorigin="anonymous" />
-
-<style type="text/css">
-    .katex img {
-      object-fit: fill;
-      padding: unset;
-      display: block;
-      position: absolute;
-      width: 100%;
-      height: inherit;
-    }
-</style>
-<h2>MTH 490 Directed Study</h2>
+            <h2>MTH 490 Directed Study</h2>
 <ul>
 <li>
 <p>Lecture: </p>
@@ -275,7 +280,7 @@ While not always directly related, I found them to be great for piquing curiosit
     doubling variable method for static first-order equations</li>
 <li>Feb 09, 2024: Stability of Viscosity solutions<ul>
 <li>Showing the distance function is the solution to the Eikonal equation</li>
-<li>Showing <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>D</mi><mo>±</mo></msup><mi>u</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">D^\pm u(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0213em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">±</span></span></span></span></span></span></span></span><span class="mord mathnormal">u</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span></span></span></span> is dense</li>
+<li>Showing $<code>D^\pm u(x)</code>$ is dense</li>
 </ul>
 </li>
 <li>Feb 02, 2024: Subdifferential and Superdifferential</li>

@@ -6,10 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
 
-        <title>Notes</title>
-        <link rel="stylesheet" href="assets/fonts.css">
-        <link rel="stylesheet" href="assets/simplify.css">
-        <link rel="stylesheet" href="assets/pygments.css">
+        <title>Son Tu</title>
+        <link rel="stylesheet" href="../assets/fonts.css">
+        <link rel="stylesheet" href="../assets/simplify.css">
+        <link rel="stylesheet" href="../assets/pygments.css">
         
         
         
@@ -123,9 +123,9 @@ window.MathJax = {
         
 
     </head>
-    <body class="node-notes node">
+    <body class="node-blog-viscosity-cited node-blog node">
         <header class="masthead">
-            <h1><a href="index.html">Son Tu</a></h1>
+            <h1><a href="../index.html">Son Tu</a></h1>
             
                 <p class="tagline">Từ Nguyễn Thái Sơn</p>
             
@@ -138,17 +138,17 @@ window.MathJax = {
                     <span class="text">Menu</span>
                 </label>
                 <ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="cv//CV.pdf">CV</a></li>
-<li><a href="teaching.html">Teaching</a></li>
-<li><a href="research.html">Research</a></li>
-<li><a href="talks.html">Talks</a>
-    <!-- * <a href="research/talks.html">Talks</a> --></li>
-<li><a href="activities.html">Activities</a> 
-    <!-- * <a href="teaching/child-one.html">Child One</a> -->
-    <!-- * <a href="teaching/child-two.html">Child Two</a> --></li>
-<li><a href="notes.html">Notes</a></li>
-<li><a href="about.html">Other</a></li>
+<li><a href="../index.html">Home</a></li>
+<li><a href="../cv//CV.pdf">CV</a></li>
+<li><a href="../teaching.html">Teaching</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../talks.html">Talks</a>
+    <!-- * <a href="../research/talks.html">Talks</a> --></li>
+<li><a href="../activities.html">Activities</a> 
+    <!-- * <a href="../teaching/child-one.html">Child One</a> -->
+    <!-- * <a href="../teaching/child-two.html">Child Two</a> --></li>
+<li><a href="../notes.html">Notes</a></li>
+<li><a href="../about.html">Other</a></li>
 </ul>
 <p><br></p>
 <p>
@@ -180,55 +180,35 @@ window.MathJax = {
         </header>
         <article class="main">
             <header class="title">
-                <h1>Notes</h1>
-                
-                    <p class="subtitle">A collection of notes.</p>
+                <h1></h1>
                 
                 
                 <hr>
             </header>
-            <!-- ### MISCELLANEOUS NOTES -->
+            <p>The effect of diffusion usually gives</p>
+<p><span class="math inline">\(\mathcal{O}(h^{1/5})\)</span></p>
+<p><span class="math display">\[
+    \int_\tau^T \int_{\T^n} |D^2u^\varepsilon|^2 \rho\;dxdt \leq
+\frac{C}{\varepsilon}
+    \quad\Longrightarrow\quad
+    \int_{\tau}^T \int_{\T^n} |\Delta u^\varepsilon| \rho \;dxdt  \leq
+\frac{C}{\sqrt{\varepsilon}} \quad\Longrightarrow\quad \Vert
+u^\varepsilon-u\Vert_{L^\infty} = \mathcal{O}(\sqrt{\varepsilon}).
+\]</span></p>
+<p><span class="math display">\[
+\begin{align}\label{eq:x}
+    \int_\tau^T \int_{\T^n} |D^2u^\varepsilon|^2 \rho\;dxdt \leq
+\frac{C}{\varepsilon}
+    \quad\Longrightarrow\quad
+    \int_{\tau}^T \int_{\T^n} |\Delta u^\varepsilon| \rho \;dxdt  \leq
+\frac{C}{\sqrt{\varepsilon}} \quad\Longrightarrow\quad \Vert
+u^\varepsilon-u\Vert_{L^\infty} = \mathcal{O}(\sqrt{\varepsilon}).
+\end{align}
+\]</span></p>
+<p><span class="math inline">\(\eqref{eq:x}\)</span></p>
+<p>This follows from Lions (1987).</p>
+<h2 class="unnumbered" id="references">References</h2>
 
-<ul>
-<li><em><a href="notes/Math807.pdf">Lecture notes on Weak KAM theory (incomplete notes)</a></em><br>
-  (May 04, 2021)</li>
-</ul>
-<!-- * *[Some notes on Finite Difference Schemes for Hamilton-Jacobi equation](@root/notes/Numerics.pdf)*<br> -->
-<!-- (December 24, 2017) -->
-
-<!-- * *[A note on Fourier-Stieltjes transforms and almost-periodic functions](@root/notes/Fourier.pdf)*<br> -->
-<!-- (January 17, 2017) -->
-
-<!-- * *[Applied Math Qualifying Exam at UW-Madison](@root/notes/Applied_Qual.pdf)* <br> -->
-<!-- (August 28, 2017) -->
-
-<!-- ---  -->
-
-<!-- These are some notes I have taken through my undergraduate study. -->
-
-<ul>
-<li>Lecture note: <em><a href="notes/summer2015.pdf">Homogenization for viscosity solutions of Hamilton - Jacobi equations</a></em> <br>
-  (July 14, 2015) 
-  <!-- Lecture notes from a course by Hung V. Tran at VNU-HCMC. -->
-</li>
-</ul>
-<!-- <details> In summer 2015, while attending a summer course taught by 
-  <a href='http://www.math.wisc.edu/~hung/'> Hung V. Tran <a> at the University of Science, Vietnam National University, HCMC, 
-  <a href='https://www.tsvan.xyz/'>Son P.T. Van</a>
-  and I wrote the lecture notes for this course.
-  </details> -->
-
-<!-- * Undergraduate thesis: *[Linear control systems and the regularity of the minimum time functions](#)* <br> -->
-<!-- (May 31, 2015) -->
-<!-- <details>
-
-  <b>Advisor:</b> <a href='https://tnguye13.math.ncsu.edu/'>Khai T. Nguyen</a> <br>
-  <b>Abstract:</b> Consider the linear control system $`x(t)=Ax(t)+Bu(t)`$ with the target $`0`$. The function $`T(x)`$ is
-  the minimum time needed to steer a point $`x`$ to $`0`$. It is well-known that under the Rank-Kalman condition, $`T`$
-  is just continuous in the reachable set. Our main goal is to study the regularity of $`T(x)`$. We prove that $`T`$ is
-  a.e. twice differentiable. Moreover, we also obtain an explicit formula for the set of singularities where the optimal
-  control changes its sign.
-  </details> -->
 
             <!-- For use inside index.stx
 ::: quote

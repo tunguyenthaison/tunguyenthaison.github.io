@@ -99,6 +99,26 @@ function includeHTML() {
         }
 }
 </script>
+
+<script>
+window.MathJax = {
+  tex: {
+    tags: 'ams',   // <-- THIS enables AMS-style numbering
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    macros: {
+        T: "\\mathbb{T}",
+        R: "\\mathbb{R}",
+        N: "\\mathbb{N}",
+        Z: "\\mathbb{Z}",
+        eps: "\\varepsilon"
+}
+  }
+};
+</script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
         
         
 

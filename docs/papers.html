@@ -99,6 +99,26 @@ function includeHTML() {
         }
 }
 </script>
+
+<script>
+window.MathJax = {
+  tex: {
+    tags: 'ams',   // <-- THIS enables AMS-style numbering
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    macros: {
+        T: "\\mathbb{T}",
+        R: "\\mathbb{R}",
+        N: "\\mathbb{N}",
+        Z: "\\mathbb{Z}",
+        eps: "\\varepsilon"
+}
+  }
+};
+</script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
         
         
 
@@ -165,9 +185,7 @@ function includeHTML() {
                 
                 <hr>
             </header>
-            <h3 id="id-2026-03-01-23-41-47">
-2026-03-01 23:41:47
-</h3>
+            <h3>2026-03-01 23:41:47</h3>
 <table style="border-collapse:collapse; width:100%;">
   <thead>
     <tr>
@@ -205,9 +223,8 @@ function includeHTML() {
     </tr>
   </tbody>
 </table>
-<h3 id="id-2026-02-27-09-24-39">
-2026-02-27 09:24:39
-</h3>
+
+<h3>2026-02-27 09:24:39</h3>
 <table style="border-collapse:collapse; width:100%;">
   <thead>
     <tr>
@@ -226,9 +243,8 @@ function includeHTML() {
     </tr>
   </tbody>
 </table>
-<h3 id="id-2026-02-23-23-42-33">
-2026-02-23 23:42:33
-</h3>
+
+<h3>2026-02-23 23:42:33</h3>
 <table style="border-collapse:collapse; width:100%;">
   <thead>
     <tr>

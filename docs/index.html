@@ -99,6 +99,26 @@ function includeHTML() {
         }
 }
 </script>
+
+<script>
+window.MathJax = {
+  tex: {
+    tags: 'ams',   // <-- THIS enables AMS-style numbering
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    macros: {
+        T: "\\mathbb{T}",
+        R: "\\mathbb{R}",
+        N: "\\mathbb{N}",
+        Z: "\\mathbb{Z}",
+        eps: "\\varepsilon"
+}
+  }
+};
+</script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
         
         
 
@@ -190,6 +210,9 @@ My <a href="notes/Thesis_SonTu.pdf">dissertation</a> is on partial differential 
 </p>
 <hr>
 <ul>
+<li>
+105th Annual Meeting of the Texas Section of the Mathematical Association of America, March 27-28, 2026 - Hosted by Baylor University <a href="https://math.artsandsciences.baylor.edu/105th-annual-maa-meeting">website</a>
+</li>
 <li>
 Guest Editor Announcement.
 </li>
