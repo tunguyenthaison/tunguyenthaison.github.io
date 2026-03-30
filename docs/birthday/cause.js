@@ -16,7 +16,7 @@
         gif: "gif1.gif"
     },
     { 
-        text: "The moments we spent, the laughter we shared, and the love we built and will bill together are the greatest gifts I could ever ask for. Happy birthday, my love! 🎉. 🥳 ", 
+        text: "The moments we spent, the laughter we shared, and the love we built and will build together are the greatest gifts I could ever ask for. Happy birthday, my love! 🎉. 🥳 ", 
         emoji: "🌟",
         gif: "gif2.gif"
     }
