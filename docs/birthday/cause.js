@@ -65,7 +65,7 @@ function displayNewReason() {
         reasonsContainer.appendChild(card);
         
         // Update counter
-        reasonCounter.textContent = `Reason ${currentReasonIndex + 1} of ${reasons.length}`;
+        // reasonCounter.textContent = `Reason ${currentReasonIndex + 1} of ${reasons.length}`;
         
         currentReasonIndex++;
 
