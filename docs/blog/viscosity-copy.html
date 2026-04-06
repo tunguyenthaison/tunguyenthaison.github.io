@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
 
-        <title>Others</title>
+        <title>Viscosity solutions: Notes and Remarks</title>
         <link rel="stylesheet" href="../assets/fonts.css">
         <link rel="stylesheet" href="../assets/simplify.css">
         <link rel="stylesheet" href="../assets/pygments.css">
@@ -123,7 +123,7 @@ window.MathJax = {
         
 
     </head>
-    <body class="node-blog-others node-blog node">
+    <body class="node-blog-viscosity-copy node-blog node">
         <header class="masthead">
             <h1><a href="../index.html">Son Tu</a></h1>
             
@@ -180,28 +180,29 @@ window.MathJax = {
         </header>
         <article class="main">
             <header class="title">
-                <h1>Others</h1>
+                <h1>Viscosity solutions: Notes and Remarks</h1>
                 
                 
                 <hr>
             </header>
-            <h3>Reading list for April</h3>
-<ul>
-<li>An Optimal Transport View of Schrodinger’s Equation, Max-K. von Renesse 
-    <span style="text-align-last: right; display: inline; float:right"> 
-        <a href="https://drive.google.com/file/d/1OZ2ObqWxF5UsNpbYfEk5H4TuycoKvCJW/view?usp=drive_link">pdf</a>
-    </span> <br>    </li>
-</ul>
-<hr />
-<p>A good book on Elliptic PDEs.</p>
-<ul>
-<li>Xavier Ros Oton <span style="text-align-last: right; display: inline; float:right"> 
-        <a href="https://www.ub.edu/pde/xros/">web</a> 
-    </span> <br>    <ul>
-<li>Regularity Theory for Elliptic PDE, Xavier Fernandez-Real, Xavier Ros-Oton, Zurich Lectures in Advanced Mathematics. EMS books, 2022.</li>
-</ul>
-</li>
-</ul>
+            <p>The effect of diffusion usually gives</p>
+<p>$\mathcal{O}(h^{1/5})$</p>
+<p>$$
+    \int_\tau^T \int_{\T^n} |D^2u^\varepsilon|^2 \rho\;dxdt \leq \frac{C}{\varepsilon} 
+    \quad\Longrightarrow\quad 
+    \int_{\tau}^T \int_{\T^n} |\Delta u^\varepsilon| \rho \;dxdt  \leq \frac{C}{\sqrt{\varepsilon}} \quad\Longrightarrow\quad \Vert u^\varepsilon-u\Vert_{L^\infty} = \mathcal{O}(\sqrt{\varepsilon}).
+$$</p>
+<p>$$
+\begin{align}\label{eq:x}
+    \int_\tau^T \int_{\T^n} |D^2u^\varepsilon|^2 \rho\;dxdt \leq \frac{C}{\varepsilon} 
+    \quad\Longrightarrow\quad 
+    \int_{\tau}^T \int_{\T^n} |\Delta u^\varepsilon| \rho \;dxdt  \leq \frac{C}{\sqrt{\varepsilon}} \quad\Longrightarrow\quad \Vert u^\varepsilon-u\Vert_{L^\infty} = \mathcal{O}(\sqrt{\varepsilon}).
+\end{align}
+$$</p>
+<p>$\eqref{eq:x}$</p>
+<p>This follows from @lions1987. </p>
+<h2>References</h2>
+<p>{% include_raw "refs_only.html" %}</p>
 
             <!-- For use inside index.stx
 ::: quote
@@ -233,13 +234,14 @@ window.MathJax = {
 <blockquote>
     <p>
         © 2016-2026 Son N. T. Tu. Powered by <a href="https://www.dmulholl.com/docs/ark/main/">Ark</a>.  
-        Last updated: April 5, 2026.
+        Last updated: March 12, 2026.
     </p>
 </blockquote>
 
 <script type="text/javascript" src="/assets/collapsible.js"></script>
 
-<!-- Default Statcounter code for MyWeb https://tunguyenthaison.github.io/ -->
+<!-- Default Statcounter code for MyWeb
+https://tunguyenthaison.github.io/ -->
 <script type="text/javascript">
     var sc_project=11219527; 
     var sc_invisible=0; 
@@ -249,17 +251,29 @@ window.MathJax = {
     scJsHost+
     "statcounter.com/counter/counter.js'></"+"script>");
     </script>
-    <noscript><div class="statcounter">
-        <a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/"
-            target="_blank"><img class="statcounter"
-            src="https://c.statcounter.com/11219527/0/8ef86b9e/0/"
-            alt="Web Analytics Made Easy - Statcounter"
-            referrerPolicy="no-referrer-when-downgrade"></a>
-    </div></noscript>
+    <noscript><div class="statcounter"><a title="Web Analytics
+    Made Easy - Statcounter" href="https://statcounter.com/"
+    target="_blank"><img class="statcounter"
+    src="https://c.statcounter.com/11219527/0/8ef86b9e/0/"
+    alt="Web Analytics Made Easy - Statcounter"
+    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
     <!-- End of Statcounter Code -->
 
 
-
+    <!-- Default Statcounter code for university
+https://users.math.msu.edu/users/tuson/ -->
+<script type="text/javascript">
+    var sc_project=12959139; 
+    var sc_invisible=1; 
+    var sc_security="1c3525af"; 
+    </script>
+    <script type="text/javascript"
+    src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript><div class="statcounter"><a title="Web Analytics"
+    href="https://statcounter.com/" target="_blank"><img class="statcounter"
+    src="https://c.statcounter.com/12959139/0/1c3525af/1/" alt="Web Analytics"
+    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+    <!-- End of Statcounter Code -->
             
         </article>
         
