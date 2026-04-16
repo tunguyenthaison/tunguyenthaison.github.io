@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
 
-        <title>Math: Notes and Remarks</title>
+        <title>Fall 2026</title>
         <link rel="stylesheet" href="../assets/fonts.css">
         <link rel="stylesheet" href="../assets/simplify.css">
         <link rel="stylesheet" href="../assets/pygments.css">
@@ -123,7 +123,7 @@ window.MathJax = {
         
 
     </head>
-    <body class="node-blog-viscosity node-blog node">
+    <body class="node-teaching-2026-fall-calculus-of-variations node-teaching node">
         <header class="masthead">
             <h1><a href="../index.html">Son Tu</a></h1>
             
@@ -190,84 +190,64 @@ window.MathJax = {
         </header>
         <article class="main">
             <header class="title">
-                <h1>Math: Notes and Remarks</h1>
-                
-                    <p class="subtitle">Collections of Math notes.</p>
+                <h1>Fall 2026</h1>
                 
                 
                 <hr>
             </header>
-            <h2>Fourier Analysis</h2>
+            <h2 id="mth-6v23-calculus-of-variations">
+MTH 6V23 Calculus of Variations
+</h2>
+<div>
 <ul>
-<li><a href="https://www2.math.upenn.edu/~gressman/analysis/14-fourier.html">Advance Fourier Analysis - Upenn, Philip T. Gressman</a></li>
-</ul>
-<h3>On $\T^n$</h3>
-<p>On $\T^n$, the set $\{E_\kappa(x): \kappa\in \Z^n\}$, where $E_\kappa(x) = e^{2\pi i \kappa \cdot x}$, is an orthonormal basis of the Hilbert space $L^2(\T^n)$. The Fouier transform is thus naturally defined $\mathcal{F}: L^2(\T^n) \to l^2(\Z^n)$ by</p>
-<p>$$
-\hat{f}(\kappa) =  \langle f, E_\kappa \rangle = \int_{\T^n} f(x) \overline{E}_{\kappa}(x) dx = \int_{\T^n} f(x)e^{-2\pi i \kappa\cdot x}\;dx.
-$$</p>
-<p>Parserval's identity states that $\Vert f\Vert_{L^2(\T^n)} = \Vert \hat{f}\Vert_{l^2(\Z^n)}$, i.e.,</p>
-<p>$$
-\begin{align}
-    \int_{\T^n} |f(x)|^2 dx = \sum_{\kappa\in \Z^n} |\hat{f}(\kappa)|^2.
-\end{align} 
-$$</p>
-<p>The Fourier transform is an isometry and thus can be extended to a unitary operator on $L^2(\T^n)$. The theory of Hilbert spaces implies that the Fourier transform is invertible and the inverse is given by</p>
-<p>$$
-\begin{align}\label{eq:inverse_fourier}
-    f(x) = \sum_{\kappa\in \Z^n} \hat           {f}(\kappa) E_\kappa(x)
-    = \sum_{\kappa\in \Z^n} \hat           {f}(\kappa) e^{2\pi i \kappa \cdot x}
-\end{align}   <br />
-$$</p>
-<p>as functions in $L^2(\T^n)$. By Hausdorff-Young inequality, the Fourier transform can be extended to a bounded linear operator from $L^p(\T^n)$ to $l^q(\Z^n)$ for $1\leq p \leq 2$ and $\frac{1}{p} + \frac{1}{q} = 1$. However, the Fourier transform is not invertible on $L^p(\T^n)$ for $p\neq 2$.</p>
-<p>$$
-\begin{align}\label{eq:hausdorff_young}
-    \Vert \hat{f}\Vert_{l^q(\Z^n)} \leq \Vert f\Vert_{L^p(\T^n)}, \quad 1\leq p \leq 2, \frac{1}{p} + \frac{1}{q} = 1.
-\end{align} 
-$$  </p>
-<p>If $\widehat{f}\in \ell^1(\Z^n)$, then the Fourier series $f_N(x) = \sum_{\kappa \in \Z^n, |\kappa|\leq N} \widehat{f}(\kappa) e^{2\pi i \kappa \cdot x}$ converges uniformly to a continuous function $G\in C(\T^n)$. By the uniqueness of Fourier coefficient we obtain $F\equiv G$.</p>
-<h3>On $\R^n$</h3>
-<h2>vanishing Viscosity</h2>
-<p>The effect of diffusion usually gives</p>
-<p>$\mathcal{O}(h^{1/5})$</p>
-<p>$$
-    \int_\tau^T \int_{\T^n} |D^2u^\varepsilon|^2 \rho\;dxdt \leq \frac{C}{\varepsilon} 
-    \quad\Longrightarrow\quad 
-    \int_{\tau}^T \int_{\T^n} |\Delta u^\varepsilon| \rho \;dxdt  \leq \frac{C}{\sqrt{\varepsilon}} \quad\Longrightarrow\quad \Vert u^\varepsilon-u\Vert_{L^\infty} = \mathcal{O}(\sqrt{\varepsilon}).
-$$</p>
-<p>$$
-\begin{align}\label{eq:xx}
-    \int_\tau^T \int_{\T^n} |D^2u^\varepsilon|^2 \rho\;dxdt \leq \frac{C}{\varepsilon} 
-    \quad\Longrightarrow\quad 
-    \int_{\tau}^T \int_{\T^n} |\Delta u^\varepsilon| \rho \;dxdt  \leq \frac{C}{\sqrt{\varepsilon}} \quad\Longrightarrow\quad \Vert u^\varepsilon-u\Vert_{L^\infty} = \mathcal{O}(\sqrt{\varepsilon}).
-\end{align}
-$$</p>
-<p>$\eqref{eq:x}$</p>
-<p>\begin{align}\label{eq:x}
-    \int_\tau^T \int_{\T^n} |D^2u^\varepsilon|^2 \rho\;dxdt \leq \frac{C}{\varepsilon} 
-    \quad\Longrightarrow\quad 
-    \int_{\tau}^T \int_{\T^n} |\Delta u^\varepsilon| \rho \;dxdt  \leq \frac{C}{\sqrt{\varepsilon}} \quad\Longrightarrow\quad \Vert u^\varepsilon-u\Vert_{L^\infty} = \mathcal{O}(\sqrt{\varepsilon}).
-\end{align}</p>
-<p>This follows from @lions1987.  </p>
-<h2>Weak KAM Theory</h2>
-<p>We review a setting of non-cooperative, differential games. They involve a system of Hamilton-Jacobi equations. <sup id="fnref:Isa65"><a class="footnote-ref" href="#fn:Isa65">1</a></sup></p>
-<ul>
-<li>Consider $N$ playes labeled $i=1,\ldots, N$. We fix a time $t\in [0,T]$ and an $N$-typle $x = (x_1,\ldots, x_N) \in \R^N$. <sup id="fnref2:Isa65"><a class="footnote-ref" href="#fn:Isa65">1</a></sup></li>
-</ul>
-<h2>Game Theory</h2>
-<h2>Refererences</h2>
-<!-- ## References
-
-{% include_raw "refs_only.html" %} -->
-
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:Isa65">
-<p>Isaacs, R. (1965) Differential Games: A Mathematical Theory with Applications to Warfare and Pursuit, Control and Optimization. John Wiley and Sons, New York.&#160;<a class="footnote-backref" href="#fnref:Isa65" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Isa65" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li>
+<a href="#">Course website - Canvas, Baylor University</a>
 </li>
-</ol>
+<li>
+Lecture:
+<ul>
+<li>
+Instructor: Son Tu – son_tu@baylor.edu
+</li>
+<li>
+SDRICH 216 (MWF   01:25PM - 02:15PM).
+</li>
+</ul>
+</li>
+<li>
+Office hours:
+<ul>
+<li>
+Time: TBA
+</li>
+</ul>
+<!-- Tuesday, Thursday, Friday from 10:00 am – 11:00 am, and by appointment. -->
+</li>
+<li>
+Syllabus: TBA
+<!-- [pdf](@root/teaching/2026-spring/2026 Spring Linear Algebra - Syllabus.pdf) -->
+</li>
+</ul>
+<p>
+<!-- * Schedule: [pdf](@root/teaching/2026-spring/Calendar Spring 2026.pdf) -->
+* How to reach me? You can reach me by sending an email to son_tu@baylor.edu. All emails will be answered within 24 hours (most likely within 10 hours).
+&lt;!-- * Getting help:
+  - <b>Math Lab</b> The Department of Mathematics provides free tutoring for students enrolled in 1000-level mathematics classes.
+      <a href="/teaching/2026-spring/Spring 2026 Math Lab Sign.pdf">
+    <img src="/teaching/2026-spring/Spring 2026 Math Lab Sign.png" width="20%" height="20%"></a>
+  - <b>Success Center</b> Free tutoring is available through the Paul L. Foster Success Center: Center for Academic Success and Engagement.
+  - Private Tutoring offered by Graduate Students
+    See <a href="https://math.artsandsciences.baylor.edu/undergraduate-program/math-lab-and-tutors">Math Department Private Tutoring</a> --&gt;
+</p>
 </div>
+<h2 id="materials">
+Materials
+</h2>
+<p>
+<!-- - Textbook: Linear Algebra and its Applications, 6th edition, by Lay, Lay, and McDonald, -->
+<!-- ISBN 9780135851203. -->
+- All materials are posted on <a href="#">Canvas</a>.
+</p>
 
             <!-- For use inside index.stx
 ::: quote
