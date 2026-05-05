@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        <title>Holder and Besov spaces: Notes and Remarks</title>
+        <link rel="stylesheet" href="../../assets/fonts.css">
+        <link rel="stylesheet" href="../../assets/simplify.css">
+        <link rel="stylesheet" href="../../assets/pygments.css">
+        
+        
+        
+        
+<!-- for table css-->
+<link rel="stylesheet" href="/assets/teaching-table.css">
+
+<link rel="stylesheet" href="/assets/collapsible.css">
+
+<!-- KATEX -->
+<!-- All KaTeX links taken from the documentation here: https://katex.org/docs/browser.html. -->
+<link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css"
+        integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB"
+        crossorigin="anonymous">
+
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+        integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p"
+        crossorigin="anonymous">
+</script>
+
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer
+        src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+        integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
+        crossorigin="anonymous"
+        onload="renderMathInElement(document.body);">
+</script>
+<!-- KATEX -->
+
+<script>
+    MathJax = {
+        tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        macros: {
+        P: '{\\mathbf P}',  
+        x: '{\\mathbf x}',       
+        R: '{\\mathbb R}',                 // a simple string replacement
+        T: '{\\mathbb T}',                 // a simple string replacement
+        bold: ['\\boldsymbol{#1}',1] ,     // this macro has one parameter
+        ddx: ['\\frac{d#2}{d#1}', 2, 'x'], // this macro has an optional parameter that defaults to 'x'
+        abc: ['(#1)', 1, [null, '\\cba']]  // equivalent to \def\abc#1\cba{(#1)}
+        }
+        }
+};
+</script>
+
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+
+
+<!-- HTML includes are done by JavaScript. -->
+<script>
+function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+        /* Make an HTTP request using the attribute value as the file name: */
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("w3-include-html");
+                includeHTML();
+        }
+        }
+        xhttp.open("GET", file, true);
+        xhttp.send();
+        /* Exit the function: */
+        return;
+        }
+        }
+}
+</script>
+
+<script>
+window.MathJax = {
+  tex: {
+    tags: 'ams',   // <-- THIS enables AMS-style numbering
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    macros: {
+        T: "\\mathbb{T}",
+        R: "\\mathbb{R}",
+        N: "\\mathbb{N}",
+        Z: "\\mathbb{Z}",
+        eps: "\\varepsilon"
+}
+  }
+};
+</script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+        
+
+    </head>
+    <body class="node-blog-harmonic-holderbesov node-blog-harmonic node-blog node">
+        <header class="masthead">
+            <h1><a href="../../index.html">Son Tu</a></h1>
+            
+                <p class="tagline">Từ Nguyễn Thái Sơn</p>
+            
+            
+            <nav class="menu">
+                <input id="menu-check" type="checkbox"/>
+                <label id="menu-label" for="menu-check" class="unselectable">
+                    <span class="icon close-icon">✕</span>
+                    <span class="icon open-icon">☰</span>
+                    <span class="text">Menu</span>
+                </label>
+                <ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../cv//CV.pdf">CV</a></li>
+<li><a href="../../teaching.html">Teaching</a></li>
+<li><a href="../../research.html">Research</a></li>
+<li><a href="../../talks.html">Talks</a></li>
+<li><a href="../../activities.html">Activities</a> </li>
+<li><a href="../../notes.html">Notes</a></li>
+<li><a href="../../about.html">Other</a></li>
+</ul>
+<p><br></p>
+<p>
+
+<!--     
+  <li style="display: inline; padding-top: -20pt; margin-top: -20pt; font-size: 0.78em;">
+    <a href="/research/publications.html">Publications</a></li> -->
+
+
+
+<!-- * [Pub](@root/research/publications//) -->
+<!-- * [Talks](@root/talks//) -->
+<!-- * [Activities](@root/activities//)  -->
+
+ <!-- * [Child One](@root/teaching/child-one//) -->
+<!-- * [Child Two](@root/teaching/child-two//) -->
+
+<!-- <a class='imagelogo' href="https://www.researchgate.net/profile/Son-Tu-2">
+    <img alt="research gate" 
+         src="/base/researchgate-svgrepo-com.svg" width="40" >
+</a> -->
+
+
+<a class='imagelogo' href="https://orcid.org/0000-0003-3839-8336">
+    <img alt="orcid" 
+         src="/base/orcid.svg" width="30" >
+</a>
+
+<a class='imagelogo' href="https://arxiv.org/a/tu_s_1.html">
+    <img alt="arxiv" 
+         src="/base/arxiv.svg" width="30" >
+</a>
+
+<a class='imagelogo' href="https://scholar.google.com/citations?user=83D3lnQAAAAJ&hl=en">
+    <img alt="google scholar" 
+         src="/base/googlescholar.svg" width="30" >
+</a>
+
+
+</p>
+            </nav>
+        </header>
+        <article class="main">
+            <header class="title">
+                <h1>Holder and Besov spaces: Notes and Remarks</h1>
+                
+                    <p class="subtitle">Collections of Math notes.</p>
+                
+                
+                <hr>
+            </header>
+            <p>Before going into the details, a useful general rule for embeddings between Besov spaces is the following.</p>
+<h2>Besov space</h2>
+<p>Let $\chi \in \mathrm{C}^\infty_c(\mathbb{R})$ be a smooth bump function such that, nonincreasing in $|s|$, with
+$$
+    \chi = 1\;\text{on}\;\left[-\frac{3}{4}, \frac{3}{4}\right], \qquad \mathrm{supp}(\chi) = \left[-\frac{4}{3}, \frac{4}{3}\right]. 
+$$</p>
+<p>For $s&gt;0$, we define</p>
+<p>$$
+\begin{align}\label{eq:PaleyLittlewood-1}
+    \varphi_{-1}(s) = \chi(s) ,
+    \qquad 
+    \varphi_0(s) = \chi\left(\frac{s}{2}\right) - \chi(s)  \geq 0,
+    \qquad 
+    \varphi_k(s) = \varphi_0\left(\frac{s}{2^k}\right) \geq 0, \quad k\geq 1. 
+\end{align}
+$$</p>
+<p>Then $\mathrm{supp}\;\varphi_k = \left[\frac{3}{4}\cdot 2^k, \frac{8}{3}\cdot 2^k\right]$ and $\sum_{k=-1}^\infty \varphi_k(s) = 1$. 
+For $\xi \in \mathbb{R}^n$, we will, by a slight abuse of notation, write $\varphi_k(\xi) = \varphi_k(|\xi|)$. </p>
+<ul>
+<li>If $f\in L^1(\T^n)$, the Littlewood-Paley projections $\Delta_k f\in C^\infty(\T^n)$ are defined by 
+\begin{align}\label{eq:PaleyLittlewood-2}
+    \Delta_k f(x) &amp;\doteq \sum_{\xi\in \Z^n} \varphi_k(\xi) \widehat{f}(\xi)e^{2\pi i \xi \cdot x} 
+    = \sum_{ \frac{3}{4}\cdot 2^k \leq |\xi| \leq \frac{8}{3}\cdot 2^k} \varphi_k(\xi) \widehat{f}(\xi)e^{2\pi i \xi \cdot x}, \qquad x\in \T^n. 
+\end{align}</li>
+<li>If $f\in L^1(\T^n)\cap L^2(\T^n)$, by Parseval's Theorem $\Vert f\Vert_{L^2(\T^n)}^2 = \sum_{\xi\in \Z^n} |\widehat{f}(\xi)|^2$, thus $f(x) = \sum_{k=-1}^\infty \Delta_kf(x)  \qquad\text{in}\;L^2(\T^n)$. </li>
+</ul>
+<p>Let $K_j:\T^n\to \R$ be the inverse Fourier transform of $\varphi_j$ namely </p>
+<p>$$
+    K_j(x) = \sum_{\xi\in \Z^n} \varphi_j(\xi) e^{2\pi i \xi \cdot x}, \qquad x\in \T^n,
+$$</p>
+<p>where the sum is finite since $\mathrm{supp}(\varphi_j) \subset \left[\frac{3}{4}\cdot 2{j}, \frac{8}{3}\cdot 2^j\right]$. </p>
+<p><strong>LEMMA.</strong>
+    $\Vert K_j\Vert_{L^1(\T^n)} \leq C$ uniformly in $j$. </p>
+<p><span style="text-align-last: right; display: inline; float:left ">
+<button class="btn btn-primary btn__first" 
+        data-toggle="collapse"
+        data-target=".collapse.t20260424a"
+        data-text="Collapse"> Proof &nbsp;</button> 
+</span>
+<span style="text-align-last: left; display: inline; float:right "> 
+    <!-- abstract button content -->
+    <div class="block collapse t20260424a">
+        <div class="block__content">
+            Let 
+            $$
+                \varphi_0^\vee(x) = \int_{\R^n}  \varphi_0(\xi) e^{2\pi i\xi \cdot x}\;d\xi 
+                \qquad \Longrightarrow \qquad 
+            $$
+        </div>
+    </div>
+</span></p>
+<h2>Basic identity</h2>
+<p><strong>Theorem.</strong> Let $\alpha \in (0,1]$. We have $C^{0,\alpha}(\T^n) = B^{\alpha}_{\infty, \infty}(\T^n)$.</p>
+<div style="background:#f5f8ff; padding:4px 8px; border-radius:6px;">
+<b>Proof.</b>
+
+Let us show $C^{0,\alpha}(\T^n)\hookrightarrow B^\alpha_{\infty,\infty}(\T^n)$. From the fact that $\widehat{K_j}(0) = \varphi_j(0) = 0$ for all $j\geq 0$ we compute for $j\geq 0$ that
+
+$$
+    \Delta_j f(x) = (K_j*f)(x) = \int_{\T^n} K_j(y) f(x-y)\;dy = \int_{\T^n} K_j(y) \big( f(x-y) - f(x)\big) \;dy.
+$$
+
+Therefore, for $j\geq 0$ we have $[f]$
+
+$$
+|\Delta_j f(x)| 
+    \leq 
+    \lbrack f \rbrack_{C^{0,\alpha}(\T^n)} \cdot 2^{-j\alpha} \left(\int_{\R^n} |\varphi_0^\vee(z)|\cdot |z|^\alpha\;dz\right).
+$$
+
+Since
+$$
+    \int_{\R^n} |\varphi_0^\vee(z)|\cdot |z|^\alpha\;dz 
+    \leq \int_{\R^n} |\varphi_0^\vee(z)|\;dz \leq C_N \int_{\R^n} \frac{dz}{(1+|z|^N)},
+$$
+we conclude that 
+$$
+    2^{j\alpha}|\Delta_j f(x)|  \leq C_N[f]_{C^{0,\alpha}(\T^n)}, \qquad j\geq 0.
+$$
+
+For $j=-1$, using $\varphi_{-1} = \chi$ and $\chi(0) = 1$, we have
+$$
+\begin{aligned}
+    |\Delta_{-1}f(x)| &= \left| \varphi_{-1}(0)\widehat{f}(0) +  \sum_{|\xi|=1} \varphi_{-1}(\xi)\widehat{f}(\xi)e^{2\pi i\xi\cdot x} \right|  \\\
+    &\leq \sum_{|\xi|\leq 1} |\widehat{f}(\xi)|\leq (n+1)\Vert f\Vert_{L^1(\T^n)} \leq (n+1)\Vert f\Vert_{L^\infty(\T^n)}. 
+\end{aligned}
+$$
+
+We conclude that 
+
+$$
+    \Vert f\Vert_{B^\alpha_{\infty, \infty}(\T^n)} \leq \left(C_N + \frac{n+1}{2}\right)\Vert f\Vert_{C^{0,\alpha}(\T^n)}. 
+$$
+
+</div>
+
+<h2>Refererences</h2>
+<!-- [^Isa65]: Isaacs, R. (1965) Differential Games: A Mathematical Theory with Applications to Warfare and Pursuit, Control and Optimization. John Wiley and Sons, New York. -->
+
+<!-- ## References
+
+{% include_raw "refs_only.html" %} -->
+
+            <!-- For use inside index.stx
+::: quote
+    © Copyright 2022-2024 Son N. T. Tu. Powered by [Ivy](https://www.dmulholl.com/docs/ivy/dev/). 
+-->
+
+
+
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+
+
+<!-- HTML includes are done by JavaScript. -->
+<script>
+    includeHTML();
+</script>
+    
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+
+<hr>
+
+<blockquote>
+    <p>
+        © 2016-2026 Son N. T. Tu. Powered by <a href="https://www.dmulholl.com/docs/ark/main/">Ark</a>.  
+        Last updated: April 5, 2026.
+    </p>
+</blockquote>
+
+<script type="text/javascript" src="/assets/collapsible.js"></script>
+
+<!-- Default Statcounter code for MyWeb https://tunguyenthaison.github.io/ -->
+<script type="text/javascript">
+    var sc_project=11219527; 
+    var sc_invisible=0; 
+    var sc_security="8ef86b9e"; 
+    var scJsHost = "https://";
+    document.write("<sc"+"ript type='text/javascript' src='" +
+    scJsHost+
+    "statcounter.com/counter/counter.js'></"+"script>");
+    </script>
+    <noscript><div class="statcounter">
+        <a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/"
+            target="_blank"><img class="statcounter"
+            src="https://c.statcounter.com/11219527/0/8ef86b9e/0/"
+            alt="Web Analytics Made Easy - Statcounter"
+            referrerPolicy="no-referrer-when-downgrade"></a>
+    </div></noscript>
+    <!-- End of Statcounter Code -->
+
+
+
+            
+        </article>
+        
+    </body>
+</html>

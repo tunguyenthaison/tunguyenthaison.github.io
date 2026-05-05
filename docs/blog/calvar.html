@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        <title>Calculus of Variations</title>
+        <link rel="stylesheet" href="../assets/fonts.css">
+        <link rel="stylesheet" href="../assets/simplify.css">
+        <link rel="stylesheet" href="../assets/pygments.css">
+        
+        
+        
+        
+<!-- for table css-->
+<link rel="stylesheet" href="/assets/teaching-table.css">
+
+<link rel="stylesheet" href="/assets/collapsible.css">
+
+<!-- KATEX -->
+<!-- All KaTeX links taken from the documentation here: https://katex.org/docs/browser.html. -->
+<link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css"
+        integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB"
+        crossorigin="anonymous">
+
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+        integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p"
+        crossorigin="anonymous">
+</script>
+
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer
+        src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+        integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
+        crossorigin="anonymous"
+        onload="renderMathInElement(document.body);">
+</script>
+<!-- KATEX -->
+
+<script>
+    MathJax = {
+        tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        macros: {
+        P: '{\\mathbf P}',  
+        x: '{\\mathbf x}',       
+        R: '{\\mathbb R}',                 // a simple string replacement
+        T: '{\\mathbb T}',                 // a simple string replacement
+        bold: ['\\boldsymbol{#1}',1] ,     // this macro has one parameter
+        ddx: ['\\frac{d#2}{d#1}', 2, 'x'], // this macro has an optional parameter that defaults to 'x'
+        abc: ['(#1)', 1, [null, '\\cba']]  // equivalent to \def\abc#1\cba{(#1)}
+        }
+        }
+};
+</script>
+
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+
+
+<!-- HTML includes are done by JavaScript. -->
+<script>
+function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+        /* Make an HTTP request using the attribute value as the file name: */
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("w3-include-html");
+                includeHTML();
+        }
+        }
+        xhttp.open("GET", file, true);
+        xhttp.send();
+        /* Exit the function: */
+        return;
+        }
+        }
+}
+</script>
+
+<script>
+window.MathJax = {
+  tex: {
+    tags: 'ams',   // <-- THIS enables AMS-style numbering
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    macros: {
+        T: "\\mathbb{T}",
+        R: "\\mathbb{R}",
+        N: "\\mathbb{N}",
+        Z: "\\mathbb{Z}",
+        eps: "\\varepsilon"
+}
+  }
+};
+</script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+        
+
+    </head>
+    <body class="node-blog-calvar node-blog node">
+        <header class="masthead">
+            <h1><a href="../index.html">Son Tu</a></h1>
+            
+                <p class="tagline">Từ Nguyễn Thái Sơn</p>
+            
+            
+            <nav class="menu">
+                <input id="menu-check" type="checkbox"/>
+                <label id="menu-label" for="menu-check" class="unselectable">
+                    <span class="icon close-icon">✕</span>
+                    <span class="icon open-icon">☰</span>
+                    <span class="text">Menu</span>
+                </label>
+                <ul>
+<li><a href="../index.html">Home</a></li>
+<li><a href="../cv//CV.pdf">CV</a></li>
+<li><a href="../teaching.html">Teaching</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../talks.html">Talks</a></li>
+<li><a href="../activities.html">Activities</a> </li>
+<li><a href="../notes.html">Notes</a></li>
+<li><a href="../about.html">Other</a></li>
+</ul>
+<p><br></p>
+<p>
+
+<!--     
+  <li style="display: inline; padding-top: -20pt; margin-top: -20pt; font-size: 0.78em;">
+    <a href="/research/publications.html">Publications</a></li> -->
+
+
+
+<!-- * [Pub](@root/research/publications//) -->
+<!-- * [Talks](@root/talks//) -->
+<!-- * [Activities](@root/activities//)  -->
+
+ <!-- * [Child One](@root/teaching/child-one//) -->
+<!-- * [Child Two](@root/teaching/child-two//) -->
+
+<!-- <a class='imagelogo' href="https://www.researchgate.net/profile/Son-Tu-2">
+    <img alt="research gate" 
+         src="/base/researchgate-svgrepo-com.svg" width="40" >
+</a> -->
+
+
+<a class='imagelogo' href="https://orcid.org/0000-0003-3839-8336">
+    <img alt="orcid" 
+         src="/base/orcid.svg" width="30" >
+</a>
+
+<a class='imagelogo' href="https://arxiv.org/a/tu_s_1.html">
+    <img alt="arxiv" 
+         src="/base/arxiv.svg" width="30" >
+</a>
+
+<a class='imagelogo' href="https://scholar.google.com/citations?user=83D3lnQAAAAJ&hl=en">
+    <img alt="google scholar" 
+         src="/base/googlescholar.svg" width="30" >
+</a>
+
+
+</p>
+            </nav>
+        </header>
+        <article class="main">
+            <header class="title">
+                <h1>Calculus of Variations</h1>
+                
+                    <p class="subtitle">Collections of Math notes.</p>
+                
+                
+                <hr>
+            </header>
+            <h2>Books and Materials</h2>
+<ul>
+<li>
+<p>The Calculus of Variations, Peter J. Olver <a href="https://www-users.cse.umn.edu/~olver/ln_/cv.pdf">link</a></p>
+</li>
+<li>
+<p>Modern Methods in the Calculus of Variations, L^p Spaces
+    Irene Fonseca, Giovanni Leoni</p>
+</li>
+<li>
+<p><a href="https://web.math.utk.edu/~afreire/teaching/m534f15/Topics%20in%20Evans'%20PDE%20text.pdf">Cal Var PDEs</a></p>
+</li>
+<li>Calculus of Variations and Nonlinear Partial Differential Equations
+Lectures given at the C.I.M.E. Summer School held in Cetraro, Italy, June 27 - July 2, 2005</li>
+<li>MS327 Deterministic and stochastic dynamics</li>
+</ul>
+<h2>Topics in Calculus of Variations, University of Vienna - Faculty of Mathematics</h2>
+<p>Summer Semester 2018</p>
+<p><a href="https://www.mat.univie.ac.at/~stefanelli/tcdv.html">course website</a></p>
+<h2>Math 3020: Selected topics in PDEs and Calculus of Variations</h2>
+<p><a href="https://sites.pitt.edu/~lewicka/3020/calcvar_topics_2012.html">course website</a></p>
+<pre><code>Instructor. Dr. Marta Lewicka (office hours in Thack 408, Monday, Wednesday 11:00-12:00)
+
+Prerequisites. The course is intended for graduate students; undergraduates require permission of the instructor (easily granted). Familiarity with Real Analysis at the graduate level will be assumed. If in doubt, consult with the books:
+Brezis: Functional analysis, Sobolev spaces and Partial Differential Equations (also, you may read the shorter French edition: Analyse fonctionelle - Theorie et applications)
+Lieb and Loss: Analysis
+
+Grades. Grades will be based on two midterms (25% + 25%) and a presentation (50%). Incompletes and make-up exams will almost never be given, and only for cases of extreme personal tragedy. The same applies to change to 'audit' after the fourth week of instruction: it will be permitted only for a very good reason ("I just realized that this course is too difficult for me" is not a good reason).
+
+Topics. The purpose of this course is to introduce a variety of modern techniques and results in Partial Differential Equations, Calculus of Variations and Analysis. The course will be self-contained. List of topics:
+
+1. Existence of solutions to the nonhomogeneous steady Navier-Stokes equations (after C. Amick)
+
+2. Young measures and compensated compactness (after L. Tartar and F. Murat)
+
+3. A compactness result in the gradient theory of phase transitions (after A. Desimone, S. Muller, R. Kohn and F. Otto).
+
+4. Korn's inequality (a detailed discussion including the proof after Kondratiev and O. Oleinik) and the nonlinear rigidity estimate (after G. Friesecke, R. James and S. Muller).
+
+5. Existence, regularity and wellposedness of the Cauchy problem in the inviscid and the viscous hyperbolic systems of conservation laws in 1 space dimension.
+
+6. Quasiconvexity and partial regularity in the Calculus of Variations (after L. Evans).
+
+Calendar of presentations:
+
+11 Apr: "Rank-one convexity does not imply quasiconvexity" by Sverak. Link to paper. Presentation by Laura Bufford.
+
+16 Apr: The truncation theorem in Appendix 1 of the paper "A theorem on geometric rigidity and the derivation of nonlinear plate theory from three dimensional elasticity" by Friesecke, James and Muller. Link to paper. Presentation by Guoqing Liu.
+
+18 Apr: How to remove the unnecessary assumptions in the proof of partial regularity of minimizers to strongly quasiconvex energies. From "Quasiconvexity and partial regularity in the Calculus of Variations" by Evans. Link to paper. Also see: Link to Mingione's review paper. Presentation by Pablo Ochoa.
+
+23 Apr: "Line energies for gradient vector fields in the plane" by Ambrosio, De Lellis and Mantegazza. Link to paper. Presentation by Jilong Hu.
+
+Calendar.
+9 Jan (M): First class
+16 Jan (M): Martin Luther King Day - no class
+5 March, 7 March (M, W): Spring break - no class
+11 Oct (Tue): Class from Monday
+19 Mar (M) : First Midterm
+25 April (W) : Second Midterm and last class
+</code></pre>
+
+            <!-- For use inside index.stx
+::: quote
+    © Copyright 2022-2024 Son N. T. Tu. Powered by [Ivy](https://www.dmulholl.com/docs/ivy/dev/). 
+-->
+
+
+
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+
+
+<!-- HTML includes are done by JavaScript. -->
+<script>
+    includeHTML();
+</script>
+    
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+
+<hr>
+
+<blockquote>
+    <p>
+        © 2016-2026 Son N. T. Tu. Powered by <a href="https://www.dmulholl.com/docs/ark/main/">Ark</a>.  
+        Last updated: April 5, 2026.
+    </p>
+</blockquote>
+
+<script type="text/javascript" src="/assets/collapsible.js"></script>
+
+<!-- Default Statcounter code for MyWeb https://tunguyenthaison.github.io/ -->
+<script type="text/javascript">
+    var sc_project=11219527; 
+    var sc_invisible=0; 
+    var sc_security="8ef86b9e"; 
+    var scJsHost = "https://";
+    document.write("<sc"+"ript type='text/javascript' src='" +
+    scJsHost+
+    "statcounter.com/counter/counter.js'></"+"script>");
+    </script>
+    <noscript><div class="statcounter">
+        <a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/"
+            target="_blank"><img class="statcounter"
+            src="https://c.statcounter.com/11219527/0/8ef86b9e/0/"
+            alt="Web Analytics Made Easy - Statcounter"
+            referrerPolicy="no-referrer-when-downgrade"></a>
+    </div></noscript>
+    <!-- End of Statcounter Code -->
+
+
+
+            
+        </article>
+        
+    </body>
+</html>

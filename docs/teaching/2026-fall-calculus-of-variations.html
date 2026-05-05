@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        <title>Fall 2026</title>
+        <link rel="stylesheet" href="../assets/fonts.css">
+        <link rel="stylesheet" href="../assets/simplify.css">
+        <link rel="stylesheet" href="../assets/pygments.css">
+        
+        
+        
+        
+<!-- for table css-->
+<link rel="stylesheet" href="/assets/teaching-table.css">
+
+<link rel="stylesheet" href="/assets/collapsible.css">
+
+<!-- KATEX -->
+<!-- All KaTeX links taken from the documentation here: https://katex.org/docs/browser.html. -->
+<link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css"
+        integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB"
+        crossorigin="anonymous">
+
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+        integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p"
+        crossorigin="anonymous">
+</script>
+
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer
+        src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+        integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
+        crossorigin="anonymous"
+        onload="renderMathInElement(document.body);">
+</script>
+<!-- KATEX -->
+
+<script>
+    MathJax = {
+        tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        macros: {
+        P: '{\\mathbf P}',  
+        x: '{\\mathbf x}',       
+        R: '{\\mathbb R}',                 // a simple string replacement
+        T: '{\\mathbb T}',                 // a simple string replacement
+        bold: ['\\boldsymbol{#1}',1] ,     // this macro has one parameter
+        ddx: ['\\frac{d#2}{d#1}', 2, 'x'], // this macro has an optional parameter that defaults to 'x'
+        abc: ['(#1)', 1, [null, '\\cba']]  // equivalent to \def\abc#1\cba{(#1)}
+        }
+        }
+};
+</script>
+
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+
+
+<!-- HTML includes are done by JavaScript. -->
+<script>
+function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+        /* Make an HTTP request using the attribute value as the file name: */
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("w3-include-html");
+                includeHTML();
+        }
+        }
+        xhttp.open("GET", file, true);
+        xhttp.send();
+        /* Exit the function: */
+        return;
+        }
+        }
+}
+</script>
+
+<script>
+window.MathJax = {
+  tex: {
+    tags: 'ams',   // <-- THIS enables AMS-style numbering
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    macros: {
+        T: "\\mathbb{T}",
+        R: "\\mathbb{R}",
+        N: "\\mathbb{N}",
+        Z: "\\mathbb{Z}",
+        eps: "\\varepsilon"
+}
+  }
+};
+</script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+        
+
+    </head>
+    <body class="node-teaching-2026-fall-calculus-of-variations node-teaching node">
+        <header class="masthead">
+            <h1><a href="../index.html">Son Tu</a></h1>
+            
+                <p class="tagline">Từ Nguyễn Thái Sơn</p>
+            
+            
+            <nav class="menu">
+                <input id="menu-check" type="checkbox"/>
+                <label id="menu-label" for="menu-check" class="unselectable">
+                    <span class="icon close-icon">✕</span>
+                    <span class="icon open-icon">☰</span>
+                    <span class="text">Menu</span>
+                </label>
+                <ul>
+<li><a href="../index.html">Home</a></li>
+<li><a href="../cv//CV.pdf">CV</a></li>
+<li><a href="../teaching.html">Teaching</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../talks.html">Talks</a></li>
+<li><a href="../activities.html">Activities</a> </li>
+<li><a href="../notes.html">Notes</a></li>
+<li><a href="../about.html">Other</a></li>
+</ul>
+<p><br></p>
+<p>
+
+<!--     
+  <li style="display: inline; padding-top: -20pt; margin-top: -20pt; font-size: 0.78em;">
+    <a href="/research/publications.html">Publications</a></li> -->
+
+
+
+<!-- * [Pub](@root/research/publications//) -->
+<!-- * [Talks](@root/talks//) -->
+<!-- * [Activities](@root/activities//)  -->
+
+ <!-- * [Child One](@root/teaching/child-one//) -->
+<!-- * [Child Two](@root/teaching/child-two//) -->
+
+<!-- <a class='imagelogo' href="https://www.researchgate.net/profile/Son-Tu-2">
+    <img alt="research gate" 
+         src="/base/researchgate-svgrepo-com.svg" width="40" >
+</a> -->
+
+
+<a class='imagelogo' href="https://orcid.org/0000-0003-3839-8336">
+    <img alt="orcid" 
+         src="/base/orcid.svg" width="30" >
+</a>
+
+<a class='imagelogo' href="https://arxiv.org/a/tu_s_1.html">
+    <img alt="arxiv" 
+         src="/base/arxiv.svg" width="30" >
+</a>
+
+<a class='imagelogo' href="https://scholar.google.com/citations?user=83D3lnQAAAAJ&hl=en">
+    <img alt="google scholar" 
+         src="/base/googlescholar.svg" width="30" >
+</a>
+
+
+</p>
+            </nav>
+        </header>
+        <article class="main">
+            <header class="title">
+                <h1>Fall 2026</h1>
+                
+                
+                <hr>
+            </header>
+            <h2 id="mth-6v23-calculus-of-variations">
+MTH 6V23 Calculus of Variations
+</h2>
+<div>
+<ul>
+<li>
+<a href="#">Course website - Canvas, Baylor University</a>
+</li>
+<li>
+Lecture:
+<ul>
+<li>
+Instructor: Son Tu – son_tu@baylor.edu
+</li>
+<li>
+SDRICH 216 (MWF   01:25PM - 02:15PM).
+</li>
+</ul>
+</li>
+<li>
+Office hours:
+<ul>
+<li>
+Time: TBA
+</li>
+</ul>
+<!-- Tuesday, Thursday, Friday from 10:00 am – 11:00 am, and by appointment. -->
+</li>
+<li>
+Syllabus: TBA
+<!-- [pdf](@root/teaching/2026-spring/2026 Spring Linear Algebra - Syllabus.pdf) -->
+</li>
+</ul>
+<p>
+<!-- * Schedule: [pdf](@root/teaching/2026-spring/Calendar Spring 2026.pdf) -->
+* How to reach me? You can reach me by sending an email to son_tu@baylor.edu. All emails will be answered within 24 hours (most likely within 10 hours).
+&lt;!-- * Getting help:
+  - <b>Math Lab</b> The Department of Mathematics provides free tutoring for students enrolled in 1000-level mathematics classes.
+      <a href="/teaching/2026-spring/Spring 2026 Math Lab Sign.pdf">
+    <img src="/teaching/2026-spring/Spring 2026 Math Lab Sign.png" width="20%" height="20%"></a>
+  - <b>Success Center</b> Free tutoring is available through the Paul L. Foster Success Center: Center for Academic Success and Engagement.
+  - Private Tutoring offered by Graduate Students
+    See <a href="https://math.artsandsciences.baylor.edu/undergraduate-program/math-lab-and-tutors">Math Department Private Tutoring</a> --&gt;
+</p>
+</div>
+<h2 id="materials">
+Materials
+</h2>
+<p>
+<!-- - Textbook: Linear Algebra and its Applications, 6th edition, by Lay, Lay, and McDonald, -->
+<!-- ISBN 9780135851203. -->
+- All materials are posted on <a href="#">Canvas</a>.
+</p>
+
+            <!-- For use inside index.stx
+::: quote
+    © Copyright 2022-2024 Son N. T. Tu. Powered by [Ivy](https://www.dmulholl.com/docs/ivy/dev/). 
+-->
+
+
+
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+
+
+<!-- HTML includes are done by JavaScript. -->
+<script>
+    includeHTML();
+</script>
+    
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+
+<hr>
+
+<blockquote>
+    <p>
+        © 2016-2026 Son N. T. Tu. Powered by <a href="https://www.dmulholl.com/docs/ark/main/">Ark</a>.  
+        Last updated: April 5, 2026.
+    </p>
+</blockquote>
+
+<script type="text/javascript" src="/assets/collapsible.js"></script>
+
+<!-- Default Statcounter code for MyWeb https://tunguyenthaison.github.io/ -->
+<script type="text/javascript">
+    var sc_project=11219527; 
+    var sc_invisible=0; 
+    var sc_security="8ef86b9e"; 
+    var scJsHost = "https://";
+    document.write("<sc"+"ript type='text/javascript' src='" +
+    scJsHost+
+    "statcounter.com/counter/counter.js'></"+"script>");
+    </script>
+    <noscript><div class="statcounter">
+        <a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/"
+            target="_blank"><img class="statcounter"
+            src="https://c.statcounter.com/11219527/0/8ef86b9e/0/"
+            alt="Web Analytics Made Easy - Statcounter"
+            referrerPolicy="no-referrer-when-downgrade"></a>
+    </div></noscript>
+    <!-- End of Statcounter Code -->
+
+
+
+            
+        </article>
+        
+    </body>
+</html>

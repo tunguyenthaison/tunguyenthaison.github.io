@@ -198,16 +198,14 @@ window.MathJax = {
                 <hr>
             </header>
             <h2>Fourier Analysis</h2>
+<ul>
+<li><a href="https://www2.math.upenn.edu/~gressman/analysis/14-fourier.html">Advance Fourier Analysis - Upenn, Philip T. Gressman</a></li>
+</ul>
 <h3>On $\T^n$</h3>
-<p>On $\T^n$, the set $\{E_\kappa(x): \kappa\in \Z^n\}$, where $E_\kappa(x) = e^{2\pi i \kappa \cdot x}$, is an orthonormal basis of the Hilbert space $L^2(\T^n)$. The Fouier transform is thus naturally defined </p>
-<p>$\mathcal{F}: L^2(\T^n) \to l^2(\Z^n)$ by</p>
+<p>On $\T^n$, the set $\{E_\kappa(x): \kappa\in \Z^n\}$, where $E_\kappa(x) = e^{2\pi i \kappa \cdot x}$, is an orthonormal basis of the Hilbert space $L^2(\T^n)$. The Fouier transform is thus naturally defined $\mathcal{F}: L^2(\T^n) \to l^2(\Z^n)$ by</p>
 <p>$$
-\begin{align}
-    \hat{f}(\kappa) =  \langle f, E_\kappa \rangle = 
-    \int_{\T^n} f(x) \overline{E}<em>{\kappa}(x) dx
-    \int</em>{\T^n} f(x) E_{-\kappa}(x) dx, \quad \kappa\in \Z^n.
-\end{align}
-$$  </p>
+\hat{f}(\kappa) =  \langle f, E_\kappa \rangle = \int_{\T^n} f(x) \overline{E}_{\kappa}(x) dx = \int_{\T^n} f(x)e^{-2\pi i \kappa\cdot x}\;dx.
+$$</p>
 <p>Parserval's identity states that $\Vert f\Vert_{L^2(\T^n)} = \Vert \hat{f}\Vert_{l^2(\Z^n)}$, i.e.,</p>
 <p>$$
 \begin{align}
@@ -238,13 +236,18 @@ $$  </p>
     \int_{\tau}^T \int_{\T^n} |\Delta u^\varepsilon| \rho \;dxdt  \leq \frac{C}{\sqrt{\varepsilon}} \quad\Longrightarrow\quad \Vert u^\varepsilon-u\Vert_{L^\infty} = \mathcal{O}(\sqrt{\varepsilon}).
 $$</p>
 <p>$$
-\begin{align}\label{eq:x}
+\begin{align}\label{eq:xx}
     \int_\tau^T \int_{\T^n} |D^2u^\varepsilon|^2 \rho\;dxdt \leq \frac{C}{\varepsilon} 
     \quad\Longrightarrow\quad 
     \int_{\tau}^T \int_{\T^n} |\Delta u^\varepsilon| \rho \;dxdt  \leq \frac{C}{\sqrt{\varepsilon}} \quad\Longrightarrow\quad \Vert u^\varepsilon-u\Vert_{L^\infty} = \mathcal{O}(\sqrt{\varepsilon}).
 \end{align}
 $$</p>
 <p>$\eqref{eq:x}$</p>
+<p>\begin{align}\label{eq:x}
+    \int_\tau^T \int_{\T^n} |D^2u^\varepsilon|^2 \rho\;dxdt \leq \frac{C}{\varepsilon} 
+    \quad\Longrightarrow\quad 
+    \int_{\tau}^T \int_{\T^n} |\Delta u^\varepsilon| \rho \;dxdt  \leq \frac{C}{\sqrt{\varepsilon}} \quad\Longrightarrow\quad \Vert u^\varepsilon-u\Vert_{L^\infty} = \mathcal{O}(\sqrt{\varepsilon}).
+\end{align}</p>
 <p>This follows from @lions1987.  </p>
 <h2>Weak KAM Theory</h2>
 <p>We review a setting of non-cooperative, differential games. They involve a system of Hamilton-Jacobi equations. <sup id="fnref:Isa65"><a class="footnote-ref" href="#fn:Isa65">1</a></sup></p>
