@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        <title>Links</title>
+        <link rel="stylesheet" href="../assets/fonts.css">
+        <link rel="stylesheet" href="../assets/simplify.css">
+        <link rel="stylesheet" href="../assets/pygments.css">
+        
+        
+        
+
+        
+
+        
+<!-- for table css-->
+<link rel="stylesheet" href="/assets/teaching-table.css">
+
+<link rel="stylesheet" href="/assets/collapsible.css">
+
+<!-- KATEX -->
+<!-- All KaTeX links taken from the documentation here: https://katex.org/docs/browser.html. -->
+<link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css"
+        integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB"
+        crossorigin="anonymous">
+
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+        integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p"
+        crossorigin="anonymous">
+</script>
+
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer
+        src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+        integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
+        crossorigin="anonymous"
+        onload="renderMathInElement(document.body);">
+</script>
+<!-- KATEX -->
+
+<script>
+    MathJax = {
+        tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        macros: {
+        P: '{\\mathbf P}',  
+        x: '{\\mathbf x}',       
+        R: '{\\mathbb R}',                 // a simple string replacement
+        T: '{\\mathbb T}',                 // a simple string replacement
+        bold: ['\\boldsymbol{#1}',1] ,     // this macro has one parameter
+        ddx: ['\\frac{d#2}{d#1}', 2, 'x'], // this macro has an optional parameter that defaults to 'x'
+        abc: ['(#1)', 1, [null, '\\cba']]  // equivalent to \def\abc#1\cba{(#1)}
+        }
+        }
+};
+</script>
+
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+
+
+<!-- HTML includes are done by JavaScript. -->
+<script>
+function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+        /* Make an HTTP request using the attribute value as the file name: */
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("w3-include-html");
+                includeHTML();
+        }
+        }
+        xhttp.open("GET", file, true);
+        xhttp.send();
+        /* Exit the function: */
+        return;
+        }
+        }
+}
+</script>
+
+<script>
+window.MathJax = {
+  tex: {
+    tags: 'ams',   // <-- THIS enables AMS-style numbering
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    macros: {
+        T: "\\mathbb{T}",
+        R: "\\mathbb{R}",
+        N: "\\mathbb{N}",
+        Z: "\\mathbb{Z}",
+        eps: "\\varepsilon"
+}
+  }
+};
+</script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+        
+
+    </head>
+    <body class="node-blog-links node-blog node">
+        <header class="masthead">
+            <h1><a href="../index.html">Son Tu</a></h1>
+            
+                <p class="tagline">Từ Nguyễn Thái Sơn</p>
+            
+            
+            <nav class="menu">
+                <input id="menu-check" type="checkbox"/>
+                <label id="menu-label" for="menu-check" class="unselectable">
+                    <span class="icon close-icon">✕</span>
+                    <span class="icon open-icon">☰</span>
+                    <span class="text">Menu</span>
+                </label>
+                <ul>
+<li><a href="../index.html">Home</a></li>
+<li><a href="../cv//CV.pdf">CV</a></li>
+<li><a href="../teaching.html">Teaching</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../talks.html">Talks</a></li>
+<li><a href="../activities.html">Activities</a> </li>
+<li><a href="../notes.html">Notes</a></li>
+<li><a href="../about.html">Other</a></li>
+</ul>
+<p><br></p>
+<p>
+
+<!--     
+  <li style="display: inline; padding-top: -20pt; margin-top: -20pt; font-size: 0.78em;">
+    <a href="/research/publications.html">Publications</a></li> -->
+
+
+
+<!-- * [Pub](@root/research/publications//) -->
+<!-- * [Talks](@root/talks//) -->
+<!-- * [Activities](@root/activities//)  -->
+
+ <!-- * [Child One](@root/teaching/child-one//) -->
+<!-- * [Child Two](@root/teaching/child-two//) -->
+
+<!-- <a class='imagelogo' href="https://www.researchgate.net/profile/Son-Tu-2">
+    <img alt="research gate" 
+         src="/base/researchgate-svgrepo-com.svg" width="40" >
+</a> -->
+
+
+<a class='imagelogo' href="https://orcid.org/0000-0003-3839-8336">
+    <img alt="orcid" 
+         src="/base/orcid.svg" width="30" >
+</a>
+
+<a class='imagelogo' href="https://arxiv.org/a/tu_s_1.html">
+    <img alt="arxiv" 
+         src="/base/arxiv.svg" width="30" >
+</a>
+
+<a class='imagelogo' href="https://scholar.google.com/citations?user=83D3lnQAAAAJ&hl=en">
+    <img alt="google scholar" 
+         src="/base/googlescholar.svg" width="30" >
+</a>
+
+
+</p>
+            </nav>
+        </header>
+        <article class="main">
+            <header class="title">
+                <h1>Links</h1>
+                
+                
+
+
+                
+
+                <hr>
+                
+            </header>
+            <h3>2026-05-05</h3>
+<ul>
+<li>Hans Triebel, Theory of Function Spaces
+Book, 1983 <a href="https://link.springer.com/book/10.1007/978-3-0346-0416-1">link</a></li>
+<li>
+<p><a href="https://doi.org/10.1007/978-3-540-71483-5_32">Sobolev's Embedding Theorem for Besov Spaces, Chapterpp 155–158</a>, 
+    (2007). Sobolev's Embedding Theorem for Besov Spaces. In: An Introduction to Sobolev Spaces and Interpolation Spaces. Lecture Notes of the Unione Matematica Italiana, vol 3. Springer, Berlin, Heidelberg. </p>
+</li>
+<li>
+<p><a href="https://baylor.app.box.com/s/503kkhk98ra4vmh2dbyylgzw9pvxh7fb">Baylor Tenure</a></p>
+</li>
+<li>A Fourier-analytic inequality used by Jean Bourgain <a href="https://mathoverflow.net/questions/101859/a-fourier-analytic-inequality-used-by-jean-bourgain?rq=1">MO</a></li>
+</ul>
+<h2>2026-04-24 (Nonlocal, Vanishing Viscosity, weakly coupled system)</h2>
+<ul>
+<li><a href="https://journals.sns.it/index.php/annaliscienze/article/view/6681/2147">Camilli et al 2023</a></li>
+<li>zibowangmath, vis_dis_HJ code <a href="https://github.com/zibowangmath/vis_dis_HJ/blob/main/vis_dis_HJ.m">github</a></li>
+<li><a href="https://web.ma.utexas.edu/mediawiki/index.php/Fractional_Laplacian#cite_note-Stinga-1">Fractional Laplacian</a></li>
+<li>A Lagrangian Approach to Weakly Coupled Hamilton-Jacobi Systems, 
+    H. Mitake, A. Siconolfi, H.V. Tran, N. Yamada <a href="https://arxiv.org/abs/1503.00521">arxiv</a></li>
+</ul>
+<h3>2026-04-06</h3>
+<ul>
+<li>Hölder continuity of solutions of elliptic systems,  Kjell-Ove Widman, https://doi.org/10.1007/BF01367766</li>
+<li>On uniqueness sets of additive eigenvalue problems and applications
+Hiroyoshi Mitake, Hung V. Tran <a href="https://arxiv.org/abs/1801.05081">arxiv</a></li>
+<li>Code: Wang, Zhang paper <a href="https://github.com/zibowangmath/vis_dis_HJ/blob/main/vis_dis_HJ.m">github</a> - <a href="../codes/vis_dis_HJ.m">matlab</a></li>
+<li>functions of bounded variation and gradient vector measure <a href="https://mathoverflow.net/questions/143820/functions-of-bounded-variation-and-gradient-vector-measure?rq=1">MO</a></li>
+<li>Functions of Bounded Variation Have Left and Right Limits <a href="https://math.stackexchange.com/questions/3226707/functions-of-bounded-variation-have-left-and-right-limits">Math.SE</a></li>
+<li>What happens if we consider functions of bounded variation that are not in $L^1$ <a href="https://mathoverflow.net/questions/435784/what-happens-if-we-consider-functions-of-bounded-variation-that-are-not-in-l1">MO</a></li>
+<li>Aleksandrov's proof of the second order differentiability of convex functions <a href="https://mathoverflow.net/questions/353950/aleksandrovs-proof-of-the-second-order-differentiability-of-convex-functions?noredirect=1&amp;lq=1">MO</a></li>
+<li>Convergence of the difference quotient of a BV function <a href="https://mathoverflow.net/questions/327985/convergence-of-the-difference-quotient-of-a-bv-function?noredirect=1&amp;lq=1">MO</a></li>
+<li>Are functions of bounded variation a.e. differentiable? <a href="https://mathoverflow.net/questions/272282/are-functions-of-bounded-variation-a-e-differentiable?rq=1">MO</a></li>
+<li>Second order differentiability of convex functions <a href="https://mathoverflow.net/questions/352421/second-order-differentiability-of-convex-functions?rq=1">MO</a></li>
+<li>Ep. 12 - New Book: The StatQuest Illustrated Guide to Statistics <a href="https://www.youtube.com/watch?v=5KH7-5HmnkM">Youtube</a></li>
+</ul>
+<h3>2026-04-01</h3>
+<p>The $1/2$-Laplacian</p>
+<ul>
+<li><a href="https://mathoverflow.net/questions/276995/fractional-laplacian-on-mathbbr">fractional laplacian on  ℝ</a></li>
+<li>Pagnini, G., Runfola, C. Mellin definition of the fractional Laplacian. Fract Calc Appl Anal 26, 2101–2117 (2023). <a href="https://doi.org/10.1007/s13540-023-00190-z">https://doi.org/10.1007/s13540-023-00190-z</a></li>
+<li>A non-local regularization of first order Hamilton–Jacobi equations, Cyril Imbert</li>
+</ul>
+<h3>2026-03-31</h3>
+<ul>
+<li><a href="The Hamilton-Jacobi Equation, Then and Now">https://bpb-us-w2.wpmucdn.com/web.sas.upenn.edu/dist/6/47/files/2021/09/rnoti-p1457.pdf</a></li>
+<li><a href="https://www.jstor.org/stable/2007396?seq=1">Two Approximations of Solutions of Hamilton-Jacobi Equations M. G. Crandall, P. L. Lions</a></li>
+<li><a href="https://www.jstor.org/stable/2006146">On the Convergence of Difference Approximations to Nonlinear Contraction Semigroups in Hilbert Spaces, Olavi Nevanlinna</a></li>
+<li><a href="https://www.jstor.org/stable/40234466">Error Bounds for Monotone Approximation Schemes for Parabolic Hamilton-Jacobi-Bellman Equations, Guy Barles, Espen R. Jakobsen</a></li>
+<li><a href="https://repository.up.ac.za/server/api/core/bitstreams/0f94c20b-b3a7-4981-968c-77da0f24c73b/content">A Monotone Scheme for Hamilton-Jacobi Equations via the Nonstandard Finite Difference Method</a></li>
+<li><a href="https://arxiv.org/abs/2603.18387">Mathematical Foundations of Deep Learning, Xiaojing Ye</a></li>
+<li><a href="https://arxiv.org/abs/1801.05081">On uniqueness sets of additive eigenvalue problems and applications, Hiroyoshi Mitake, Hung V. Tran</a></li>
+<li><a href="https://math.stackexchange.com/questions/4772146/general-morreys-inequality-on-mathbbr2">General Morrey's Inequality on $\R^2$</a></li>
+<li><a href="https://arxiv.org/abs/2108.10306">On weak solutions to first-order discount mean field games, Hiroyoshi Mitake, Kengo Terai</a></li>
+</ul>
+
+            <!-- For use inside index.stx
+::: quote
+    © Copyright 2022-2024 Son N. T. Tu. Powered by [Ivy](https://www.dmulholl.com/docs/ivy/dev/). 
+-->
+
+
+
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+
+
+<!-- HTML includes are done by JavaScript. -->
+<script>
+    includeHTML();
+</script>
+    
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+
+<hr>
+
+<blockquote>
+    <p>
+        © 2016-2026 Son N. T. Tu. Powered by <a href="https://www.dmulholl.com/docs/ark/main/">Ark</a>.  
+        Last updated: June 17, 2026.
+    </p>
+</blockquote>
+
+<script type="text/javascript" src="/assets/collapsible.js"></script>
+
+<!-- Default Statcounter code for MyWeb https://tunguyenthaison.github.io/ -->
+<script type="text/javascript">
+    var sc_project=11219527; 
+    var sc_invisible=0; 
+    var sc_security="8ef86b9e"; 
+    var scJsHost = "https://";
+    document.write("<sc"+"ript type='text/javascript' src='" +
+    scJsHost+
+    "statcounter.com/counter/counter.js'></"+"script>");
+    </script>
+    <noscript><div class="statcounter">
+        <a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/"
+            target="_blank"><img class="statcounter"
+            src="https://c.statcounter.com/11219527/0/8ef86b9e/0/"
+            alt="Web Analytics Made Easy - Statcounter"
+            referrerPolicy="no-referrer-when-downgrade"></a>
+    </div></noscript>
+    <!-- End of Statcounter Code -->
+
+
+
+            
+        </article>
+        
+    </body>
+</html>

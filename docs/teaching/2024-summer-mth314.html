@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        <title>Summer 2024</title>
+        <link rel="stylesheet" href="../assets/fonts.css">
+        <link rel="stylesheet" href="../assets/simplify.css">
+        <link rel="stylesheet" href="../assets/pygments.css">
+        
+        
+        
+
+        
+
+        
+<!-- for table css-->
+<link rel="stylesheet" href="/assets/teaching-table.css">
+
+<link rel="stylesheet" href="/assets/collapsible.css">
+
+<!-- KATEX -->
+<!-- All KaTeX links taken from the documentation here: https://katex.org/docs/browser.html. -->
+<link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css"
+        integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB"
+        crossorigin="anonymous">
+
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+        integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p"
+        crossorigin="anonymous">
+</script>
+
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer
+        src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+        integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
+        crossorigin="anonymous"
+        onload="renderMathInElement(document.body);">
+</script>
+<!-- KATEX -->
+
+<script>
+    MathJax = {
+        tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        macros: {
+        P: '{\\mathbf P}',  
+        x: '{\\mathbf x}',       
+        R: '{\\mathbb R}',                 // a simple string replacement
+        T: '{\\mathbb T}',                 // a simple string replacement
+        bold: ['\\boldsymbol{#1}',1] ,     // this macro has one parameter
+        ddx: ['\\frac{d#2}{d#1}', 2, 'x'], // this macro has an optional parameter that defaults to 'x'
+        abc: ['(#1)', 1, [null, '\\cba']]  // equivalent to \def\abc#1\cba{(#1)}
+        }
+        }
+};
+</script>
+
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+
+
+<!-- HTML includes are done by JavaScript. -->
+<script>
+function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+        /* Make an HTTP request using the attribute value as the file name: */
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("w3-include-html");
+                includeHTML();
+        }
+        }
+        xhttp.open("GET", file, true);
+        xhttp.send();
+        /* Exit the function: */
+        return;
+        }
+        }
+}
+</script>
+
+<script>
+window.MathJax = {
+  tex: {
+    tags: 'ams',   // <-- THIS enables AMS-style numbering
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    macros: {
+        T: "\\mathbb{T}",
+        R: "\\mathbb{R}",
+        N: "\\mathbb{N}",
+        Z: "\\mathbb{Z}",
+        eps: "\\varepsilon"
+}
+  }
+};
+</script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+        
+
+    </head>
+    <body class="node-teaching-2024-summer-mth314 node-teaching node">
+        <header class="masthead">
+            <h1><a href="../index.html">Son Tu</a></h1>
+            
+                <p class="tagline">Từ Nguyễn Thái Sơn</p>
+            
+            
+            <nav class="menu">
+                <input id="menu-check" type="checkbox"/>
+                <label id="menu-label" for="menu-check" class="unselectable">
+                    <span class="icon close-icon">✕</span>
+                    <span class="icon open-icon">☰</span>
+                    <span class="text">Menu</span>
+                </label>
+                <ul>
+<li><a href="../index.html">Home</a></li>
+<li><a href="../cv//CV.pdf">CV</a></li>
+<li><a href="../teaching.html">Teaching</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../talks.html">Talks</a></li>
+<li><a href="../activities.html">Activities</a> </li>
+<li><a href="../notes.html">Notes</a></li>
+<li><a href="../about.html">Other</a></li>
+</ul>
+<p><br></p>
+<p>
+
+<!--     
+  <li style="display: inline; padding-top: -20pt; margin-top: -20pt; font-size: 0.78em;">
+    <a href="/research/publications.html">Publications</a></li> -->
+
+
+
+<!-- * [Pub](@root/research/publications//) -->
+<!-- * [Talks](@root/talks//) -->
+<!-- * [Activities](@root/activities//)  -->
+
+ <!-- * [Child One](@root/teaching/child-one//) -->
+<!-- * [Child Two](@root/teaching/child-two//) -->
+
+<!-- <a class='imagelogo' href="https://www.researchgate.net/profile/Son-Tu-2">
+    <img alt="research gate" 
+         src="/base/researchgate-svgrepo-com.svg" width="40" >
+</a> -->
+
+
+<a class='imagelogo' href="https://orcid.org/0000-0003-3839-8336">
+    <img alt="orcid" 
+         src="/base/orcid.svg" width="30" >
+</a>
+
+<a class='imagelogo' href="https://arxiv.org/a/tu_s_1.html">
+    <img alt="arxiv" 
+         src="/base/arxiv.svg" width="30" >
+</a>
+
+<a class='imagelogo' href="https://scholar.google.com/citations?user=83D3lnQAAAAJ&hl=en">
+    <img alt="google scholar" 
+         src="/base/googlescholar.svg" width="30" >
+</a>
+
+
+</p>
+            </nav>
+        </header>
+        <article class="main">
+            <header class="title">
+                <h1>Summer 2024</h1>
+                
+                
+
+
+                
+
+                <hr>
+                
+            </header>
+            <h2 id="cmse-mth-314-matrix-algebra-with-computational-applications">
+CMSE/MTH 314 Matrix Algebra with Computational Applications
+</h2>
+<ul>
+<li>
+<a href="../teaching/2024-summer/exam-code.ipynb">exam code</a>
+</li>
+</ul>
+<div>
+</div>
+<ul>
+<li>
+<a href="https://d2l.msu.edu/d2l/home/2211458">Course website - D2L</a>
+</li>
+<li>
+Lecture:
+<ul>
+<li>
+Instructor: Son Tu – tuson@msu.edu
+</li>
+<li>
+Wells Hall A332 (TR 9:10 am - 12:00 pm).
+</li>
+</ul>
+</li>
+<li>
+Syllabus <a href="../teaching/2024-summer/syllabus.pdf">PDF</a>
+</li>
+<li>
+Schedule <a href="../teaching/2024-summer/schedule.pdf">PDF</a>
+</li>
+</ul>
+<dl>
+<div>
+<dt>
+Office hours:
+</dt>
+<dd>
+<ul>
+<li>
+Wednesday 9-11 am on Zoom or in person C330 Wells Hall
+</li>
+<li>
+By appointment (via email)
+</li>
+<li>
+<a href="https://msu.zoom.us/j/96240880040">https://msu.zoom.us/j/96240880040</a>
+</li>
+<li>
+Meeting ID: 962 4088 0040
+</li>
+<li>
+Passcode: 632835
+</li>
+</ul>
+</dd>
+</div>
+<div>
+<dt>
+Getting help:
+</dt>
+<dd>
+<ul>
+<li>
+<a href="https://math.msu.edu/MLC/index.aspx">MLC - Math Learning Center</a>
+</li>
+<li>
+<a href="https://piazza.com/class/lum4qiemmk67e2">Piazza - MTH314</a>
+</li>
+<li>
+<a href="https://caps.msu.edu/">MSU Counseling Center</a>
+</li>
+<li>
+<a href="https://undergrad.msu.edu/resources">Student Resources</a>
+</li>
+<li>
+<a href="https://www.rcpd.msu.edu/">Resource Center for Persons with Disabilities</a>
+</li>
+</ul>
+</dd>
+</div>
+</dl>
+<h2 id="materials">
+Materials
+</h2>
+<ul>
+<li>
+All materials are hosted on <a href="https://d2l.msu.edu/d2l/home/2211458">D2L</a>.
+</li>
+<li>
+Some lecture notes are posted here for convenience.
+</li>
+</ul>
+<ul class="stx-toc">
+<li>
+<a href="#cmse-mth-314-matrix-algebra-with-computational-applications">CMSE/MTH 314 Matrix Algebra with Computational Applications</a>
+</li>
+<li>
+<a href="#materials">Materials</a>
+<ul>
+<li>
+<a href="#lecture-11-2024-06-18-diagonalization-singular-value-decomposition">Lecture 11 &nbsp; &#183; &nbsp; 2024-06-18 &nbsp; &#183; &nbsp; Diagonalization &amp; Singular value decomposition</a>
+</li>
+<li>
+<a href="#lecture-10-2024-06-13-eigenvalue-markovs-problem">Lecture 10 &nbsp; &#183; &nbsp; 2024-06-13 &nbsp; &#183; &nbsp; Eigenvalue &amp; Markov's problem</a>
+</li>
+<li>
+<a href="#lecture-09-2024-06-11-gram-schmidt-process">Lecture 09 &nbsp; &#183; &nbsp; 2024-06-11 &nbsp; &#183; &nbsp; Gram-Schmidt process</a>
+</li>
+<li>
+<a href="#lecture-08-2024-06-06-change-of-basis">Lecture 08 &nbsp; &#183; &nbsp; 2024-06-06 &nbsp; &#183; &nbsp; Change of basis</a>
+</li>
+<li>
+<a href="#lecture-07-2024-06-04-vector-space-2">Lecture 07 &nbsp; &#183; &nbsp; 2024-06-04 &nbsp; &#183; &nbsp; Vector space 2</a>
+</li>
+<li>
+<a href="#lecture-06-2024-05-30-vector-space-i">Lecture 06 &nbsp; &#183; &nbsp; 2024-05-30 &nbsp; &#183; &nbsp; Vector space I</a>
+</li>
+<li>
+<a href="#lecture-05-2024-05-28-linear-transformation">Lecture 05 &nbsp; &#183; &nbsp; 2024-05-28 &nbsp; &#183; &nbsp; Linear transformation</a>
+</li>
+<li>
+<a href="#lecture-04-2024-05-23-determinant">Lecture 04 &nbsp; &#183; &nbsp; 2024-05-23 &nbsp; &#183; &nbsp; Determinant</a>
+</li>
+<li>
+<a href="#lecture-03-2024-05-21-inverse-of-matrix">Lecture 03 &nbsp; &#183; &nbsp; 2024-05-21 &nbsp; &#183; &nbsp; Inverse of Matrix</a>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="lecture-11-2024-06-18-diagonalization-singular-value-decomposition">
+Lecture 11 &nbsp; &#183; &nbsp; 2024-06-18 &nbsp; &#183; &nbsp; Diagonalization &amp; Singular value decomposition
+</h6>
+<ul>
+<li>
+Diagonalization
+</li>
+<li>
+Singular value decompostion
+<ul>
+<li>
+<b>Theorem:</b> If $A$ is of size $n\times n$  is symmetric and orthogonal, then $A$ can be written as $A = PDP^T$, where $P$ is orthogonal and $D$ is diagonal.
+</li>
+</ul>
+If $A$ is of size $m\times n$, then
+
+    * the matrix $A^TA$ is $n\times n$ symetric
+
+    * the matrix $AA^T$ is $m\times m$ symetric
+
+We therefore can apply the theorem to $A^TA$ and $AA^T$ to get
+
+$$
+  \begin{cases}
+      A^TA &amp;= VD_1V^T \\
+      AA^T &amp;= UD_2U^T .
+  \end{cases}
+$$
+
+Let $\lambda_1, \ldots, \lambda_n$ be the eigenvalues of $A^TA$, then they are non-negative. The singular values are $\sigma_i=\sqrt{\lambda_i}$ for $i=1,2,\ldots,n$. Let $D = \mathrm{diag}(\sigma_1,\ldots,\sigma_n)$ then
+
+$$
+  A = U\cdot \Sigma \cdot V^T
+$$
+
+where $\Sigma$ is the $m\times n$ matrix fromed from $D$ with padded zeros rows and columns.
+
+<ul>
+<li>
+Notes: when computing $U,V$, we need to normalized every eigenvector (column) to norm $1$.
+</li>
+<li>
+Facts for orthogonal matrix $A$
+<ul>
+<li>
+Column vectors are an orthogonal set
+</li>
+<li>
+Row vectors are an orthogonal set
+</li>
+<li>
+$A^{-1}$ is orthorgonal
+</li>
+<li>
+$A^T$ is orthorgonal (since $A^{-1} = A^T$)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="lecture-10-2024-06-13-eigenvalue-markovs-problem">
+Lecture 10 &nbsp; &#183; &nbsp; 2024-06-13 &nbsp; &#183; &nbsp; Eigenvalue &amp; Markov's problem
+</h6>
+<h6 id="lecture-09-2024-06-11-gram-schmidt-process">
+Lecture 09 &nbsp; &#183; &nbsp; 2024-06-11 &nbsp; &#183; &nbsp; Gram-Schmidt process
+</h6>
+<h6 id="lecture-08-2024-06-06-change-of-basis">
+Lecture 08 &nbsp; &#183; &nbsp; 2024-06-06 &nbsp; &#183; &nbsp; Change of basis
+</h6>
+<p>
+Key takeaways:
+</p>
+<ul>
+<li>
+Let $\mathcal{E} = (e_1,\ldots, e_n)$ be a (standard) basis for $V$ (think of $\R^n$)
+</li>
+<li>
+Let $\mathcal{B} = (b_1,\ldots, b_n)$ be a basis for $V$.
+</li>
+<li>
+Let $\mathcal{C} = (c_1,\ldots, c_n)$ be a basis for $V$.
+</li>
+</ul>
+<p>
+For $x\in V$ then
+</p>
+<p>
+$$
+    [x]_\mathcal{B} =
+    \begin{bmatrix}
+        x_1\\
+        \vdots\\
+        x_n
+    \end{bmatrix} \qquad\text{means} \qquad x =[x]_\mathcal{E} = x_1b_1 + \ldots + x_nb_n.
+$$
+</p>
+<p>
+In other words, this is the key equation:
+</p>
+<p>
+$$
+    [ x ] _ { \mathcal{E} } =  [ b_1, \ldots, b_n ] \cdot [ x ] _ {\mathcal{B}}  = [c_1, \ldots, c_n] \cdot [ x ] _ {\mathcal{C}}.
+$$
+</p>
+<p>
+Then we can convert between bases as
+</p>
+<p>
+$$
+\fbox{$
+    \displaystyle
+    [ x ] _ { \mathcal{C} } = [ c_1,\ldots, c_n ] ^ {-1} \cdot [b_1,\ldots, b_n] \cdot [ x ] _ { \mathcal{B} } .
+$}
+$$
+</p>
+<h6 id="lecture-07-2024-06-04-vector-space-2">
+Lecture 07 &nbsp; &#183; &nbsp; 2024-06-04 &nbsp; &#183; &nbsp; Vector space 2
+</h6>
+<p>
+Key takeaways:
+Given a matrix $A$ of size $m\times n$
+</p>
+<ul>
+<li>
+Nullspace: set of all solutions of the equation $Ax=0$. <br>
+Other notation: $\mathrm{null}(A)$ or $\mathrm{ker}(T)$ where $T(x)=Ax$.
+</li>
+<li>
+Column space: set of linear combinations of the columns of $A$. <br>
+
+<ul>
+<li>
+$\mathrm{col}(A)$ is a subset of $\R^m$
+</li>
+<li>
+$\mathrm{col}(A)$ is also range of $T$ where $Tx=Ax$
+</li>
+</ul>
+</li>
+<li>
+Row space: set of linear combinations of all rows of $A$ (each row is a vector in $\R^n$)
+<ul>
+<li>
+$\mathrm{row}(A) = \mathrm{col}(A^T)$
+</li>
+</ul>
+</li>
+<li>
+Finding bases for row space, column space, null space and dimension of a space
+
+<ul>
+<li>
+Row space: rwo equivalent transformation <br>
+Start from $A$, do RREF, whatever we get at the end, their rows form a basis for $\mathrm{row}(A)$
+</li>
+<li>
+<i>Note: row operation $A$ to $B$ makes $\mathrm{col}(A)=\mathrm{col}(B)$ (as vector spaces)</i>
+</li>
+<li>
+Column space:
+
+<ul>
+<li>
+Start from $A$, do RREF to get $B$
+</li>
+<li>
+See which columns of $B$ are dependent on the others (non-pivot columns), cross them out
+</li>
+<li>
+The rest of the columns form a basis for $\mathrm{col}(A)$
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+$\mathrm{rank}(A) = \mathrm{dim}(\mathrm{col}(A)) = \mathrm{dim}(\mathrm{row}(A))$ : number of leading (pivots) in RREF
+</li>
+<li>
+Rank-Nullity theorem:
+
+<ul>
+<li>
+$\mathrm{rank}(A) + \mathrm{dim}(\mathrm{null}(A)) = n$
+</li>
+<li>
+$\mathrm{rank}(A) + \mathrm{dim}(\mathrm{null}(A^T)) = m$
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="lecture-06-2024-05-30-vector-space-i">
+Lecture 06 &nbsp; &#183; &nbsp; 2024-05-30 &nbsp; &#183; &nbsp; Vector space I
+</h6>
+<h6 id="lecture-05-2024-05-28-linear-transformation">
+Lecture 05 &nbsp; &#183; &nbsp; 2024-05-28 &nbsp; &#183; &nbsp; Linear transformation
+</h6>
+<p>
+Key takeaways:
+</p>
+<ul>
+<li>
+Linear transformation (they are matrix tranformation if $T:\R^n\to\R^m$)
+</li>
+<li>
+Given a linear transformation $T:\R^n\to\R^m$, find the matrix representation $Tx=Ax$.
+</li>
+<li>
+Elementary transformations in 2D:
+<ul>
+<li>
+Shears (vertically, horizontally)
+</li>
+<li>
+Projecttions (to $x_1$ axis, to $x_2$ axis)
+</li>
+<li>
+Contractions and Expansions (vertically, horizontally)
+</li>
+<li>
+Reflections (5 types)
+</li>
+<li>
+Rotations
+</li>
+</ul>
+</li>
+<li>
+A special nonlinear transformation: translation.
+</li>
+<li>
+How to combine transformation (the order matters).
+</li>
+</ul>
+<h6 id="lecture-04-2024-05-23-determinant">
+Lecture 04 &nbsp; &#183; &nbsp; 2024-05-23 &nbsp; &#183; &nbsp; Determinant
+</h6>
+<p>
+Key takeaways:
+</p>
+<ul>
+<li>
+Algorithm to compute determinant: cofactor expansion
+</li>
+<li>
+Relation between determinants of matrices after row operations.
+</li>
+</ul>
+<p>
+<details>
+</p>
+<p>
+$$
+    A =
+    \begin{bmatrix}
+        1  &amp; -4 &amp; 2 \\
+        -2 &amp; 8 &amp; -4 \\
+        -1 &amp; 7 &amp; 0
+    \end{bmatrix}
+$$
+</p>
+<pre class="lang-python pygments" data-lang="python">
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">det</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre>
+<p>
+</details>
+</p>
+<h6 id="lecture-03-2024-05-21-inverse-of-matrix">
+Lecture 03 &nbsp; &#183; &nbsp; 2024-05-21 &nbsp; &#183; &nbsp; Inverse of Matrix
+</h6>
+<p>
+Key takeaways:
+</p>
+<ul>
+<li>
+Finding the inserve of a matrix.
+</li>
+<li>
+Finding a series of elementary matrices in the row operations.
+</li>
+</ul>
+<p>
+<details>
+</p>
+<p>
+Python code to do the augmented matrix and perfoming row operations
+</p>
+<p>
+Let
+</p>
+<p>
+$$
+A =
+\begin{bmatrix}
+    0 &amp; 1 &amp; 2 \\
+    1 &amp; 0 &amp; 3 \\
+    4 &amp;-3 &amp; 8
+\end{bmatrix}.
+$$
+</p>
+<p>
+To find the inverse of $A$, we form the augmented matrix
+</p>
+<p>
+$$
+    [A|B] =
+\begin{bmatrix}
+    0 &amp; 1 &amp; 2 &amp; | &amp; 1 &amp; 0 &amp; 0\\
+    1 &amp; 0 &amp; 3 &amp; | &amp; 0 &amp; 1 &amp; 0\\
+    4 &amp;-3 &amp; 8 &amp; | &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}.
+$$
+</p>
+<p>
+Then we perform row operations to find the reduced row echelon form of $A$ (<code>rref</code>),
+then the matrix obtained on the right will be $A^{-1}$, given the <code>rref(A) = I_3</code>. Otherwise $A$ is not invertible.
+</p>
+<pre class="lang-python pygments" data-lang="python">
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="p">])</span>
+
+<span class="c1"># stack A|B to form the augmented matrix</span>
+<span class="n">AB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">A</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span>
+
+<span class="c1"># convert AB to sympy</span>
+<span class="n">AB</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">AB</span><span class="p">)</span>
+
+<span class="c1"># perform the row operations to find the reduced echelon form of A</span>
+<span class="n">AB_rref</span> <span class="o">=</span> <span class="n">AB</span><span class="o">.</span><span class="n">rref</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># select the matrix on the right hand side</span>
+<span class="n">Ainv</span> <span class="o">=</span> <span class="n">AB_rref</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+
+<span class="n">Ainv</span>
+</pre>
+<p>
+We obtain
+</p>
+<p>
+$$
+  A ^ { -1 } =
+  \begin{bmatrix}
+      -4.5 &amp; 7  &amp; -1.5 \\
+        -2 &amp; 4  &amp; -1 \\
+       1.5 &amp; -2 &amp; 0.5
+  \end{bmatrix}
+$$
+</p>
+<p>
+</details>
+</p>
+
+            <!-- For use inside index.stx
+::: quote
+    © Copyright 2022-2024 Son N. T. Tu. Powered by [Ivy](https://www.dmulholl.com/docs/ivy/dev/). 
+-->
+
+
+
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+
+
+<!-- HTML includes are done by JavaScript. -->
+<script>
+    includeHTML();
+</script>
+    
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+
+<hr>
+
+<blockquote>
+    <p>
+        © 2016-2026 Son N. T. Tu. Powered by <a href="https://www.dmulholl.com/docs/ark/main/">Ark</a>.  
+        Last updated: June 17, 2026.
+    </p>
+</blockquote>
+
+<script type="text/javascript" src="/assets/collapsible.js"></script>
+
+<!-- Default Statcounter code for MyWeb https://tunguyenthaison.github.io/ -->
+<script type="text/javascript">
+    var sc_project=11219527; 
+    var sc_invisible=0; 
+    var sc_security="8ef86b9e"; 
+    var scJsHost = "https://";
+    document.write("<sc"+"ript type='text/javascript' src='" +
+    scJsHost+
+    "statcounter.com/counter/counter.js'></"+"script>");
+    </script>
+    <noscript><div class="statcounter">
+        <a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/"
+            target="_blank"><img class="statcounter"
+            src="https://c.statcounter.com/11219527/0/8ef86b9e/0/"
+            alt="Web Analytics Made Easy - Statcounter"
+            referrerPolicy="no-referrer-when-downgrade"></a>
+    </div></noscript>
+    <!-- End of Statcounter Code -->
+
+
+
+            
+        </article>
+        
+    </body>
+</html>
