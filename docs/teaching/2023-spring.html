@@ -8,7 +8,7 @@
 
         <title>Spring 2023</title>
         <link rel="stylesheet" href="../assets/fonts.css">
-        <link rel="stylesheet" href="../assets/simplify.css">
+        <link rel="stylesheet" href="../assets/simplify.css?v=20260915">
         <link rel="stylesheet" href="../assets/pygments.css">
         
         
@@ -16,111 +16,64 @@
 
         
 
-        
-<!-- for table css-->
-<link rel="stylesheet" href="/assets/teaching-table.css">
-
+        <link rel="stylesheet" href="/assets/teaching-table.css">
 <link rel="stylesheet" href="/assets/collapsible.css">
+<link rel="stylesheet" href="/assets/tex-blog.css">
 
-<!-- KATEX -->
-<!-- All KaTeX links taken from the documentation here: https://katex.org/docs/browser.html. -->
-<link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css"
-        integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB"
-        crossorigin="anonymous">
-
-<!-- The loading of KaTeX is deferred to speed up page rendering -->
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
-        integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p"
-        crossorigin="anonymous">
-</script>
-
-<!-- To automatically render math in text elements, include the auto-render extension: -->
-<script defer
-        src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
-        integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
-        crossorigin="anonymous"
-        onload="renderMathInElement(document.body);">
-</script>
-<!-- KATEX -->
-
+<!-- One MathJax instance renders both handwritten Markdown and plasTeX output. -->
 <script>
-    MathJax = {
-        tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
+window.MathJax = {
+    tex: {
+        tags: "ams",
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+        processEscapes: true,
         macros: {
-        P: '{\\mathbf P}',  
-        x: '{\\mathbf x}',       
-        R: '{\\mathbb R}',                 // a simple string replacement
-        T: '{\\mathbb T}',                 // a simple string replacement
-        bold: ['\\boldsymbol{#1}',1] ,     // this macro has one parameter
-        ddx: ['\\frac{d#2}{d#1}', 2, 'x'], // this macro has an optional parameter that defaults to 'x'
-        abc: ['(#1)', 1, [null, '\\cba']]  // equivalent to \def\abc#1\cba{(#1)}
+            P: "{\\mathbf P}",
+            x: "{\\mathbf x}",
+            R: "{\\mathbb R}",
+            T: "{\\mathbb T}",
+            N: "{\\mathbb N}",
+            Z: "{\\mathbb Z}",
+            eps: "{\\varepsilon}",
+            bold: ["\\boldsymbol{#1}", 1],
+            ddx: ["\\frac{d#2}{d#1}", 2, "x"]
         }
-        }
+    },
+    options: {
+        skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+    }
 };
 </script>
-
-<script id="MathJax-script" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-
-
-<!-- ################################################################# -->
-<!-- ################################################################# -->
-<!-- ################################################################# -->
-<!-- ################################################################# -->
-<!-- ################################################################# -->
-
+<script id="MathJax-script" defer
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <!-- HTML includes are done by JavaScript. -->
 <script>
 function includeHTML() {
-        var z, i, elmnt, file, xhttp;
-        /* Loop through a collection of all HTML elements: */
-        z = document.getElementsByTagName("*");
-        for (i = 0; i < z.length; i++) {
+    var z, i, elmnt, file, xhttp;
+    z = document.getElementsByTagName("*");
+    for (i = 0; i < z.length; i++) {
         elmnt = z[i];
-        /*search for elements with a certain atrribute:*/
         file = elmnt.getAttribute("w3-include-html");
         if (file) {
-        /* Make an HTTP request using the attribute value as the file name: */
-        xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-                /* Remove the attribute, and call this function once more: */
-                elmnt.removeAttribute("w3-include-html");
-                includeHTML();
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4) {
+                    if (this.status === 200) { this.elmnt.innerHTML = this.responseText; }
+                    if (this.status === 404) { this.elmnt.innerHTML = "Page not found."; }
+                    this.elmnt.removeAttribute("w3-include-html");
+                    includeHTML();
+                }
+            };
+            xhttp.elmnt = elmnt;
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            return;
         }
-        }
-        xhttp.open("GET", file, true);
-        xhttp.send();
-        /* Exit the function: */
-        return;
-        }
-        }
+    }
 }
 </script>
-
-<script>
-window.MathJax = {
-  tex: {
-    tags: 'ams',   // <-- THIS enables AMS-style numbering
-    inlineMath: [['$', '$'], ['\\(', '\\)']],
-    displayMath: [['$$', '$$'], ['\\[', '\\]']],
-    macros: {
-        T: "\\mathbb{T}",
-        R: "\\mathbb{R}",
-        N: "\\mathbb{N}",
-        Z: "\\mathbb{Z}",
-        eps: "\\varepsilon"
-}
-  }
-};
-</script>
-
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
         
         
@@ -511,7 +464,7 @@ simply use <code>np.array</code> to convert it before calling <code>len()</code>
     </p>
 </blockquote>
 
-<script type="text/javascript" src="/assets/collapsible.js"></script>
+<script type="text/javascript" src="/assets/collapsible.js?v=20260915"></script>
 
 <!-- Default Statcounter code for MyWeb https://tunguyenthaison.github.io/ -->
 <script type="text/javascript">
@@ -531,7 +484,6 @@ simply use <code>np.array</code> to convert it before calling <code>len()</code>
             referrerPolicy="no-referrer-when-downgrade"></a>
     </div></noscript>
     <!-- End of Statcounter Code -->
-
 
 
             

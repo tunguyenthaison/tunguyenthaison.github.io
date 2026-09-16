@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        <title>A Mathematical Blog Post</title>
+        <link rel="stylesheet" href="../assets/fonts.css">
+        <link rel="stylesheet" href="../assets/simplify.css?v=20260915">
+        <link rel="stylesheet" href="../assets/pygments.css">
+        
+        
+        
+            <meta name="description" content="A short description for search engines and link previews.">
+        
+
+        
+
+        <link rel="stylesheet" href="/assets/teaching-table.css">
+<link rel="stylesheet" href="/assets/collapsible.css">
+<link rel="stylesheet" href="/assets/tex-blog.css">
+
+<!-- One MathJax instance renders both handwritten Markdown and plasTeX output. -->
+<script>
+window.MathJax = {
+    tex: {
+        tags: "ams",
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+        processEscapes: true,
+        macros: {
+            P: "{\\mathbf P}",
+            x: "{\\mathbf x}",
+            R: "{\\mathbb R}",
+            T: "{\\mathbb T}",
+            N: "{\\mathbb N}",
+            Z: "{\\mathbb Z}",
+            eps: "{\\varepsilon}",
+            bold: ["\\boldsymbol{#1}", 1],
+            ddx: ["\\frac{d#2}{d#1}", 2, "x"]
+        }
+    },
+    options: {
+        skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+    }
+};
+</script>
+<script id="MathJax-script" defer
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- HTML includes are done by JavaScript. -->
+<script>
+function includeHTML() {
+    var z, i, elmnt, file, xhttp;
+    z = document.getElementsByTagName("*");
+    for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4) {
+                    if (this.status === 200) { this.elmnt.innerHTML = this.responseText; }
+                    if (this.status === 404) { this.elmnt.innerHTML = "Page not found."; }
+                    this.elmnt.removeAttribute("w3-include-html");
+                    includeHTML();
+                }
+            };
+            xhttp.elmnt = elmnt;
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            return;
+        }
+    }
+}
+</script>
+
+        
+        
+
+    </head>
+    <body class="node-blog-tex-blog-example node-blog node">
+        <header class="masthead">
+            <h1><a href="../index.html">Son Tu</a></h1>
+            
+                <p class="tagline">Từ Nguyễn Thái Sơn</p>
+            
+            
+            <nav class="menu">
+                <input id="menu-check" type="checkbox"/>
+                <label id="menu-label" for="menu-check" class="unselectable">
+                    <span class="icon close-icon">✕</span>
+                    <span class="icon open-icon">☰</span>
+                    <span class="text">Menu</span>
+                </label>
+                <ul>
+<li><a href="../index.html">Home</a></li>
+<li><a href="../cv//CV.pdf">CV</a></li>
+<li><a href="../teaching.html">Teaching</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../talks.html">Talks</a></li>
+<li><a href="../activities.html">Activities</a> </li>
+<li><a href="../notes.html">Notes</a></li>
+<li><a href="../about.html">Other</a></li>
+</ul>
+<p><br></p>
+<p>
+
+<!--     
+  <li style="display: inline; padding-top: -20pt; margin-top: -20pt; font-size: 0.78em;">
+    <a href="/research/publications.html">Publications</a></li> -->
+
+
+
+<!-- * [Pub](@root/research/publications//) -->
+<!-- * [Talks](@root/talks//) -->
+<!-- * [Activities](@root/activities//)  -->
+
+ <!-- * [Child One](@root/teaching/child-one//) -->
+<!-- * [Child Two](@root/teaching/child-two//) -->
+
+<!-- <a class='imagelogo' href="https://www.researchgate.net/profile/Son-Tu-2">
+    <img alt="research gate" 
+         src="/base/researchgate-svgrepo-com.svg" width="40" >
+</a> -->
+
+
+<a class='imagelogo' href="https://orcid.org/0000-0003-3839-8336">
+    <img alt="orcid" 
+         src="/base/orcid.svg" width="30" >
+</a>
+
+<a class='imagelogo' href="https://arxiv.org/a/tu_s_1.html">
+    <img alt="arxiv" 
+         src="/base/arxiv.svg" width="30" >
+</a>
+
+<a class='imagelogo' href="https://scholar.google.com/citations?user=83D3lnQAAAAJ&hl=en">
+    <img alt="google scholar" 
+         src="/base/googlescholar.svg" width="30" >
+</a>
+
+
+</p>
+            </nav>
+        </header>
+        <article class="main">
+            <header class="title">
+                <h1>A Mathematical Blog Post</h1>
+                
+                    <p class="subtitle">Notes and remarks</p>
+                
+                
+                    <p class="subtitle">September 6, 2026</p>
+                
+
+
+                
+
+                <hr>
+                
+            </header>
+            <!-- Generated by tools/build_tex_blog.py from tex/my-post.tex. -->
+<div class="tex-blog">
+<h2 id="a0000000002">1 Introduction</h2>
+<p>Write the article as ordinary LaTeX. Inline mathematics such as \(f\colon \mathbb {T}^n\to \mathbb {R}\) and displayed equations are rendered by MathJax on the website. </p>
+<div class="equation" id="eq:heat">
+<p>
+  <div class="equation_content">
+    \begin{equation} \label{eq:heat} \partial _t u - \Delta u = 0 \qquad \text{in } (0,\infty )\times \mathbb {R}^n. \end{equation}
+  </div>
+  <span class="equation_label">1</span>
+</p>
+</div>
+<p>Cross-references stay on the generated page; for example, see Equation&#160;<a href="#eq:heat" class="eqref">1</a>. </p>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:example">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">1.1</span>
+  </div>
+  <div class="theorem_thmcontent">
+  <p> Suppose \(u\) is a smooth solution of <a href="#eq:heat" class="eqref">1</a>. Then its spatial average is constant in time whenever the boundary terms vanish. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000003">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Integrate <a href="#eq:heat" class="eqref">1</a> in space and use integration by parts. </p>
+
+  </div>
+</div>
+<h2 id="a0000000004">2 Figures</h2>
+<p>Store figures beside the TeX source and include them with a relative path: </p>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:simpleCountingP1">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">2.1</span>
+    <span class="proposition_thmtitle">Simple counting for \(p=1\)</span>
+  </div>
+  <div class="proposition_thmcontent">
+  <p> Let \(n\geq 2\), \(\omega \in \mathcal{D}(\sigma , C_\omega ,n)\), and \(x\in \mathbb {T}^n\). If \(f\in B^s_{1,q}(\mathbb {T}^n)\) with </p>
+<div class="displaymath" id="a0000000005">
+  \begin{equation*}  1\leq q\leq \infty , \qquad s{\gt}n. \end{equation*}
+</div>
+<p> There exists \(C= C(n, \sigma , s, C_\omega )\) such that </p>
+<div class="equation" id="eq:RateP1Simple">
+<p>
+  <div class="equation_content">
+    \begin{equation} \label{eq:RateP1Simple} \left|\frac{1}{T}\int _0^T f(x_0+\omega t)\; dt - \int _{\mathbb {T}^n} f(y)\; dy\right| \leq C \Vert f\Vert _{B^s_{1,q}(\mathbb {T}^n)} \begin{cases} \begin{aligned} &  \left(T^{-1}\log T\right)^{\frac{s-n}{\sigma -n}} & &  n {\lt} s {\lt} \sigma , \\ &  T^{-1}(\log T)^{2-1/q} & &  n {\lt} s = \sigma , \\ &  T^{-1}, & &  s{\gt}\max \{ \sigma , n\} . \end{aligned}\end{cases} \end{equation}
+  </div>
+  <span class="equation_label">2</span>
+</p>
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000006">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof of Proposition <a href="#prop:simpleCountingP1">2.1</a>
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> We start with the estimate (assume that \(x_0=0\) and \(\int _{\mathbb {T}^n} f(y)\; dy = 0\)) </p>
+<div class="displaymath" id="a0000000007">
+  \begin{equation*}  \left|\frac{1}{T}\int _0^T f(x_0+\omega t)\; dt - \int _{\mathbb {T}^n} f(y)\; dy\right| \leq \frac{1}{T}\sum _{j=-1}^\infty \left| \int _0^T \Delta _j f(\omega t)\; dt \right|. \end{equation*}
+</div>
+<p> We will treat \(j=-1,0\) separately. From ?? we obtain </p>
+<div class="displaymath" id="a0000000008">
+  \begin{equation*} \begin{aligned}  \frac{1}{\pi } \sum _{\xi \in \mathcal{A}_j} |\widehat{\Delta _j f}(\xi )|\cdot \frac{1}{|\xi \cdot \omega |} &  \leq \frac{1}{\pi } \Vert \widehat{\Delta _j f}\Vert _{L^\infty (\mathbb {T}^n)} \sum _{\xi \in \mathcal{A}_j} \frac{1}{|\xi \cdot \omega |} \\ &  \leq \frac{1}{\pi } \Vert \widehat{\Delta _j f}\Vert _{L^\infty (\mathbb {T}^n)} \frac{(2n+5)(1 + j)}{\delta _j} = C \cdot (1+j) 2^{j\sigma } \Vert \Delta _j f\Vert _{L^1(\mathbb {T}^n)} \end{aligned}\end{equation*}
+</div>
+<p> where \(C = \frac{2n+5}{\pi C_\omega }\left(\frac{16}{3}\right)^\sigma \). Then </p>
+<div class="displaymath" id="a0000000009">
+  \begin{equation*} \begin{aligned}  \frac{1}{T}\sum _{j\leq N}\left| \int _{0}^T \Delta _j f(\omega t)\; dt\right| &  \leq C\cdot \frac{1}{T} \sum _{j\neq N} (1+j) 2^{j\sigma } \Vert \Delta _j f\Vert _{L^1(\mathbb {T}^n)} \\ & \leq C\cdot \frac{1}{T} \sum _{j\leq N} (1+j)2^{j(\sigma -s)} \cdot 2^{js}\Vert \Delta _j f\Vert _{L^1(\mathbb {T}^n)} \leq C \cdot \frac{D_N}{T} \Vert f\Vert _{B^s_{1,q}(\mathbb {T}^n)}, \end{aligned}\end{equation*}
+</div>
+<p> thanks to Hölder inequality with \(\frac{1}{q'} + \frac{1}{q} = 1\), where </p>
+<div class="displaymath" id="a0000000010">
+  \begin{equation*} \begin{aligned}  D_N & = \left(\sum _{j\leq N} (1+j)^{q'} 2^{j(\sigma -s)q'} \right)^{1/q'} & \qquad 1\leq q’ {\lt} \infty , \\ D_N & = \sup _{j\leq N} (1+j)2^{j(\sigma -s)} & \qquad q’=\infty . \end{aligned}\end{equation*}
+</div>
+
+<p><i class="it">Case 1.</i> If \(s{\gt}\max \{ \sigma , n\} \) then </p>
+<div class="displaymath" id="a0000000011">
+  \begin{equation*}  D_N\leq C(\sigma -s, q’) \qquad \text{for all}\;  1\leq q’\leq \infty . \end{equation*}
+</div>
+<p> Let \(N\to \infty \) we obtain </p>
+<div class="displaymath" id="a0000000012">
+  \begin{equation*}  \frac{1}{T}\sum _{j=-1}^\infty \left| \int _0^T \Delta _j f(\omega t)\; dt \right| \leq C(\sigma , n, s-\sigma , q) \Vert f\Vert _{B^s_{1,q}(\mathbb {T}^n)}\cdot \frac{1}{T}, \end{equation*}
+</div>
+<p> where \(C = \frac{2n+5}{\pi C_\omega } \left(\frac{16}{3}\right)^\sigma C(\sigma -s, q)\). </p>
+<p><i class="it">Case 2.</i> If \(s=\sigma {\gt} n\), then </p>
+<div class="displaymath" id="a0000000013">
+  \begin{equation*}  D_N = \left( \sum _{j\leq N} (1+j)^{q'} \right)^{1/q'} \leq C\cdot N^{1+\frac{1}{q'}} \qquad \text{for all}\;  1\leq q’\leq \infty . \end{equation*}
+</div>
+<p> For the blocks with \(j{\gt}N\), Bernstein’s inequality (Lemma ??) gives \(\Vert \Delta _j f\Vert _{L^\infty (\mathbb {T}^n)} \leq C(n)\cdot 2^{jn}\Vert \Delta _j f\Vert _{L^1(\mathbb {T}^n)}\). Therefore </p>
+<div class="displaymath" id="a0000000014">
+  \begin{equation*} \begin{aligned}  \frac{1}{T}\sum _{j {\gt} N} \left| \int _0^T \Delta _j f(\omega t)\; dt \right| & \leq \sum _{j {\gt} N}\Vert \Delta _j f\Vert _{L^\infty (\mathbb {T}^n)} \\ & = \sum _{j {\gt} N} 2^{j(n-s)}\cdot 2^{js}\Vert \Delta _j f\Vert _{L^1(\mathbb {T}^n)} \leq C\cdot E_N \Vert f\Vert _{B^s_{1,q}(\mathbb {T}^n)}. \end{aligned}\end{equation*}
+</div>
+<p> where </p>
+<div class="displaymath" id="a0000000015">
+  \begin{equation*} \begin{aligned}  E_N & = \left( \sum _{j{\gt}N} 2^{j(n-s)q'} \right)^{1/q'} & \qquad 1\leq q’{\lt}\infty , \\ E_N & = \sup _{j{\gt}N} 2^{j(n-s)} & \qquad q’=\infty . \end{aligned}\end{equation*}
+</div>
+<p> We deduce that </p>
+<div class="equation" id="eq:EN">
+<p>
+  <div class="equation_content">
+    \begin{equation} \label{eq:EN} E_N \leq C\cdot 2^{-N(s-n)} \qquad \text{for all}\;  1\leq q'\leq \infty . \end{equation}
+  </div>
+  <span class="equation_label">4</span>
+</p>
+</div>
+<p> Therefore </p>
+<div class="displaymath" id="a0000000016">
+  \begin{align*}  \frac{1}{T}\sum _{j=-1}^\infty \left| \int _0^T \Delta _j f(\omega t)\; dt \right| & \leq C\left(\frac{D_N}{T} + E_N\right) \Vert f\Vert _{B^s_{1,q}(\mathbb {T}^n)} \\ &  \leq C \left(\frac{1}{T}\cdot N^{1+\frac{1}{q'}} + 2^{-N(s-n)}\right)\Vert f\Vert _{B^s_{1,q}(\mathbb {T}^n)} \\ &  \leq C\Vert f\Vert _{B^s_{1,q}(\mathbb {T}^n)} \cdot T^{-1}(\log T)^{1+1/q'} = C\Vert f\Vert _{B^s_{1,q}(\mathbb {T}^n)} \cdot {T^{-1}}(\log T)^{2-1/q} \end{align*}
+</div>
+<p> by choosing \(N \approx \frac{\log _2T}{s-n}\), and \(C = C(n,\sigma )\). </p>
+
+<p><i class="it">Case 3.</i> If \(n{\lt}s{\lt}\sigma \), then </p>
+<div class="displaymath" id="a0000000017">
+  \begin{equation*}  D_N \leq C(N+1)2^{N(\sigma -s)} \qquad \text{for all}\;  1\leq q’\leq \infty , \end{equation*}
+</div>
+<p> where \(C = C(\sigma -s)\). Thanks to <a href="#eq:EN" class="eqref">4</a> we deduce that </p>
+<div class="displaymath" id="a0000000018">
+  \begin{align*} & \frac{1}{T}\sum _{j=-1}^\infty \left| \int _0^T \Delta _j f(\omega t)\; dt \right| \leq C\left(\frac{D_N}{T} + E_N\right) \Vert f\Vert _{B^s_{1,q}(\mathbb {T}^n)} \\ & \qquad \qquad \leq C \left(\frac{1}{T}\cdot (N+1)2^{N(\sigma -s)} + 2^{-N(s-n)}\right)\Vert f\Vert _{B^s_{1,q}(\mathbb {T}^n)} \leq C\Vert f\Vert _{B^s_{1,q}(\mathbb {T}^n)} \cdot \left(\frac{\log T}{T}\right)^{\frac{s-n}{\sigma -n}} \end{align*}
+</div>
+<p> by choosing \(N \approx \frac{1}{\sigma -n}\log _2\! \left(\frac{T}{\log T}\right)\), and \(C = C(n,\sigma ,s)\). </p>
+
+  </div>
+</div>
+</div>
+
+            <!-- For use inside index.stx
+::: quote
+    © Copyright 2022-2024 Son N. T. Tu. Powered by [Ivy](https://www.dmulholl.com/docs/ivy/dev/). 
+-->
+
+
+
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+
+
+<!-- HTML includes are done by JavaScript. -->
+<script>
+    includeHTML();
+</script>
+    
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+<!-- ################################################################# -->
+
+<hr>
+
+<blockquote>
+    <p>
+        © 2016-2026 Son N. T. Tu. Powered by <a href="https://www.dmulholl.com/docs/ark/main/">Ark</a>.  
+        Last updated: August 20, 2026.
+    </p>
+</blockquote>
+
+<script type="text/javascript" src="/assets/collapsible.js?v=20260915"></script>
+
+<!-- Default Statcounter code for MyWeb https://tunguyenthaison.github.io/ -->
+<script type="text/javascript">
+    var sc_project=11219527; 
+    var sc_invisible=0; 
+    var sc_security="8ef86b9e"; 
+    var scJsHost = "https://";
+    document.write("<sc"+"ript type='text/javascript' src='" +
+    scJsHost+
+    "statcounter.com/counter/counter.js'></"+"script>");
+    </script>
+    <noscript><div class="statcounter">
+        <a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/"
+            target="_blank"><img class="statcounter"
+            src="https://c.statcounter.com/11219527/0/8ef86b9e/0/"
+            alt="Web Analytics Made Easy - Statcounter"
+            referrerPolicy="no-referrer-when-downgrade"></a>
+    </div></noscript>
+    <!-- End of Statcounter Code -->
+
+
+            
+        </article>
+        
+    </body>
+</html>

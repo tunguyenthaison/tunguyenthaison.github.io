@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
 
-        <title>Harmonic Analysis: Notes and Remarks</title>
+        <title>Holder and Besov spaces: Notes and Remarks</title>
         <link rel="stylesheet" href="../assets/fonts.css">
-        <link rel="stylesheet" href="../assets/simplify.css">
+        <link rel="stylesheet" href="../assets/simplify.css?v=20260915">
         <link rel="stylesheet" href="../assets/pygments.css">
         
         
@@ -79,7 +79,7 @@ function includeHTML() {
         
 
     </head>
-    <body class="node-blog-fourier node-blog node">
+    <body class="node-old-holderbesov node-old node">
         <header class="masthead">
             <h1><a href="../index.html">Son Tu</a></h1>
             
@@ -146,7 +146,7 @@ function includeHTML() {
         </header>
         <article class="main">
             <header class="title">
-                <h1>Harmonic Analysis: Notes and Remarks</h1>
+                <h1>Holder and Besov spaces: Notes and Remarks</h1>
                 
                     <p class="subtitle">Collections of Math notes.</p>
                 
@@ -158,37 +158,108 @@ function includeHTML() {
                 <hr>
                 
             </header>
-            <h2>Fourier Analysis</h2>
+            <p>Before going into the details, a useful general rule for embeddings between Besov spaces is the following.</p>
+<h2>Besov space</h2>
+<p>Let $\chi \in \mathrm{C}^\infty_c(\mathbb{R})$ be a smooth bump function such that, nonincreasing in $|s|$, with
+$$
+    \chi = 1\;\text{on}\;\left[-\frac{3}{4}, \frac{3}{4}\right], \qquad \mathrm{supp}(\chi) = \left[-\frac{4}{3}, \frac{4}{3}\right]. 
+$$</p>
+<p>For $s&gt;0$, we define</p>
+<p>$$
+\begin{align}\label{eq:PaleyLittlewood-1}
+    \varphi_{-1}(s) = \chi(s) ,
+    \qquad 
+    \varphi_0(s) = \chi\left(\frac{s}{2}\right) - \chi(s)  \geq 0,
+    \qquad 
+    \varphi_k(s) = \varphi_0\left(\frac{s}{2^k}\right) \geq 0, \quad k\geq 1. 
+\end{align}
+$$</p>
+<p>Then $\mathrm{supp}\;\varphi_k = \left[\frac{3}{4}\cdot 2^k, \frac{8}{3}\cdot 2^k\right]$ and $\sum_{k=-1}^\infty \varphi_k(s) = 1$. 
+For $\xi \in \mathbb{R}^n$, we will, by a slight abuse of notation, write $\varphi_k(\xi) = \varphi_k(|\xi|)$. </p>
 <ul>
-<li>
-<p><a href="https://extremal010101.wordpress.com/2020/05/06/fourier-multipliers-examples-on-the-torus/">Fourier multiplier on Torus</a></p>
-</li>
-<li>
-<p><a href="https://www2.math.upenn.edu/~gressman/analysis/14-fourier.html">Advance Fourier Analysis - Upenn, Philip T. Gressman</a></p>
-</li>
-<li><a href="https://math.uchicago.edu/~may/REU2015/REUPapers/Thoma.pdf">Results on Fourier Multipliers Eric Thoma</a></li>
-<li><a href="https://mathoverflow.net/questions/120405/sufficient-condition-for-lp-multiplier-on-the-torus">Sufficient condition for 𝐿𝑝 multiplier on the torus</a></li>
-<li><a href="https://mathoverflow.net/questions/332174/h%C3%B6rmander-mikhlin-theorem-on-the-torus">Hörmander-Mikhlin theorem on the torus</a></li>
-<li><a href="https://link.springer.com/chapter/10.1007/978-3-7643-8116-5_5">On the Fourier Analysis of Operators on the Torus</a></li>
-<li><a href="https://mathoverflow.net/questions/290256/regularity-of-fourier-transforms-of-lp-functions-for-2p-le-infty?rq=1">Regularity of Fourier transforms of  𝐿𝑝 functions for  2&lt;𝑝≤∞</a></li>
-<li><a href="https://mathoverflow.net/questions/130171/fourier-transform-of-a-bounded-function">Fourier transform of a bounded function</a></li>
-<li><a href="https://mathoverflow.net/questions/122870/about-the-boundedness-of-a-multiplication-operator?rq=1">About the boundedness of a multiplication operator.</a></li>
-<li><a href="https://mathoverflow.net/questions/499560/reference-request-besov-spaces-are-compactly-embedded-in-h%C3%B6lder-spaces">Reference Request: Besov spaces are compactly embedded in Hölder spaces</a></li>
-<li><a href="https://math.stackexchange.com/questions/2175990/interpretation-of-besov-space-parameters">Interpretation of Besov Space parameters</a></li>
+<li>If $f\in L^1(\T^n)$, the Littlewood-Paley projections $\Delta_k f\in C^\infty(\T^n)$ are defined by 
+\begin{align}\label{eq:PaleyLittlewood-2}
+    \Delta_k f(x) &amp;\doteq \sum_{\xi\in \Z^n} \varphi_k(\xi) \widehat{f}(\xi)e^{2\pi i \xi \cdot x} 
+    = \sum_{ \frac{3}{4}\cdot 2^k \leq |\xi| \leq \frac{8}{3}\cdot 2^k} \varphi_k(\xi) \widehat{f}(\xi)e^{2\pi i \xi \cdot x}, \qquad x\in \T^n. 
+\end{align}</li>
+<li>If $f\in L^1(\T^n)\cap L^2(\T^n)$, by Parseval's Theorem $\Vert f\Vert_{L^2(\T^n)}^2 = \sum_{\xi\in \Z^n} |\widehat{f}(\xi)|^2$, thus $f(x) = \sum_{k=-1}^\infty \Delta_kf(x)  \qquad\text{in}\;L^2(\T^n)$. </li>
 </ul>
+<p>Let $K_j:\T^n\to \R$ be the inverse Fourier transform of $\varphi_j$ namely </p>
+<p>$$
+    K_j(x) = \sum_{\xi\in \Z^n} \varphi_j(\xi) e^{2\pi i \xi \cdot x}, \qquad x\in \T^n,
+$$</p>
+<p>where the sum is finite since $\mathrm{supp}(\varphi_j) \subset \left[\frac{3}{4}\cdot 2{j}, \frac{8}{3}\cdot 2^j\right]$. </p>
+<p><strong>LEMMA.</strong>
+    $\Vert K_j\Vert_{L^1(\T^n)} \leq C$ uniformly in $j$. </p>
+<p><span style="text-align-last: right; display: inline; float:left ">
+<button class="btn btn-primary btn__first" 
+        data-toggle="collapse"
+        data-target=".collapse.t20260424a"
+        data-text="Collapse"> Proof &nbsp;</button> 
+</span>
+<span style="text-align-last: left; display: inline; float:right "> 
+    <!-- abstract button content -->
+    <div class="block collapse t20260424a">
+        <div class="block__content">
+            Let 
+            $$
+                \varphi_0^\vee(x) = \int_{\R^n}  \varphi_0(\xi) e^{2\pi i\xi \cdot x}\;d\xi 
+                \qquad \Longrightarrow \qquad 
+            $$
+        </div>
+    </div>
+</span></p>
+<h2>Basic identity</h2>
+<p><strong>Theorem.</strong> Let $\alpha \in (0,1]$. We have $C^{0,\alpha}(\T^n) = B^{\alpha}_{\infty, \infty}(\T^n)$.</p>
+<div style="background:#f5f8ff; padding:4px 8px; border-radius:6px;">
+<b>Proof.</b>
+
+Let us show $C^{0,\alpha}(\T^n)\hookrightarrow B^\alpha_{\infty,\infty}(\T^n)$. From the fact that $\widehat{K_j}(0) = \varphi_j(0) = 0$ for all $j\geq 0$ we compute for $j\geq 0$ that
+
+$$
+    \Delta_j f(x) = (K_j*f)(x) = \int_{\T^n} K_j(y) f(x-y)\;dy = \int_{\T^n} K_j(y) \big( f(x-y) - f(x)\big) \;dy.
+$$
+
+Therefore, for $j\geq 0$ we have $[f]$
+
+$$
+|\Delta_j f(x)| 
+    \leq 
+    \lbrack f \rbrack_{C^{0,\alpha}(\T^n)} \cdot 2^{-j\alpha} \left(\int_{\R^n} |\varphi_0^\vee(z)|\cdot |z|^\alpha\;dz\right).
+$$
+
+Since
+$$
+    \int_{\R^n} |\varphi_0^\vee(z)|\cdot |z|^\alpha\;dz 
+    \leq \int_{\R^n} |\varphi_0^\vee(z)|\;dz \leq C_N \int_{\R^n} \frac{dz}{(1+|z|^N)},
+$$
+we conclude that 
+$$
+    2^{j\alpha}|\Delta_j f(x)|  \leq C_N[f]_{C^{0,\alpha}(\T^n)}, \qquad j\geq 0.
+$$
+
+For $j=-1$, using $\varphi_{-1} = \chi$ and $\chi(0) = 1$, we have
+$$
+\begin{aligned}
+    |\Delta_{-1}f(x)| &= \left| \varphi_{-1}(0)\widehat{f}(0) +  \sum_{|\xi|=1} \varphi_{-1}(\xi)\widehat{f}(\xi)e^{2\pi i\xi\cdot x} \right|  \\\
+    &\leq \sum_{|\xi|\leq 1} |\widehat{f}(\xi)|\leq (n+1)\Vert f\Vert_{L^1(\T^n)} \leq (n+1)\Vert f\Vert_{L^\infty(\T^n)}. 
+\end{aligned}
+$$
+
+We conclude that 
+
+$$
+    \Vert f\Vert_{B^\alpha_{\infty, \infty}(\T^n)} \leq \left(C_N + \frac{n+1}{2}\right)\Vert f\Vert_{C^{0,\alpha}(\T^n)}. 
+$$
+
+</div>
+
 <h2>Refererences</h2>
+<!-- [^Isa65]: Isaacs, R. (1965) Differential Games: A Mathematical Theory with Applications to Warfare and Pursuit, Control and Optimization. John Wiley and Sons, New York. -->
+
 <!-- ## References
 
 {% include_raw "refs_only.html" %} -->
-
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:Isa65">
-<p>Isaacs, R. (1965) Differential Games: A Mathematical Theory with Applications to Warfare and Pursuit, Control and Optimization. John Wiley and Sons, New York.&#160;<a class="footnote-backref" href="#fnref:Isa65" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
 
             <!-- For use inside index.stx
 ::: quote
@@ -224,7 +295,7 @@ function includeHTML() {
     </p>
 </blockquote>
 
-<script type="text/javascript" src="/assets/collapsible.js"></script>
+<script type="text/javascript" src="/assets/collapsible.js?v=20260915"></script>
 
 <!-- Default Statcounter code for MyWeb https://tunguyenthaison.github.io/ -->
 <script type="text/javascript">
@@ -244,7 +315,6 @@ function includeHTML() {
             referrerPolicy="no-referrer-when-downgrade"></a>
     </div></noscript>
     <!-- End of Statcounter Code -->
-
 
 
             
