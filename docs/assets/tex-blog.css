@@ -15,10 +15,28 @@
 
 .tex-blog .displaymath,
 .tex-blog .equation {
-    margin: 1.5rem 0;
+    margin: 0.75rem 0;
     max-width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
+}
+
+/* plasTeX uses .displaymath for equation* and align*. Keep these displays
+   close to the surrounding text size, even when MathJax applies its own
+   per-formula scaling. */
+.tex-blog .displaymath {
+    font-size: 0.9em;
+}
+
+.tex-blog .displaymath > mjx-container[display="true"],
+.tex-blog .equation_content > mjx-container[display="true"] {
+    margin-bottom: 0.25em !important;
+    margin-top: 0.25em !important;
+}
+
+/* The plasTeX numbered-equation wrapper contains empty paragraph elements. */
+.tex-blog .equation > p {
+    margin: 0;
 }
 
 .tex-blog .equation_content {
