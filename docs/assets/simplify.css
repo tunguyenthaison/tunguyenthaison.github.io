@@ -634,6 +634,34 @@ body {
     text-align: center;
 }
 
+.header-image {
+    margin: 5% 0 0;
+}
+
+.header-image__frame {
+    border-radius: 32px;
+    box-shadow: 0 18px 18px rgba(0, 0, 0, 0.25);
+    height: 320px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.header-image__frame img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.header-image figcaption {
+    color: #666;
+    font-size: 0.9em;
+    font-style: italic;
+    line-height: 1.4;
+    margin: 0.75rem 1rem 0;
+    text-align: center;
+}
+
 .main .title hr {
     margin: 50px auto 60px;
 }
